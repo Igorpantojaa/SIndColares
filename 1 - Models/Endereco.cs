@@ -2,7 +2,8 @@
 
 public class Endereco
 {
-    public int Id { get; set; } = 0;
+    public int Id { get; set; }
+    public int AssociadoId { get; set; }
     public int CEP { get; set; } = 0;
     public string UF { get; set; } = string.Empty;
     public string Municipio { get; set; } = string.Empty;

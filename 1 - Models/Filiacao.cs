@@ -3,6 +3,7 @@
 public class Filiacao
 {
     public int Id { get; set; }
+    public int AssociadoId { get; set; }
     public bool Filiado { get; set; } = true;
     public string TipoEntidade { get; set; } = string.Empty;
     public string NomeEntidade { get; set; } = string.Empty;

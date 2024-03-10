@@ -1,4 +1,4 @@
-﻿namespace Models;
+﻿namespace Modelos;
 
 public class Associado
 {

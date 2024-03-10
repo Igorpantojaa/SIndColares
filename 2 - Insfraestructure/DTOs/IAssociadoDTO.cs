@@ -1,6 +1,6 @@
-﻿using Models;
+﻿using Modelos;
 
-namespace Insfraestructure.DTOs
+namespace Infraestrutura.DTOs
 {
     public interface IAssociadoDTO
     {

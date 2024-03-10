@@ -1,7 +1,8 @@
-﻿using Microsoft.EntityFrameworkCore;
-using Models;
+﻿using Infraestrutura;
+using Microsoft.EntityFrameworkCore;
+using Modelos;
 
-namespace Insfraestructure.DTOs;
+namespace Infraestrutura.DTOs;
 
 public class AssociadoDTO : IAssociadoDTO
 {

@@ -3,20 +3,26 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34408.163
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 - Models", "1 - Models", "{D3A3BC08-A03A-4729-9A13-0B75E63A7CF5}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 - Modelos", "1 - Modelos", "{D3A3BC08-A03A-4729-9A13-0B75E63A7CF5}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Models", "1 - Models\Models.csproj", "{F56C334C-F9A6-48A6-AA02-3703E2C84D4D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Modelos", "1 - Models\Modelos.csproj", "{F56C334C-F9A6-48A6-AA02-3703E2C84D4D}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2 - Infraestructure", "2 - Infraestructure", "{6AF576B7-0190-49E4-902D-6CD95CC3A86C}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2 - Infraestrutura", "2 - Infraestrutura", "{6AF576B7-0190-49E4-902D-6CD95CC3A86C}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Insfraestructure", "2 - Insfraestructure\Insfraestructure.csproj", "{6013996F-4887-4DFB-AC73-E1517BB9A7BE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infraestrutura", "2 - Insfraestructure\Infraestrutura.csproj", "{6013996F-4887-4DFB-AC73-E1517BB9A7BE}"
 	ProjectSection(ProjectDependencies) = postProject
 		{F56C334C-F9A6-48A6-AA02-3703E2C84D4D} = {F56C334C-F9A6-48A6-AA02-3703E2C84D4D}
 	EndProjectSection
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 - Services", "3 - Services", "{5BEE05F8-EE94-4A6E-B548-369622B96B3F}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 - Servicos", "3 - Servicos", "{5BEE05F8-EE94-4A6E-B548-369622B96B3F}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4 - Presentation", "4 - Presentation", "{9A7C95CD-C573-42C6-81B9-2B674E589D5F}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4 - Apresentacao", "4 - Apresentacao", "{9A7C95CD-C573-42C6-81B9-2B674E589D5F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SINDCOLARES", "4 - Presentation\SINDCOLARES\SINDCOLARES.csproj", "{CC6F483F-8854-4B08-A16D-7DFDCAF645C3}"
+	ProjectSection(ProjectDependencies) = postProject
+		{6013996F-4887-4DFB-AC73-E1517BB9A7BE} = {6013996F-4887-4DFB-AC73-E1517BB9A7BE}
+		{F56C334C-F9A6-48A6-AA02-3703E2C84D4D} = {F56C334C-F9A6-48A6-AA02-3703E2C84D4D}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -32,6 +38,10 @@ Global
 		{6013996F-4887-4DFB-AC73-E1517BB9A7BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6013996F-4887-4DFB-AC73-E1517BB9A7BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6013996F-4887-4DFB-AC73-E1517BB9A7BE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CC6F483F-8854-4B08-A16D-7DFDCAF645C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CC6F483F-8854-4B08-A16D-7DFDCAF645C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CC6F483F-8854-4B08-A16D-7DFDCAF645C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CC6F483F-8854-4B08-A16D-7DFDCAF645C3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -39,6 +49,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{F56C334C-F9A6-48A6-AA02-3703E2C84D4D} = {D3A3BC08-A03A-4729-9A13-0B75E63A7CF5}
 		{6013996F-4887-4DFB-AC73-E1517BB9A7BE} = {6AF576B7-0190-49E4-902D-6CD95CC3A86C}
+		{CC6F483F-8854-4B08-A16D-7DFDCAF645C3} = {9A7C95CD-C573-42C6-81B9-2B674E589D5F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {6E6D2A2F-80B0-45A9-BC20-53A69D6A1CF3}

@@ -1,4 +1,4 @@
-﻿namespace Insfraestructure;
+﻿namespace Infraestrutura;
 
 public class GestaoArquivos
 {

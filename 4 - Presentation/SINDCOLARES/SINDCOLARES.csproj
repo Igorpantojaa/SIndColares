@@ -17,6 +17,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\1 - Models\Modelos.csproj" />
+    <ProjectReference Include="..\..\2 - Insfraestructure\Infraestrutura.csproj" />
+    <ProjectReference Include="..\..\3 - Services\Servicos\Servicos.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Compile Update="Properties\Resources.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>

@@ -1,26 +1,21 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using Infraestrutura;
+using Infraestrutura.DTOs;
+using Servicos;
+namespace SINDCOLARES;
 
-namespace SINDCOLARES
+public partial class FRM_Inicio : Form
 {
-    public partial class FRM_Inicio : Form
+    private readonly ICadastroService _servico;
+    public FRM_Inicio(IAssociadoDTO context)
     {
-        public FRM_Inicio()
-        {
-            InitializeComponent();
-        }
+        _servico = new CadastroService(context);
+        InitializeComponent();
+    }
 
-        private void BTN_NovoCadastro_Click(object sender, EventArgs e)
-        {
-            FRM_Cadastro cad = new();
-            cad.ShowDialog();
-        }
+    private void BTN_NovoCadastro_Click(object sender, EventArgs e)
+    {
+        SindContext contxt = new();
+        FRM_Cadastro cad = new();
+        cad.ShowDialog();
     }
 }

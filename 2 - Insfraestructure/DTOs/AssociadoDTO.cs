@@ -1,5 +1,4 @@
-﻿using Infraestrutura;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using Modelos;
 
 namespace Infraestrutura.DTOs;
@@ -13,7 +12,7 @@ public class AssociadoDTO : IAssociadoDTO
         _context = new SindContext();
     }
 
-    public void Novo(Associado a)
+    public void Salvar(Associado a)
     {
         try
         {

@@ -2,6 +2,7 @@
 
 public class Endereco
 {
+    public int id { get; set; }
     public int AssociadoId { get; set; }
     public int CEP { get; set; } = 0;
     public string UF { get; set; } = string.Empty;

@@ -32,8 +32,8 @@
             label1 = new Label();
             label2 = new Label();
             textBox2 = new TextBox();
-            button2 = new Button();
-            button1 = new Button();
+            BTN_Cancelar = new Button();
+            BTN_Salvar = new Button();
             SuspendLayout();
             // 
             // textBox1
@@ -70,23 +70,23 @@
             textBox2.Size = new Size(203, 23);
             textBox2.TabIndex = 2;
             // 
-            // button2
+            // BTN_Cancelar
             // 
-            button2.Location = new Point(120, 116);
-            button2.Name = "button2";
-            button2.Size = new Size(91, 38);
-            button2.TabIndex = 9;
-            button2.Text = "Cancelar";
-            button2.UseVisualStyleBackColor = true;
+            BTN_Cancelar.Location = new Point(120, 116);
+            BTN_Cancelar.Name = "BTN_Cancelar";
+            BTN_Cancelar.Size = new Size(91, 38);
+            BTN_Cancelar.TabIndex = 9;
+            BTN_Cancelar.Text = "Cancelar";
+            BTN_Cancelar.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // BTN_Salvar
             // 
-            button1.Location = new Point(16, 116);
-            button1.Name = "button1";
-            button1.Size = new Size(91, 38);
-            button1.TabIndex = 8;
-            button1.Text = "Salvar";
-            button1.UseVisualStyleBackColor = true;
+            BTN_Salvar.Location = new Point(16, 116);
+            BTN_Salvar.Name = "BTN_Salvar";
+            BTN_Salvar.Size = new Size(91, 38);
+            BTN_Salvar.TabIndex = 8;
+            BTN_Salvar.Text = "Salvar";
+            BTN_Salvar.UseVisualStyleBackColor = true;
             // 
             // FRM_Contato
             // 
@@ -94,8 +94,8 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(227, 171);
             ControlBox = false;
-            Controls.Add(button2);
-            Controls.Add(button1);
+            Controls.Add(BTN_Cancelar);
+            Controls.Add(BTN_Salvar);
             Controls.Add(label2);
             Controls.Add(textBox2);
             Controls.Add(label1);
@@ -113,7 +113,7 @@
         private Label label1;
         private Label label2;
         private TextBox textBox2;
-        private Button button2;
-        private Button button1;
+        private Button BTN_Cancelar;
+        private Button BTN_Salvar;
     }
 }

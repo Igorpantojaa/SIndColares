@@ -4,9 +4,9 @@ namespace Infraestrutura.DTOs
 {
     public interface IAssociadoDTO
     {
-        void Atualizar(Associado a);
+        void Salvar(Associado a);
         void Excluir(Associado a);
+        void Atualizar(Associado a);
         List<Associado> ListarTodos();
-        void Novo(Associado a);
     }
 }

@@ -14,11 +14,4 @@ public class Associado
     public Documentos Documentos { get; set; } = new();
     public Escolaridade Escolaridade { get; set; } = new();
     public DateTime DataNascimento { get; set; } = DateTime.Now;
-
-    public Associado(string cpf, string nome)
-    {
-        Id = Convert.ToInt32(cpf);
-        Nome = nome;
-        Documentos.CPF = cpf;
-    }
 }

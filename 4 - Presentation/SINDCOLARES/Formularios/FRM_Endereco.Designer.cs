@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             groupBox3 = new GroupBox();
+            TXB_Localidade = new TextBox();
+            label1 = new Label();
+            CB_UF = new ComboBox();
             TXB_Numero = new TextBox();
             label17 = new Label();
             TXB_Bairro = new TextBox();
@@ -40,11 +43,8 @@
             label12 = new Label();
             TXB_CEP = new TextBox();
             label13 = new Label();
-            CB_UF = new ComboBox();
-            TXB_Localidade = new TextBox();
-            label1 = new Label();
-            button1 = new Button();
-            button2 = new Button();
+            BTN_Salvar = new Button();
+            BTN_Cancelar = new Button();
             groupBox3.SuspendLayout();
             SuspendLayout();
             // 
@@ -69,6 +69,31 @@
             groupBox3.Size = new Size(437, 123);
             groupBox3.TabIndex = 5;
             groupBox3.TabStop = false;
+            // 
+            // TXB_Localidade
+            // 
+            TXB_Localidade.Location = new Point(321, 81);
+            TXB_Localidade.Name = "TXB_Localidade";
+            TXB_Localidade.Size = new Size(107, 23);
+            TXB_Localidade.TabIndex = 14;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.Location = new Point(321, 63);
+            label1.Name = "label1";
+            label1.Size = new Size(65, 15);
+            label1.TabIndex = 13;
+            label1.Text = "Localidade";
+            // 
+            // CB_UF
+            // 
+            CB_UF.FormattingEnabled = true;
+            CB_UF.Location = new Point(97, 37);
+            CB_UF.Name = "CB_UF";
+            CB_UF.Size = new Size(102, 23);
+            CB_UF.TabIndex = 12;
             // 
             // TXB_Numero
             // 
@@ -165,48 +190,23 @@
             label13.TabIndex = 0;
             label13.Text = "CEP";
             // 
-            // CB_UF
+            // BTN_Salvar
             // 
-            CB_UF.FormattingEnabled = true;
-            CB_UF.Location = new Point(97, 37);
-            CB_UF.Name = "CB_UF";
-            CB_UF.Size = new Size(102, 23);
-            CB_UF.TabIndex = 12;
+            BTN_Salvar.Location = new Point(254, 140);
+            BTN_Salvar.Name = "BTN_Salvar";
+            BTN_Salvar.Size = new Size(91, 38);
+            BTN_Salvar.TabIndex = 6;
+            BTN_Salvar.Text = "Salvar";
+            BTN_Salvar.UseVisualStyleBackColor = true;
             // 
-            // TXB_Localidade
+            // BTN_Cancelar
             // 
-            TXB_Localidade.Location = new Point(321, 81);
-            TXB_Localidade.Name = "TXB_Localidade";
-            TXB_Localidade.Size = new Size(107, 23);
-            TXB_Localidade.TabIndex = 14;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(321, 63);
-            label1.Name = "label1";
-            label1.Size = new Size(65, 15);
-            label1.TabIndex = 13;
-            label1.Text = "Localidade";
-            // 
-            // button1
-            // 
-            button1.Location = new Point(254, 140);
-            button1.Name = "button1";
-            button1.Size = new Size(91, 38);
-            button1.TabIndex = 6;
-            button1.Text = "Salvar";
-            button1.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            button2.Location = new Point(358, 140);
-            button2.Name = "button2";
-            button2.Size = new Size(91, 38);
-            button2.TabIndex = 7;
-            button2.Text = "Cancelar";
-            button2.UseVisualStyleBackColor = true;
+            BTN_Cancelar.Location = new Point(358, 140);
+            BTN_Cancelar.Name = "BTN_Cancelar";
+            BTN_Cancelar.Size = new Size(91, 38);
+            BTN_Cancelar.TabIndex = 7;
+            BTN_Cancelar.Text = "Cancelar";
+            BTN_Cancelar.UseVisualStyleBackColor = true;
             // 
             // FRM_Endereco
             // 
@@ -214,8 +214,8 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(464, 183);
             ControlBox = false;
-            Controls.Add(button2);
-            Controls.Add(button1);
+            Controls.Add(BTN_Cancelar);
+            Controls.Add(BTN_Salvar);
             Controls.Add(groupBox3);
             Name = "FRM_Endereco";
             Text = "Endereço";
@@ -241,7 +241,7 @@
         private Label label13;
         private TextBox TXB_Localidade;
         private Label label1;
-        private Button button1;
-        private Button button2;
+        private Button BTN_Salvar;
+        private Button BTN_Cancelar;
     }
 }

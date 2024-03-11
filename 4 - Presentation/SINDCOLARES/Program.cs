@@ -1,3 +1,6 @@
+using Infraestrutura;
+using Infraestrutura.DTOs;
+
 namespace SINDCOLARES
 {
     internal static class Program
@@ -12,7 +15,7 @@ namespace SINDCOLARES
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
             //SindColaresContext context = new();
-            Application.Run(new FRM_Inicio());
+            Application.Run(new FRM_Inicio(new AssociadoDTO()));
         }
     }
 }

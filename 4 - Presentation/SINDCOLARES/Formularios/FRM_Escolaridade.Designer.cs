@@ -28,33 +28,33 @@
         /// </summary>
         private void InitializeComponent()
         {
-            button2 = new Button();
-            button1 = new Button();
+            BTN_Cancelar = new Button();
+            BTN_Salvar = new Button();
             groupBox3 = new GroupBox();
-            CB_UF = new ComboBox();
-            label14 = new Label();
             comboBox1 = new ComboBox();
             label1 = new Label();
+            CB_UF = new ComboBox();
+            label14 = new Label();
             groupBox3.SuspendLayout();
             SuspendLayout();
             // 
-            // button2
+            // BTN_Cancelar
             // 
-            button2.Location = new Point(255, 141);
-            button2.Name = "button2";
-            button2.Size = new Size(91, 38);
-            button2.TabIndex = 10;
-            button2.Text = "Cancelar";
-            button2.UseVisualStyleBackColor = true;
+            BTN_Cancelar.Location = new Point(255, 141);
+            BTN_Cancelar.Name = "BTN_Cancelar";
+            BTN_Cancelar.Size = new Size(91, 38);
+            BTN_Cancelar.TabIndex = 10;
+            BTN_Cancelar.Text = "Cancelar";
+            BTN_Cancelar.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // BTN_Salvar
             // 
-            button1.Location = new Point(151, 141);
-            button1.Name = "button1";
-            button1.Size = new Size(91, 38);
-            button1.TabIndex = 9;
-            button1.Text = "Salvar";
-            button1.UseVisualStyleBackColor = true;
+            BTN_Salvar.Location = new Point(151, 141);
+            BTN_Salvar.Name = "BTN_Salvar";
+            BTN_Salvar.Size = new Size(91, 38);
+            BTN_Salvar.TabIndex = 9;
+            BTN_Salvar.Text = "Salvar";
+            BTN_Salvar.UseVisualStyleBackColor = true;
             // 
             // groupBox3
             // 
@@ -67,24 +67,6 @@
             groupBox3.Size = new Size(334, 123);
             groupBox3.TabIndex = 8;
             groupBox3.TabStop = false;
-            // 
-            // CB_UF
-            // 
-            CB_UF.FormattingEnabled = true;
-            CB_UF.Location = new Point(8, 33);
-            CB_UF.Name = "CB_UF";
-            CB_UF.Size = new Size(318, 23);
-            CB_UF.TabIndex = 12;
-            // 
-            // label14
-            // 
-            label14.AutoSize = true;
-            label14.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label14.Location = new Point(8, 15);
-            label14.Name = "label14";
-            label14.Size = new Size(75, 15);
-            label14.TabIndex = 4;
-            label14.Text = "Escolaridade";
             // 
             // comboBox1
             // 
@@ -104,14 +86,32 @@
             label1.TabIndex = 13;
             label1.Text = "Declaração";
             // 
+            // CB_UF
+            // 
+            CB_UF.FormattingEnabled = true;
+            CB_UF.Location = new Point(8, 33);
+            CB_UF.Name = "CB_UF";
+            CB_UF.Size = new Size(318, 23);
+            CB_UF.TabIndex = 12;
+            // 
+            // label14
+            // 
+            label14.AutoSize = true;
+            label14.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            label14.Location = new Point(8, 15);
+            label14.Name = "label14";
+            label14.Size = new Size(75, 15);
+            label14.TabIndex = 4;
+            label14.Text = "Escolaridade";
+            // 
             // FRM_Escolaridade
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(358, 188);
             ControlBox = false;
-            Controls.Add(button2);
-            Controls.Add(button1);
+            Controls.Add(BTN_Cancelar);
+            Controls.Add(BTN_Salvar);
             Controls.Add(groupBox3);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "FRM_Escolaridade";
@@ -123,8 +123,8 @@
 
         #endregion
 
-        private Button button2;
-        private Button button1;
+        private Button BTN_Cancelar;
+        private Button BTN_Salvar;
         private GroupBox groupBox3;
         private ComboBox CB_UF;
         private Label label14;

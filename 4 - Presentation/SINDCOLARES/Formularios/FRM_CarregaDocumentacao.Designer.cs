@@ -29,224 +29,225 @@
         private void InitializeComponent()
         {
             groupBox1 = new GroupBox();
-            button1 = new Button();
-            button2 = new Button();
-            button3 = new Button();
-            button4 = new Button();
-            button5 = new Button();
-            button6 = new Button();
-            button7 = new Button();
-            button8 = new Button();
-            button9 = new Button();
-            button10 = new Button();
-            button11 = new Button();
-            button12 = new Button();
-            button13 = new Button();
-            button14 = new Button();
-            button15 = new Button();
-            button16 = new Button();
-            button17 = new Button();
-            button18 = new Button();
-            button19 = new Button();
+            BTN_AbrirPasta = new Button();
+            BTN_VisualizaCanhotoProtocolo = new Button();
+            BTN_SelecionaCanhotoProtocolo = new Button();
+            BTN_GeraDocumentacao = new Button();
+            BTN_VisualizaFiliacao = new Button();
+            BTN_VisualizaReqINSS = new Button();
+            BTN_VisualizaReqLicensa = new Button();
+            BTN_VisualizaTermoAutorizacao = new Button();
+            BTN_VisualizaResidencia = new Button();
+            BTN_VisualizaRG = new Button();
+            BTN_VisualizaCPF = new Button();
+            BTN_SelecionaFiliacao = new Button();
+            BTN_SelecionaReqINSS = new Button();
+            BTN_SelecionaReqLicensa = new Button();
+            BTN_SelecionaTermoAutorizacao = new Button();
+            BTN_SelecionaResidencia = new Button();
+            BTN_SelecionaRG = new Button();
+            BTN_SelecionaCPF = new Button();
+            BTN_Voltar = new Button();
             groupBox1.SuspendLayout();
             SuspendLayout();
             // 
             // groupBox1
             // 
-            groupBox1.Controls.Add(button19);
-            groupBox1.Controls.Add(button17);
-            groupBox1.Controls.Add(button18);
-            groupBox1.Controls.Add(button15);
-            groupBox1.Controls.Add(button8);
-            groupBox1.Controls.Add(button9);
-            groupBox1.Controls.Add(button10);
-            groupBox1.Controls.Add(button11);
-            groupBox1.Controls.Add(button12);
-            groupBox1.Controls.Add(button13);
-            groupBox1.Controls.Add(button14);
-            groupBox1.Controls.Add(button7);
-            groupBox1.Controls.Add(button6);
-            groupBox1.Controls.Add(button5);
-            groupBox1.Controls.Add(button4);
-            groupBox1.Controls.Add(button3);
-            groupBox1.Controls.Add(button2);
-            groupBox1.Controls.Add(button1);
+            groupBox1.Controls.Add(BTN_AbrirPasta);
+            groupBox1.Controls.Add(BTN_VisualizaCanhotoProtocolo);
+            groupBox1.Controls.Add(BTN_SelecionaCanhotoProtocolo);
+            groupBox1.Controls.Add(BTN_GeraDocumentacao);
+            groupBox1.Controls.Add(BTN_VisualizaFiliacao);
+            groupBox1.Controls.Add(BTN_VisualizaReqINSS);
+            groupBox1.Controls.Add(BTN_VisualizaReqLicensa);
+            groupBox1.Controls.Add(BTN_VisualizaTermoAutorizacao);
+            groupBox1.Controls.Add(BTN_VisualizaResidencia);
+            groupBox1.Controls.Add(BTN_VisualizaRG);
+            groupBox1.Controls.Add(BTN_VisualizaCPF);
+            groupBox1.Controls.Add(BTN_SelecionaFiliacao);
+            groupBox1.Controls.Add(BTN_SelecionaReqINSS);
+            groupBox1.Controls.Add(BTN_SelecionaReqLicensa);
+            groupBox1.Controls.Add(BTN_SelecionaTermoAutorizacao);
+            groupBox1.Controls.Add(BTN_SelecionaResidencia);
+            groupBox1.Controls.Add(BTN_SelecionaRG);
+            groupBox1.Controls.Add(BTN_SelecionaCPF);
             groupBox1.Location = new Point(12, 6);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new Size(283, 471);
             groupBox1.TabIndex = 0;
             groupBox1.TabStop = false;
             // 
-            // button1
+            // BTN_AbrirPasta
             // 
-            button1.Location = new Point(6, 13);
-            button1.Name = "button1";
-            button1.Size = new Size(130, 39);
-            button1.TabIndex = 0;
-            button1.Text = "Selecionar CPF";
-            button1.UseVisualStyleBackColor = true;
+            BTN_AbrirPasta.Location = new Point(6, 418);
+            BTN_AbrirPasta.Name = "BTN_AbrirPasta";
+            BTN_AbrirPasta.Size = new Size(266, 39);
+            BTN_AbrirPasta.TabIndex = 17;
+            BTN_AbrirPasta.Text = "Abrir pasta do associado";
+            BTN_AbrirPasta.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // BTN_VisualizaCanhotoProtocolo
             // 
-            button2.Location = new Point(6, 58);
-            button2.Name = "button2";
-            button2.Size = new Size(130, 39);
-            button2.TabIndex = 1;
-            button2.Text = "Selecionar RG";
-            button2.UseVisualStyleBackColor = true;
+            BTN_VisualizaCanhotoProtocolo.Location = new Point(142, 328);
+            BTN_VisualizaCanhotoProtocolo.Name = "BTN_VisualizaCanhotoProtocolo";
+            BTN_VisualizaCanhotoProtocolo.Size = new Size(130, 39);
+            BTN_VisualizaCanhotoProtocolo.TabIndex = 16;
+            BTN_VisualizaCanhotoProtocolo.Text = "Visualizar Canhoto Protocolo";
+            BTN_VisualizaCanhotoProtocolo.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // BTN_SelecionaCanhotoProtocolo
             // 
-            button3.Location = new Point(6, 148);
-            button3.Name = "button3";
-            button3.Size = new Size(130, 39);
-            button3.TabIndex = 2;
-            button3.Text = "Selecionar Comp. Residência";
-            button3.UseVisualStyleBackColor = true;
+            BTN_SelecionaCanhotoProtocolo.Location = new Point(6, 328);
+            BTN_SelecionaCanhotoProtocolo.Name = "BTN_SelecionaCanhotoProtocolo";
+            BTN_SelecionaCanhotoProtocolo.Size = new Size(130, 39);
+            BTN_SelecionaCanhotoProtocolo.TabIndex = 15;
+            BTN_SelecionaCanhotoProtocolo.Text = "Selecionar Canhoto Protocolo";
+            BTN_SelecionaCanhotoProtocolo.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // BTN_GeraDocumentacao
             // 
-            button4.Location = new Point(6, 193);
-            button4.Name = "button4";
-            button4.Size = new Size(130, 39);
-            button4.TabIndex = 3;
-            button4.Text = "Selecionar Termo de Autorização";
-            button4.UseVisualStyleBackColor = true;
+            BTN_GeraDocumentacao.Location = new Point(6, 373);
+            BTN_GeraDocumentacao.Name = "BTN_GeraDocumentacao";
+            BTN_GeraDocumentacao.Size = new Size(266, 39);
+            BTN_GeraDocumentacao.TabIndex = 14;
+            BTN_GeraDocumentacao.Text = "Gerar Documentação";
+            BTN_GeraDocumentacao.UseVisualStyleBackColor = true;
             // 
-            // button5
+            // BTN_VisualizaFiliacao
             // 
-            button5.Location = new Point(6, 238);
-            button5.Name = "button5";
-            button5.Size = new Size(130, 39);
-            button5.TabIndex = 4;
-            button5.Text = "Selecionar Req. Licensa";
-            button5.UseVisualStyleBackColor = true;
+            BTN_VisualizaFiliacao.Location = new Point(142, 103);
+            BTN_VisualizaFiliacao.Name = "BTN_VisualizaFiliacao";
+            BTN_VisualizaFiliacao.Size = new Size(130, 39);
+            BTN_VisualizaFiliacao.TabIndex = 13;
+            BTN_VisualizaFiliacao.Text = "Visualizar Declaração de Filiação";
+            BTN_VisualizaFiliacao.UseVisualStyleBackColor = true;
             // 
-            // button6
+            // BTN_VisualizaReqINSS
             // 
-            button6.Location = new Point(6, 283);
-            button6.Name = "button6";
-            button6.Size = new Size(130, 39);
-            button6.TabIndex = 5;
-            button6.Text = "Selecionar Req. INSS";
-            button6.UseVisualStyleBackColor = true;
+            BTN_VisualizaReqINSS.Location = new Point(142, 283);
+            BTN_VisualizaReqINSS.Name = "BTN_VisualizaReqINSS";
+            BTN_VisualizaReqINSS.Size = new Size(130, 39);
+            BTN_VisualizaReqINSS.TabIndex = 12;
+            BTN_VisualizaReqINSS.Text = "Visualizar Req. INSS";
+            BTN_VisualizaReqINSS.UseVisualStyleBackColor = true;
             // 
-            // button7
+            // BTN_VisualizaReqLicensa
             // 
-            button7.Location = new Point(6, 103);
-            button7.Name = "button7";
-            button7.Size = new Size(130, 39);
-            button7.TabIndex = 6;
-            button7.Text = "Selecionar Declaração de Filiação";
-            button7.UseVisualStyleBackColor = true;
+            BTN_VisualizaReqLicensa.Location = new Point(142, 238);
+            BTN_VisualizaReqLicensa.Name = "BTN_VisualizaReqLicensa";
+            BTN_VisualizaReqLicensa.Size = new Size(130, 39);
+            BTN_VisualizaReqLicensa.TabIndex = 11;
+            BTN_VisualizaReqLicensa.Text = "Visualizar Req. Licensa";
+            BTN_VisualizaReqLicensa.UseVisualStyleBackColor = true;
             // 
-            // button8
+            // BTN_VisualizaTermoAutorizacao
             // 
-            button8.Location = new Point(142, 103);
-            button8.Name = "button8";
-            button8.Size = new Size(130, 39);
-            button8.TabIndex = 13;
-            button8.Text = "Visualizar Declaração de Filiação";
-            button8.UseVisualStyleBackColor = true;
+            BTN_VisualizaTermoAutorizacao.Location = new Point(142, 193);
+            BTN_VisualizaTermoAutorizacao.Name = "BTN_VisualizaTermoAutorizacao";
+            BTN_VisualizaTermoAutorizacao.Size = new Size(130, 39);
+            BTN_VisualizaTermoAutorizacao.TabIndex = 10;
+            BTN_VisualizaTermoAutorizacao.Text = "Visualizar Termo de Autorização";
+            BTN_VisualizaTermoAutorizacao.UseVisualStyleBackColor = true;
             // 
-            // button9
+            // BTN_VisualizaResidencia
             // 
-            button9.Location = new Point(142, 283);
-            button9.Name = "button9";
-            button9.Size = new Size(130, 39);
-            button9.TabIndex = 12;
-            button9.Text = "Visualizar Req. INSS";
-            button9.UseVisualStyleBackColor = true;
+            BTN_VisualizaResidencia.Location = new Point(142, 148);
+            BTN_VisualizaResidencia.Name = "BTN_VisualizaResidencia";
+            BTN_VisualizaResidencia.Size = new Size(130, 39);
+            BTN_VisualizaResidencia.TabIndex = 9;
+            BTN_VisualizaResidencia.Text = "Visualizar Comp. Residência";
+            BTN_VisualizaResidencia.UseVisualStyleBackColor = true;
             // 
-            // button10
+            // BTN_VisualizaRG
             // 
-            button10.Location = new Point(142, 238);
-            button10.Name = "button10";
-            button10.Size = new Size(130, 39);
-            button10.TabIndex = 11;
-            button10.Text = "Visualizar Req. Licensa";
-            button10.UseVisualStyleBackColor = true;
+            BTN_VisualizaRG.Location = new Point(142, 58);
+            BTN_VisualizaRG.Name = "BTN_VisualizaRG";
+            BTN_VisualizaRG.Size = new Size(130, 39);
+            BTN_VisualizaRG.TabIndex = 8;
+            BTN_VisualizaRG.Text = "Visualizar RG";
+            BTN_VisualizaRG.UseVisualStyleBackColor = true;
             // 
-            // button11
+            // BTN_VisualizaCPF
             // 
-            button11.Location = new Point(142, 193);
-            button11.Name = "button11";
-            button11.Size = new Size(130, 39);
-            button11.TabIndex = 10;
-            button11.Text = "Visualizar Termo de Autorização";
-            button11.UseVisualStyleBackColor = true;
+            BTN_VisualizaCPF.Location = new Point(142, 13);
+            BTN_VisualizaCPF.Name = "BTN_VisualizaCPF";
+            BTN_VisualizaCPF.Size = new Size(130, 39);
+            BTN_VisualizaCPF.TabIndex = 7;
+            BTN_VisualizaCPF.Text = "Visualizar CPF";
+            BTN_VisualizaCPF.UseVisualStyleBackColor = true;
             // 
-            // button12
+            // BTN_SelecionaFiliacao
             // 
-            button12.Location = new Point(142, 148);
-            button12.Name = "button12";
-            button12.Size = new Size(130, 39);
-            button12.TabIndex = 9;
-            button12.Text = "Visualizar Comp. Residência";
-            button12.UseVisualStyleBackColor = true;
+            BTN_SelecionaFiliacao.Location = new Point(6, 103);
+            BTN_SelecionaFiliacao.Name = "BTN_SelecionaFiliacao";
+            BTN_SelecionaFiliacao.Size = new Size(130, 39);
+            BTN_SelecionaFiliacao.TabIndex = 6;
+            BTN_SelecionaFiliacao.Text = "Selecionar Declaração de Filiação";
+            BTN_SelecionaFiliacao.UseVisualStyleBackColor = true;
             // 
-            // button13
+            // BTN_SelecionaReqINSS
             // 
-            button13.Location = new Point(142, 58);
-            button13.Name = "button13";
-            button13.Size = new Size(130, 39);
-            button13.TabIndex = 8;
-            button13.Text = "Visualizar RG";
-            button13.UseVisualStyleBackColor = true;
+            BTN_SelecionaReqINSS.Location = new Point(6, 283);
+            BTN_SelecionaReqINSS.Name = "BTN_SelecionaReqINSS";
+            BTN_SelecionaReqINSS.Size = new Size(130, 39);
+            BTN_SelecionaReqINSS.TabIndex = 5;
+            BTN_SelecionaReqINSS.Text = "Selecionar Req. INSS";
+            BTN_SelecionaReqINSS.UseVisualStyleBackColor = true;
             // 
-            // button14
+            // BTN_SelecionaReqLicensa
             // 
-            button14.Location = new Point(142, 13);
-            button14.Name = "button14";
-            button14.Size = new Size(130, 39);
-            button14.TabIndex = 7;
-            button14.Text = "Visualizar CPF";
-            button14.UseVisualStyleBackColor = true;
+            BTN_SelecionaReqLicensa.Location = new Point(6, 238);
+            BTN_SelecionaReqLicensa.Name = "BTN_SelecionaReqLicensa";
+            BTN_SelecionaReqLicensa.Size = new Size(130, 39);
+            BTN_SelecionaReqLicensa.TabIndex = 4;
+            BTN_SelecionaReqLicensa.Text = "Selecionar Req. Licensa";
+            BTN_SelecionaReqLicensa.UseVisualStyleBackColor = true;
             // 
-            // button15
+            // BTN_SelecionaTermoAutorizacao
             // 
-            button15.Location = new Point(6, 373);
-            button15.Name = "button15";
-            button15.Size = new Size(266, 39);
-            button15.TabIndex = 14;
-            button15.Text = "Gerar Documentação";
-            button15.UseVisualStyleBackColor = true;
+            BTN_SelecionaTermoAutorizacao.Location = new Point(6, 193);
+            BTN_SelecionaTermoAutorizacao.Name = "BTN_SelecionaTermoAutorizacao";
+            BTN_SelecionaTermoAutorizacao.Size = new Size(130, 39);
+            BTN_SelecionaTermoAutorizacao.TabIndex = 3;
+            BTN_SelecionaTermoAutorizacao.Text = "Selecionar Termo de Autorização";
+            BTN_SelecionaTermoAutorizacao.UseVisualStyleBackColor = true;
             // 
-            // button16
+            // BTN_SelecionaResidencia
             // 
-            button16.Location = new Point(88, 484);
-            button16.Name = "button16";
-            button16.Size = new Size(130, 39);
-            button16.TabIndex = 13;
-            button16.Text = "Voltar";
-            button16.UseVisualStyleBackColor = true;
+            BTN_SelecionaResidencia.Location = new Point(6, 148);
+            BTN_SelecionaResidencia.Name = "BTN_SelecionaResidencia";
+            BTN_SelecionaResidencia.Size = new Size(130, 39);
+            BTN_SelecionaResidencia.TabIndex = 2;
+            BTN_SelecionaResidencia.Text = "Selecionar Comp. Residência";
+            BTN_SelecionaResidencia.UseVisualStyleBackColor = true;
             // 
-            // button17
+            // BTN_SelecionaRG
             // 
-            button17.Location = new Point(142, 328);
-            button17.Name = "button17";
-            button17.Size = new Size(130, 39);
-            button17.TabIndex = 16;
-            button17.Text = "Visualizar Canhoto Protocolo";
-            button17.UseVisualStyleBackColor = true;
+            BTN_SelecionaRG.Location = new Point(6, 58);
+            BTN_SelecionaRG.Name = "BTN_SelecionaRG";
+            BTN_SelecionaRG.Size = new Size(130, 39);
+            BTN_SelecionaRG.TabIndex = 1;
+            BTN_SelecionaRG.Text = "Selecionar RG";
+            BTN_SelecionaRG.UseVisualStyleBackColor = true;
             // 
-            // button18
+            // BTN_SelecionaCPF
             // 
-            button18.Location = new Point(6, 328);
-            button18.Name = "button18";
-            button18.Size = new Size(130, 39);
-            button18.TabIndex = 15;
-            button18.Text = "Selecionar Canhoto Protocolo";
-            button18.UseVisualStyleBackColor = true;
+            BTN_SelecionaCPF.Location = new Point(6, 13);
+            BTN_SelecionaCPF.Name = "BTN_SelecionaCPF";
+            BTN_SelecionaCPF.Size = new Size(130, 39);
+            BTN_SelecionaCPF.TabIndex = 0;
+            BTN_SelecionaCPF.Text = "Selecionar CPF";
+            BTN_SelecionaCPF.UseVisualStyleBackColor = true;
             // 
-            // button19
+            // BTN_Voltar
             // 
-            button19.Location = new Point(6, 418);
-            button19.Name = "button19";
-            button19.Size = new Size(266, 39);
-            button19.TabIndex = 17;
-            button19.Text = "Abrir pasta do associado";
-            button19.UseVisualStyleBackColor = true;
+            BTN_Voltar.Location = new Point(88, 484);
+            BTN_Voltar.Name = "BTN_Voltar";
+            BTN_Voltar.Size = new Size(130, 39);
+            BTN_Voltar.TabIndex = 13;
+            BTN_Voltar.Text = "Voltar";
+            BTN_Voltar.UseVisualStyleBackColor = true;
+            BTN_Voltar.Click += BTN_Voltar_Click;
             // 
             // FRM_CarregaDocumentacao
             // 
@@ -254,7 +255,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(307, 532);
             ControlBox = false;
-            Controls.Add(button16);
+            Controls.Add(BTN_Voltar);
             Controls.Add(groupBox1);
             Name = "FRM_CarregaDocumentacao";
             Text = "FRM_CarregaDocumentacao";
@@ -265,24 +266,24 @@
         #endregion
 
         private GroupBox groupBox1;
-        private Button button3;
-        private Button button2;
-        private Button button1;
-        private Button button7;
-        private Button button6;
-        private Button button5;
-        private Button button4;
-        private Button button15;
-        private Button button8;
-        private Button button9;
-        private Button button10;
-        private Button button11;
-        private Button button12;
-        private Button button13;
-        private Button button14;
-        private Button button16;
-        private Button button17;
-        private Button button18;
-        private Button button19;
+        private Button BTN_SelecionaResidencia;
+        private Button BTN_SelecionaRG;
+        private Button BTN_SelecionaCPF;
+        private Button BTN_SelecionaFiliacao;
+        private Button BTN_SelecionaReqINSS;
+        private Button BTN_SelecionaReqLicensa;
+        private Button BTN_SelecionaTermoAutorizacao;
+        private Button BTN_GeraDocumentacao;
+        private Button BTN_VisualizaFiliacao;
+        private Button BTN_VisualizaReqINSS;
+        private Button BTN_VisualizaReqLicensa;
+        private Button BTN_VisualizaTermoAutorizacao;
+        private Button BTN_VisualizaResidencia;
+        private Button BTN_VisualizaRG;
+        private Button BTN_VisualizaCPF;
+        private Button BTN_Voltar;
+        private Button BTN_VisualizaCanhotoProtocolo;
+        private Button BTN_SelecionaCanhotoProtocolo;
+        private Button BTN_AbrirPasta;
     }
 }

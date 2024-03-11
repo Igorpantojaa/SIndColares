@@ -42,12 +42,12 @@
             textBox5 = new TextBox();
             label7 = new Label();
             groupBox1 = new GroupBox();
-            TXB_CPF = new TextBox();
-            label1 = new Label();
             TXB_PIS = new TextBox();
             label2 = new Label();
-            button2 = new Button();
-            button1 = new Button();
+            TXB_CPF = new TextBox();
+            label1 = new Label();
+            BTN_Cancelar = new Button();
+            BTN_Salvar = new Button();
             groupBox2.SuspendLayout();
             groupBox1.SuspendLayout();
             SuspendLayout();
@@ -189,23 +189,6 @@
             groupBox1.TabIndex = 18;
             groupBox1.TabStop = false;
             // 
-            // TXB_CPF
-            // 
-            TXB_CPF.Location = new Point(27, 35);
-            TXB_CPF.Name = "TXB_CPF";
-            TXB_CPF.Size = new Size(171, 23);
-            TXB_CPF.TabIndex = 3;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(24, 17);
-            label1.Name = "label1";
-            label1.Size = new Size(27, 15);
-            label1.TabIndex = 2;
-            label1.Text = "CPF";
-            // 
             // TXB_PIS
             // 
             TXB_PIS.Location = new Point(256, 33);
@@ -223,23 +206,40 @@
             label2.TabIndex = 4;
             label2.Text = "PIS/NIS";
             // 
-            // button2
+            // TXB_CPF
             // 
-            button2.Location = new Point(375, 267);
-            button2.Name = "button2";
-            button2.Size = new Size(91, 38);
-            button2.TabIndex = 20;
-            button2.Text = "Cancelar";
-            button2.UseVisualStyleBackColor = true;
+            TXB_CPF.Location = new Point(27, 35);
+            TXB_CPF.Name = "TXB_CPF";
+            TXB_CPF.Size = new Size(171, 23);
+            TXB_CPF.TabIndex = 3;
             // 
-            // button1
+            // label1
             // 
-            button1.Location = new Point(271, 267);
-            button1.Name = "button1";
-            button1.Size = new Size(91, 38);
-            button1.TabIndex = 19;
-            button1.Text = "Salvar";
-            button1.UseVisualStyleBackColor = true;
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.Location = new Point(24, 17);
+            label1.Name = "label1";
+            label1.Size = new Size(27, 15);
+            label1.TabIndex = 2;
+            label1.Text = "CPF";
+            // 
+            // BTN_Cancelar
+            // 
+            BTN_Cancelar.Location = new Point(375, 267);
+            BTN_Cancelar.Name = "BTN_Cancelar";
+            BTN_Cancelar.Size = new Size(91, 38);
+            BTN_Cancelar.TabIndex = 20;
+            BTN_Cancelar.Text = "Cancelar";
+            BTN_Cancelar.UseVisualStyleBackColor = true;
+            // 
+            // BTN_Salvar
+            // 
+            BTN_Salvar.Location = new Point(271, 267);
+            BTN_Salvar.Name = "BTN_Salvar";
+            BTN_Salvar.Size = new Size(91, 38);
+            BTN_Salvar.TabIndex = 19;
+            BTN_Salvar.Text = "Salvar";
+            BTN_Salvar.UseVisualStyleBackColor = true;
             // 
             // FRM_Documentos
             // 
@@ -247,8 +247,8 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(478, 311);
             ControlBox = false;
-            Controls.Add(button2);
-            Controls.Add(button1);
+            Controls.Add(BTN_Cancelar);
+            Controls.Add(BTN_Salvar);
             Controls.Add(groupBox1);
             Controls.Add(groupBox2);
             FormBorderStyle = FormBorderStyle.FixedSingle;
@@ -281,7 +281,7 @@
         private Label label2;
         private TextBox TXB_CPF;
         private Label label1;
-        private Button button2;
-        private Button button1;
+        private Button BTN_Cancelar;
+        private Button BTN_Salvar;
     }
 }

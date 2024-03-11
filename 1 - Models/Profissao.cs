@@ -2,6 +2,7 @@
 
 public class Profissao
 {
+    public int id { get; set; }
     public int AssociadoId { get; set; }
     public string Categoria { get; set; } = string.Empty;
     public string FormaPesca { get; set; } = string.Empty;

@@ -29,32 +29,32 @@
         private void InitializeComponent()
         {
             groupBox1 = new GroupBox();
+            groupBox3 = new GroupBox();
+            label6 = new Label();
+            textBox3 = new TextBox();
+            textBox1 = new TextBox();
+            label4 = new Label();
+            label2 = new Label();
+            label5 = new Label();
             groupBox2 = new GroupBox();
             checkBox11 = new CheckBox();
             checkBox5 = new CheckBox();
             checkBox6 = new CheckBox();
             checkBox3 = new CheckBox();
             checkBox4 = new CheckBox();
-            label5 = new Label();
-            textBox2 = new TextBox();
-            label4 = new Label();
-            textBox1 = new TextBox();
+            comboBox2 = new ComboBox();
             checkBox2 = new CheckBox();
+            textBox2 = new TextBox();
             checkBox1 = new CheckBox();
             comboBox3 = new ComboBox();
             label3 = new Label();
-            comboBox2 = new ComboBox();
-            label2 = new Label();
             comboBox1 = new ComboBox();
             label1 = new Label();
-            groupBox3 = new GroupBox();
-            textBox3 = new TextBox();
-            label6 = new Label();
-            button2 = new Button();
-            button1 = new Button();
+            BTN_Cancelar = new Button();
+            BTN_Salvar = new Button();
             groupBox1.SuspendLayout();
-            groupBox2.SuspendLayout();
             groupBox3.SuspendLayout();
+            groupBox2.SuspendLayout();
             SuspendLayout();
             // 
             // groupBox1
@@ -76,6 +76,72 @@
             groupBox1.Size = new Size(350, 336);
             groupBox1.TabIndex = 0;
             groupBox1.TabStop = false;
+            // 
+            // groupBox3
+            // 
+            groupBox3.Controls.Add(label6);
+            groupBox3.Controls.Add(textBox3);
+            groupBox3.Controls.Add(textBox1);
+            groupBox3.Controls.Add(label4);
+            groupBox3.Location = new Point(6, 110);
+            groupBox3.Name = "groupBox3";
+            groupBox3.Size = new Size(330, 80);
+            groupBox3.TabIndex = 13;
+            groupBox3.TabStop = false;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            label6.Location = new Point(6, 19);
+            label6.Name = "label6";
+            label6.Size = new Size(126, 15);
+            label6.TabIndex = 15;
+            label6.Text = "Nome da Embarcação";
+            // 
+            // textBox3
+            // 
+            textBox3.Location = new Point(6, 40);
+            textBox3.Name = "textBox3";
+            textBox3.Size = new Size(173, 23);
+            textBox3.TabIndex = 14;
+            // 
+            // textBox1
+            // 
+            textBox1.Location = new Point(185, 40);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(139, 23);
+            textBox1.TabIndex = 8;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            label4.Location = new Point(185, 19);
+            label4.Name = "label4";
+            label4.Size = new Size(31, 15);
+            label4.TabIndex = 9;
+            label4.Text = "RGP";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            label2.Location = new Point(6, 63);
+            label2.Name = "label2";
+            label2.Size = new Size(93, 15);
+            label2.TabIndex = 2;
+            label2.Text = "Forma de Pesca";
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            label5.Location = new Point(191, 63);
+            label5.Name = "label5";
+            label5.Size = new Size(23, 15);
+            label5.TabIndex = 11;
+            label5.Text = "AB";
             // 
             // groupBox2
             // 
@@ -141,39 +207,13 @@
             checkBox4.Text = "Peixes";
             checkBox4.UseVisualStyleBackColor = true;
             // 
-            // label5
+            // comboBox2
             // 
-            label5.AutoSize = true;
-            label5.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label5.Location = new Point(191, 63);
-            label5.Name = "label5";
-            label5.Size = new Size(23, 15);
-            label5.TabIndex = 11;
-            label5.Text = "AB";
-            // 
-            // textBox2
-            // 
-            textBox2.Location = new Point(191, 81);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(145, 23);
-            textBox2.TabIndex = 10;
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label4.Location = new Point(185, 19);
-            label4.Name = "label4";
-            label4.Size = new Size(31, 15);
-            label4.TabIndex = 9;
-            label4.Text = "RGP";
-            // 
-            // textBox1
-            // 
-            textBox1.Location = new Point(185, 40);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(139, 23);
-            textBox1.TabIndex = 8;
+            comboBox2.FormattingEnabled = true;
+            comboBox2.Location = new Point(6, 81);
+            comboBox2.Name = "comboBox2";
+            comboBox2.Size = new Size(179, 23);
+            comboBox2.TabIndex = 3;
             // 
             // checkBox2
             // 
@@ -184,6 +224,13 @@
             checkBox2.TabIndex = 7;
             checkBox2.Text = "Aposentado";
             checkBox2.UseVisualStyleBackColor = true;
+            // 
+            // textBox2
+            // 
+            textBox2.Location = new Point(191, 81);
+            textBox2.Name = "textBox2";
+            textBox2.Size = new Size(145, 23);
+            textBox2.TabIndex = 10;
             // 
             // checkBox1
             // 
@@ -213,24 +260,6 @@
             label3.TabIndex = 4;
             label3.Text = "Área de Pesca";
             // 
-            // comboBox2
-            // 
-            comboBox2.FormattingEnabled = true;
-            comboBox2.Location = new Point(6, 81);
-            comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(179, 23);
-            comboBox2.TabIndex = 3;
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label2.Location = new Point(6, 63);
-            label2.Name = "label2";
-            label2.Size = new Size(93, 15);
-            label2.TabIndex = 2;
-            label2.Text = "Forma de Pesca";
-            // 
             // comboBox1
             // 
             comboBox1.FormattingEnabled = true;
@@ -249,52 +278,23 @@
             label1.TabIndex = 0;
             label1.Text = "Categoria Profissional";
             // 
-            // groupBox3
+            // BTN_Cancelar
             // 
-            groupBox3.Controls.Add(label6);
-            groupBox3.Controls.Add(textBox3);
-            groupBox3.Controls.Add(textBox1);
-            groupBox3.Controls.Add(label4);
-            groupBox3.Location = new Point(6, 110);
-            groupBox3.Name = "groupBox3";
-            groupBox3.Size = new Size(330, 80);
-            groupBox3.TabIndex = 13;
-            groupBox3.TabStop = false;
+            BTN_Cancelar.Location = new Point(271, 354);
+            BTN_Cancelar.Name = "BTN_Cancelar";
+            BTN_Cancelar.Size = new Size(91, 38);
+            BTN_Cancelar.TabIndex = 14;
+            BTN_Cancelar.Text = "Cancelar";
+            BTN_Cancelar.UseVisualStyleBackColor = true;
             // 
-            // textBox3
+            // BTN_Salvar
             // 
-            textBox3.Location = new Point(6, 40);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(173, 23);
-            textBox3.TabIndex = 14;
-            // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label6.Location = new Point(6, 19);
-            label6.Name = "label6";
-            label6.Size = new Size(126, 15);
-            label6.TabIndex = 15;
-            label6.Text = "Nome da Embarcação";
-            // 
-            // button2
-            // 
-            button2.Location = new Point(271, 354);
-            button2.Name = "button2";
-            button2.Size = new Size(91, 38);
-            button2.TabIndex = 14;
-            button2.Text = "Cancelar";
-            button2.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            button1.Location = new Point(167, 354);
-            button1.Name = "button1";
-            button1.Size = new Size(91, 38);
-            button1.TabIndex = 13;
-            button1.Text = "Salvar";
-            button1.UseVisualStyleBackColor = true;
+            BTN_Salvar.Location = new Point(167, 354);
+            BTN_Salvar.Name = "BTN_Salvar";
+            BTN_Salvar.Size = new Size(91, 38);
+            BTN_Salvar.TabIndex = 13;
+            BTN_Salvar.Text = "Salvar";
+            BTN_Salvar.UseVisualStyleBackColor = true;
             // 
             // FRM_Profissao
             // 
@@ -302,17 +302,17 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(375, 401);
             ControlBox = false;
-            Controls.Add(button2);
-            Controls.Add(button1);
+            Controls.Add(BTN_Cancelar);
+            Controls.Add(BTN_Salvar);
             Controls.Add(groupBox1);
             Name = "FRM_Profissao";
             Text = "FRM_Profissao";
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
-            groupBox2.ResumeLayout(false);
-            groupBox2.PerformLayout();
             groupBox3.ResumeLayout(false);
             groupBox3.PerformLayout();
+            groupBox2.ResumeLayout(false);
+            groupBox2.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -340,7 +340,7 @@
         private GroupBox groupBox3;
         private Label label6;
         private TextBox textBox3;
-        private Button button2;
-        private Button button1;
+        private Button BTN_Cancelar;
+        private Button BTN_Salvar;
     }
 }

@@ -295,6 +295,7 @@
             FormBorderStyle = FormBorderStyle.FixedSingle;
             MaximizeBox = false;
             Name = "FRM_Cadastro";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "FRM_Cadastro";
             GP_Formularios.ResumeLayout(false);
             GP_Info.ResumeLayout(false);

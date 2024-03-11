@@ -1,20 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿namespace SINDCOLARES.Formularios;
 
-namespace SINDCOLARES.Formularios
+public partial class FRM_CarregaDocumentacao : Form
 {
-    public partial class FRM_CarregaDocumentacao : Form
+    public FRM_CarregaDocumentacao()
     {
-        public FRM_CarregaDocumentacao()
-        {
-            InitializeComponent();
-        }
+        InitializeComponent();
+    }
+
+    private void BTN_Voltar_Click(object sender, EventArgs e)
+    {
+        Close();
     }
 }

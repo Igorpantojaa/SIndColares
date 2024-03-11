@@ -308,6 +308,7 @@
             Controls.Add(BTN_Salvar);
             Controls.Add(groupBox1);
             Name = "FRM_Profissao";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "FRM_Profissao";
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();

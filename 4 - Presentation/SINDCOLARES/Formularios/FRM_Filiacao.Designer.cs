@@ -171,6 +171,7 @@
             Controls.Add(BTN_Salvar);
             Controls.Add(GP_Filiacao);
             Name = "FRM_Filiacao";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "FRM_Filiacao";
             GP_Filiacao.ResumeLayout(false);
             GP_Filiacao.PerformLayout();

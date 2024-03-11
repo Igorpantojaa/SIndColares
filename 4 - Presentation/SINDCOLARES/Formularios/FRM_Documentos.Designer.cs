@@ -141,12 +141,12 @@
             CB_EstadoEmissao.Size = new Size(88, 23);
             CB_EstadoEmissao.TabIndex = 10;
             // 
-            // DTP_DAtaEmissao
+            // DTP_DataEmissao
             // 
             DTP_DataEmissao.CustomFormat = "dd/MM/yyyy";
             DTP_DataEmissao.Format = DateTimePickerFormat.Custom;
             DTP_DataEmissao.Location = new Point(139, 39);
-            DTP_DataEmissao.Name = "DTP_DAtaEmissao";
+            DTP_DataEmissao.Name = "DTP_DataEmissao";
             DTP_DataEmissao.Size = new Size(114, 23);
             DTP_DataEmissao.TabIndex = 10;
             // 
@@ -255,6 +255,7 @@
             Controls.Add(groupBox2);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "FRM_Documentos";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "FRM_Documentos";
             groupBox2.ResumeLayout(false);
             groupBox2.PerformLayout();

@@ -31,10 +31,10 @@
             BTN_Cancelar = new Button();
             BTN_Salvar = new Button();
             groupBox3 = new GroupBox();
+            TXB_Declaração = new TextBox();
             label1 = new Label();
             CB_Escolarridade = new ComboBox();
             label14 = new Label();
-            TXB_Declaração = new TextBox();
             groupBox3.SuspendLayout();
             SuspendLayout();
             // 
@@ -46,6 +46,7 @@
             BTN_Cancelar.TabIndex = 10;
             BTN_Cancelar.Text = "Cancelar";
             BTN_Cancelar.UseVisualStyleBackColor = true;
+            BTN_Cancelar.Click += BTN_Cancelar_Click;
             // 
             // BTN_Salvar
             // 
@@ -55,6 +56,7 @@
             BTN_Salvar.TabIndex = 9;
             BTN_Salvar.Text = "Salvar";
             BTN_Salvar.UseVisualStyleBackColor = true;
+            BTN_Salvar.Click += BTN_Salvar_Click;
             // 
             // groupBox3
             // 
@@ -67,6 +69,14 @@
             groupBox3.Size = new Size(334, 202);
             groupBox3.TabIndex = 8;
             groupBox3.TabStop = false;
+            // 
+            // TXB_Declaração
+            // 
+            TXB_Declaração.Location = new Point(8, 85);
+            TXB_Declaração.Multiline = true;
+            TXB_Declaração.Name = "TXB_Declaração";
+            TXB_Declaração.Size = new Size(318, 111);
+            TXB_Declaração.TabIndex = 14;
             // 
             // label1
             // 
@@ -96,14 +106,6 @@
             label14.TabIndex = 4;
             label14.Text = "Escolaridade";
             // 
-            // TXB_Declaração
-            // 
-            TXB_Declaração.Location = new Point(8, 85);
-            TXB_Declaração.Multiline = true;
-            TXB_Declaração.Name = "TXB_Declaração";
-            TXB_Declaração.Size = new Size(318, 111);
-            TXB_Declaração.TabIndex = 14;
-            // 
             // FRM_Escolaridade
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -115,6 +117,7 @@
             Controls.Add(groupBox3);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "FRM_Escolaridade";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "FRM_Escolaridade";
             groupBox3.ResumeLayout(false);
             groupBox3.PerformLayout();

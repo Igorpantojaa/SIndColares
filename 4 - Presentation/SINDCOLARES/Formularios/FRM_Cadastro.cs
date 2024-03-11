@@ -66,11 +66,16 @@ public partial class FRM_Cadastro : Form
 
     private void Salvar()
     {
-        throw new NotImplementedException();
+        _cadastroService.InfoAssociado.Nome = TXB_Nome.Text;
+        _cadastroService.InfoAssociado.Apelido = TXB_Apelido.Text;
+        _cadastroService.InfoAssociado.DataNascimento = DTP_DataNascimento.Value;
+        _cadastroService.InfoAssociado.Sexo = CB_Sexo.SelectedText;
     }
 
     private void Cancelar()
     {
         Close();
     }
+
+
 }

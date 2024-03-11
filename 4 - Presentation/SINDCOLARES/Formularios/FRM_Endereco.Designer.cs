@@ -220,6 +220,7 @@
             Controls.Add(BTN_Salvar);
             Controls.Add(groupBox3);
             Name = "FRM_Endereco";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Endereço";
             groupBox3.ResumeLayout(false);
             groupBox3.PerformLayout();

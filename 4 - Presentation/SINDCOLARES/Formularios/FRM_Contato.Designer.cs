@@ -104,6 +104,7 @@
             Controls.Add(TXB_Email);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "FRM_Contato";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "FRM_Contato";
             ResumeLayout(false);
             PerformLayout();

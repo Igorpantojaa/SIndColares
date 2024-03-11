@@ -258,6 +258,7 @@
             Controls.Add(BTN_Voltar);
             Controls.Add(groupBox1);
             Name = "FRM_CarregaDocumentacao";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "FRM_CarregaDocumentacao";
             groupBox1.ResumeLayout(false);
             ResumeLayout(false);

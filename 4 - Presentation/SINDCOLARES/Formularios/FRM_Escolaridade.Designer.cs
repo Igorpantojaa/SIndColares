@@ -31,16 +31,16 @@
             BTN_Cancelar = new Button();
             BTN_Salvar = new Button();
             groupBox3 = new GroupBox();
-            comboBox1 = new ComboBox();
             label1 = new Label();
-            CB_UF = new ComboBox();
+            CB_Escolarridade = new ComboBox();
             label14 = new Label();
+            TXB_Declaração = new TextBox();
             groupBox3.SuspendLayout();
             SuspendLayout();
             // 
             // BTN_Cancelar
             // 
-            BTN_Cancelar.Location = new Point(255, 141);
+            BTN_Cancelar.Location = new Point(255, 220);
             BTN_Cancelar.Name = "BTN_Cancelar";
             BTN_Cancelar.Size = new Size(91, 38);
             BTN_Cancelar.TabIndex = 10;
@@ -49,7 +49,7 @@
             // 
             // BTN_Salvar
             // 
-            BTN_Salvar.Location = new Point(151, 141);
+            BTN_Salvar.Location = new Point(151, 220);
             BTN_Salvar.Name = "BTN_Salvar";
             BTN_Salvar.Size = new Size(91, 38);
             BTN_Salvar.TabIndex = 9;
@@ -58,23 +58,15 @@
             // 
             // groupBox3
             // 
-            groupBox3.Controls.Add(comboBox1);
+            groupBox3.Controls.Add(TXB_Declaração);
             groupBox3.Controls.Add(label1);
-            groupBox3.Controls.Add(CB_UF);
+            groupBox3.Controls.Add(CB_Escolarridade);
             groupBox3.Controls.Add(label14);
             groupBox3.Location = new Point(12, 12);
             groupBox3.Name = "groupBox3";
-            groupBox3.Size = new Size(334, 123);
+            groupBox3.Size = new Size(334, 202);
             groupBox3.TabIndex = 8;
             groupBox3.TabStop = false;
-            // 
-            // comboBox1
-            // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(8, 85);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(318, 23);
-            comboBox1.TabIndex = 14;
             // 
             // label1
             // 
@@ -86,13 +78,13 @@
             label1.TabIndex = 13;
             label1.Text = "Declaração";
             // 
-            // CB_UF
+            // CB_Escolarridade
             // 
-            CB_UF.FormattingEnabled = true;
-            CB_UF.Location = new Point(8, 33);
-            CB_UF.Name = "CB_UF";
-            CB_UF.Size = new Size(318, 23);
-            CB_UF.TabIndex = 12;
+            CB_Escolarridade.FormattingEnabled = true;
+            CB_Escolarridade.Location = new Point(8, 33);
+            CB_Escolarridade.Name = "CB_Escolarridade";
+            CB_Escolarridade.Size = new Size(318, 23);
+            CB_Escolarridade.TabIndex = 12;
             // 
             // label14
             // 
@@ -104,11 +96,19 @@
             label14.TabIndex = 4;
             label14.Text = "Escolaridade";
             // 
+            // TXB_Declaração
+            // 
+            TXB_Declaração.Location = new Point(8, 85);
+            TXB_Declaração.Multiline = true;
+            TXB_Declaração.Name = "TXB_Declaração";
+            TXB_Declaração.Size = new Size(318, 111);
+            TXB_Declaração.TabIndex = 14;
+            // 
             // FRM_Escolaridade
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(358, 188);
+            ClientSize = new Size(358, 270);
             ControlBox = false;
             Controls.Add(BTN_Cancelar);
             Controls.Add(BTN_Salvar);
@@ -126,9 +126,9 @@
         private Button BTN_Cancelar;
         private Button BTN_Salvar;
         private GroupBox groupBox3;
-        private ComboBox CB_UF;
+        private ComboBox CB_Escolarridade;
         private Label label14;
-        private ComboBox comboBox1;
         private Label label1;
+        private TextBox TXB_Declaração;
     }
 }

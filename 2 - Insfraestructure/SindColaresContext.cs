@@ -16,6 +16,7 @@ public class SindContext : DbContext
     public DbSet<Associado> Associados { get; set; }
     public DbSet<Documentos> Documentos { get; set; }
     public DbSet<Escolaridade> Escolaridades { get; set; }
+    public DbSet<Digitalizados> Digitalizados { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {

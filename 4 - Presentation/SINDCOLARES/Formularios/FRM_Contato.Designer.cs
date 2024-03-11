@@ -28,20 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-            textBox1 = new TextBox();
+            TXB_Email = new TextBox();
             label1 = new Label();
             label2 = new Label();
-            textBox2 = new TextBox();
+            TXB_Telefone = new TextBox();
             BTN_Cancelar = new Button();
             BTN_Salvar = new Button();
             SuspendLayout();
             // 
-            // textBox1
+            // TXB_Email
             // 
-            textBox1.Location = new Point(12, 30);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(203, 23);
-            textBox1.TabIndex = 0;
+            TXB_Email.Location = new Point(12, 30);
+            TXB_Email.Name = "TXB_Email";
+            TXB_Email.Size = new Size(203, 23);
+            TXB_Email.TabIndex = 0;
             // 
             // label1
             // 
@@ -63,12 +63,12 @@
             label2.TabIndex = 3;
             label2.Text = "Telefone";
             // 
-            // textBox2
+            // TXB_Telefone
             // 
-            textBox2.Location = new Point(12, 74);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(203, 23);
-            textBox2.TabIndex = 2;
+            TXB_Telefone.Location = new Point(12, 74);
+            TXB_Telefone.Name = "TXB_Telefone";
+            TXB_Telefone.Size = new Size(203, 23);
+            TXB_Telefone.TabIndex = 2;
             // 
             // BTN_Cancelar
             // 
@@ -78,6 +78,7 @@
             BTN_Cancelar.TabIndex = 9;
             BTN_Cancelar.Text = "Cancelar";
             BTN_Cancelar.UseVisualStyleBackColor = true;
+            BTN_Cancelar.Click += BTN_Cancelar_Click;
             // 
             // BTN_Salvar
             // 
@@ -87,6 +88,7 @@
             BTN_Salvar.TabIndex = 8;
             BTN_Salvar.Text = "Salvar";
             BTN_Salvar.UseVisualStyleBackColor = true;
+            BTN_Salvar.Click += BTN_Salvar_Click;
             // 
             // FRM_Contato
             // 
@@ -97,9 +99,9 @@
             Controls.Add(BTN_Cancelar);
             Controls.Add(BTN_Salvar);
             Controls.Add(label2);
-            Controls.Add(textBox2);
+            Controls.Add(TXB_Telefone);
             Controls.Add(label1);
-            Controls.Add(textBox1);
+            Controls.Add(TXB_Email);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "FRM_Contato";
             Text = "FRM_Contato";
@@ -109,10 +111,10 @@
 
         #endregion
 
-        private TextBox textBox1;
+        private TextBox TXB_Email;
         private Label label1;
         private Label label2;
-        private TextBox textBox2;
+        private TextBox TXB_Telefone;
         private Button BTN_Cancelar;
         private Button BTN_Salvar;
     }

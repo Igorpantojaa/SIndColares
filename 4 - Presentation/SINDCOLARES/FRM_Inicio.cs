@@ -1,6 +1,7 @@
 ﻿using Infraestrutura;
 using Infraestrutura.DTOs;
 using Servicos;
+
 namespace SINDCOLARES;
 
 public partial class FRM_Inicio : Form
@@ -14,8 +15,7 @@ public partial class FRM_Inicio : Form
 
     private void BTN_NovoCadastro_Click(object sender, EventArgs e)
     {
-        SindContext contxt = new();
-        FRM_Cadastro cad = new();
+        FRM_Cadastro cad = new(_servico);
         cad.ShowDialog();
     }
 }

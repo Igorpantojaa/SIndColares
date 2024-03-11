@@ -30,14 +30,14 @@
         {
             GP_Filiacao = new GroupBox();
             label4 = new Label();
-            comboBox2 = new ComboBox();
+            CB_UF = new ComboBox();
             label3 = new Label();
-            textBox2 = new TextBox();
+            TXB_CNPJ = new TextBox();
             label2 = new Label();
-            textBox1 = new TextBox();
+            TXB_NomeEntidade = new TextBox();
             label1 = new Label();
-            comboBox1 = new ComboBox();
-            checkBox1 = new CheckBox();
+            CB_TipoEntidade = new ComboBox();
+            CHB_Filiacao = new CheckBox();
             BTN_Cancelar = new Button();
             BTN_Salvar = new Button();
             GP_Filiacao.SuspendLayout();
@@ -46,14 +46,14 @@
             // GP_Filiacao
             // 
             GP_Filiacao.Controls.Add(label4);
-            GP_Filiacao.Controls.Add(comboBox2);
+            GP_Filiacao.Controls.Add(CB_UF);
             GP_Filiacao.Controls.Add(label3);
-            GP_Filiacao.Controls.Add(textBox2);
+            GP_Filiacao.Controls.Add(TXB_CNPJ);
             GP_Filiacao.Controls.Add(label2);
-            GP_Filiacao.Controls.Add(textBox1);
+            GP_Filiacao.Controls.Add(TXB_NomeEntidade);
             GP_Filiacao.Controls.Add(label1);
-            GP_Filiacao.Controls.Add(comboBox1);
-            GP_Filiacao.Controls.Add(checkBox1);
+            GP_Filiacao.Controls.Add(CB_TipoEntidade);
+            GP_Filiacao.Controls.Add(CHB_Filiacao);
             GP_Filiacao.Location = new Point(12, 12);
             GP_Filiacao.Name = "GP_Filiacao";
             GP_Filiacao.Size = new Size(279, 159);
@@ -70,13 +70,13 @@
             label4.TabIndex = 8;
             label4.Text = "UF Entidade";
             // 
-            // comboBox2
+            // CB_UF
             // 
-            comboBox2.FormattingEnabled = true;
-            comboBox2.Location = new Point(142, 125);
-            comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(126, 23);
-            comboBox2.TabIndex = 7;
+            CB_UF.FormattingEnabled = true;
+            CB_UF.Location = new Point(142, 125);
+            CB_UF.Name = "CB_UF";
+            CB_UF.Size = new Size(126, 23);
+            CB_UF.TabIndex = 7;
             // 
             // label3
             // 
@@ -88,12 +88,12 @@
             label3.TabIndex = 6;
             label3.Text = "CNPJ Entidade";
             // 
-            // textBox2
+            // TXB_CNPJ
             // 
-            textBox2.Location = new Point(6, 125);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(130, 23);
-            textBox2.TabIndex = 5;
+            TXB_CNPJ.Location = new Point(6, 125);
+            TXB_CNPJ.Name = "TXB_CNPJ";
+            TXB_CNPJ.Size = new Size(130, 23);
+            TXB_CNPJ.TabIndex = 5;
             // 
             // label2
             // 
@@ -105,12 +105,12 @@
             label2.TabIndex = 4;
             label2.Text = "Nome da entidade";
             // 
-            // textBox1
+            // TXB_NomeEntidade
             // 
-            textBox1.Location = new Point(6, 81);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(262, 23);
-            textBox1.TabIndex = 3;
+            TXB_NomeEntidade.Location = new Point(6, 81);
+            TXB_NomeEntidade.Name = "TXB_NomeEntidade";
+            TXB_NomeEntidade.Size = new Size(262, 23);
+            TXB_NomeEntidade.TabIndex = 3;
             // 
             // label1
             // 
@@ -122,24 +122,24 @@
             label1.TabIndex = 2;
             label1.Text = "Tipo de Entidade";
             // 
-            // comboBox1
+            // CB_TipoEntidade
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(78, 37);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(190, 23);
-            comboBox1.TabIndex = 1;
+            CB_TipoEntidade.FormattingEnabled = true;
+            CB_TipoEntidade.Location = new Point(78, 37);
+            CB_TipoEntidade.Name = "CB_TipoEntidade";
+            CB_TipoEntidade.Size = new Size(190, 23);
+            CB_TipoEntidade.TabIndex = 1;
             // 
-            // checkBox1
+            // CHB_Filiacao
             // 
-            checkBox1.AutoSize = true;
-            checkBox1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            checkBox1.Location = new Point(6, 37);
-            checkBox1.Name = "checkBox1";
-            checkBox1.Size = new Size(66, 19);
-            checkBox1.TabIndex = 0;
-            checkBox1.Text = "Filiação";
-            checkBox1.UseVisualStyleBackColor = true;
+            CHB_Filiacao.AutoSize = true;
+            CHB_Filiacao.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            CHB_Filiacao.Location = new Point(6, 37);
+            CHB_Filiacao.Name = "CHB_Filiacao";
+            CHB_Filiacao.Size = new Size(66, 19);
+            CHB_Filiacao.TabIndex = 0;
+            CHB_Filiacao.Text = "Filiação";
+            CHB_Filiacao.UseVisualStyleBackColor = true;
             // 
             // BTN_Cancelar
             // 
@@ -149,6 +149,7 @@
             BTN_Cancelar.TabIndex = 12;
             BTN_Cancelar.Text = "Cancelar";
             BTN_Cancelar.UseVisualStyleBackColor = true;
+            BTN_Cancelar.Click += BTN_Cancelar_Click;
             // 
             // BTN_Salvar
             // 
@@ -158,6 +159,7 @@
             BTN_Salvar.TabIndex = 11;
             BTN_Salvar.Text = "Salvar";
             BTN_Salvar.UseVisualStyleBackColor = true;
+            BTN_Salvar.Click += BTN_Salvar_Click;
             // 
             // FRM_Filiacao
             // 
@@ -179,14 +181,14 @@
 
         private GroupBox GP_Filiacao;
         private Label label1;
-        private ComboBox comboBox1;
-        private CheckBox checkBox1;
+        private ComboBox CB_TipoEntidade;
+        private CheckBox CHB_Filiacao;
         private Label label4;
-        private ComboBox comboBox2;
+        private ComboBox CB_UF;
         private Label label3;
-        private TextBox textBox2;
+        private TextBox TXB_CNPJ;
         private Label label2;
-        private TextBox textBox1;
+        private TextBox TXB_NomeEntidade;
         private Button BTN_Cancelar;
         private Button BTN_Salvar;
     }

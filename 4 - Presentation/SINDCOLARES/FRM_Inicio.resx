@@ -121,7 +121,7 @@
   <data name="BTN_NovoCadastro.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAYAAAD0eNT6AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wgAADsIBFShKgAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAACzzSURBVHhe7d0J
+        wQAADsEBuJFr7QAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAACzzSURBVHhe7d0J
         tHV3Wd/xNyEDYCCAoEwyJEEEjUxlEkSK1EqBIhUJKhDAirVrUZYVS1WUYGkIIEgCCaCiECZFrQO1IggI
         hEA0KWBRmSJCIkMShgAyhCbt7+nrbW7e93fvu5+797PP/7/397PWd7FWSO7Z59z/Pv/nnHuGfY24pXqU
         eob6LfUedaH6rPqa+j9E1GRXqIvV76lHqsMVAOwo7iS+V71EfUi5OxYi6q/3qm9TAHAN8Uj/VHWRcnce
@@ -319,7 +319,7 @@
   <data name="BTN_PesquisarCadastro.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAYAAAD0eNT6AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wgAADsIBFShKgAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAFOkSURBVHhe7b11
+        wQAADsEBuJFr7QAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAFOkSURBVHhe7b11
         uCdXlbaNM8gLBA+uwSHBMxAIDO4DgzO4uwVnQhgCwWVwt0ECBCcEJ7hl0AECwQYCQYIGZ97veb7OedNp
         VnefVbVql933dd3/JH1V1dm/XVWrtqx1Apgsu8gbySfLt8qvyp/L38n/i4ij+Wt5pPyifKPcT15LnlIC
         AHTCL/17yI/Jv8no4YOI0/RP8mB5G3kKCQCwU84qD5B83SMuQ48S+J4+gwQA+Ds8ZLi//KOMHiKIOG8d

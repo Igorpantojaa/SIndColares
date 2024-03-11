@@ -29,17 +29,17 @@
         private void InitializeComponent()
         {
             groupBox2 = new GroupBox();
-            textBox7 = new TextBox();
+            TXB_NomeMae = new TextBox();
             label11 = new Label();
-            textBox3 = new TextBox();
+            TXB_NomePai = new TextBox();
             label3 = new Label();
-            textBox6 = new TextBox();
+            TXB_OrgaoEmissor = new TextBox();
             label10 = new Label();
             label9 = new Label();
-            comboBox2 = new ComboBox();
-            dateTimePicker1 = new DateTimePicker();
+            CB_EstadoEmissao = new ComboBox();
+            DTP_DataEmissao = new DateTimePicker();
             label8 = new Label();
-            textBox5 = new TextBox();
+            TXB_RG = new TextBox();
             label7 = new Label();
             groupBox1 = new GroupBox();
             TXB_PIS = new TextBox();
@@ -54,17 +54,17 @@
             // 
             // groupBox2
             // 
-            groupBox2.Controls.Add(textBox7);
+            groupBox2.Controls.Add(TXB_NomeMae);
             groupBox2.Controls.Add(label11);
-            groupBox2.Controls.Add(textBox3);
+            groupBox2.Controls.Add(TXB_NomePai);
             groupBox2.Controls.Add(label3);
-            groupBox2.Controls.Add(textBox6);
+            groupBox2.Controls.Add(TXB_OrgaoEmissor);
             groupBox2.Controls.Add(label10);
             groupBox2.Controls.Add(label9);
-            groupBox2.Controls.Add(comboBox2);
-            groupBox2.Controls.Add(dateTimePicker1);
+            groupBox2.Controls.Add(CB_EstadoEmissao);
+            groupBox2.Controls.Add(DTP_DataEmissao);
             groupBox2.Controls.Add(label8);
-            groupBox2.Controls.Add(textBox5);
+            groupBox2.Controls.Add(TXB_RG);
             groupBox2.Controls.Add(label7);
             groupBox2.Location = new Point(12, 91);
             groupBox2.Name = "groupBox2";
@@ -72,12 +72,12 @@
             groupBox2.TabIndex = 17;
             groupBox2.TabStop = false;
             // 
-            // textBox7
+            // TXB_NomeMae
             // 
-            textBox7.Location = new Point(6, 127);
-            textBox7.Name = "textBox7";
-            textBox7.Size = new Size(440, 23);
-            textBox7.TabIndex = 16;
+            TXB_NomeMae.Location = new Point(6, 127);
+            TXB_NomeMae.Name = "TXB_NomeMae";
+            TXB_NomeMae.Size = new Size(440, 23);
+            TXB_NomeMae.TabIndex = 16;
             // 
             // label11
             // 
@@ -89,12 +89,12 @@
             label11.TabIndex = 15;
             label11.Text = "Nome da Mãe";
             // 
-            // textBox3
+            // TXB_NomePai
             // 
-            textBox3.Location = new Point(6, 83);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(440, 23);
-            textBox3.TabIndex = 5;
+            TXB_NomePai.Location = new Point(6, 83);
+            TXB_NomePai.Name = "TXB_NomePai";
+            TXB_NomePai.Size = new Size(440, 23);
+            TXB_NomePai.TabIndex = 5;
             // 
             // label3
             // 
@@ -106,12 +106,12 @@
             label3.TabIndex = 4;
             label3.Text = "Nome do Pai";
             // 
-            // textBox6
+            // TXB_OrgaoEmissor
             // 
-            textBox6.Location = new Point(353, 39);
-            textBox6.Name = "textBox6";
-            textBox6.Size = new Size(93, 23);
-            textBox6.TabIndex = 14;
+            TXB_OrgaoEmissor.Location = new Point(353, 39);
+            TXB_OrgaoEmissor.Name = "TXB_OrgaoEmissor";
+            TXB_OrgaoEmissor.Size = new Size(93, 23);
+            TXB_OrgaoEmissor.TabIndex = 14;
             // 
             // label10
             // 
@@ -133,22 +133,22 @@
             label9.TabIndex = 11;
             label9.Text = "Estado Emissão";
             // 
-            // comboBox2
+            // CB_EstadoEmissao
             // 
-            comboBox2.FormattingEnabled = true;
-            comboBox2.Location = new Point(259, 39);
-            comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(88, 23);
-            comboBox2.TabIndex = 10;
+            CB_EstadoEmissao.FormattingEnabled = true;
+            CB_EstadoEmissao.Location = new Point(259, 39);
+            CB_EstadoEmissao.Name = "CB_EstadoEmissao";
+            CB_EstadoEmissao.Size = new Size(88, 23);
+            CB_EstadoEmissao.TabIndex = 10;
             // 
-            // dateTimePicker1
+            // DTP_DAtaEmissao
             // 
-            dateTimePicker1.CustomFormat = "dd/MM/yyyy";
-            dateTimePicker1.Format = DateTimePickerFormat.Custom;
-            dateTimePicker1.Location = new Point(139, 39);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(114, 23);
-            dateTimePicker1.TabIndex = 10;
+            DTP_DataEmissao.CustomFormat = "dd/MM/yyyy";
+            DTP_DataEmissao.Format = DateTimePickerFormat.Custom;
+            DTP_DataEmissao.Location = new Point(139, 39);
+            DTP_DataEmissao.Name = "DTP_DAtaEmissao";
+            DTP_DataEmissao.Size = new Size(114, 23);
+            DTP_DataEmissao.TabIndex = 10;
             // 
             // label8
             // 
@@ -160,12 +160,12 @@
             label8.TabIndex = 4;
             label8.Text = "Data de Emissão";
             // 
-            // textBox5
+            // TXB_RG
             // 
-            textBox5.Location = new Point(6, 39);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(127, 23);
-            textBox5.TabIndex = 1;
+            TXB_RG.Location = new Point(6, 39);
+            TXB_RG.Name = "TXB_RG";
+            TXB_RG.Size = new Size(127, 23);
+            TXB_RG.TabIndex = 1;
             // 
             // label7
             // 
@@ -231,6 +231,7 @@
             BTN_Cancelar.TabIndex = 20;
             BTN_Cancelar.Text = "Cancelar";
             BTN_Cancelar.UseVisualStyleBackColor = true;
+            BTN_Cancelar.Click += BTN_Cancelar_Click;
             // 
             // BTN_Salvar
             // 
@@ -240,6 +241,7 @@
             BTN_Salvar.TabIndex = 19;
             BTN_Salvar.Text = "Salvar";
             BTN_Salvar.UseVisualStyleBackColor = true;
+            BTN_Salvar.Click += BTN_Salvar_Click;
             // 
             // FRM_Documentos
             // 
@@ -264,17 +266,17 @@
         #endregion
 
         private GroupBox groupBox2;
-        private TextBox textBox7;
+        private TextBox TXB_NomeMae;
         private Label label11;
-        private TextBox textBox3;
+        private TextBox TXB_NomePai;
         private Label label3;
-        private TextBox textBox6;
+        private TextBox TXB_OrgaoEmissor;
         private Label label10;
         private Label label9;
-        private ComboBox comboBox2;
-        private DateTimePicker dateTimePicker1;
+        private ComboBox CB_EstadoEmissao;
+        private DateTimePicker DTP_DataEmissao;
         private Label label8;
-        private TextBox textBox5;
+        private TextBox TXB_RG;
         private Label label7;
         private GroupBox groupBox1;
         private TextBox TXB_PIS;

@@ -198,6 +198,7 @@
             BTN_Salvar.TabIndex = 6;
             BTN_Salvar.Text = "Salvar";
             BTN_Salvar.UseVisualStyleBackColor = true;
+            BTN_Salvar.Click += BTN_Salvar_Click;
             // 
             // BTN_Cancelar
             // 
@@ -207,6 +208,7 @@
             BTN_Cancelar.TabIndex = 7;
             BTN_Cancelar.Text = "Cancelar";
             BTN_Cancelar.UseVisualStyleBackColor = true;
+            BTN_Cancelar.Click += BTN_Cancelar_Click;
             // 
             // FRM_Endereco
             // 

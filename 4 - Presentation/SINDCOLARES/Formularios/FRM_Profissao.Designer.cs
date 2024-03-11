@@ -31,24 +31,24 @@
             groupBox1 = new GroupBox();
             groupBox3 = new GroupBox();
             label6 = new Label();
-            textBox3 = new TextBox();
-            textBox1 = new TextBox();
+            TXB_NomeEmbarcacao = new TextBox();
+            TXB_RGP = new TextBox();
             label4 = new Label();
             label2 = new Label();
             label5 = new Label();
             groupBox2 = new GroupBox();
-            checkBox11 = new CheckBox();
-            checkBox5 = new CheckBox();
-            checkBox6 = new CheckBox();
-            checkBox3 = new CheckBox();
-            checkBox4 = new CheckBox();
-            comboBox2 = new ComboBox();
-            checkBox2 = new CheckBox();
-            textBox2 = new TextBox();
-            checkBox1 = new CheckBox();
-            comboBox3 = new ComboBox();
+            CHB_Outros = new CheckBox();
+            CHB_Algas = new CheckBox();
+            CHB_Mariscos = new CheckBox();
+            CHB_Crustaceos = new CheckBox();
+            CHB_Peixes = new CheckBox();
+            CB_FormaPesca = new ComboBox();
+            CHB_Aposentado = new CheckBox();
+            TXB_AB = new TextBox();
+            CHB_Empregado = new CheckBox();
+            CB_AreaPesca = new ComboBox();
             label3 = new Label();
-            comboBox1 = new ComboBox();
+            CB_CategoriaProfissional = new ComboBox();
             label1 = new Label();
             BTN_Cancelar = new Button();
             BTN_Salvar = new Button();
@@ -63,13 +63,13 @@
             groupBox1.Controls.Add(label2);
             groupBox1.Controls.Add(label5);
             groupBox1.Controls.Add(groupBox2);
-            groupBox1.Controls.Add(comboBox2);
-            groupBox1.Controls.Add(checkBox2);
-            groupBox1.Controls.Add(textBox2);
-            groupBox1.Controls.Add(checkBox1);
-            groupBox1.Controls.Add(comboBox3);
+            groupBox1.Controls.Add(CB_FormaPesca);
+            groupBox1.Controls.Add(CHB_Aposentado);
+            groupBox1.Controls.Add(TXB_AB);
+            groupBox1.Controls.Add(CHB_Empregado);
+            groupBox1.Controls.Add(CB_AreaPesca);
             groupBox1.Controls.Add(label3);
-            groupBox1.Controls.Add(comboBox1);
+            groupBox1.Controls.Add(CB_CategoriaProfissional);
             groupBox1.Controls.Add(label1);
             groupBox1.Location = new Point(12, 12);
             groupBox1.Name = "groupBox1";
@@ -80,8 +80,8 @@
             // groupBox3
             // 
             groupBox3.Controls.Add(label6);
-            groupBox3.Controls.Add(textBox3);
-            groupBox3.Controls.Add(textBox1);
+            groupBox3.Controls.Add(TXB_NomeEmbarcacao);
+            groupBox3.Controls.Add(TXB_RGP);
             groupBox3.Controls.Add(label4);
             groupBox3.Location = new Point(6, 110);
             groupBox3.Name = "groupBox3";
@@ -99,19 +99,19 @@
             label6.TabIndex = 15;
             label6.Text = "Nome da Embarcação";
             // 
-            // textBox3
+            // TXB_NomeEmbarcacao
             // 
-            textBox3.Location = new Point(6, 40);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(173, 23);
-            textBox3.TabIndex = 14;
+            TXB_NomeEmbarcacao.Location = new Point(6, 40);
+            TXB_NomeEmbarcacao.Name = "TXB_NomeEmbarcacao";
+            TXB_NomeEmbarcacao.Size = new Size(173, 23);
+            TXB_NomeEmbarcacao.TabIndex = 14;
             // 
-            // textBox1
+            // TXB_RGP
             // 
-            textBox1.Location = new Point(185, 40);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(139, 23);
-            textBox1.TabIndex = 8;
+            TXB_RGP.Location = new Point(185, 40);
+            TXB_RGP.Name = "TXB_RGP";
+            TXB_RGP.Size = new Size(139, 23);
+            TXB_RGP.TabIndex = 8;
             // 
             // label4
             // 
@@ -145,11 +145,11 @@
             // 
             // groupBox2
             // 
-            groupBox2.Controls.Add(checkBox11);
-            groupBox2.Controls.Add(checkBox5);
-            groupBox2.Controls.Add(checkBox6);
-            groupBox2.Controls.Add(checkBox3);
-            groupBox2.Controls.Add(checkBox4);
+            groupBox2.Controls.Add(CHB_Outros);
+            groupBox2.Controls.Add(CHB_Algas);
+            groupBox2.Controls.Add(CHB_Mariscos);
+            groupBox2.Controls.Add(CHB_Crustaceos);
+            groupBox2.Controls.Add(CHB_Peixes);
             groupBox2.Location = new Point(6, 246);
             groupBox2.Name = "groupBox2";
             groupBox2.Size = new Size(330, 77);
@@ -157,98 +157,98 @@
             groupBox2.TabStop = false;
             groupBox2.Text = "Produtos de Pesca";
             // 
-            // checkBox11
+            // CHB_Outros
             // 
-            checkBox11.AutoSize = true;
-            checkBox11.Location = new Point(179, 47);
-            checkBox11.Name = "checkBox11";
-            checkBox11.Size = new Size(62, 19);
-            checkBox11.TabIndex = 19;
-            checkBox11.Text = "Outros";
-            checkBox11.UseVisualStyleBackColor = true;
+            CHB_Outros.AutoSize = true;
+            CHB_Outros.Location = new Point(179, 47);
+            CHB_Outros.Name = "CHB_Outros";
+            CHB_Outros.Size = new Size(62, 19);
+            CHB_Outros.TabIndex = 19;
+            CHB_Outros.Text = "Outros";
+            CHB_Outros.UseVisualStyleBackColor = true;
             // 
-            // checkBox5
+            // CHB_Algas
             // 
-            checkBox5.AutoSize = true;
-            checkBox5.Location = new Point(210, 22);
-            checkBox5.Name = "checkBox5";
-            checkBox5.Size = new Size(55, 19);
-            checkBox5.TabIndex = 16;
-            checkBox5.Text = "Algas";
-            checkBox5.UseVisualStyleBackColor = true;
+            CHB_Algas.AutoSize = true;
+            CHB_Algas.Location = new Point(210, 22);
+            CHB_Algas.Name = "CHB_Algas";
+            CHB_Algas.Size = new Size(55, 19);
+            CHB_Algas.TabIndex = 16;
+            CHB_Algas.Text = "Algas";
+            CHB_Algas.UseVisualStyleBackColor = true;
             // 
-            // checkBox6
+            // CHB_Mariscos
             // 
-            checkBox6.AutoSize = true;
-            checkBox6.Location = new Point(130, 22);
-            checkBox6.Name = "checkBox6";
-            checkBox6.Size = new Size(74, 19);
-            checkBox6.TabIndex = 15;
-            checkBox6.Text = "Mariscoa";
-            checkBox6.UseVisualStyleBackColor = true;
+            CHB_Mariscos.AutoSize = true;
+            CHB_Mariscos.Location = new Point(130, 22);
+            CHB_Mariscos.Name = "CHB_Mariscos";
+            CHB_Mariscos.Size = new Size(73, 19);
+            CHB_Mariscos.TabIndex = 15;
+            CHB_Mariscos.Text = "Mariscos";
+            CHB_Mariscos.UseVisualStyleBackColor = true;
             // 
-            // checkBox3
+            // CHB_Crustaceos
             // 
-            checkBox3.AutoSize = true;
-            checkBox3.Location = new Point(90, 47);
-            checkBox3.Name = "checkBox3";
-            checkBox3.Size = new Size(84, 19);
-            checkBox3.TabIndex = 14;
-            checkBox3.Text = "Crustáceos";
-            checkBox3.UseVisualStyleBackColor = true;
+            CHB_Crustaceos.AutoSize = true;
+            CHB_Crustaceos.Location = new Point(90, 47);
+            CHB_Crustaceos.Name = "CHB_Crustaceos";
+            CHB_Crustaceos.Size = new Size(84, 19);
+            CHB_Crustaceos.TabIndex = 14;
+            CHB_Crustaceos.Text = "Crustáceos";
+            CHB_Crustaceos.UseVisualStyleBackColor = true;
             // 
-            // checkBox4
+            // CHB_Peixes
             // 
-            checkBox4.AutoSize = true;
-            checkBox4.Location = new Point(65, 22);
-            checkBox4.Name = "checkBox4";
-            checkBox4.Size = new Size(59, 19);
-            checkBox4.TabIndex = 13;
-            checkBox4.Text = "Peixes";
-            checkBox4.UseVisualStyleBackColor = true;
+            CHB_Peixes.AutoSize = true;
+            CHB_Peixes.Location = new Point(65, 22);
+            CHB_Peixes.Name = "CHB_Peixes";
+            CHB_Peixes.Size = new Size(59, 19);
+            CHB_Peixes.TabIndex = 13;
+            CHB_Peixes.Text = "Peixes";
+            CHB_Peixes.UseVisualStyleBackColor = true;
             // 
-            // comboBox2
+            // CB_FormaPesca
             // 
-            comboBox2.FormattingEnabled = true;
-            comboBox2.Location = new Point(6, 81);
-            comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(179, 23);
-            comboBox2.TabIndex = 3;
+            CB_FormaPesca.FormattingEnabled = true;
+            CB_FormaPesca.Location = new Point(6, 81);
+            CB_FormaPesca.Name = "CB_FormaPesca";
+            CB_FormaPesca.Size = new Size(179, 23);
+            CB_FormaPesca.TabIndex = 3;
             // 
-            // checkBox2
+            // CHB_Aposentado
             // 
-            checkBox2.AutoSize = true;
-            checkBox2.Location = new Point(216, 221);
-            checkBox2.Name = "checkBox2";
-            checkBox2.Size = new Size(90, 19);
-            checkBox2.TabIndex = 7;
-            checkBox2.Text = "Aposentado";
-            checkBox2.UseVisualStyleBackColor = true;
+            CHB_Aposentado.AutoSize = true;
+            CHB_Aposentado.Location = new Point(216, 221);
+            CHB_Aposentado.Name = "CHB_Aposentado";
+            CHB_Aposentado.Size = new Size(90, 19);
+            CHB_Aposentado.TabIndex = 7;
+            CHB_Aposentado.Text = "Aposentado";
+            CHB_Aposentado.UseVisualStyleBackColor = true;
             // 
-            // textBox2
+            // TXB_AB
             // 
-            textBox2.Location = new Point(191, 81);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(145, 23);
-            textBox2.TabIndex = 10;
+            TXB_AB.Location = new Point(191, 81);
+            TXB_AB.Name = "TXB_AB";
+            TXB_AB.Size = new Size(145, 23);
+            TXB_AB.TabIndex = 10;
             // 
-            // checkBox1
+            // CHB_Empregado
             // 
-            checkBox1.AutoSize = true;
-            checkBox1.Location = new Point(216, 196);
-            checkBox1.Name = "checkBox1";
-            checkBox1.Size = new Size(87, 19);
-            checkBox1.TabIndex = 6;
-            checkBox1.Text = "Empregado";
-            checkBox1.UseVisualStyleBackColor = true;
+            CHB_Empregado.AutoSize = true;
+            CHB_Empregado.Location = new Point(216, 196);
+            CHB_Empregado.Name = "CHB_Empregado";
+            CHB_Empregado.Size = new Size(87, 19);
+            CHB_Empregado.TabIndex = 6;
+            CHB_Empregado.Text = "Empregado";
+            CHB_Empregado.UseVisualStyleBackColor = true;
             // 
-            // comboBox3
+            // CB_AreaPesca
             // 
-            comboBox3.FormattingEnabled = true;
-            comboBox3.Location = new Point(6, 211);
-            comboBox3.Name = "comboBox3";
-            comboBox3.Size = new Size(179, 23);
-            comboBox3.TabIndex = 5;
+            CB_AreaPesca.FormattingEnabled = true;
+            CB_AreaPesca.Location = new Point(6, 211);
+            CB_AreaPesca.Name = "CB_AreaPesca";
+            CB_AreaPesca.Size = new Size(179, 23);
+            CB_AreaPesca.TabIndex = 5;
             // 
             // label3
             // 
@@ -260,13 +260,13 @@
             label3.TabIndex = 4;
             label3.Text = "Área de Pesca";
             // 
-            // comboBox1
+            // CB_CategoriaProfissional
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(6, 37);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(179, 23);
-            comboBox1.TabIndex = 1;
+            CB_CategoriaProfissional.FormattingEnabled = true;
+            CB_CategoriaProfissional.Location = new Point(6, 37);
+            CB_CategoriaProfissional.Name = "CB_CategoriaProfissional";
+            CB_CategoriaProfissional.Size = new Size(179, 23);
+            CB_CategoriaProfissional.TabIndex = 1;
             // 
             // label1
             // 
@@ -286,6 +286,7 @@
             BTN_Cancelar.TabIndex = 14;
             BTN_Cancelar.Text = "Cancelar";
             BTN_Cancelar.UseVisualStyleBackColor = true;
+            BTN_Cancelar.Click += BTN_Cancelar_Click;
             // 
             // BTN_Salvar
             // 
@@ -295,6 +296,7 @@
             BTN_Salvar.TabIndex = 13;
             BTN_Salvar.Text = "Salvar";
             BTN_Salvar.UseVisualStyleBackColor = true;
+            BTN_Salvar.Click += BTN_Salvar_Click;
             // 
             // FRM_Profissao
             // 
@@ -319,27 +321,27 @@
         #endregion
 
         private GroupBox groupBox1;
-        private ComboBox comboBox1;
+        private ComboBox CB_CategoriaProfissional;
         private Label label1;
-        private ComboBox comboBox3;
+        private ComboBox CB_AreaPesca;
         private Label label3;
-        private ComboBox comboBox2;
+        private ComboBox CB_FormaPesca;
         private Label label2;
         private GroupBox groupBox2;
-        private CheckBox checkBox11;
-        private CheckBox checkBox5;
-        private CheckBox checkBox6;
-        private CheckBox checkBox3;
-        private CheckBox checkBox4;
+        private CheckBox CHB_Outros;
+        private CheckBox CHB_Algas;
+        private CheckBox CHB_Mariscos;
+        private CheckBox CHB_Crustaceos;
+        private CheckBox CHB_Peixes;
         private Label label5;
-        private TextBox textBox2;
+        private TextBox TXB_AB;
         private Label label4;
-        private TextBox textBox1;
-        private CheckBox checkBox2;
-        private CheckBox checkBox1;
+        private TextBox TXB_RGP;
+        private CheckBox CHB_Aposentado;
+        private CheckBox CHB_Empregado;
         private GroupBox groupBox3;
         private Label label6;
-        private TextBox textBox3;
+        private TextBox TXB_NomeEmbarcacao;
         private Button BTN_Cancelar;
         private Button BTN_Salvar;
     }

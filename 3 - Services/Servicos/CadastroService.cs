@@ -19,7 +19,6 @@ public class CadastroService : ICadastroService
     public void NovoCadastro(string cpf)
     {
         _Associado = new();
-        _Associado.Id = Convert.ToInt32(cpf);
         _Associado.Documentos.CPF = cpf;
     }
 

@@ -1,11 +1,14 @@
-﻿using SINDCOLARES.Formularios;
+﻿using Servicos;
+using SINDCOLARES.Formularios;
 
 namespace SINDCOLARES;
 
 public partial class FRM_Cadastro : Form
 {
-    public FRM_Cadastro()
+    private readonly ICadastroService _cadastroService;
+    public FRM_Cadastro(ICadastroService cs)
     {
+        _cadastroService = cs;
         InitializeComponent();
     }
 
@@ -16,46 +19,46 @@ public partial class FRM_Cadastro : Form
     private void BTN_filiacao_Click(object sender, EventArgs e) => Filiacao();
     private void BTN_Profissao_Click(object sender, EventArgs e) => Profissao();
     private void BTN_Documentos_Click(object sender, EventArgs e) => Documentos();
-    private void BTN_Documentacao_Click(object sender, EventArgs e) => Documentacao();
+    private void BTN_Documentacao_Click(object sender, EventArgs e) => Digitalizados();
     private void BTN_Escolaridade_Click(object sender, EventArgs e) => Escolaridade();
 
     private void Documentos()
     {
-        FRM_Documentos d = new();
+        FRM_Documentos d = new(_cadastroService);
         d.ShowDialog();
     }
 
     private void Endereco()
     {
-        FRM_Endereco e = new();
+        FRM_Endereco e = new(_cadastroService);
         e.ShowDialog();
     }
 
     private void Contato()
     {
-        FRM_Contato c = new();
+        FRM_Contato c = new(_cadastroService);
         c.ShowDialog();
     }
 
     private void Escolaridade()
     {
-        FRM_Escolaridade e = new();
+        FRM_Escolaridade e = new(_cadastroService);
         e.ShowDialog();
     }
 
     private void Filiacao()
     {
-        FRM_Filiacao f = new();
+        FRM_Filiacao f = new(_cadastroService);
         f.ShowDialog();
     }
 
     private void Profissao()
     {
-        FRM_Profissao p = new();
+        FRM_Profissao p = new(_cadastroService);
         p.ShowDialog();
     }
 
-    private void Documentacao()
+    private void Digitalizados()
     {
         FRM_CarregaDocumentacao d = new();
         d.ShowDialog();

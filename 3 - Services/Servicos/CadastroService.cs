@@ -1,4 +1,5 @@
-﻿using Infraestrutura.DTOs;
+﻿using Infraestrutura;
+using Infraestrutura.DTOs;
 using Modelos;
 
 namespace Servicos;
@@ -25,5 +26,11 @@ public class CadastroService : ICadastroService
     public void LimparCadastro()
     {
         _Associado = new();
+    }
+    public void CriarPasta()
+    {
+        var cpf = _Associado.Documentos.CPF;
+        var nome = _Associado.Nome;
+        _Associado.Digitalizados.Local = GestaoArquivos.DiretorioAssociado(cpf, nome);
     }
 }

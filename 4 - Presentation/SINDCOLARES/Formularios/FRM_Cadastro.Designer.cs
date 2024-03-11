@@ -36,6 +36,7 @@
             BTN_Contato = new Button();
             BTN_Escolaridade = new Button();
             GP_Foto = new GroupBox();
+            PB_Foto = new PictureBox();
             GP_Info = new GroupBox();
             CB_Sexo = new ComboBox();
             DTP_DataNascimento = new DateTimePicker();
@@ -52,6 +53,8 @@
             BTN_Salvar = new Button();
             BTN_Documentacao = new Button();
             GP_Formularios.SuspendLayout();
+            GP_Foto.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)PB_Foto).BeginInit();
             GP_Info.SuspendLayout();
             GP_DadosBasicos.SuspendLayout();
             SuspendLayout();
@@ -133,12 +136,23 @@
             // 
             // GP_Foto
             // 
+            GP_Foto.Controls.Add(PB_Foto);
             GP_Foto.Location = new Point(344, 12);
             GP_Foto.Name = "GP_Foto";
             GP_Foto.Size = new Size(120, 122);
             GP_Foto.TabIndex = 18;
             GP_Foto.TabStop = false;
             GP_Foto.Text = "Foto";
+            // 
+            // PB_Foto
+            // 
+            PB_Foto.Dock = DockStyle.Fill;
+            PB_Foto.Location = new Point(3, 19);
+            PB_Foto.Name = "PB_Foto";
+            PB_Foto.Size = new Size(114, 100);
+            PB_Foto.TabIndex = 0;
+            PB_Foto.TabStop = false;
+            PB_Foto.Click += PB_Foto_Click;
             // 
             // GP_Info
             // 
@@ -277,7 +291,7 @@
             BTN_Documentacao.TabIndex = 22;
             BTN_Documentacao.Text = "Documentação";
             BTN_Documentacao.UseVisualStyleBackColor = true;
-            BTN_Documentacao.Click += BTN_Documentacao_Click;
+            BTN_Documentacao.Click += BTN_Digitalizados_Click;
             // 
             // FRM_Cadastro
             // 
@@ -298,6 +312,8 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "FRM_Cadastro";
             GP_Formularios.ResumeLayout(false);
+            GP_Foto.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)PB_Foto).EndInit();
             GP_Info.ResumeLayout(false);
             GP_Info.PerformLayout();
             GP_DadosBasicos.ResumeLayout(false);
@@ -330,5 +346,6 @@
         private Button BTN_Cancelar;
         private Button BTN_Salvar;
         private Button BTN_Documentacao;
+        private PictureBox PB_Foto;
     }
 }

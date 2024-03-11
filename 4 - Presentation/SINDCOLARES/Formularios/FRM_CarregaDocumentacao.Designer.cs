@@ -103,6 +103,7 @@
             BTN_SelecionaCanhotoProtocolo.TabIndex = 15;
             BTN_SelecionaCanhotoProtocolo.Text = "Selecionar Canhoto Protocolo";
             BTN_SelecionaCanhotoProtocolo.UseVisualStyleBackColor = true;
+            BTN_SelecionaCanhotoProtocolo.Click += BTN_SelecionaCanhotoProtocolo_Click;
             // 
             // BTN_GeraDocumentacao
             // 
@@ -184,6 +185,7 @@
             BTN_SelecionaFiliacao.TabIndex = 6;
             BTN_SelecionaFiliacao.Text = "Selecionar Declaração de Filiação";
             BTN_SelecionaFiliacao.UseVisualStyleBackColor = true;
+            BTN_SelecionaFiliacao.Click += BTN_SelecionaFiliacao_Click;
             // 
             // BTN_SelecionaReqINSS
             // 
@@ -193,6 +195,7 @@
             BTN_SelecionaReqINSS.TabIndex = 5;
             BTN_SelecionaReqINSS.Text = "Selecionar Req. INSS";
             BTN_SelecionaReqINSS.UseVisualStyleBackColor = true;
+            BTN_SelecionaReqINSS.Click += BTN_SelecionaReqINSS_Click;
             // 
             // BTN_SelecionaReqLicensa
             // 
@@ -202,6 +205,7 @@
             BTN_SelecionaReqLicensa.TabIndex = 4;
             BTN_SelecionaReqLicensa.Text = "Selecionar Req. Licensa";
             BTN_SelecionaReqLicensa.UseVisualStyleBackColor = true;
+            BTN_SelecionaReqLicensa.Click += BTN_SelecionaReqLicensa_Click;
             // 
             // BTN_SelecionaTermoAutorizacao
             // 
@@ -211,6 +215,7 @@
             BTN_SelecionaTermoAutorizacao.TabIndex = 3;
             BTN_SelecionaTermoAutorizacao.Text = "Selecionar Termo de Autorização";
             BTN_SelecionaTermoAutorizacao.UseVisualStyleBackColor = true;
+            BTN_SelecionaTermoAutorizacao.Click += BTN_SelecionaTermoAutorizacao_Click;
             // 
             // BTN_SelecionaResidencia
             // 
@@ -220,6 +225,7 @@
             BTN_SelecionaResidencia.TabIndex = 2;
             BTN_SelecionaResidencia.Text = "Selecionar Comp. Residência";
             BTN_SelecionaResidencia.UseVisualStyleBackColor = true;
+            BTN_SelecionaResidencia.Click += BTN_SelecionaResidencia_Click;
             // 
             // BTN_SelecionaRG
             // 
@@ -229,6 +235,7 @@
             BTN_SelecionaRG.TabIndex = 1;
             BTN_SelecionaRG.Text = "Selecionar RG";
             BTN_SelecionaRG.UseVisualStyleBackColor = true;
+            BTN_SelecionaRG.Click += BTN_SelecionaRG_Click;
             // 
             // BTN_SelecionaCPF
             // 
@@ -238,6 +245,7 @@
             BTN_SelecionaCPF.TabIndex = 0;
             BTN_SelecionaCPF.Text = "Selecionar CPF";
             BTN_SelecionaCPF.UseVisualStyleBackColor = true;
+            BTN_SelecionaCPF.Click += BTN_SelecionaCPF_Click;
             // 
             // BTN_Voltar
             // 

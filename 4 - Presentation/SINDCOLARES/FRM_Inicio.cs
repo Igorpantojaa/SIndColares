@@ -11,6 +11,7 @@ public partial class FRM_Inicio : Form
     {
         _servico = new CadastroService(context);
         InitializeComponent();
+        GestaoArquivos.CriarDiretorioDeArquivos();
     }
 
     private void BTN_NovoCadastro_Click(object sender, EventArgs e)

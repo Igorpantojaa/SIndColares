@@ -13,5 +13,6 @@ public class Associado
     public Profissao Profissao { get; set; } = new();
     public Documentos Documentos { get; set; } = new();
     public Escolaridade Escolaridade { get; set; } = new();
+    public Digitalizados Digitalizados { get; set; } = new();
     public DateTime DataNascimento { get; set; } = DateTime.Now;
 }

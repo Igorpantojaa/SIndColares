@@ -9,5 +9,5 @@ public interface ICadastroService
     public Associado InfoAssociado { get; }
     public void NovoCadastro(string cpf);
     public void LimparCadastro();
-    public void CriarPasta();
+    public void PastaAssociado();
 }

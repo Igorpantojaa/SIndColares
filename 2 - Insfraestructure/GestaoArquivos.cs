@@ -12,10 +12,10 @@ public class GestaoArquivos
 
     public static string DiretorioAssociado(string cpf, string nome)
     {
-        var diretorio = $"{nome.ToUpper()} [{cpf}]";
-        if (!Directory.Exists($".\\Associados\\{diretorio}"))
+        var diretorio = $".\\Associados\\{nome.ToUpper()} [{cpf}]";
+        if (!Directory.Exists(diretorio))
         {
-            Directory.CreateDirectory($".\\Associados\\{diretorio}");
+            Directory.CreateDirectory(diretorio);
         }
         return diretorio;
     }

@@ -16,17 +16,17 @@ public partial class FRM_Cadastro : Form
     private void PB_Foto_Click(object sender, EventArgs e) => SalvaFoto();
     private void BTN_Salvar_Click(object sender, EventArgs e) => Salvar();
     private void BTN_Cancelar_Click(object sender, EventArgs e) => Cancelar();
+    private void BTN_Digitalizados_Click(object sender, EventArgs e) => DocumentosAssociado();
     private void BTN_Contato_Click(object sender, EventArgs e) => new FRM_Contato(_cadastroService).ShowDialog();
     private void BTN_Endereco_Click(object sender, EventArgs e) => new FRM_Endereco(_cadastroService).ShowDialog();
     private void BTN_filiacao_Click(object sender, EventArgs e) => new FRM_Filiacao(_cadastroService).ShowDialog();
     private void BTN_Profissao_Click(object sender, EventArgs e) => new FRM_Profissao(_cadastroService).ShowDialog();
     private void BTN_Documentos_Click(object sender, EventArgs e) => new FRM_Documentos(_cadastroService).ShowDialog();
     private void BTN_Escolaridade_Click(object sender, EventArgs e) => new FRM_Escolaridade(_cadastroService).ShowDialog();
-    private void BTN_Digitalizados_Click(object sender, EventArgs e) => DocumentosAssociado();
 
     private void DocumentosAssociado()
     {
-        Salvar();
+        AtualizaInfo();
         if (_cadastroService.InfoAssociado.Documentos.CPF != string.Empty &&
             _cadastroService.InfoAssociado.Nome != string.Empty)
         {
@@ -42,18 +42,13 @@ public partial class FRM_Cadastro : Form
 
     private void Salvar()
     {
-        _cadastroService.InfoAssociado.Nome = TXB_Nome.Text;
-        _cadastroService.InfoAssociado.Apelido = TXB_Apelido.Text;
-        _cadastroService.InfoAssociado.DataNascimento = DTP_DataNascimento.Value;
-        _cadastroService.InfoAssociado.Sexo = CB_Sexo.SelectedText;
-        _cadastroService.InfoAssociado.Documentos.CPF = TXB_CPF.Text;
+        AtualizaInfo();
     }
 
     private void Cancelar()
     {
         Close();
     }
-
     private void SalvaFoto()
     {
         var destino = $"{_cadastroService.InfoAssociado.Digitalizados.Local}\\FOTO.jpg";
@@ -70,5 +65,14 @@ public partial class FRM_Cadastro : Form
                 MessageBox.Show($"Houve um erro ao salvar o arquivo: {ex.Message}", "Erro");
             }
         }
+    }
+    private void AtualizaInfo()
+    {
+        _cadastroService.InfoAssociado.Nome = TXB_Nome.Text;
+        _cadastroService.InfoAssociado.Apelido = TXB_Apelido.Text;
+        _cadastroService.InfoAssociado.DataNascimento = DTP_DataNascimento.Value;
+        _cadastroService.InfoAssociado.Sexo = CB_Sexo.SelectedText;
+        _cadastroService.InfoAssociado.Documentos.CPF = TXB_CPF.Text;
+
     }
 }

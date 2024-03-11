@@ -10,7 +10,7 @@ public partial class FRM_CarregaDocumentacao : Form
     public FRM_CarregaDocumentacao(ICadastroService service)
     {
         _service = service;
-        _service.CriarPasta();
+        _service.PastaAssociado();
         _local = _service.InfoAssociado.Digitalizados.Local;
         InitializeComponent();
     }
@@ -70,9 +70,39 @@ public partial class FRM_CarregaDocumentacao : Form
 
     private static string SalvarArquivo(string destino)
     {
-        OpenFileDialog ofd = new();
-        ofd.ShowDialog();
-        File.Copy(ofd.FileName, destino, true);
-        return destino;
+        try
+        {
+            OpenFileDialog ofd = new() 
+            {
+                Filter = "Arquivos PDF (*.pdf)|*.pdf"
+            };
+            if(DialogResult.OK == ofd.ShowDialog()) 
+            {
+                File.Copy(ofd.FileName, destino, true);
+                MessageBox.Show
+                (
+                    $"Arquivo salvo com sucesso!",
+                    "Sucesso!",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information
+                );
+                return destino;
+            }
+            else
+            {
+                return string.Empty;
+            }
+        }
+        catch (Exception ex)
+        {
+            MessageBox.Show
+            (
+                $"Ocorreu um erro ao salvar o arquivo: {ex.Message}", 
+                "Erro!", 
+                MessageBoxButtons.OK, 
+                MessageBoxIcon.Warning
+            );
+            return string.Empty;
+        }
     }
 }

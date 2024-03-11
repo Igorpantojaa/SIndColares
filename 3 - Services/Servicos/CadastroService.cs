@@ -27,7 +27,7 @@ public class CadastroService : ICadastroService
     {
         _Associado = new();
     }
-    public void CriarPasta()
+    public void PastaAssociado()
     {
         var cpf = _Associado.Documentos.CPF;
         var nome = _Associado.Nome;

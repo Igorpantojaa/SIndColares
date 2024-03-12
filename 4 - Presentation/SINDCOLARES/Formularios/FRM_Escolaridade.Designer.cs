@@ -31,10 +31,10 @@
             BTN_Cancelar = new Button();
             BTN_Salvar = new Button();
             groupBox3 = new GroupBox();
-            TXB_Declaração = new TextBox();
             label1 = new Label();
             CB_Escolarridade = new ComboBox();
             label14 = new Label();
+            CB_DeclaracaoEscolaridade = new ComboBox();
             groupBox3.SuspendLayout();
             SuspendLayout();
             // 
@@ -60,7 +60,7 @@
             // 
             // groupBox3
             // 
-            groupBox3.Controls.Add(TXB_Declaração);
+            groupBox3.Controls.Add(CB_DeclaracaoEscolaridade);
             groupBox3.Controls.Add(label1);
             groupBox3.Controls.Add(CB_Escolarridade);
             groupBox3.Controls.Add(label14);
@@ -69,14 +69,6 @@
             groupBox3.Size = new Size(334, 202);
             groupBox3.TabIndex = 8;
             groupBox3.TabStop = false;
-            // 
-            // TXB_Declaração
-            // 
-            TXB_Declaração.Location = new Point(8, 85);
-            TXB_Declaração.Multiline = true;
-            TXB_Declaração.Name = "TXB_Declaração";
-            TXB_Declaração.Size = new Size(318, 111);
-            TXB_Declaração.TabIndex = 14;
             // 
             // label1
             // 
@@ -106,6 +98,14 @@
             label14.TabIndex = 4;
             label14.Text = "Escolaridade";
             // 
+            // CB_DeclaracaoEscolaridade
+            // 
+            CB_DeclaracaoEscolaridade.FormattingEnabled = true;
+            CB_DeclaracaoEscolaridade.Location = new Point(8, 90);
+            CB_DeclaracaoEscolaridade.Name = "CB_DeclaracaoEscolaridade";
+            CB_DeclaracaoEscolaridade.Size = new Size(318, 23);
+            CB_DeclaracaoEscolaridade.TabIndex = 14;
+            // 
             // FRM_Escolaridade
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -133,6 +133,6 @@
         private ComboBox CB_Escolarridade;
         private Label label14;
         private Label label1;
-        private TextBox TXB_Declaração;
+        private ComboBox CB_DeclaracaoEscolaridade;
     }
 }

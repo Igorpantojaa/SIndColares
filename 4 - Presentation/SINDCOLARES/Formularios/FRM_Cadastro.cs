@@ -1,4 +1,5 @@
 ﻿using Servicos;
+using Servicos.ComboBox;
 using SINDCOLARES.Formularios;
 
 namespace SINDCOLARES;
@@ -11,6 +12,7 @@ public partial class FRM_Cadastro : Form
     {
         _service = cs;
         InitializeComponent();
+        CB_Sexo.DataSource = ConteudoComboBox.Sexo();
     }
 
     private void PB_Foto_Click(object sender, EventArgs e) => SalvaFoto();
@@ -23,21 +25,6 @@ public partial class FRM_Cadastro : Form
     private void BTN_Profissao_Click(object sender, EventArgs e) => new FRM_Profissao(_service).ShowDialog();
     private void BTN_Documentos_Click(object sender, EventArgs e) => new FRM_Documentos(_service).ShowDialog();
     private void BTN_Escolaridade_Click(object sender, EventArgs e) => new FRM_Escolaridade(_service).ShowDialog();
-
-    private void DocumentosAssociado()
-    {
-        AtualizaInfo();
-        if (ValidaDadosBasicos() == true)
-        {
-            new FRM_CarregaDocumentacao(_service).ShowDialog();
-        }
-        else
-        {
-            var msg = "Você precisa preencher o nome e o CPF para a criação da pasta do Associado.";
-            MessageBox.Show(msg, "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-        }
-        return;
-    }
 
     private void Salvar()
     {
@@ -106,7 +93,20 @@ public partial class FRM_Cadastro : Form
             return false;
         }
     }
-
+    private void DocumentosAssociado()
+    {
+        AtualizaInfo();
+        if (ValidaDadosBasicos() == true)
+        {
+            new FRM_CarregaDocumentacao(_service).ShowDialog();
+        }
+        else
+        {
+            var msg = "Você precisa preencher o nome e o CPF para a criação da pasta do Associado.";
+            MessageBox.Show(msg, "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        }
+        return;
+    }
     private void FRM_Cadastro_Load(object sender, EventArgs e)
     {
         TXB_Nome.Text = _service.InfoAssociado.Nome;

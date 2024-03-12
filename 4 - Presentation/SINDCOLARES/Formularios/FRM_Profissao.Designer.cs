@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             groupBox1 = new GroupBox();
+            label7 = new Label();
+            TXB_LocalPesca = new TextBox();
             groupBox3 = new GroupBox();
             label6 = new Label();
             TXB_NomeEmbarcacao = new TextBox();
@@ -59,6 +61,8 @@
             // 
             // groupBox1
             // 
+            groupBox1.Controls.Add(label7);
+            groupBox1.Controls.Add(TXB_LocalPesca);
             groupBox1.Controls.Add(groupBox3);
             groupBox1.Controls.Add(label2);
             groupBox1.Controls.Add(label5);
@@ -73,9 +77,26 @@
             groupBox1.Controls.Add(label1);
             groupBox1.Location = new Point(12, 12);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(350, 336);
+            groupBox1.Size = new Size(350, 375);
             groupBox1.TabIndex = 0;
             groupBox1.TabStop = false;
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            label7.Location = new Point(6, 237);
+            label7.Name = "label7";
+            label7.Size = new Size(69, 15);
+            label7.TabIndex = 17;
+            label7.Text = "Local Pesca";
+            // 
+            // TXB_LocalPesca
+            // 
+            TXB_LocalPesca.Location = new Point(6, 258);
+            TXB_LocalPesca.Name = "TXB_LocalPesca";
+            TXB_LocalPesca.Size = new Size(338, 23);
+            TXB_LocalPesca.TabIndex = 16;
             // 
             // groupBox3
             // 
@@ -150,7 +171,7 @@
             groupBox2.Controls.Add(CHB_Mariscos);
             groupBox2.Controls.Add(CHB_Crustaceos);
             groupBox2.Controls.Add(CHB_Peixes);
-            groupBox2.Location = new Point(6, 246);
+            groupBox2.Location = new Point(6, 287);
             groupBox2.Name = "groupBox2";
             groupBox2.Size = new Size(330, 77);
             groupBox2.TabIndex = 12;
@@ -280,7 +301,7 @@
             // 
             // BTN_Cancelar
             // 
-            BTN_Cancelar.Location = new Point(271, 354);
+            BTN_Cancelar.Location = new Point(271, 382);
             BTN_Cancelar.Name = "BTN_Cancelar";
             BTN_Cancelar.Size = new Size(91, 38);
             BTN_Cancelar.TabIndex = 14;
@@ -290,7 +311,7 @@
             // 
             // BTN_Salvar
             // 
-            BTN_Salvar.Location = new Point(167, 354);
+            BTN_Salvar.Location = new Point(167, 382);
             BTN_Salvar.Name = "BTN_Salvar";
             BTN_Salvar.Size = new Size(91, 38);
             BTN_Salvar.TabIndex = 13;
@@ -302,7 +323,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(375, 401);
+            ClientSize = new Size(375, 432);
             ControlBox = false;
             Controls.Add(BTN_Cancelar);
             Controls.Add(BTN_Salvar);
@@ -346,5 +367,7 @@
         private TextBox TXB_NomeEmbarcacao;
         private Button BTN_Cancelar;
         private Button BTN_Salvar;
+        private Label label7;
+        private TextBox TXB_LocalPesca;
     }
 }

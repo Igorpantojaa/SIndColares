@@ -1,4 +1,5 @@
 ﻿using Servicos;
+using Servicos.ComboBox;
 
 namespace SINDCOLARES.Formularios;
 
@@ -9,11 +10,12 @@ public partial class FRM_Escolaridade : Form
     {
         _service = service;
         InitializeComponent();
+        CB_Escolarridade.DataSource = ConteudoComboBox.Escolaridade();
     }
     private void BTN_Salvar_Click(object sender, EventArgs e)
     {
-        _service.InfoAssociado.Escolaridade.Autodeclaracao = CB_Escolarridade.SelectedText;
-        _service.InfoAssociado.Escolaridade.Formacao = TXB_Declaração.Text;
+        _service.InfoAssociado.Escolaridade.Autodeclaracao = CB_DeclaracaoEscolaridade.Text;
+        _service.InfoAssociado.Escolaridade.Formacao = CB_Escolarridade.Text;
         MessageBox.Show("Dados atualizados.", "Sucesso!");
         Close();
     }
@@ -25,7 +27,7 @@ public partial class FRM_Escolaridade : Form
 
     private void FRM_Escolaridade_Load(object sender, EventArgs e)
     {
-        CB_Escolarridade.SelectedText = _service.InfoAssociado.Escolaridade.Autodeclaracao;
-        TXB_Declaração.Text = _service.InfoAssociado.Escolaridade.Formacao;
+        CB_Escolarridade.Text = _service.InfoAssociado.Escolaridade.Formacao;
+        CB_DeclaracaoEscolaridade.Text = _service.InfoAssociado.Escolaridade.Autodeclaracao;
     }
 }

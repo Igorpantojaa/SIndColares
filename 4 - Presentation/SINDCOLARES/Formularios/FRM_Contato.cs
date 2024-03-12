@@ -17,7 +17,7 @@ public partial class FRM_Contato : Form
     {
         _Service.InfoAssociado.Contato.Telefone = TXB_Telefone.Text;
         _Service.InfoAssociado.Contato.Email = TXB_Email.Text;
-        MessageBox.Show("Dados atualizados.", "Sucersso!");
+        MessageBox.Show("Dados atualizados.", "Sucesso!");
         Close();
     }
 

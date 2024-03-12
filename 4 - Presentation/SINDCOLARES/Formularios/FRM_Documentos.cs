@@ -1,4 +1,5 @@
 ﻿using Servicos;
+using Servicos.ComboBox;
 
 namespace SINDCOLARES.Formularios;
 
@@ -9,6 +10,7 @@ public partial class FRM_Documentos : Form
     {
         _service = service;
         InitializeComponent();
+        CB_EstadoEmissao.DataSource = ConteudoComboBox.Estados();
     }
 
     private void BTN_Salvar_Click(object sender, EventArgs e)
@@ -20,7 +22,7 @@ public partial class FRM_Documentos : Form
         _service.InfoAssociado.Documentos.RG.NomePai = TXB_NomePai.Text;
         _service.InfoAssociado.Documentos.RG.NomeMae = TXB_NomeMae.Text;
         _service.InfoAssociado.Documentos.RG.OrgaoEmissor = TXB_OrgaoEmissor.Text;
-        _service.InfoAssociado.Documentos.RG.EstadoEmissao = CB_EstadoEmissao.SelectedText;
+        _service.InfoAssociado.Documentos.RG.EstadoEmissao = CB_EstadoEmissao.Text;
         MessageBox.Show("Dados atualizados.", "Sucersso!");
         Close();
     }
@@ -39,6 +41,6 @@ public partial class FRM_Documentos : Form
         TXB_NomePai.Text = _service.InfoAssociado.Documentos.RG.NomePai;
         TXB_NomeMae.Text = _service.InfoAssociado.Documentos.RG.NomeMae;
         TXB_OrgaoEmissor.Text = _service.InfoAssociado.Documentos.RG.OrgaoEmissor;
-        CB_EstadoEmissao.SelectedText = _service.InfoAssociado.Documentos.RG.EstadoEmissao;
+        CB_EstadoEmissao.Text = _service.InfoAssociado.Documentos.RG.EstadoEmissao;
     }
 }

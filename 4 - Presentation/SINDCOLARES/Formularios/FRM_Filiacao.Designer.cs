@@ -173,6 +173,7 @@
             Name = "FRM_Filiacao";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "FRM_Filiacao";
+            Load += FRM_Filiacao_Load;
             GP_Filiacao.ResumeLayout(false);
             GP_Filiacao.PerformLayout();
             ResumeLayout(false);

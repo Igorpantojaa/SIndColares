@@ -22,7 +22,7 @@ public partial class FRM_Filiacao : Form
         _service.InfoAssociado.Filiacao.UFEntidade = CB_UF.SelectedText;
         _service.InfoAssociado.Filiacao.TipoEntidade = CB_TipoEntidade.SelectedText;
         _service.InfoAssociado.Filiacao.CNPJEntidade = TXB_CNPJ.Text;
-        if(CHB_Filiacao.Checked == true)
+        if (CHB_Filiacao.Checked == true)
         {
             _service.InfoAssociado.Filiacao.Filiado = true;
         }
@@ -32,5 +32,14 @@ public partial class FRM_Filiacao : Form
         }
         MessageBox.Show("Dados atualizados.", "Sucesso!");
         Close();
+    }
+
+    private void FRM_Filiacao_Load(object sender, EventArgs e)
+    {
+        TXB_NomeEntidade.Text = _service.InfoAssociado.Filiacao.NomeEntidade;
+        CB_UF.SelectedText = _service.InfoAssociado.Filiacao.UFEntidade;
+        CB_TipoEntidade.SelectedText = _service.InfoAssociado.Filiacao.TipoEntidade;
+        TXB_CNPJ.Text = _service.InfoAssociado.Filiacao.CNPJEntidade;
+        CHB_Filiacao.Checked = _service.InfoAssociado.Filiacao.Filiado;
     }
 }

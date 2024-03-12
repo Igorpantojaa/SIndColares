@@ -310,6 +310,7 @@
             Name = "FRM_Profissao";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "FRM_Profissao";
+            Load += FRM_Profissao_Load;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             groupBox3.ResumeLayout(false);

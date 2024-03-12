@@ -37,5 +37,16 @@ namespace SINDCOLARES.Formularios
         {
             Close();
         }
+
+        private void FRM_Endereco_Load(object sender, EventArgs e)
+        {
+            TXB_CEP.Text = _service.InfoAssociado.Endereco.CEP;
+            CB_UF.SelectedText = _service.InfoAssociado.Endereco.UF;
+            TXB_Municipio.Text = _service.InfoAssociado.Endereco.Municipio;
+            TXB_Localidade.Text = _service.InfoAssociado.Endereco.Localidade;
+            TXB_Bairro.Text = _service.InfoAssociado.Endereco.Bairro;
+            TXB_Rua.Text = _service.InfoAssociado.Endereco.Rua;
+            TXB_Numero.Text = _service.InfoAssociado.Endereco.Numero;
+        }
     }
 }

@@ -22,4 +22,10 @@ public partial class FRM_Escolaridade : Form
     {
         Close();
     }
+
+    private void FRM_Escolaridade_Load(object sender, EventArgs e)
+    {
+        CB_Escolarridade.SelectedText = _service.InfoAssociado.Escolaridade.Autodeclaracao;
+        TXB_Declaração.Text = _service.InfoAssociado.Escolaridade.Formacao;
+    }
 }

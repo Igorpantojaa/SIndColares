@@ -1,6 +1,6 @@
-﻿using Infraestrutura;
+﻿using Modelos;
+using Infraestrutura;
 using Infraestrutura.DTOs;
-using Modelos;
 
 namespace Servicos;
 
@@ -22,7 +22,6 @@ public class CadastroService : ICadastroService
         _Associado = new();
         _Associado.Documentos.CPF = cpf;
     }
-
     public void LimparCadastro()
     {
         _Associado = new();

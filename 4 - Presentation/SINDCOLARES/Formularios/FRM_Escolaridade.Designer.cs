@@ -119,6 +119,7 @@
             Name = "FRM_Escolaridade";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "FRM_Escolaridade";
+            Load += FRM_Escolaridade_Load;
             groupBox3.ResumeLayout(false);
             groupBox3.PerformLayout();
             ResumeLayout(false);

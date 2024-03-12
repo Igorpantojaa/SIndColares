@@ -257,6 +257,7 @@
             Name = "FRM_Documentos";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "FRM_Documentos";
+            Load += FRM_Documentos_Load;
             groupBox2.ResumeLayout(false);
             groupBox2.PerformLayout();
             groupBox1.ResumeLayout(false);

@@ -29,4 +29,16 @@ public partial class FRM_Documentos : Form
     {
         Close();
     }
+
+    private void FRM_Documentos_Load(object sender, EventArgs e)
+    {
+        TXB_CPF.Text = _service.InfoAssociado.Documentos.CPF;
+        TXB_PIS.Text = _service.InfoAssociado.Documentos.PIS;
+        TXB_RG.Text = _service.InfoAssociado.Documentos.RG.Numero;
+        DTP_DataEmissao.Value = _service.InfoAssociado.Documentos.RG.DataEmisao;
+        TXB_NomePai.Text = _service.InfoAssociado.Documentos.RG.NomePai;
+        TXB_NomeMae.Text = _service.InfoAssociado.Documentos.RG.NomeMae;
+        TXB_OrgaoEmissor.Text = _service.InfoAssociado.Documentos.RG.OrgaoEmissor;
+        CB_EstadoEmissao.SelectedText = _service.InfoAssociado.Documentos.RG.EstadoEmissao;
+    }
 }

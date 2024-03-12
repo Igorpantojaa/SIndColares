@@ -146,10 +146,12 @@
             // 
             // PB_Foto
             // 
+            PB_Foto.BackgroundImageLayout = ImageLayout.Zoom;
             PB_Foto.Dock = DockStyle.Fill;
             PB_Foto.Location = new Point(3, 19);
             PB_Foto.Name = "PB_Foto";
             PB_Foto.Size = new Size(114, 100);
+            PB_Foto.SizeMode = PictureBoxSizeMode.StretchImage;
             PB_Foto.TabIndex = 0;
             PB_Foto.TabStop = false;
             PB_Foto.Click += PB_Foto_Click;
@@ -311,6 +313,7 @@
             Name = "FRM_Cadastro";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "FRM_Cadastro";
+            Load += FRM_Cadastro_Load;
             GP_Formularios.ResumeLayout(false);
             GP_Foto.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)PB_Foto).EndInit();

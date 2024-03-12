@@ -2,6 +2,15 @@
 
 public  class Digitalizados
 {
+    public bool CPFCarregado { get { if (CPF != string.Empty) { return true; } else { return false; } } }
+    public bool RGCarregado { get { if (RG != string.Empty) { return true; } else { return false; } } }
+    public bool FiliacaoCarregado { get { if (Filiacao != string.Empty) { return true; } else { return false; } } }
+    public bool ResidenciaCarregado { get { if (Residencia != string.Empty) { return true; } else { return false; } } }
+    public bool AutorizacaoCarregado { get { if (Autorizacao != string.Empty) { return true; } else { return false; } } }
+    public bool ReqLicensaCarregado { get { if (ReqLicensa != string.Empty) { return true; } else { return false; } } }
+    public bool ReqINSSCarregado { get { if (ReqINSS != string.Empty) { return true; } else { return false; } } }
+    public bool CanhotoProtocoloCarregado { get { if (CanhotoProtocolo != string.Empty) { return true; } else { return false; } } }
+
     public int Id { get; set; }
     public int AssociadoId { get; set; }
     public string Local {  get; set; } = string.Empty;

@@ -222,6 +222,7 @@
             Name = "FRM_Endereco";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Endereço";
+            Load += FRM_Endereco_Load;
             groupBox3.ResumeLayout(false);
             groupBox3.PerformLayout();
             ResumeLayout(false);

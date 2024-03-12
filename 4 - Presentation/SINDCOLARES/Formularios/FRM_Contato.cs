@@ -9,6 +9,8 @@ public partial class FRM_Contato : Form
     {
         _Service = service;
         InitializeComponent();
+        TXB_Email.Text = _Service.InfoAssociado.Contato.Email;
+        TXB_Telefone.Text = _Service.InfoAssociado.Contato.Telefone;
     }
 
     private void BTN_Salvar_Click(object sender, EventArgs e)

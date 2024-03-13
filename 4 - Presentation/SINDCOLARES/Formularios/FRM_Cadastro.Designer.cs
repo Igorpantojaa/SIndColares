@@ -237,7 +237,7 @@
             // 
             TXB_Nome.Location = new Point(6, 81);
             TXB_Nome.Name = "TXB_Nome";
-            TXB_Nome.Size = new Size(308, 23);
+            TXB_Nome.Size = new Size(314, 23);
             TXB_Nome.TabIndex = 3;
             // 
             // label2
@@ -255,6 +255,8 @@
             TXB_CPF.Name = "TXB_CPF";
             TXB_CPF.Size = new Size(151, 23);
             TXB_CPF.TabIndex = 1;
+            TXB_CPF.Enter += TXB_CPF_Leave;
+            TXB_CPF.Leave += TXB_CPF_Leave;
             // 
             // label1
             // 

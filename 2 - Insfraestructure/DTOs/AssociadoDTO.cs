@@ -16,25 +16,24 @@ public class AssociadoDTO : IAssociadoDTO
     {
         try
         {
-            _context.Associados.Add(a);
+            if(a.Id == 0)
+            {
+                if(CPFNaBase(a) == false)
+                {
+                    _context.Associados.Add(a);
+                }
+                else
+                {
+                    var associado = RecuperaPeloCPF(a.GetCPF);
+                    throw new Exception($"CPF já cadastrado no associado:\n{associado!.Nome}");
+                }
+            }  
+            else _context.Associados.Update(a);
             _context.SaveChanges();
         }
         catch (Exception ex)
         {
             throw new Exception($"Erro ao criar novo registro: \n{ex.Message}");
-        }
-    }
-
-    public void Atualizar(Associado a)
-    {
-        try
-        {
-            _context.Associados.Update(a);
-            _context.SaveChanges();
-        }
-        catch (Exception ex)
-        {
-            throw new Exception($"Erro ao alterar novo registro: \n{ex.Message}");
         }
     }
 
@@ -71,5 +70,52 @@ public class AssociadoDTO : IAssociadoDTO
             return new List<Associado>();
             throw new Exception($"Erro ao recuperar registros: \n{ex.Message}");
         }
+    }
+
+    public Associado Recuperar(int id)
+    {
+        try
+        {
+            var a = _context.Associados                    
+                    .Include(a => a.Contato)
+                    .Include(a => a.Digitalizados)
+                    .Include(a => a.Documentos)
+                    .Include(a => a.Documentos.RG)
+                    .Include(a => a.Endereco)
+                    .Include(a => a.Escolaridade)
+                    .Include(a => a.Filiacao)
+                    .Include(a => a.Profissao)
+                    .Include(a => a.Profissao.ProdutoPesca)
+                    .FirstOrDefault(x => x.Id == id);
+            if(a != null)
+            {
+                return a;
+            }
+            else
+            {
+                return new();
+            }
+
+        }
+        catch (Exception ex)
+        {
+            return new(); 
+            throw new Exception($"Erro ao recuperar registro: \n{ex.Message}");
+        }
+    }
+    private bool CPFNaBase(Associado associado)
+    {
+        var a = RecuperaPeloCPF(associado.GetCPF);
+        if (a.Id != 0) return true;
+        else return false;
+    }
+    
+    private Associado RecuperaPeloCPF(string CPF)
+    {
+        var a = _context.Associados
+                .Include(a => a.Documentos)
+                .FirstOrDefault(x => x.Documentos.CPF == CPF);
+        if (a != null) return a;
+        else return new();
     }
 }

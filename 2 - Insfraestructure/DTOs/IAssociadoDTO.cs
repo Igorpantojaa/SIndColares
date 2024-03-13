@@ -6,7 +6,7 @@ namespace Infraestrutura.DTOs
     {
         void Salvar(Associado a);
         void Excluir(Associado a);
-        void Atualizar(Associado a);
+        Associado Recuperar(int id);
         List<Associado> ListarTodos();
     }
 }

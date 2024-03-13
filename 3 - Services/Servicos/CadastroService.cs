@@ -8,7 +8,6 @@ public class CadastroService : ICadastroService
 {
     private Associado _Associado;
     private readonly IAssociadoDTO _DTO;
-    public IAssociadoDTO Operacoes { get { return _DTO; } }
     public Associado InfoAssociado { get { return _Associado; } }
 
     public CadastroService(IAssociadoDTO dto)
@@ -17,11 +16,6 @@ public class CadastroService : ICadastroService
         _Associado = new();
     }
 
-    public void NovoCadastro(string cpf)
-    {
-        _Associado = new();
-        _Associado.Documentos.CPF = cpf;
-    }
     public void LimparCadastro()
     {
         _Associado = new();
@@ -31,5 +25,33 @@ public class CadastroService : ICadastroService
         var cpf = _Associado.Documentos.CPF;
         var nome = _Associado.Nome;
         _Associado.Digitalizados.Local = GestaoArquivos.DiretorioAssociado(cpf, nome);
+    }
+    public void Salvar()
+    {
+        _DTO.Salvar(_Associado);
+        LimparCadastro();
+    }
+    public void Excluir()
+    {
+        Directory.Delete(_Associado.Digitalizados.Local, true);
+        _DTO.Excluir(_Associado);
+        LimparCadastro();
+    }
+    public void Cancelar()
+    {
+        if (_Associado.Id == 0 && Directory.Exists(_Associado.Digitalizados.Local))
+        {
+            Directory.Delete(_Associado.Digitalizados.Local, true);
+        }
+    }
+    public void Recuperar(int id)
+    {
+        _Associado = _DTO.Recuperar(id);
+    }
+    public List<Associado> ListarTodos() => _DTO.ListarTodos();
+
+    public string ImagemAssociado(int id)
+    {
+        return _DTO.Recuperar(id).GetFoto;
     }
 }

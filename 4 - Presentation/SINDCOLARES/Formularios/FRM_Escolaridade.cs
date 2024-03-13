@@ -11,6 +11,7 @@ public partial class FRM_Escolaridade : Form
         _service = service;
         InitializeComponent();
         CB_Escolarridade.DataSource = ConteudoComboBox.Escolaridade();
+        CB_DeclaracaoEscolaridade.DataSource = ConteudoComboBox.DeclaracaoEscolaridade();
     }
     private void BTN_Salvar_Click(object sender, EventArgs e)
     {

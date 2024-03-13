@@ -55,6 +55,7 @@
             BTN_PesquisarCadastro.Size = new Size(90, 96);
             BTN_PesquisarCadastro.TabIndex = 1;
             BTN_PesquisarCadastro.UseVisualStyleBackColor = true;
+            BTN_PesquisarCadastro.Click += BTN_PesquisarCadastro_Click;
             // 
             // LBL_NovoCadastro
             // 

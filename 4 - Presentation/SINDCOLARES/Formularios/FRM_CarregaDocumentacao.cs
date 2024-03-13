@@ -1,4 +1,5 @@
 ﻿using Servicos;
+using Servicos.Utilidades;
 using System.Diagnostics;
 
 namespace SINDCOLARES.Formularios;
@@ -128,7 +129,7 @@ public partial class FRM_CarregaDocumentacao : Form
     private void BTN_ExcluirFiliacao_Click(object sender, EventArgs e)
     {
         var caminho = _service.InfoAssociado.Digitalizados.Filiacao;
-        _service.InfoAssociado.Digitalizados.Filiacao= ExcluirArquivo(caminho);
+        _service.InfoAssociado.Digitalizados.Filiacao = ExcluirArquivo(caminho);
         ChecaDocumentacao();
     }
     private void BTN_ExcluirReqLicensa_Click(object sender, EventArgs e)
@@ -292,7 +293,7 @@ public partial class FRM_CarregaDocumentacao : Form
     {
         try
         {
-            if(MessageBox.Show("Deseja excluir o arquivo?", "Exclusão", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            if (MessageBox.Show("Deseja excluir o arquivo?", "Exclusão", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 File.Delete(destino);
                 MessageBox.Show
@@ -320,5 +321,11 @@ public partial class FRM_CarregaDocumentacao : Form
             );
             return string.Empty;
         }
+    }
+
+    private void BTN_GeraDocumentacao_Click(object sender, EventArgs e)
+    {
+        ReqSeguroDefeso.SubstituirElementos(_service.InfoAssociado);
+        Mensages.Alerta("Gerado com sucesso", "Informacao");
     }
 }

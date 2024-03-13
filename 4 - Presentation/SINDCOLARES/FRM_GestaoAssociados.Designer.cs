@@ -148,6 +148,7 @@
             BTN_Novo.TabIndex = 1;
             BTN_Novo.Text = "Novo";
             BTN_Novo.UseVisualStyleBackColor = true;
+            BTN_Novo.Click += BTN_Novo_Click;
             // 
             // BTN_Alterar
             // 
@@ -167,6 +168,7 @@
             BTN_Excluir.TabIndex = 3;
             BTN_Excluir.Text = "Excluir";
             BTN_Excluir.UseVisualStyleBackColor = true;
+            BTN_Excluir.Click += BTN_Excluir_Click;
             // 
             // groupBox2
             // 

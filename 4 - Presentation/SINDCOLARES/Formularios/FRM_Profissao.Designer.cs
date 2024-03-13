@@ -54,6 +54,10 @@
             label1 = new Label();
             BTN_Cancelar = new Button();
             BTN_Salvar = new Button();
+            TXB_CPFProprietario = new TextBox();
+            label8 = new Label();
+            label9 = new Label();
+            TXB_CEI = new TextBox();
             groupBox1.SuspendLayout();
             groupBox3.SuspendLayout();
             groupBox2.SuspendLayout();
@@ -61,6 +65,8 @@
             // 
             // groupBox1
             // 
+            groupBox1.Controls.Add(label9);
+            groupBox1.Controls.Add(TXB_CEI);
             groupBox1.Controls.Add(label7);
             groupBox1.Controls.Add(TXB_LocalPesca);
             groupBox1.Controls.Add(groupBox3);
@@ -75,9 +81,9 @@
             groupBox1.Controls.Add(label3);
             groupBox1.Controls.Add(CB_CategoriaProfissional);
             groupBox1.Controls.Add(label1);
-            groupBox1.Location = new Point(12, 12);
+            groupBox1.Location = new Point(13, 12);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(350, 375);
+            groupBox1.Size = new Size(350, 421);
             groupBox1.TabIndex = 0;
             groupBox1.TabStop = false;
             // 
@@ -85,7 +91,7 @@
             // 
             label7.AutoSize = true;
             label7.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label7.Location = new Point(6, 237);
+            label7.Location = new Point(6, 288);
             label7.Name = "label7";
             label7.Size = new Size(69, 15);
             label7.TabIndex = 17;
@@ -93,20 +99,22 @@
             // 
             // TXB_LocalPesca
             // 
-            TXB_LocalPesca.Location = new Point(6, 258);
+            TXB_LocalPesca.Location = new Point(6, 309);
             TXB_LocalPesca.Name = "TXB_LocalPesca";
             TXB_LocalPesca.Size = new Size(338, 23);
             TXB_LocalPesca.TabIndex = 16;
             // 
             // groupBox3
             // 
+            groupBox3.Controls.Add(TXB_CPFProprietario);
+            groupBox3.Controls.Add(label8);
             groupBox3.Controls.Add(label6);
             groupBox3.Controls.Add(TXB_NomeEmbarcacao);
             groupBox3.Controls.Add(TXB_RGP);
             groupBox3.Controls.Add(label4);
             groupBox3.Location = new Point(6, 110);
             groupBox3.Name = "groupBox3";
-            groupBox3.Size = new Size(330, 80);
+            groupBox3.Size = new Size(330, 131);
             groupBox3.TabIndex = 13;
             groupBox3.TabStop = false;
             // 
@@ -171,7 +179,7 @@
             groupBox2.Controls.Add(CHB_Mariscos);
             groupBox2.Controls.Add(CHB_Crustaceos);
             groupBox2.Controls.Add(CHB_Peixes);
-            groupBox2.Location = new Point(6, 287);
+            groupBox2.Location = new Point(12, 338);
             groupBox2.Name = "groupBox2";
             groupBox2.Size = new Size(330, 77);
             groupBox2.TabIndex = 12;
@@ -239,7 +247,7 @@
             // CHB_Aposentado
             // 
             CHB_Aposentado.AutoSize = true;
-            CHB_Aposentado.Location = new Point(216, 221);
+            CHB_Aposentado.Location = new Point(216, 272);
             CHB_Aposentado.Name = "CHB_Aposentado";
             CHB_Aposentado.Size = new Size(90, 19);
             CHB_Aposentado.TabIndex = 7;
@@ -256,7 +264,7 @@
             // CHB_Empregado
             // 
             CHB_Empregado.AutoSize = true;
-            CHB_Empregado.Location = new Point(216, 196);
+            CHB_Empregado.Location = new Point(216, 247);
             CHB_Empregado.Name = "CHB_Empregado";
             CHB_Empregado.Size = new Size(87, 19);
             CHB_Empregado.TabIndex = 6;
@@ -266,7 +274,7 @@
             // CB_AreaPesca
             // 
             CB_AreaPesca.FormattingEnabled = true;
-            CB_AreaPesca.Location = new Point(6, 211);
+            CB_AreaPesca.Location = new Point(6, 262);
             CB_AreaPesca.Name = "CB_AreaPesca";
             CB_AreaPesca.Size = new Size(179, 23);
             CB_AreaPesca.TabIndex = 5;
@@ -275,7 +283,7 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label3.Location = new Point(6, 193);
+            label3.Location = new Point(6, 244);
             label3.Name = "label3";
             label3.Size = new Size(84, 15);
             label3.TabIndex = 4;
@@ -301,7 +309,7 @@
             // 
             // BTN_Cancelar
             // 
-            BTN_Cancelar.Location = new Point(271, 382);
+            BTN_Cancelar.Location = new Point(272, 439);
             BTN_Cancelar.Name = "BTN_Cancelar";
             BTN_Cancelar.Size = new Size(91, 38);
             BTN_Cancelar.TabIndex = 14;
@@ -311,7 +319,7 @@
             // 
             // BTN_Salvar
             // 
-            BTN_Salvar.Location = new Point(167, 382);
+            BTN_Salvar.Location = new Point(168, 439);
             BTN_Salvar.Name = "BTN_Salvar";
             BTN_Salvar.Size = new Size(91, 38);
             BTN_Salvar.TabIndex = 13;
@@ -319,11 +327,45 @@
             BTN_Salvar.UseVisualStyleBackColor = true;
             BTN_Salvar.Click += BTN_Salvar_Click;
             // 
+            // TXB_CPFProprietario
+            // 
+            TXB_CPFProprietario.Location = new Point(85, 87);
+            TXB_CPFProprietario.Name = "TXB_CPFProprietario";
+            TXB_CPFProprietario.Size = new Size(161, 23);
+            TXB_CPFProprietario.TabIndex = 16;
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            label8.Location = new Point(85, 69);
+            label8.Name = "label8";
+            label8.Size = new Size(97, 15);
+            label8.TabIndex = 17;
+            label8.Text = "CPF Proprietário";
+            // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            label9.Location = new Point(191, 19);
+            label9.Name = "label9";
+            label9.Size = new Size(24, 15);
+            label9.TabIndex = 19;
+            label9.Text = "CEI";
+            // 
+            // TXB_CEI
+            // 
+            TXB_CEI.Location = new Point(191, 37);
+            TXB_CEI.Name = "TXB_CEI";
+            TXB_CEI.Size = new Size(145, 23);
+            TXB_CEI.TabIndex = 18;
+            // 
             // FRM_Profissao
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(375, 432);
+            ClientSize = new Size(375, 489);
             ControlBox = false;
             Controls.Add(BTN_Cancelar);
             Controls.Add(BTN_Salvar);
@@ -369,5 +411,9 @@
         private Button BTN_Salvar;
         private Label label7;
         private TextBox TXB_LocalPesca;
+        private Label label9;
+        private TextBox TXB_CEI;
+        private TextBox TXB_CPFProprietario;
+        private Label label8;
     }
 }

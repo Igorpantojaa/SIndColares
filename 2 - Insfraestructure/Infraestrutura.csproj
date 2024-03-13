@@ -8,9 +8,11 @@
 
   <ItemGroup>
     <None Remove="LocalDB\Database1_log.ldf" />
+    <None Remove="LocalDB\SindColaresDB.db" />
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="DocX" Version="2.3.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.16" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="7.0.16">
       <PrivateAssets>all</PrivateAssets>
@@ -21,14 +23,17 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="LocalDB\" />
+    <PackageReference Include="System.IO.Packaging" Version="8.0.0" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\1 - Models\Modelos.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="LocalDB\SindColaresDB.db">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 
 </Project>

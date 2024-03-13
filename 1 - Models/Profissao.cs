@@ -10,6 +10,7 @@ public class Profissao
     public string RGP { get; set; } = string.Empty;
     public string AB { get; set; } = string.Empty;
     public ProdutosPesca ProdutoPesca { get; set; } = new ();
+    public string CPFProprietario {  get; set; } = string.Empty;
     public string AreaPesca { get; set; } = "Rio";
     public string LocalPesca { get; set; } = string.Empty;
     public bool Empregado { get; set; } = false;

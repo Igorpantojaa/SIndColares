@@ -9,6 +9,7 @@ public class SindContext : DbContext
     public SindContext() : base() { }
 
     public DbSet<RG> RG { get; set; }
+    public DbSet<Periodo> Periodos { get; set; }
     public DbSet<Contato> Contatos { get; set; }
     public DbSet<Endereco> Enderecos { get; set; }
     public DbSet<Filiacao> Filiacoes { get; set; }

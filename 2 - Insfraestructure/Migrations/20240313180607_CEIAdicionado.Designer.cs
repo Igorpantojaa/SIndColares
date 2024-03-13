@@ -3,6 +3,7 @@ using System;
 using Infraestrutura;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Infraestrutura.Migrations
 {
     [DbContext(typeof(SindContext))]
-    partial class SindContextModelSnapshot : ModelSnapshot
+    [Migration("20240313180607_CEIAdicionado")]
+    partial class CEIAdicionado
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "7.0.16");
@@ -265,40 +268,6 @@ namespace Infraestrutura.Migrations
                     b.ToTable("Filiacoes");
                 });
 
-            modelBuilder.Entity("Modelos.Periodo", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER");
-
-                    b.Property<string>("AnoVigencia")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.Property<DateTime>("DataPublicacao")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("Especies")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.Property<DateTime>("FimPeriodo1")
-                        .HasColumnType("TEXT");
-
-                    b.Property<DateTime>("FimPeriodo2")
-                        .HasColumnType("TEXT");
-
-                    b.Property<DateTime>("InicioPeriodo1")
-                        .HasColumnType("TEXT");
-
-                    b.Property<DateTime>("InicioPeriodo2")
-                        .HasColumnType("TEXT");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Periodos");
-                });
-
             modelBuilder.Entity("Modelos.ProdutosPesca", b =>
                 {
                     b.Property<int>("Id")
@@ -347,10 +316,6 @@ namespace Infraestrutura.Migrations
 
                     b.Property<int>("AssociadoId")
                         .HasColumnType("INTEGER");
-
-                    b.Property<string>("CPFProprietario")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
 
                     b.Property<string>("Categoria")
                         .IsRequired()

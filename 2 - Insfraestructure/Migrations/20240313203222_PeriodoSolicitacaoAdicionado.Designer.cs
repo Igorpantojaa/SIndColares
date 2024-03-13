@@ -3,6 +3,7 @@ using System;
 using Infraestrutura;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Infraestrutura.Migrations
 {
     [DbContext(typeof(SindContext))]
-    partial class SindContextModelSnapshot : ModelSnapshot
+    [Migration("20240313203222_PeriodoSolicitacaoAdicionado")]
+    partial class PeriodoSolicitacaoAdicionado
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "7.0.16");
@@ -347,10 +350,6 @@ namespace Infraestrutura.Migrations
 
                     b.Property<int>("AssociadoId")
                         .HasColumnType("INTEGER");
-
-                    b.Property<string>("CPFProprietario")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
 
                     b.Property<string>("Categoria")
                         .IsRequired()

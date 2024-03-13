@@ -233,6 +233,7 @@
             BTN_GeraDocumentacao.TabIndex = 14;
             BTN_GeraDocumentacao.Text = "Gerar Documentação";
             BTN_GeraDocumentacao.UseVisualStyleBackColor = true;
+            BTN_GeraDocumentacao.Click += BTN_GeraDocumentacao_Click;
             // 
             // BTN_VisualizaFiliacao
             // 

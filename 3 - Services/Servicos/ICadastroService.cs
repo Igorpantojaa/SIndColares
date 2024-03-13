@@ -10,6 +10,7 @@ public interface ICadastroService
     public void Salvar();
     public void Excluir();
     public void Cancelar();
+    public bool CPFnaBase();
     public void Recuperar(int id);
     public string ImagemAssociado(int id);
     public List<Associado> ListarTodos();

@@ -20,7 +20,7 @@ public partial class FRM_GestaoAssociados : Form
         if (DGV_Associados.SelectedRows.Count > 0)
         {
             var selecao = Convert.ToInt32(DGV_Associados.SelectedRows[0].Cells[0].Value);
-            PB_FotoAssociado.ImageLocation = _service.ImagemAssociado(selecao); 
+            PB_FotoAssociado.ImageLocation = _service.ImagemAssociado(selecao);
             return selecao;
         }
         else
@@ -52,5 +52,17 @@ public partial class FRM_GestaoAssociados : Form
     private void DGV_Associados_CellClick(object sender, DataGridViewCellEventArgs e)
     {
         SelecaoAtual();
+    }
+
+    private void BTN_Novo_Click(object sender, EventArgs e)
+    {
+        _service.LimparCadastro();
+        new FRM_Cadastro(_service).ShowDialog();
+        AtualizaTabela();
+    }
+
+    private void BTN_Excluir_Click(object sender, EventArgs e)
+    {
+
     }
 }

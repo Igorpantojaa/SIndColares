@@ -22,36 +22,101 @@ public class CadastroService : ICadastroService
     }
     public void PastaAssociado()
     {
-        var cpf = _Associado.Documentos.CPF;
-        var nome = _Associado.Nome;
-        _Associado.Digitalizados.Local = GestaoArquivos.DiretorioAssociado(cpf, nome);
+        try
+        {
+            if(_DTO.CPFNaBase(_Associado) != true)
+            {
+                var cpf = _Associado.Documentos.CPF;
+                var nome = _Associado.Nome;
+                _Associado.Digitalizados.Local = GestaoArquivos.DiretorioAssociado(cpf, nome);
+            }
+        }
+        catch (Exception ex)
+        {
+            throw new Exception(ex.Message);
+        }
     }
     public void Salvar()
     {
-        _DTO.Salvar(_Associado);
-        LimparCadastro();
+        try
+        {
+            _DTO.Salvar(_Associado);
+            LimparCadastro();
+        }
+        catch (Exception ex)
+        {
+            throw new Exception(ex.Message);
+        }
     }
     public void Excluir()
     {
-        Directory.Delete(_Associado.Digitalizados.Local, true);
-        _DTO.Excluir(_Associado);
-        LimparCadastro();
+        try
+        {
+            Directory.Delete(_Associado.Digitalizados.Local, true);
+            _DTO.Excluir(_Associado);
+            LimparCadastro();
+        }
+        catch (Exception ex)
+        {
+            throw new Exception(ex.Message);
+        }
     }
     public void Cancelar()
     {
-        if (_Associado.Id == 0 && Directory.Exists(_Associado.Digitalizados.Local))
+        try
         {
-            Directory.Delete(_Associado.Digitalizados.Local, true);
+            if (_Associado.Id == 0 && Directory.Exists(_Associado.Digitalizados.Local))
+            {
+                Directory.Delete(_Associado.Digitalizados.Local, true);
+            }
+        }
+        catch (Exception ex)
+        {
+            throw new Exception(ex.Message);
+        }
+    }
+    public bool CPFnaBase()
+    {
+        try
+        {
+            return _DTO.CPFNaBase(_Associado);
+        }
+        catch (Exception ex)
+        {
+            throw new Exception(ex.Message);
         }
     }
     public void Recuperar(int id)
     {
-        _Associado = _DTO.Recuperar(id);
+        try
+        {
+            _Associado = _DTO.Recuperar(id);
+        }
+        catch (Exception ex)
+        {
+            throw new Exception(ex.Message);
+        }
     }
-    public List<Associado> ListarTodos() => _DTO.ListarTodos();
-
+    public List<Associado> ListarTodos()
+    {
+        try
+        {
+            return _DTO.ListarTodos();
+        }
+        catch (Exception ex)
+        {
+            throw new Exception(ex.Message);
+        }
+    }
     public string ImagemAssociado(int id)
     {
-        return _DTO.Recuperar(id).GetFoto;
+        try
+        {
+            return _DTO.Recuperar(id).GetFoto;
+        }
+        catch (Exception ex)
+        {
+            throw new Exception(ex.Message);
+        }
     }
 }

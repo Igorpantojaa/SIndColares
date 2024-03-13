@@ -1,6 +1,4 @@
-﻿using System.Numerics;
-
-namespace Servicos.ComboBox;
+﻿namespace Servicos.ComboBox;
 
 public class ConteudoComboBox
 {

@@ -151,7 +151,7 @@
             PB_Foto.Location = new Point(3, 19);
             PB_Foto.Name = "PB_Foto";
             PB_Foto.Size = new Size(114, 100);
-            PB_Foto.SizeMode = PictureBoxSizeMode.StretchImage;
+            PB_Foto.SizeMode = PictureBoxSizeMode.Zoom;
             PB_Foto.TabIndex = 0;
             PB_Foto.TabStop = false;
             PB_Foto.Click += PB_Foto_Click;

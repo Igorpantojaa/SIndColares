@@ -33,10 +33,9 @@ public class AssociadoDTO : IAssociadoDTO
         }
         catch (Exception ex)
         {
-            throw new Exception($"Erro ao criar novo registro: \n{ex.Message}");
+            throw new Exception(ex.Message);
         }
     }
-
     public void Excluir(Associado a)
     {
         try
@@ -49,7 +48,6 @@ public class AssociadoDTO : IAssociadoDTO
             throw new Exception($"Erro ao remover registro: \n{ex.Message}");
         }
     }
-
     public List<Associado> ListarTodos()
     {
         try
@@ -71,7 +69,6 @@ public class AssociadoDTO : IAssociadoDTO
             throw new Exception($"Erro ao recuperar registros: \n{ex.Message}");
         }
     }
-
     public Associado Recuperar(int id)
     {
         try
@@ -103,13 +100,12 @@ public class AssociadoDTO : IAssociadoDTO
             throw new Exception($"Erro ao recuperar registro: \n{ex.Message}");
         }
     }
-    private bool CPFNaBase(Associado associado)
+    public bool CPFNaBase(Associado associado)
     {
-        var a = RecuperaPeloCPF(associado.GetCPF);
+        var a = RecuperaPeloCPF(associado.Documentos.CPF);
         if (a.Id != 0) return true;
         else return false;
     }
-    
     private Associado RecuperaPeloCPF(string CPF)
     {
         var a = _context.Associados

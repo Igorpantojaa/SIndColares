@@ -1,5 +1,6 @@
 ﻿using Servicos;
 using Servicos.ComboBox;
+using Servicos.Utilidades;
 using SINDCOLARES.Formularios;
 
 namespace SINDCOLARES;
@@ -15,7 +16,7 @@ public partial class FRM_Cadastro : Form
         CB_Sexo.DataSource = ConteudoComboBox.Sexo();
     }
 
-    private void PB_Foto_Click(object sender, EventArgs e) => SalvaFoto();
+    private void PB_Foto_Click(object sender, EventArgs e) => CarregaFoto();
     private void BTN_Salvar_Click(object sender, EventArgs e) => Salvar();
     private void TXB_CPF_Leave(object sender, EventArgs e) => FormataCPF();
     private void BTN_Cancelar_Click(object sender, EventArgs e) => Cancelar();
@@ -34,23 +35,12 @@ public partial class FRM_Cadastro : Form
         try
         {
             _service.Salvar();
-            MessageBox.Show
-            (
-                "Registro salvo com sucesso!",
-                "Salvar",
-                MessageBoxButtons.OK,
-                MessageBoxIcon.Information
-            );
+            Mensages.Alerta("Registro salvo com sucesso!", "Informacao");
+            Close();
         }
         catch (Exception ex)
         {
-            MessageBox.Show
-            (
-                $"Não foi possível salvar o registtro!\n{ex.Message}",
-                "Erro!",
-                MessageBoxButtons.OK,
-                MessageBoxIcon.Error
-            );
+            Mensages.Alerta($"Não foi possível salvar o registtro!\n{ex.Message}", "Erro");
         }
     }
     private void Cancelar()
@@ -58,9 +48,9 @@ public partial class FRM_Cadastro : Form
         _service.Cancelar();
         Close();
     }
-    private void SalvaFoto()
+    private void CarregaFoto()
     {
-        if (ValidaDadosBasicos() == true)
+        if (_service.InfoAssociado.Digitalizados.Local != string.Empty)
         {
             var destino = $"{_service.InfoAssociado.Digitalizados.Local}\\FOTO.jpg";
             OpenFileDialog ofd = new();
@@ -69,39 +59,27 @@ public partial class FRM_Cadastro : Form
                 try
                 {
                     File.Copy(ofd.FileName, destino, true);
-                    MessageBox.Show
-                    (
-                        "Arquivo salvo com sucesso!",
-                        "Sucesso",
-                        MessageBoxButtons.OK,
-                        MessageBoxIcon.Information
-                    );
+                    Mensages.Alerta("Arquivo salvo com sucesso!", "Informacao");
                     _service.InfoAssociado.Digitalizados.Foto = destino;
                     PB_Foto.ImageLocation = _service.InfoAssociado.Digitalizados.Foto = destino;
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show
-                    (
-                        $"Houve um erro ao salvar o arquivo: {ex.Message}",
-                        "Erro",
-                        MessageBoxButtons.OK,
-                        MessageBoxIcon.Error
-                    );
+                    Mensages.Alerta($"Houve um erro ao salvar o arquivo: {ex.Message}", "Erro");
                 }
             }
         }
         else
         {
-            MessageBox.Show("Preencha os campos Nome e CPF para criar a pasta do Associado.");
+            Mensages.Alerta("Preencha os campos Nome e CPF para criar a pasta do Associado.", "Informacao");
         }
     }
     private void FormataCPF()
     {
-        if (Utilitarios.ValidaCPF(TXB_CPF.Text) == true && TXB_CPF.Text.Length == 11)
+        if (CPF.ValidaCPF(TXB_CPF.Text) == true && TXB_CPF.Text.Length == 11)
         {
             var cpf = TXB_CPF.Text;
-            TXB_CPF.Text = Utilitarios.FormataCPF(cpf);
+            TXB_CPF.Text = CPF.FormataCPF(cpf);
         }
     }
     private void AtualizaInfo()
@@ -118,20 +96,13 @@ public partial class FRM_Cadastro : Form
         if (_service.InfoAssociado.Documentos.CPF != string.Empty &&
             _service.InfoAssociado.Nome != string.Empty)
         {
-            if (Utilitarios.ValidaCPF(TXB_CPF.Text) == false)
+            if (CPF.ValidaCPF(TXB_CPF.Text))
             {
-                MessageBox.Show
-                (
-                    $"CPF inválido!",
-                    "Erro!",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Error
-                );
+                Mensages.Alerta("CPF inválido!", "Erro");
                 return false;
             }
             else
             {
-                _service.PastaAssociado();
                 return true;
             }
         }
@@ -145,22 +116,29 @@ public partial class FRM_Cadastro : Form
         TXB_Nome.Text = _service.InfoAssociado.Nome;
         TXB_Apelido.Text = _service.InfoAssociado.Apelido;
         DTP_DataNascimento.Value = _service.InfoAssociado.DataNascimento;
-        CB_Sexo.SelectedText = _service.InfoAssociado.Sexo;
+        CB_Sexo.Text = _service.InfoAssociado.Sexo;
         TXB_CPF.Text = _service.InfoAssociado.Documentos.CPF;
         PB_Foto.ImageLocation = _service.InfoAssociado.Digitalizados.Foto;
     }
     private void DocumentosAssociado()
     {
-        AtualizaInfo();
-        if (ValidaDadosBasicos() == true)
+        if(_service.InfoAssociado.Id == 0) 
         {
-            new FRM_CarregaDocumentacao(_service).ShowDialog();
+            AtualizaInfo();
+            if (ValidaDadosBasicos() == true && _service.CPFnaBase() == false)
+            {
+                _service.PastaAssociado();
+                new FRM_CarregaDocumentacao(_service).ShowDialog();
+            }
+            else
+            {
+                if (_service.CPFnaBase()) Mensages.Alerta("CPF já cadastrado!", "Erro");
+                else Mensages.Alerta("Você precisa preencher o nome e o CPF para a criação da pasta do Associado.", "Erro");
+            }
         }
         else
         {
-            var msg = "Você precisa preencher o nome e o CPF para a criação da pasta do Associado.";
-            MessageBox.Show(msg, "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            new FRM_CarregaDocumentacao(_service).ShowDialog();
         }
-        return;
     }
 }

@@ -7,4 +7,5 @@ public class Documentos
     public RG RG { get; set; } = new();
     public string CPF { get; set; } = string.Empty;
     public string PIS { get; set; } = string.Empty;
+    public string CEI { get; set; } = string.Empty;
 }

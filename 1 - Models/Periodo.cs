@@ -1,4 +1,6 @@
-﻿namespace Modelos;
+﻿using Xceed.Document.NET;
+
+namespace Modelos;
 
 public class Periodo
 {
@@ -9,5 +11,7 @@ public class Periodo
     public DateTime InicioPeriodo2 { get; set; } = DateTime.Now;
     public DateTime FimPeriodo1 { get; set; } = DateTime.Now;
     public DateTime FimPeriodo2 { get; set; } = DateTime.Now;
+    public bool Periodo1Ativo { get; set; } = false;
+    public bool Periodo2Ativo { get; set; } = false;
     public string Especies { get; set; } = "GURIJUBA (SCIADES PARKERI)";
 }

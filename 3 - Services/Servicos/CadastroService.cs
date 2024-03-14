@@ -6,29 +6,35 @@ namespace Servicos;
 
 public class CadastroService : ICadastroService
 {
-    private Associado _Associado;
-    private readonly IAssociadoDTO _DTO;
-    public Associado InfoAssociado { get { return _Associado; } }
+    private Periodo _periodo;
+    private Associado _associado;
+    private readonly IPeriodoDTO _periodoDTO;
+    private readonly IAssociadoDTO _associadoDTO;
 
-    public CadastroService(IAssociadoDTO dto)
+    public Periodo Periodo { get { return _periodo; } }
+    public Associado InfoAssociado { get { return _associado; } }
+
+    public CadastroService(IAssociadoDTO associadoDTO, IPeriodoDTO periodoDTO)
     {
-        _DTO = dto;
-        _Associado = new();
+        _associadoDTO = associadoDTO;
+        _periodoDTO = periodoDTO;
+        _associado = new();
+        _periodo = new();
     }
 
     public void LimparCadastro()
     {
-        _Associado = new();
+        _associado = new();
     }
     public void PastaAssociado()
     {
         try
         {
-            if(_DTO.CPFNaBase(_Associado) != true)
+            if(_associadoDTO.CPFNaBase(_associado) != true)
             {
-                var cpf = _Associado.Documentos.CPF;
-                var nome = _Associado.Nome;
-                _Associado.Digitalizados.Local = GestaoArquivos.DiretorioAssociado(cpf, nome);
+                var cpf = _associado.Documentos.CPF;
+                var nome = _associado.Nome;
+                _associado.Digitalizados.Local = GestaoArquivos.DiretorioAssociado(cpf, nome);
             }
         }
         catch (Exception ex)
@@ -40,7 +46,7 @@ public class CadastroService : ICadastroService
     {
         try
         {
-            _DTO.Salvar(_Associado);
+            _associadoDTO.Salvar(_associado);
             LimparCadastro();
         }
         catch (Exception ex)
@@ -52,8 +58,8 @@ public class CadastroService : ICadastroService
     {
         try
         {
-            Directory.Delete(_Associado.Digitalizados.Local, true);
-            _DTO.Excluir(_Associado);
+            Directory.Delete(_associado.Digitalizados.Local, true);
+            _associadoDTO.Excluir(_associado);
             LimparCadastro();
         }
         catch (Exception ex)
@@ -65,9 +71,9 @@ public class CadastroService : ICadastroService
     {
         try
         {
-            if (_Associado.Id == 0 && Directory.Exists(_Associado.Digitalizados.Local))
+            if (_associado.Id == 0 && Directory.Exists(_associado.Digitalizados.Local))
             {
-                Directory.Delete(_Associado.Digitalizados.Local, true);
+                Directory.Delete(_associado.Digitalizados.Local, true);
             }
         }
         catch (Exception ex)
@@ -79,7 +85,7 @@ public class CadastroService : ICadastroService
     {
         try
         {
-            return _DTO.CPFNaBase(_Associado);
+            return _associadoDTO.CPFNaBase(_associado);
         }
         catch (Exception ex)
         {
@@ -90,7 +96,7 @@ public class CadastroService : ICadastroService
     {
         try
         {
-            _Associado = _DTO.Recuperar(id);
+            _associado = _associadoDTO.Recuperar(id);
         }
         catch (Exception ex)
         {
@@ -101,7 +107,7 @@ public class CadastroService : ICadastroService
     {
         try
         {
-            return _DTO.ListarTodos();
+            return _associadoDTO.ListarTodos();
         }
         catch (Exception ex)
         {
@@ -112,11 +118,51 @@ public class CadastroService : ICadastroService
     {
         try
         {
-            return _DTO.Recuperar(id).GetFoto;
+            return _associadoDTO.Recuperar(id).GetFoto;
         }
         catch (Exception ex)
         {
             throw new Exception(ex.Message);
         }
+    }
+
+    public void SalvarPeriodo()
+    {
+        try
+        {
+            _periodoDTO.Salvar(_periodo);
+            LimparCadastro();
+        }
+        catch (Exception ex)
+        {
+            throw new Exception(ex.Message);
+        }
+    }
+    public void ExcluirPeriodo()
+    {
+        try
+        {
+            _periodoDTO.Excluir(_periodo);
+        }
+        catch (Exception ex)
+        {
+            throw new Exception(ex.Message);
+        }
+    }
+    public void RecuperarPeriodo(int id)
+    {
+        try
+        {
+            _periodo = _periodoDTO.Recuperar(id);
+        }
+        catch (Exception ex)
+        {
+            throw new Exception(ex.Message);
+        }
+    }
+
+    public void LimpaPeriodo()
+    {
+        _periodo = new();
     }
 }

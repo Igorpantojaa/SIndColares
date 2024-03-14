@@ -1,6 +1,6 @@
 ﻿namespace SINDCOLARES.Formularios
 {
-    public class Mensages
+    public class Mensagens
     {
         public static void Alerta(string mensagem, string tipo)
         {

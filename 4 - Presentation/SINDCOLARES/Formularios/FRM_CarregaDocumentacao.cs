@@ -326,6 +326,6 @@ public partial class FRM_CarregaDocumentacao : Form
     private void BTN_GeraDocumentacao_Click(object sender, EventArgs e)
     {
         ReqSeguroDefeso.SubstituirElementos(_service.InfoAssociado);
-        Mensages.Alerta("Gerado com sucesso", "Informacao");
+        Mensagens.Alerta("Gerado com sucesso", "Informacao");
     }
 }

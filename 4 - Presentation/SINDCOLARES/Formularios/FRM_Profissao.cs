@@ -18,7 +18,7 @@ public partial class FRM_Profissao : Form
     private void BTN_Salvar_Click(object sender, EventArgs e)
     {
         SalvarInformacoes();
-        Mensages.Alerta("Dados atualizados.", "Sucesso!");
+        Mensagens.Alerta("Dados atualizados.", "Sucesso!");
         Close();
     }
     private void BTN_Cancelar_Click(object sender, EventArgs e)

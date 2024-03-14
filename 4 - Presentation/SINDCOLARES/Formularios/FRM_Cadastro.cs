@@ -1,4 +1,5 @@
 ﻿using Servicos;
+using Infraestrutura;
 using Servicos.ComboBox;
 using Servicos.Utilidades;
 using SINDCOLARES.Formularios;
@@ -35,12 +36,12 @@ public partial class FRM_Cadastro : Form
         try
         {
             _service.Salvar();
-            Mensages.Alerta("Registro salvo com sucesso!", "Informacao");
+            Mensagens.Alerta("Registro salvo com sucesso!", "Informacao");
             Close();
         }
         catch (Exception ex)
         {
-            Mensages.Alerta($"Não foi possível salvar o registtro!\n{ex.Message}", "Erro");
+            Mensagens.Alerta($"Não foi possível salvar o registtro!\n{ex.Message}", "Erro");
         }
     }
     private void Cancelar()
@@ -52,26 +53,26 @@ public partial class FRM_Cadastro : Form
     {
         if (_service.InfoAssociado.Digitalizados.Local != string.Empty)
         {
-            var destino = $"{_service.InfoAssociado.Digitalizados.Local}\\FOTO.jpg";
             OpenFileDialog ofd = new();
             if (ofd.ShowDialog() == DialogResult.OK)
             {
                 try
                 {
-                    File.Copy(ofd.FileName, destino, true);
-                    Mensages.Alerta("Arquivo salvo com sucesso!", "Informacao");
-                    _service.InfoAssociado.Digitalizados.Foto = destino;
-                    PB_Foto.ImageLocation = _service.InfoAssociado.Digitalizados.Foto = destino;
+                    var destino = _service.InfoAssociado.Digitalizados.Local;
+                    var foto = GestaoArquivos.SalvarFoto(ofd.FileName, destino);
+                    Mensagens.Alerta("Arquivo salvo com sucesso!", "Informacao");
+                    _service.InfoAssociado.Digitalizados.Foto = foto;
+                    PB_Foto.ImageLocation = foto;
                 }
                 catch (Exception ex)
                 {
-                    Mensages.Alerta($"Houve um erro ao salvar o arquivo: {ex.Message}", "Erro");
+                    Mensagens.Alerta($"Houve um erro ao salvar o arquivo: {ex.Message}", "Erro");
                 }
             }
         }
         else
         {
-            Mensages.Alerta("Preencha os campos Nome e CPF para criar a pasta do Associado.", "Informacao");
+            Mensagens.Alerta("Preencha os campos Nome e CPF para criar a pasta do Associado.", "Informacao");
         }
     }
     private void FormataCPF()
@@ -98,7 +99,7 @@ public partial class FRM_Cadastro : Form
         {
             if (CPF.ValidaCPF(TXB_CPF.Text))
             {
-                Mensages.Alerta("CPF inválido!", "Erro");
+                Mensagens.Alerta("CPF inválido!", "Erro");
                 return false;
             }
             else
@@ -132,8 +133,8 @@ public partial class FRM_Cadastro : Form
             }
             else
             {
-                if (_service.CPFnaBase()) Mensages.Alerta("CPF já cadastrado!", "Erro");
-                else Mensages.Alerta("Você precisa preencher o nome e o CPF para a criação da pasta do Associado.", "Erro");
+                if (_service.CPFnaBase()) Mensagens.Alerta("CPF já cadastrado!", "Erro");
+                else Mensagens.Alerta("Você precisa preencher o nome e o CPF para a criação da pasta do Associado.", "Erro");
             }
         }
         else

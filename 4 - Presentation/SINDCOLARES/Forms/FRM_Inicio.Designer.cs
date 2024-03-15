@@ -43,7 +43,7 @@
             // 
             BTN_NovoCadastro.BackgroundImage = (Image)resources.GetObject("BTN_NovoCadastro.BackgroundImage");
             BTN_NovoCadastro.BackgroundImageLayout = ImageLayout.Zoom;
-            BTN_NovoCadastro.Location = new Point(121, 52);
+            BTN_NovoCadastro.Location = new Point(121, 48);
             BTN_NovoCadastro.Name = "BTN_NovoCadastro";
             BTN_NovoCadastro.Size = new Size(90, 96);
             BTN_NovoCadastro.TabIndex = 0;
@@ -54,7 +54,7 @@
             // 
             BTN_PesquisarCadastro.BackgroundImage = (Image)resources.GetObject("BTN_PesquisarCadastro.BackgroundImage");
             BTN_PesquisarCadastro.BackgroundImageLayout = ImageLayout.Zoom;
-            BTN_PesquisarCadastro.Location = new Point(277, 52);
+            BTN_PesquisarCadastro.Location = new Point(291, 48);
             BTN_PesquisarCadastro.Name = "BTN_PesquisarCadastro";
             BTN_PesquisarCadastro.Size = new Size(90, 96);
             BTN_PesquisarCadastro.TabIndex = 1;
@@ -65,7 +65,7 @@
             // 
             LBL_NovoCadastro.AutoSize = true;
             LBL_NovoCadastro.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            LBL_NovoCadastro.Location = new Point(122, 34);
+            LBL_NovoCadastro.Location = new Point(122, 30);
             LBL_NovoCadastro.Name = "LBL_NovoCadastro";
             LBL_NovoCadastro.Size = new Size(88, 15);
             LBL_NovoCadastro.TabIndex = 2;
@@ -75,7 +75,7 @@
             // 
             LBL_ProcurarCadastro.AutoSize = true;
             LBL_ProcurarCadastro.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            LBL_ProcurarCadastro.Location = new Point(269, 34);
+            LBL_ProcurarCadastro.Location = new Point(283, 30);
             LBL_ProcurarCadastro.Name = "LBL_ProcurarCadastro";
             LBL_ProcurarCadastro.Size = new Size(106, 15);
             LBL_ProcurarCadastro.TabIndex = 3;
@@ -85,7 +85,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(118, 171);
+            label1.Location = new Point(104, 175);
             label1.Name = "label1";
             label1.Size = new Size(124, 15);
             label1.TabIndex = 5;
@@ -95,7 +95,7 @@
             // 
             BTN_Periodos.BackgroundImage = (Image)resources.GetObject("BTN_Periodos.BackgroundImage");
             BTN_Periodos.BackgroundImageLayout = ImageLayout.Zoom;
-            BTN_Periodos.Location = new Point(135, 189);
+            BTN_Periodos.Location = new Point(121, 193);
             BTN_Periodos.Name = "BTN_Periodos";
             BTN_Periodos.Size = new Size(90, 96);
             BTN_Periodos.TabIndex = 4;
@@ -106,7 +106,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label2.Location = new Point(266, 171);
+            label2.Location = new Point(280, 175);
             label2.Name = "label2";
             label2.Size = new Size(113, 15);
             label2.TabIndex = 7;
@@ -116,7 +116,7 @@
             // 
             BTN_GeraDocumentos.BackgroundImage = (Image)resources.GetObject("BTN_GeraDocumentos.BackgroundImage");
             BTN_GeraDocumentos.BackgroundImageLayout = ImageLayout.Zoom;
-            BTN_GeraDocumentos.Location = new Point(277, 189);
+            BTN_GeraDocumentos.Location = new Point(291, 193);
             BTN_GeraDocumentos.Name = "BTN_GeraDocumentos";
             BTN_GeraDocumentos.Size = new Size(90, 96);
             BTN_GeraDocumentos.TabIndex = 6;

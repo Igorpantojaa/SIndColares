@@ -12,7 +12,7 @@ public partial class FRM_GestaoAssociados : Form
 
     private void GestaoAssociados_Load(object sender, EventArgs e)
     {
-        DGV_Associados.DataSource = _service.ListarTodos();
+        DGV_Associados.DataSource = _service.ListarAssociados();
     }
 
     private int SelecaoAtual()
@@ -41,7 +41,7 @@ public partial class FRM_GestaoAssociados : Form
 
     private void AtualizaTabela()
     {
-        DGV_Associados.DataSource = _service.ListarTodos();
+        DGV_Associados.DataSource = _service.ListarAssociados();
     }
 
     private void BTN_Fechar_Click(object sender, EventArgs e)

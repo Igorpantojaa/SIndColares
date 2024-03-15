@@ -7,9 +7,9 @@ public class AssociadoDTO : IAssociadoDTO
 {
     private readonly SindContext _context;
 
-    public AssociadoDTO()
+    public AssociadoDTO(SindContext context)
     {
-        _context = new SindContext();
+        _context = context;
     }
 
     public void Salvar(Associado a)

@@ -13,11 +13,12 @@ public interface ICadastroService
     bool CPFnaBase();
     void Recuperar(int id);
     string ImagemAssociado(int id);
-    List<Associado> ListarTodos();
+    List<Associado> ListarAssociados();
 
      Periodo Periodo { get; }
     void SalvarPeriodo();
     void ExcluirPeriodo();
     void LimpaPeriodo();
     void RecuperarPeriodo(int id);
+    List<Periodo> ListarPeriodos();
 }

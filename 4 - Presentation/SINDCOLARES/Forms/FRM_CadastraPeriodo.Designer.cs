@@ -40,12 +40,14 @@
             DTP_Periodo2Fim = new DateTimePicker();
             DTP_Periodo2Inicio = new DateTimePicker();
             LBL_Periodo2inicio = new Label();
-            DTP_PeriodoVigencia = new DateTimePicker();
             label5 = new Label();
             groupBox3 = new GroupBox();
             TXB_Especies = new TextBox();
             BTN_Salvar = new Button();
             BTN_Cancelar = new Button();
+            DTP_DataPublicacao = new DateTimePicker();
+            label2 = new Label();
+            LBL_Vigencia = new Label();
             LBL_Periodo1inicio.SuspendLayout();
             groupBox2.SuspendLayout();
             groupBox3.SuspendLayout();
@@ -84,6 +86,8 @@
             CHB_Periodo1.TabIndex = 6;
             CHB_Periodo1.Text = "1º Período";
             CHB_Periodo1.UseVisualStyleBackColor = true;
+            CHB_Periodo1.CheckedChanged += CHB_Periodo1_CheckedChanged;
+            CHB_Periodo1.CheckStateChanged += CHB_Periodo1_CheckedChanged;
             // 
             // LBL_Periodo1Fim
             // 
@@ -132,6 +136,8 @@
             CHB_Periodo2.TabIndex = 5;
             CHB_Periodo2.Text = "2º Período";
             CHB_Periodo2.UseVisualStyleBackColor = true;
+            CHB_Periodo2.CheckedChanged += CHB_Periodo1_CheckedChanged;
+            CHB_Periodo2.CheckStateChanged += CHB_Periodo1_CheckedChanged;
             // 
             // LBL_Periodo2Fim
             // 
@@ -171,24 +177,14 @@
             LBL_Periodo2inicio.TabIndex = 0;
             LBL_Periodo2inicio.Text = "2º Período - Início";
             // 
-            // DTP_PeriodoVigencia
-            // 
-            DTP_PeriodoVigencia.CustomFormat = "yyyy";
-            DTP_PeriodoVigencia.Format = DateTimePickerFormat.Custom;
-            DTP_PeriodoVigencia.Location = new Point(194, 12);
-            DTP_PeriodoVigencia.MinDate = new DateTime(2024, 3, 13, 0, 0, 0, 0);
-            DTP_PeriodoVigencia.Name = "DTP_PeriodoVigencia";
-            DTP_PeriodoVigencia.Size = new Size(64, 23);
-            DTP_PeriodoVigencia.TabIndex = 6;
-            // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(89, 18);
+            label5.Location = new Point(12, 19);
             label5.Name = "label5";
-            label5.Size = new Size(96, 15);
+            label5.Size = new Size(55, 15);
             label5.TabIndex = 5;
-            label5.Text = "Período Vigência";
+            label5.Text = "Vigência:";
             // 
             // groupBox3
             // 
@@ -228,16 +224,46 @@
             BTN_Cancelar.UseVisualStyleBackColor = true;
             BTN_Cancelar.Click += BTN_Cancelar_Click;
             // 
+            // DTP_DataPublicacao
+            // 
+            DTP_DataPublicacao.CustomFormat = "";
+            DTP_DataPublicacao.Format = DateTimePickerFormat.Short;
+            DTP_DataPublicacao.Location = new Point(225, 15);
+            DTP_DataPublicacao.MinDate = new DateTime(2019, 1, 1, 0, 0, 0, 0);
+            DTP_DataPublicacao.Name = "DTP_DataPublicacao";
+            DTP_DataPublicacao.Size = new Size(108, 23);
+            DTP_DataPublicacao.TabIndex = 11;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(127, 19);
+            label2.Name = "label2";
+            label2.Size = new Size(92, 15);
+            label2.TabIndex = 10;
+            label2.Text = "Data Publicação";
+            // 
+            // LBL_Vigencia
+            // 
+            LBL_Vigencia.AutoSize = true;
+            LBL_Vigencia.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            LBL_Vigencia.Location = new Point(69, 19);
+            LBL_Vigencia.Name = "LBL_Vigencia";
+            LBL_Vigencia.Size = new Size(0, 17);
+            LBL_Vigencia.TabIndex = 12;
+            // 
             // FRM_CadastraPeriodo
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(347, 439);
             ControlBox = false;
+            Controls.Add(LBL_Vigencia);
+            Controls.Add(DTP_DataPublicacao);
+            Controls.Add(label2);
             Controls.Add(BTN_Cancelar);
             Controls.Add(BTN_Salvar);
             Controls.Add(groupBox3);
-            Controls.Add(DTP_PeriodoVigencia);
             Controls.Add(label5);
             Controls.Add(groupBox2);
             Controls.Add(LBL_Periodo1inicio);
@@ -268,7 +294,6 @@
         private DateTimePicker DTP_Periodo2Fim;
         private DateTimePicker DTP_Periodo2Inicio;
         private Label LBL_Periodo2inicio;
-        private DateTimePicker DTP_PeriodoVigencia;
         private Label label5;
         private GroupBox groupBox3;
         private TextBox TXB_Especies;
@@ -276,5 +301,8 @@
         private CheckBox CHB_Periodo2;
         private Button BTN_Salvar;
         private Button BTN_Cancelar;
+        private DateTimePicker DTP_DataPublicacao;
+        private Label label2;
+        private Label LBL_Vigencia;
     }
 }

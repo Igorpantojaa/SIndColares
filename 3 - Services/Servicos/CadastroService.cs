@@ -14,34 +14,15 @@ public class CadastroService : ICadastroService
     public Periodo Periodo { get { return _periodo; } }
     public Associado InfoAssociado { get { return _associado; } }
 
-    public CadastroService(IAssociadoDTO associadoDTO, IPeriodoDTO periodoDTO)
+    public CadastroService(SindContext context)
     {
-        _associadoDTO = associadoDTO;
-        _periodoDTO = periodoDTO;
+        _associadoDTO = new AssociadoDTO(context);
+        _periodoDTO = new PeriodoDTO(context);
         _associado = new();
         _periodo = new();
     }
 
-    public void LimparCadastro()
-    {
-        _associado = new();
-    }
-    public void PastaAssociado()
-    {
-        try
-        {
-            if(_associadoDTO.CPFNaBase(_associado) != true)
-            {
-                var cpf = _associado.Documentos.CPF;
-                var nome = _associado.Nome;
-                _associado.Digitalizados.Local = GestaoArquivos.DiretorioAssociado(cpf, nome);
-            }
-        }
-        catch (Exception ex)
-        {
-            throw new Exception(ex.Message);
-        }
-    }
+
     public void Salvar()
     {
         try
@@ -92,22 +73,31 @@ public class CadastroService : ICadastroService
             throw new Exception(ex.Message);
         }
     }
-    public void Recuperar(int id)
+    public void LimparCadastro()
+    {
+        _associado = new();
+    }
+    public void PastaAssociado()
     {
         try
         {
-            _associado = _associadoDTO.Recuperar(id);
+            if(_associadoDTO.CPFNaBase(_associado) != true)
+            {
+                var cpf = _associado.Documentos.CPF;
+                var nome = _associado.Nome;
+                _associado.Digitalizados.Local = GestaoArquivos.DiretorioAssociado(cpf, nome);
+            }
         }
         catch (Exception ex)
         {
             throw new Exception(ex.Message);
         }
     }
-    public List<Associado> ListarTodos()
+    public void Recuperar(int id)
     {
         try
         {
-            return _associadoDTO.ListarTodos();
+            _associado = _associadoDTO.Recuperar(id);
         }
         catch (Exception ex)
         {
@@ -125,7 +115,22 @@ public class CadastroService : ICadastroService
             throw new Exception(ex.Message);
         }
     }
+    public List<Associado> ListarAssociados()
+    {
+        try
+        {
+            return _associadoDTO.ListarTodos();
+        }
+        catch (Exception ex)
+        {
+            throw new Exception(ex.Message);
+        }
+    }
 
+    public void LimpaPeriodo()
+    {
+        _periodo = new();
+    }
     public void SalvarPeriodo()
     {
         try
@@ -160,9 +165,15 @@ public class CadastroService : ICadastroService
             throw new Exception(ex.Message);
         }
     }
-
-    public void LimpaPeriodo()
+    public List<Periodo> ListarPeriodos()
     {
-        _periodo = new();
+        try
+        {
+            return _periodoDTO.ListarTodos();
+        }
+        catch (Exception ex)
+        {
+            throw new Exception(ex.Message);
+        }
     }
 }

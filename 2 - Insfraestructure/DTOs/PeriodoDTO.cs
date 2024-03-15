@@ -6,9 +6,9 @@ public class PeriodoDTO : IPeriodoDTO
 {
     private readonly SindContext _context;
 
-    public PeriodoDTO()
+    public PeriodoDTO(SindContext context)
     {
-        _context = new SindContext();
+        _context = context;
     }
 
     public void Salvar(Periodo p)
@@ -39,19 +39,6 @@ public class PeriodoDTO : IPeriodoDTO
             throw new Exception($"Erro ao remover registro: \n{ex.Message}");
         }
     }
-    public List<Periodo> ListarTodos()
-    {
-        try
-        {
-            var l = _context.Periodos.ToList();
-            return l;
-        }
-        catch (Exception ex)
-        {
-            return new List<Periodo>();
-            throw new Exception($"Erro ao recuperar registros: \n{ex.Message}");
-        }
-    }
     public Periodo Recuperar(int id)
     {
         try
@@ -71,6 +58,19 @@ public class PeriodoDTO : IPeriodoDTO
         {
             return new(); 
             throw new Exception($"Erro ao recuperar registro: \n{ex.Message}");
+        }
+    }
+    public List<Periodo> ListarTodos()
+    {
+        try
+        {
+            var l = _context.Periodos.ToList();
+            return l;
+        }
+        catch (Exception ex)
+        {
+            return new List<Periodo>();
+            throw new Exception($"Erro ao recuperar registros: \n{ex.Message}");
         }
     }
 }

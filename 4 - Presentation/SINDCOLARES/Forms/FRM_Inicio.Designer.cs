@@ -33,13 +33,17 @@
             BTN_PesquisarCadastro = new Button();
             LBL_NovoCadastro = new Label();
             LBL_ProcurarCadastro = new Label();
+            label1 = new Label();
+            BTN_Periodos = new Button();
+            label2 = new Label();
+            BTN_GeraDocumentos = new Button();
             SuspendLayout();
             // 
             // BTN_NovoCadastro
             // 
             BTN_NovoCadastro.BackgroundImage = (Image)resources.GetObject("BTN_NovoCadastro.BackgroundImage");
             BTN_NovoCadastro.BackgroundImageLayout = ImageLayout.Zoom;
-            BTN_NovoCadastro.Location = new Point(121, 120);
+            BTN_NovoCadastro.Location = new Point(121, 52);
             BTN_NovoCadastro.Name = "BTN_NovoCadastro";
             BTN_NovoCadastro.Size = new Size(90, 96);
             BTN_NovoCadastro.TabIndex = 0;
@@ -50,7 +54,7 @@
             // 
             BTN_PesquisarCadastro.BackgroundImage = (Image)resources.GetObject("BTN_PesquisarCadastro.BackgroundImage");
             BTN_PesquisarCadastro.BackgroundImageLayout = ImageLayout.Zoom;
-            BTN_PesquisarCadastro.Location = new Point(277, 120);
+            BTN_PesquisarCadastro.Location = new Point(277, 52);
             BTN_PesquisarCadastro.Name = "BTN_PesquisarCadastro";
             BTN_PesquisarCadastro.Size = new Size(90, 96);
             BTN_PesquisarCadastro.TabIndex = 1;
@@ -61,7 +65,7 @@
             // 
             LBL_NovoCadastro.AutoSize = true;
             LBL_NovoCadastro.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            LBL_NovoCadastro.Location = new Point(122, 102);
+            LBL_NovoCadastro.Location = new Point(122, 34);
             LBL_NovoCadastro.Name = "LBL_NovoCadastro";
             LBL_NovoCadastro.Size = new Size(88, 15);
             LBL_NovoCadastro.TabIndex = 2;
@@ -71,17 +75,63 @@
             // 
             LBL_ProcurarCadastro.AutoSize = true;
             LBL_ProcurarCadastro.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            LBL_ProcurarCadastro.Location = new Point(269, 102);
+            LBL_ProcurarCadastro.Location = new Point(269, 34);
             LBL_ProcurarCadastro.Name = "LBL_ProcurarCadastro";
             LBL_ProcurarCadastro.Size = new Size(106, 15);
             LBL_ProcurarCadastro.TabIndex = 3;
             LBL_ProcurarCadastro.Text = "Procurar Cadastro";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.Location = new Point(118, 171);
+            label1.Name = "label1";
+            label1.Size = new Size(124, 15);
+            label1.TabIndex = 5;
+            label1.Text = "Períodos Cadastrados";
+            // 
+            // BTN_Periodos
+            // 
+            BTN_Periodos.BackgroundImage = (Image)resources.GetObject("BTN_Periodos.BackgroundImage");
+            BTN_Periodos.BackgroundImageLayout = ImageLayout.Zoom;
+            BTN_Periodos.Location = new Point(135, 189);
+            BTN_Periodos.Name = "BTN_Periodos";
+            BTN_Periodos.Size = new Size(90, 96);
+            BTN_Periodos.TabIndex = 4;
+            BTN_Periodos.UseVisualStyleBackColor = true;
+            BTN_Periodos.Click += BTN_Periodos_Click;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            label2.Location = new Point(266, 171);
+            label2.Name = "label2";
+            label2.Size = new Size(113, 15);
+            label2.TabIndex = 7;
+            label2.Text = "Gerar Documentos";
+            // 
+            // BTN_GeraDocumentos
+            // 
+            BTN_GeraDocumentos.BackgroundImage = (Image)resources.GetObject("BTN_GeraDocumentos.BackgroundImage");
+            BTN_GeraDocumentos.BackgroundImageLayout = ImageLayout.Zoom;
+            BTN_GeraDocumentos.Location = new Point(277, 189);
+            BTN_GeraDocumentos.Name = "BTN_GeraDocumentos";
+            BTN_GeraDocumentos.Size = new Size(90, 96);
+            BTN_GeraDocumentos.TabIndex = 6;
+            BTN_GeraDocumentos.UseVisualStyleBackColor = true;
+            BTN_GeraDocumentos.Click += BTN_GeraDocumentos_Click;
             // 
             // FRM_Inicio
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(496, 319);
+            Controls.Add(label2);
+            Controls.Add(BTN_GeraDocumentos);
+            Controls.Add(label1);
+            Controls.Add(BTN_Periodos);
             Controls.Add(LBL_ProcurarCadastro);
             Controls.Add(LBL_NovoCadastro);
             Controls.Add(BTN_PesquisarCadastro);
@@ -100,5 +150,9 @@
         private Button BTN_PesquisarCadastro;
         private Label LBL_NovoCadastro;
         private Label LBL_ProcurarCadastro;
+        private Label label1;
+        private Button BTN_Periodos;
+        private Label label2;
+        private Button BTN_GeraDocumentos;
     }
 }

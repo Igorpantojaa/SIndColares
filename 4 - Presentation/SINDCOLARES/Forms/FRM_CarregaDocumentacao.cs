@@ -1,4 +1,5 @@
-﻿using Servicos;
+﻿using Infraestrutura;
+using Servicos;
 using Servicos.Utilidades;
 using System.Diagnostics;
 
@@ -35,7 +36,7 @@ public partial class FRM_CarregaDocumentacao : Form
     }
     private void BTN_SelecionaReqINSS_Click(object sender, EventArgs e)
     {
-        var destino = $"{_local}\\REQUERIMENTO_INSS.pdf";
+        var destino = $"{_local}\\REQUERIMENTO_INSS [{_service.Periodo.AnoVigencia}].pdf";
         _service.InfoAssociado.Digitalizados.ReqINSS = SalvarArquivo(destino);
         ChecaDocumentacao();
     }
@@ -65,14 +66,14 @@ public partial class FRM_CarregaDocumentacao : Form
     }
     private void BTN_SelecionaCanhotoProtocolo_Click(object sender, EventArgs e)
     {
-        var destino = $"{_local}\\CANHOTO_PROTOCOLO.pdf";
+        var destino = $"{_local}\\CANHOTO_PROTOCOLO [{_service.Periodo.AnoVigencia}].pdf";
         _service.InfoAssociado.Digitalizados.CanhotoProtocolo = SalvarArquivo(destino);
         ChecaDocumentacao();
     }
 
     private void BTN_AbrirPasta_Click(object sender, EventArgs e)
     {
-        AbrirPasta(_local);
+        GestaoArquivos.AbrirPasta(_local);
     }
     private void BTN_VisualizaRG_Click(object sender, EventArgs e)
     {
@@ -231,10 +232,6 @@ public partial class FRM_CarregaDocumentacao : Form
             BTN_SelecionaCanhotoProtocolo.BackColor = SystemColors.ButtonHighlight;
         }
     }
-    private static void AbrirPasta(string caminho)
-    {
-        Process.Start("explorer.exe", caminho);
-    }
     private static void AbrirArquivo(string caminho)
     {
         if (File.Exists(caminho))
@@ -325,7 +322,7 @@ public partial class FRM_CarregaDocumentacao : Form
 
     private void BTN_GeraDocumentacao_Click(object sender, EventArgs e)
     {
-        ReqSeguroDefeso.SubstituirElementos(_service.InfoAssociado);
+        //GeraDocumentos.ReqSeguroDefeso(_service.InfoAssociado, _service.Periodo);
         Mensagens.Alerta("Gerado com sucesso", "Informacao");
     }
 }

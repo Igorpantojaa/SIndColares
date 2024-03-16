@@ -3,6 +3,7 @@ using System;
 using Infraestrutura;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Infraestrutura.Migrations
 {
     [DbContext(typeof(SindContext))]
-    partial class SindContextModelSnapshot : ModelSnapshot
+    [Migration("20240315063534_Pre-Release1")]
+    partial class PreRelease1
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "7.0.16");
@@ -376,9 +379,6 @@ namespace Infraestrutura.Migrations
                     b.Property<string>("NomeEmbarcacao")
                         .IsRequired()
                         .HasColumnType("TEXT");
-
-                    b.Property<int>("NumeroTripulantes")
-                        .HasColumnType("INTEGER");
 
                     b.Property<int>("ProdutoPescaId")
                         .HasColumnType("INTEGER");

@@ -1,4 +1,7 @@
-﻿using Servicos;
+﻿using Infraestrutura;
+using Servicos;
+using SINDCOLARES.Formularios;
+using System.DirectoryServices;
 
 namespace SINDCOLARES.Forms;
 
@@ -21,7 +24,11 @@ public partial class FRM_GerarDocumentos : Form
     private void BTN_VerCadastro_Click(object sender, EventArgs e)
     {
         VisualizarCadastro();
-    }   
+    }
+    private void BTN_GeraDocumentos_Click(object sender, EventArgs e)
+    {
+        GeraDocumentos();
+    }
     private void CB_Vigencia_SelectionChangeCommitted(object sender, EventArgs e)
     {
         CarregaInfoVigencia();
@@ -52,7 +59,7 @@ public partial class FRM_GerarDocumentos : Form
     }
     private void VisualizarCadastro()
     {
-        if(SelecaoTabela() > 0)
+        if (SelecaoTabela() > 0)
         {
             _service.Recuperar(SelecaoTabela());
             new FRM_Cadastro(_service).ShowDialog();
@@ -61,6 +68,7 @@ public partial class FRM_GerarDocumentos : Form
     private void CarregaInfoVigencia()
     {
         _service.RecuperarPeriodo(Convert.ToInt32(CB_Vigencia.SelectedValue));
+        CB_Vigencia.SelectedValue = _service.Periodo.Id;
         LBL_DataPublicacao.Text = _service.Periodo.GetDataPublicacao;
         LBL_InicioPeriodo1.Text = _service.Periodo.GetInicioVigencia1;
         LBL_FimPeriodo1.Text = _service.Periodo.GetFimVigencia1;
@@ -72,6 +80,26 @@ public partial class FRM_GerarDocumentos : Form
         if (SelecaoTabela() > 0)
         {
             _service.Recuperar(SelecaoTabela());
+        }
+    }
+
+    private void GeraDocumentos()
+    {
+        if(_service.InfoAssociado.Id > 0 && _service.Periodo.Id > 0)
+        {
+            FolderBrowserDialog fbd = new();
+            fbd.ShowDialog();
+            var destino = fbd.SelectedPath;
+            var docs = _service.SalvaDocumentos(destino);
+            if(CHB_RegInicial.Checked) docs.RegistroInicial();
+            if(CHB_Filiacao.Checked) docs.DeclaracaoFiliacao();
+            if(CHB_ReqSeguroDefeso.Checked) docs.ReqSeguroDefeso();
+            if(CHB_DecResidencia.Checked) docs.DeclaracaoResidencia();
+            GestaoArquivos.AbrirPasta(destino);
+        }
+        else
+        {
+            Mensagens.Alerta("Selecione um associado e um período de vigência para continuar.", "Informacao");
         }
     }
 }

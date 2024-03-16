@@ -170,6 +170,7 @@
             Controls.Add(BTN_Cancelar);
             Controls.Add(BTN_Salvar);
             Controls.Add(GP_Filiacao);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "FRM_Filiacao";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "FRM_Filiacao";

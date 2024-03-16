@@ -21,7 +21,7 @@ public class SindContext : DbContext
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
-        var connDB = "Data Source=D:\\Dev\\VSTUDIO\\SIndColares\\2 - Insfraestructure\\LocalDB\\SindColaresDB.db";
+        var connDB = "Data Source=D:\\Dev\\VSTUDIO\\SIndColares\\2 - Insfraestructure\\Arquivos\\LocalDB\\SindColaresDB.db";
         optionsBuilder.UseSqlite(connDB);
     }
 }

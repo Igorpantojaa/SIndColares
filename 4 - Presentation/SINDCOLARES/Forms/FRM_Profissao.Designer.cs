@@ -29,9 +29,13 @@
         private void InitializeComponent()
         {
             groupBox1 = new GroupBox();
+            label9 = new Label();
+            TXB_CEI = new TextBox();
             label7 = new Label();
             TXB_LocalPesca = new TextBox();
             groupBox3 = new GroupBox();
+            TXB_CPFProprietario = new TextBox();
+            label8 = new Label();
             label6 = new Label();
             TXB_NomeEmbarcacao = new TextBox();
             TXB_RGP = new TextBox();
@@ -54,10 +58,6 @@
             label1 = new Label();
             BTN_Cancelar = new Button();
             BTN_Salvar = new Button();
-            TXB_CPFProprietario = new TextBox();
-            label8 = new Label();
-            label9 = new Label();
-            TXB_CEI = new TextBox();
             groupBox1.SuspendLayout();
             groupBox3.SuspendLayout();
             groupBox2.SuspendLayout();
@@ -86,6 +86,23 @@
             groupBox1.Size = new Size(350, 421);
             groupBox1.TabIndex = 0;
             groupBox1.TabStop = false;
+            // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            label9.Location = new Point(191, 19);
+            label9.Name = "label9";
+            label9.Size = new Size(24, 15);
+            label9.TabIndex = 19;
+            label9.Text = "CEI";
+            // 
+            // TXB_CEI
+            // 
+            TXB_CEI.Location = new Point(191, 37);
+            TXB_CEI.Name = "TXB_CEI";
+            TXB_CEI.Size = new Size(145, 23);
+            TXB_CEI.TabIndex = 18;
             // 
             // label7
             // 
@@ -117,6 +134,23 @@
             groupBox3.Size = new Size(330, 131);
             groupBox3.TabIndex = 13;
             groupBox3.TabStop = false;
+            // 
+            // TXB_CPFProprietario
+            // 
+            TXB_CPFProprietario.Location = new Point(85, 87);
+            TXB_CPFProprietario.Name = "TXB_CPFProprietario";
+            TXB_CPFProprietario.Size = new Size(161, 23);
+            TXB_CPFProprietario.TabIndex = 16;
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            label8.Location = new Point(85, 69);
+            label8.Name = "label8";
+            label8.Size = new Size(97, 15);
+            label8.TabIndex = 17;
+            label8.Text = "CPF Proprietário";
             // 
             // label6
             // 
@@ -327,40 +361,6 @@
             BTN_Salvar.UseVisualStyleBackColor = true;
             BTN_Salvar.Click += BTN_Salvar_Click;
             // 
-            // TXB_CPFProprietario
-            // 
-            TXB_CPFProprietario.Location = new Point(85, 87);
-            TXB_CPFProprietario.Name = "TXB_CPFProprietario";
-            TXB_CPFProprietario.Size = new Size(161, 23);
-            TXB_CPFProprietario.TabIndex = 16;
-            // 
-            // label8
-            // 
-            label8.AutoSize = true;
-            label8.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label8.Location = new Point(85, 69);
-            label8.Name = "label8";
-            label8.Size = new Size(97, 15);
-            label8.TabIndex = 17;
-            label8.Text = "CPF Proprietário";
-            // 
-            // label9
-            // 
-            label9.AutoSize = true;
-            label9.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label9.Location = new Point(191, 19);
-            label9.Name = "label9";
-            label9.Size = new Size(24, 15);
-            label9.TabIndex = 19;
-            label9.Text = "CEI";
-            // 
-            // TXB_CEI
-            // 
-            TXB_CEI.Location = new Point(191, 37);
-            TXB_CEI.Name = "TXB_CEI";
-            TXB_CEI.Size = new Size(145, 23);
-            TXB_CEI.TabIndex = 18;
-            // 
             // FRM_Profissao
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -370,6 +370,7 @@
             Controls.Add(BTN_Cancelar);
             Controls.Add(BTN_Salvar);
             Controls.Add(groupBox1);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "FRM_Profissao";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "FRM_Profissao";

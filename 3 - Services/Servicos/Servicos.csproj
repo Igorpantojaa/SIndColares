@@ -7,24 +7,30 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Arquivos\Templates\DeclaracaoFiliacao.docx" />
+    <None Remove="Arquivos\Templates\RegistroInicial.docx" />
+    <None Remove="Arquivos\Templates\RequerimentoSeguroDefeso.docx" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Arquivos\Templates\DeclaracaoFiliacao.docx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Arquivos\Templates\RegistroInicial.docx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Arquivos\Templates\RequerimentoSeguroDefeso.docx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="DocX" Version="2.3.0" />
     <PackageReference Include="System.IO.Packaging" Version="8.0.0" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\..\2 - Insfraestructure\Infraestrutura.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Update="Templates\DeclaracaoFiliacao.docx">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="Templates\RegistroInicial.docx">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="Templates\RequerimentoSeguroDefeso.docx">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
   </ItemGroup>
 
 </Project>

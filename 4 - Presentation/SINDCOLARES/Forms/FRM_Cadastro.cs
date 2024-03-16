@@ -51,6 +51,7 @@ public partial class FRM_Cadastro : Form
     }
     private void CarregaFoto()
     {
+        if(ValidaDadosBasicos()) _service.PastaAssociado();
         if (_service.InfoAssociado.Digitalizados.Local != string.Empty)
         {
             OpenFileDialog ofd = new();
@@ -93,24 +94,24 @@ public partial class FRM_Cadastro : Form
     }
     private bool ValidaDadosBasicos()
     {
-        AtualizaInfo();
-        if (_service.InfoAssociado.Documentos.CPF != string.Empty &&
-            _service.InfoAssociado.Nome != string.Empty)
+        try
         {
-            if (CPF.ValidaCPF(TXB_CPF.Text))
+            AtualizaInfo();
+            if (TXB_CPF.Text != string.Empty && CPF.ValidaCPF(TXB_CPF.Text))
+            {
+                return true;
+            }
+            else
             {
                 Mensagens.Alerta("CPF inválido!", "Erro");
                 return false;
             }
-            else
-            {
-                return true;
-            }
         }
-        else
+        catch (Exception ex)
         {
+            Mensagens.Alerta($"{ex.Message}", "Erro!");
             return false;
-        }
+        } 
     }
     private void CarregaInformacoes()
     {
@@ -123,6 +124,7 @@ public partial class FRM_Cadastro : Form
     }
     private void DocumentosAssociado()
     {
+        ValidaDadosBasicos();
         if(_service.InfoAssociado.Id == 0) 
         {
             AtualizaInfo();

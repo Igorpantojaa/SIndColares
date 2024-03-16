@@ -6,6 +6,7 @@ public class Periodo
 {
     public int Id { get; set; } = 0;
     public string AnoVigencia { get { return DataPublicacao.Year.ToString(); } }
+    public string NumeroPublicacao { get; set; } = string.Empty;
     public DateTime DataPublicacao { get; set; } = DateTime.Now;
     public DateTime InicioPeriodo1 { get; set; } = DateTime.Now;
     public DateTime InicioPeriodo2 { get; set; } = DateTime.Now;

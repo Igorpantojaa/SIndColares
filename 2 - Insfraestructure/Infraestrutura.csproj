@@ -7,8 +7,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="LocalDB\Database1_log.ldf" />
-    <None Remove="LocalDB\SindColaresDB.db" />
+    <None Remove="Arquivos\LocalDB\Database1_log.ldf" />
+    <None Remove="Arquivos\LocalDB\SindColaresDB.db" />
   </ItemGroup>
 
   <ItemGroup>
@@ -31,8 +31,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Content Include="LocalDB\SindColaresDB.db">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <Content Include="Arquivos\LocalDB\SindColaresDB.db">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
 

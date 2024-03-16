@@ -1,4 +1,5 @@
 ﻿using Servicos;
+using SINDCOLARES.Formularios;
 namespace SINDCOLARES;
 
 public partial class FRM_GestaoAssociados : Form
@@ -63,6 +64,28 @@ public partial class FRM_GestaoAssociados : Form
 
     private void BTN_Excluir_Click(object sender, EventArgs e)
     {
-
+        try
+        {
+            if (SelecaoAtual() > 0)
+            {
+                _service.Recuperar(SelecaoAtual());
+                if (DialogResult.Yes == MessageBox.Show
+                                        (
+                                            "Deseja realmente excluir o registro selecionado?",
+                                            "Atenção",
+                                            MessageBoxButtons.YesNo,
+                                            MessageBoxIcon.Question
+                                        )
+                    )
+                {
+                    _service.Excluir(SelecaoAtual());
+                }
+                AtualizaTabela();
+            }
+        }
+        catch ( Exception ex )
+        {
+            Mensagens.Alerta($"Houve um problema ao escluir o registro:\n{ex.Message}", "Erro");
+        }
     }
 }

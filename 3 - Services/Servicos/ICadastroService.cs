@@ -1,4 +1,5 @@
 ﻿using Modelos;
+using Servicos.Utilidades;
 
 namespace Servicos;
 
@@ -8,7 +9,7 @@ public interface ICadastroService
     void LimparCadastro();
     void PastaAssociado();
     void Salvar();
-    void Excluir();
+    void Excluir(int id);
     void Cancelar();
     bool CPFnaBase();
     void Recuperar(int id);
@@ -21,4 +22,6 @@ public interface ICadastroService
     void LimpaPeriodo();
     void RecuperarPeriodo(int id);
     List<Periodo> ListarPeriodos();
+
+    GeraDocumentos SalvaDocumentos(string destino);
 }

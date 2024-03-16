@@ -1,4 +1,5 @@
-﻿using System.Security.Cryptography;
+﻿using System.Diagnostics;
+using System.Security.Cryptography;
 
 namespace Infraestrutura;
 
@@ -11,35 +12,66 @@ public class GestaoArquivos
             Directory.CreateDirectory(".\\Arquivos\\Associados");
         }
     }
-
-    public static string DiretorioAssociado(string cpf, string nome)
+    public static void AbrirPasta(string caminho)
     {
-        var diretorio = $".\\Arquivos\\Associados\\{nome.ToUpper()} [{cpf}]";
-        if (!Directory.Exists(diretorio))
-        {
-            Directory.CreateDirectory(diretorio);
-        }
-        return diretorio;
+        Process.Start("explorer.exe", caminho);
     }
-
+    public static string CriarDiretorioAssociado(string cpf)
+    {
+        try
+        {
+            var diretorio = $".\\Arquivos\\Associados\\[{cpf}]";
+            if (!Directory.Exists(diretorio))
+            {
+                Directory.CreateDirectory(diretorio);
+            }
+            return diretorio;
+        }
+        catch
+        {
+            throw;
+        }
+    }
+    public static void ExcluirDiretorioAssociado(string local)
+    {
+        try
+        {
+            if (Directory.Exists(local))
+            {
+                Directory.Delete(local, true);
+            }
+        }
+        catch
+        {
+            throw;
+        }
+    }
     public static string SalvarFoto(string origem, string destino)
     {
         try
         {
-            if (!Directory.Exists(destino))
-            {
-                destino = $"{destino}//FOTO.jpg";
-                File.Copy(origem, destino, true);
-                return destino;
-            }
-            else
-            {
-                return string.Empty;
-            }
+            destino = $"{destino}\\FOTO.jpg";
+            File.Copy(origem, destino, true);
+            return destino;
         }
-        catch (Exception ex)
+        catch
         {
-            throw new Exception(ex.Message);
+            return string.Empty;
+            throw;
+        }
+    }
+    public static string SalvarArquivo(string origem, string destino)
+    {
+        try
+        {
+            destino = $"{destino}\\FOTO.jpg";
+            File.Copy(origem, destino, true);
+            return destino;
+        }
+        catch
+        {
+            return string.Empty;
+            throw;
         }
     }
 }

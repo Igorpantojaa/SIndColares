@@ -219,6 +219,7 @@
             Controls.Add(BTN_Cancelar);
             Controls.Add(BTN_Salvar);
             Controls.Add(groupBox3);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "FRM_Endereco";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Endereço";

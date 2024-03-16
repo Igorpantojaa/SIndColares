@@ -1,6 +1,7 @@
 ﻿using Modelos;
 using Infraestrutura;
 using Infraestrutura.DTOs;
+using Servicos.Utilidades;
 
 namespace Servicos;
 
@@ -22,7 +23,6 @@ public class CadastroService : ICadastroService
         _periodo = new();
     }
 
-
     public void Salvar()
     {
         try
@@ -35,12 +35,14 @@ public class CadastroService : ICadastroService
             throw new Exception(ex.Message);
         }
     }
-    public void Excluir()
+    public void Excluir(int id)
     {
         try
         {
-            Directory.Delete(_associado.Digitalizados.Local, true);
+            LimparCadastro();
+            Recuperar(id);
             _associadoDTO.Excluir(_associado);
+            GestaoArquivos.ExcluirDiretorioAssociado(_associado.Digitalizados.Local);
             LimparCadastro();
         }
         catch (Exception ex)
@@ -54,7 +56,7 @@ public class CadastroService : ICadastroService
         {
             if (_associado.Id == 0 && Directory.Exists(_associado.Digitalizados.Local))
             {
-                Directory.Delete(_associado.Digitalizados.Local, true);
+                GestaoArquivos.ExcluirDiretorioAssociado(_associado.Digitalizados.Local);
             }
         }
         catch (Exception ex)
@@ -81,16 +83,16 @@ public class CadastroService : ICadastroService
     {
         try
         {
-            if(_associadoDTO.CPFNaBase(_associado) != true)
+            if(!_associadoDTO.CPFNaBase(_associado))
             {
                 var cpf = _associado.Documentos.CPF;
                 var nome = _associado.Nome;
-                _associado.Digitalizados.Local = GestaoArquivos.DiretorioAssociado(cpf, nome);
+                _associado.Digitalizados.Local = GestaoArquivos.CriarDiretorioAssociado(cpf);
             }
         }
-        catch (Exception ex)
+        catch
         {
-            throw new Exception(ex.Message);
+            throw;
         }
     }
     public void Recuperar(int id)
@@ -99,9 +101,9 @@ public class CadastroService : ICadastroService
         {
             _associado = _associadoDTO.Recuperar(id);
         }
-        catch (Exception ex)
+        catch
         {
-            throw new Exception(ex.Message);
+            throw;
         }
     }
     public string ImagemAssociado(int id)
@@ -110,9 +112,9 @@ public class CadastroService : ICadastroService
         {
             return _associadoDTO.Recuperar(id).GetFoto;
         }
-        catch (Exception ex)
+        catch
         {
-            throw new Exception(ex.Message);
+            throw;
         }
     }
     public List<Associado> ListarAssociados()
@@ -121,9 +123,9 @@ public class CadastroService : ICadastroService
         {
             return _associadoDTO.ListarTodos();
         }
-        catch (Exception ex)
+        catch
         {
-            throw new Exception(ex.Message);
+            throw;
         }
     }
 
@@ -138,9 +140,9 @@ public class CadastroService : ICadastroService
             _periodoDTO.Salvar(_periodo);
             LimparCadastro();
         }
-        catch (Exception ex)
+        catch
         {
-            throw new Exception(ex.Message);
+            throw;
         }
     }
     public void ExcluirPeriodo()
@@ -149,9 +151,9 @@ public class CadastroService : ICadastroService
         {
             _periodoDTO.Excluir(_periodo);
         }
-        catch (Exception ex)
+        catch
         {
-            throw new Exception(ex.Message);
+            throw;
         }
     }
     public void RecuperarPeriodo(int id)
@@ -160,9 +162,9 @@ public class CadastroService : ICadastroService
         {
             _periodo = _periodoDTO.Recuperar(id);
         }
-        catch (Exception ex)
+        catch
         {
-            throw new Exception(ex.Message);
+            throw;
         }
     }
     public List<Periodo> ListarPeriodos()
@@ -171,9 +173,13 @@ public class CadastroService : ICadastroService
         {
             return _periodoDTO.ListarTodos();
         }
-        catch (Exception ex)
+        catch
         {
-            throw new Exception(ex.Message);
+            throw;
         }
+    }
+    public GeraDocumentos SalvaDocumentos(string destino)
+    {
+        return new GeraDocumentos(_associado, _periodo, destino);
     }
 }

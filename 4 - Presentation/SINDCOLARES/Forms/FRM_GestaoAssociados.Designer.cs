@@ -238,6 +238,7 @@
             Controls.Add(BTN_Alterar);
             Controls.Add(BTN_Novo);
             Controls.Add(groupBox1);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             MaximizeBox = false;
             Name = "FRM_GestaoAssociados";
             StartPosition = FormStartPosition.CenterScreen;

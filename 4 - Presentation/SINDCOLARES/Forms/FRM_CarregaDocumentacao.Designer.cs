@@ -40,7 +40,6 @@
             BTN_AbrirPasta = new Button();
             BTN_VisualizaCanhotoProtocolo = new Button();
             BTN_SelecionaCanhotoProtocolo = new Button();
-            BTN_GeraDocumentacao = new Button();
             BTN_VisualizaFiliacao = new Button();
             BTN_VisualizaReqINSS = new Button();
             BTN_VisualizaReqLicensa = new Button();
@@ -72,7 +71,6 @@
             groupBox1.Controls.Add(BTN_AbrirPasta);
             groupBox1.Controls.Add(BTN_VisualizaCanhotoProtocolo);
             groupBox1.Controls.Add(BTN_SelecionaCanhotoProtocolo);
-            groupBox1.Controls.Add(BTN_GeraDocumentacao);
             groupBox1.Controls.Add(BTN_VisualizaFiliacao);
             groupBox1.Controls.Add(BTN_VisualizaReqINSS);
             groupBox1.Controls.Add(BTN_VisualizaReqLicensa);
@@ -89,7 +87,7 @@
             groupBox1.Controls.Add(BTN_SelecionaCPF);
             groupBox1.Location = new Point(12, 6);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(355, 469);
+            groupBox1.Size = new Size(355, 422);
             groupBox1.TabIndex = 0;
             groupBox1.TabStop = false;
             // 
@@ -192,7 +190,7 @@
             // BTN_AbrirPasta
             // 
             BTN_AbrirPasta.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            BTN_AbrirPasta.Location = new Point(44, 420);
+            BTN_AbrirPasta.Location = new Point(44, 373);
             BTN_AbrirPasta.Name = "BTN_AbrirPasta";
             BTN_AbrirPasta.Size = new Size(266, 39);
             BTN_AbrirPasta.TabIndex = 17;
@@ -223,17 +221,6 @@
             BTN_SelecionaCanhotoProtocolo.Text = "Canhoto do Protocolo";
             BTN_SelecionaCanhotoProtocolo.UseVisualStyleBackColor = false;
             BTN_SelecionaCanhotoProtocolo.Click += BTN_SelecionaCanhotoProtocolo_Click;
-            // 
-            // BTN_GeraDocumentacao
-            // 
-            BTN_GeraDocumentacao.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            BTN_GeraDocumentacao.Location = new Point(44, 375);
-            BTN_GeraDocumentacao.Name = "BTN_GeraDocumentacao";
-            BTN_GeraDocumentacao.Size = new Size(266, 39);
-            BTN_GeraDocumentacao.TabIndex = 14;
-            BTN_GeraDocumentacao.Text = "Gerar Documentação";
-            BTN_GeraDocumentacao.UseVisualStyleBackColor = true;
-            BTN_GeraDocumentacao.Click += BTN_GeraDocumentacao_Click;
             // 
             // BTN_VisualizaFiliacao
             // 
@@ -406,7 +393,7 @@
             // BTN_Voltar
             // 
             BTN_Voltar.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            BTN_Voltar.Location = new Point(124, 481);
+            BTN_Voltar.Location = new Point(121, 434);
             BTN_Voltar.Name = "BTN_Voltar";
             BTN_Voltar.Size = new Size(130, 39);
             BTN_Voltar.TabIndex = 13;
@@ -418,10 +405,11 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(379, 529);
+            ClientSize = new Size(379, 485);
             ControlBox = false;
             Controls.Add(BTN_Voltar);
             Controls.Add(groupBox1);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "FRM_CarregaDocumentacao";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "FRM_CarregaDocumentacao";
@@ -439,7 +427,6 @@
         private Button BTN_SelecionaReqINSS;
         private Button BTN_SelecionaReqLicensa;
         private Button BTN_SelecionaTermoAutorizacao;
-        private Button BTN_GeraDocumentacao;
         private Button BTN_VisualizaFiliacao;
         private Button BTN_VisualizaReqINSS;
         private Button BTN_VisualizaReqLicensa;

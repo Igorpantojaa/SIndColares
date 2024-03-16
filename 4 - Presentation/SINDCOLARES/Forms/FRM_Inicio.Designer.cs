@@ -136,6 +136,7 @@
             Controls.Add(LBL_NovoCadastro);
             Controls.Add(BTN_PesquisarCadastro);
             Controls.Add(BTN_NovoCadastro);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             MaximizeBox = false;
             Name = "FRM_Inicio";
             StartPosition = FormStartPosition.CenterScreen;

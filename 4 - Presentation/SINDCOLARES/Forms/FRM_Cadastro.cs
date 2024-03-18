@@ -41,7 +41,7 @@ public partial class FRM_Cadastro : Form
         }
         catch (Exception ex)
         {
-            Mensagens.Alerta($"Não foi possível salvar o registtro!\n{ex.Message}", "Erro");
+            Mensagens.Alerta(ex.Message, "Erro");
         }
     }
     private void Cancelar()
@@ -59,15 +59,31 @@ public partial class FRM_Cadastro : Form
             {
                 try
                 {
-                    var destino = _service.InfoAssociado.Digitalizados.Local;
-                    var foto = GestaoArquivos.SalvarFoto(ofd.FileName, destino);
-                    Mensagens.Alerta("Arquivo salvo com sucesso!", "Informacao");
-                    _service.InfoAssociado.Digitalizados.Foto = foto;
-                    PB_Foto.ImageLocation = foto;
+                    var destino = $"{_service.InfoAssociado.Digitalizados.Local}\\FOTO.jpg";
+                    if(!File.Exists(destino)) 
+                    {
+                        GestaoArquivos.SalvarArquivo(ofd.FileName, destino);
+                        Mensagens.Alerta("Arquivo salvo com sucesso!", "Informacao");
+                        _service.InfoAssociado.Digitalizados.Foto = destino;
+                        PB_Foto.ImageLocation = destino;
+                    }
+                    else
+                    {
+                        var opcao = Mensagens.Sobrecresver();
+                        if(opcao)
+                        {
+                            GestaoArquivos.SalvarArquivo(ofd.FileName, destino);
+                            Mensagens.Alerta("Arquivo substituido com sucesso!", "Informacao");
+                            _service.InfoAssociado.Digitalizados.Foto = destino;
+                            PB_Foto.ImageLocation = destino;
+                        }
+                    }
+                    
                 }
                 catch (Exception ex)
                 {
-                    Mensagens.Alerta($"Houve um erro ao salvar o arquivo: {ex.Message}", "Erro");
+                    Mensagens.Alerta($"{ex.Message}", "Erro");
+                    _service.InfoAssociado.Digitalizados.Foto = string.Empty;
                 }
             }
         }

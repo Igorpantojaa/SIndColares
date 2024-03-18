@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Modelos;
+using System.Configuration;
 
 namespace Infraestrutura;
 
@@ -21,7 +22,8 @@ public class SindContext : DbContext
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
-        var connDB = "Data Source=D:\\Dev\\VSTUDIO\\SIndColares\\2 - Insfraestructure\\Arquivos\\LocalDB\\SindColaresDB.db";
+        var connDB = ConfigurationManager.ConnectionStrings["DBConn"].ConnectionString;
+        ;
         optionsBuilder.UseSqlite(connDB);
     }
 }

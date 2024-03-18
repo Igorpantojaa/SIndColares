@@ -6,8 +6,8 @@ public  class Digitalizados
     public bool RGCarregado { get { if (RG != string.Empty) { return true; } else { return false; } } }
     public bool FiliacaoCarregado { get { if (Filiacao != string.Empty) { return true; } else { return false; } } }
     public bool ResidenciaCarregado { get { if (Residencia != string.Empty) { return true; } else { return false; } } }
-    public bool AutorizacaoCarregado { get { if (Autorizacao != string.Empty) { return true; } else { return false; } } }
-    public bool ReqLicensaCarregado { get { if (ReqLicensa != string.Empty) { return true; } else { return false; } } }
+    public bool ProcuracaoCarregado { get { if (Procuracao != string.Empty) { return true; } else { return false; } } }
+    public bool ReqLicensaCarregado { get { if (RegInicial != string.Empty) { return true; } else { return false; } } }
     public bool ReqINSSCarregado { get { if (ReqINSS != string.Empty) { return true; } else { return false; } } }
     public bool CanhotoProtocoloCarregado { get { if (CanhotoProtocolo != string.Empty) { return true; } else { return false; } } }
 
@@ -19,8 +19,8 @@ public  class Digitalizados
     public string Foto { get; set; } = string.Empty;
     public string Filiacao { get; set; } = string.Empty;
     public string Residencia { get; set; } = string.Empty;
-    public string Autorizacao { get; set; } = string.Empty;
-    public string ReqLicensa { get; set; } = string.Empty;
+    public string Procuracao { get; set; } = string.Empty;
+    public string RegInicial { get; set; } = string.Empty;
     public string ReqINSS { get; set; } = string.Empty;
     public string CanhotoProtocolo { get; set; } = string.Empty;
 }

@@ -48,6 +48,8 @@
             DTP_DataPublicacao = new DateTimePicker();
             label2 = new Label();
             LBL_Vigencia = new Label();
+            label3 = new Label();
+            TXB_NumPublicacao = new TextBox();
             LBL_Periodo1inicio.SuspendLayout();
             groupBox2.SuspendLayout();
             groupBox3.SuspendLayout();
@@ -64,12 +66,13 @@
             // 
             // LBL_Periodo1inicio
             // 
+            LBL_Periodo1inicio.Anchor = AnchorStyles.Bottom;
             LBL_Periodo1inicio.Controls.Add(CHB_Periodo1);
             LBL_Periodo1inicio.Controls.Add(LBL_Periodo1Fim);
             LBL_Periodo1inicio.Controls.Add(DTP_Periodo1Fim);
             LBL_Periodo1inicio.Controls.Add(DTP_Periodo1Inicio);
             LBL_Periodo1inicio.Controls.Add(label1);
-            LBL_Periodo1inicio.Location = new Point(12, 41);
+            LBL_Periodo1inicio.Location = new Point(12, 75);
             LBL_Periodo1inicio.Name = "LBL_Periodo1inicio";
             LBL_Periodo1inicio.Size = new Size(321, 118);
             LBL_Periodo1inicio.TabIndex = 1;
@@ -116,12 +119,13 @@
             // 
             // groupBox2
             // 
+            groupBox2.Anchor = AnchorStyles.Bottom;
             groupBox2.Controls.Add(CHB_Periodo2);
             groupBox2.Controls.Add(LBL_Periodo2Fim);
             groupBox2.Controls.Add(DTP_Periodo2Fim);
             groupBox2.Controls.Add(DTP_Periodo2Inicio);
             groupBox2.Controls.Add(LBL_Periodo2inicio);
-            groupBox2.Location = new Point(12, 165);
+            groupBox2.Location = new Point(12, 199);
             groupBox2.Name = "groupBox2";
             groupBox2.Size = new Size(321, 121);
             groupBox2.TabIndex = 5;
@@ -188,8 +192,9 @@
             // 
             // groupBox3
             // 
+            groupBox3.Anchor = AnchorStyles.Bottom;
             groupBox3.Controls.Add(TXB_Especies);
-            groupBox3.Location = new Point(12, 292);
+            groupBox3.Location = new Point(12, 326);
             groupBox3.Name = "groupBox3";
             groupBox3.Size = new Size(321, 93);
             groupBox3.TabIndex = 7;
@@ -206,7 +211,8 @@
             // 
             // BTN_Salvar
             // 
-            BTN_Salvar.Location = new Point(71, 391);
+            BTN_Salvar.Anchor = AnchorStyles.Bottom;
+            BTN_Salvar.Location = new Point(71, 425);
             BTN_Salvar.Name = "BTN_Salvar";
             BTN_Salvar.Size = new Size(99, 38);
             BTN_Salvar.TabIndex = 8;
@@ -216,7 +222,8 @@
             // 
             // BTN_Cancelar
             // 
-            BTN_Cancelar.Location = new Point(176, 391);
+            BTN_Cancelar.Anchor = AnchorStyles.Bottom;
+            BTN_Cancelar.Location = new Point(176, 425);
             BTN_Cancelar.Name = "BTN_Cancelar";
             BTN_Cancelar.Size = new Size(99, 38);
             BTN_Cancelar.TabIndex = 9;
@@ -252,12 +259,30 @@
             LBL_Vigencia.Size = new Size(0, 17);
             LBL_Vigencia.TabIndex = 12;
             // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(107, 49);
+            label3.Name = "label3";
+            label3.Size = new Size(112, 15);
+            label3.TabIndex = 14;
+            label3.Text = "Número Publicação";
+            // 
+            // TXB_NumPublicacao
+            // 
+            TXB_NumPublicacao.Location = new Point(225, 46);
+            TXB_NumPublicacao.Name = "TXB_NumPublicacao";
+            TXB_NumPublicacao.Size = new Size(108, 23);
+            TXB_NumPublicacao.TabIndex = 15;
+            // 
             // FRM_CadastraPeriodo
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(347, 439);
+            ClientSize = new Size(347, 473);
             ControlBox = false;
+            Controls.Add(TXB_NumPublicacao);
+            Controls.Add(label3);
             Controls.Add(LBL_Vigencia);
             Controls.Add(DTP_DataPublicacao);
             Controls.Add(label2);
@@ -304,5 +329,7 @@
         private DateTimePicker DTP_DataPublicacao;
         private Label label2;
         private Label LBL_Vigencia;
+        private Label label3;
+        private TextBox TXB_NumPublicacao;
     }
 }

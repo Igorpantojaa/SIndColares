@@ -37,6 +37,7 @@ namespace SINDCOLARES.Formularios
             {
                 _service.Periodo.Periodo1Ativo = true;
                 _service.Periodo.DataPublicacao = DTP_DataPublicacao.Value;
+                _service.Periodo.NumeroPublicacao = TXB_NumPublicacao.Text;
                 _service.Periodo.InicioPeriodo1 = DTP_Periodo1Inicio.Value;
                 _service.Periodo.FimPeriodo1 = DTP_Periodo1Fim.Value;
             }
@@ -48,8 +49,9 @@ namespace SINDCOLARES.Formularios
             {
                 _service.Periodo.Periodo2Ativo = true;
                 _service.Periodo.DataPublicacao = DTP_DataPublicacao.Value;
-                _service.Periodo.InicioPeriodo1 = DTP_Periodo1Inicio.Value;
-                _service.Periodo.FimPeriodo1 = DTP_Periodo1Fim.Value;
+                _service.Periodo.NumeroPublicacao = TXB_NumPublicacao.Text;
+                _service.Periodo.InicioPeriodo2 = DTP_Periodo2Inicio.Value;
+                _service.Periodo.FimPeriodo2 = DTP_Periodo2Fim.Value;
             }
             else
             {

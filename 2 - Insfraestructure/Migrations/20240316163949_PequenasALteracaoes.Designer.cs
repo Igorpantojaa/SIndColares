@@ -3,6 +3,7 @@ using System;
 using Infraestrutura;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Infraestrutura.Migrations
 {
     [DbContext(typeof(SindContext))]
-    partial class SindContextModelSnapshot : ModelSnapshot
+    [Migration("20240316163949_PequenasALteracaoes")]
+    partial class PequenasALteracaoes
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "7.0.16");
@@ -45,7 +48,7 @@ namespace Infraestrutura.Migrations
 
             modelBuilder.Entity("Modelos.Contato", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
@@ -64,7 +67,7 @@ namespace Infraestrutura.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.HasKey("Id");
+                    b.HasKey("id");
 
                     b.HasIndex("AssociadoId")
                         .IsUnique();
@@ -388,10 +391,6 @@ namespace Infraestrutura.Migrations
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("RGP")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("UFPesca")
                         .IsRequired()
                         .HasColumnType("TEXT");
 

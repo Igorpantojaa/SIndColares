@@ -49,8 +49,8 @@
             BTN_VisualizaCPF = new Button();
             BTN_SelecionaFiliacao = new Button();
             BTN_SelecionaReqINSS = new Button();
-            BTN_SelecionaReqLicensa = new Button();
-            BTN_SelecionaTermoAutorizacao = new Button();
+            BTN_SelecionaRegInicial = new Button();
+            BTN_SelecionaProcuracao = new Button();
             BTN_SelecionaResidencia = new Button();
             BTN_SelecionaRG = new Button();
             BTN_SelecionaCPF = new Button();
@@ -80,8 +80,8 @@
             groupBox1.Controls.Add(BTN_VisualizaCPF);
             groupBox1.Controls.Add(BTN_SelecionaFiliacao);
             groupBox1.Controls.Add(BTN_SelecionaReqINSS);
-            groupBox1.Controls.Add(BTN_SelecionaReqLicensa);
-            groupBox1.Controls.Add(BTN_SelecionaTermoAutorizacao);
+            groupBox1.Controls.Add(BTN_SelecionaRegInicial);
+            groupBox1.Controls.Add(BTN_SelecionaProcuracao);
             groupBox1.Controls.Add(BTN_SelecionaResidencia);
             groupBox1.Controls.Add(BTN_SelecionaRG);
             groupBox1.Controls.Add(BTN_SelecionaCPF);
@@ -190,7 +190,7 @@
             // BTN_AbrirPasta
             // 
             BTN_AbrirPasta.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            BTN_AbrirPasta.Location = new Point(44, 373);
+            BTN_AbrirPasta.Location = new Point(44, 374);
             BTN_AbrirPasta.Name = "BTN_AbrirPasta";
             BTN_AbrirPasta.Size = new Size(266, 39);
             BTN_AbrirPasta.TabIndex = 17;
@@ -218,7 +218,7 @@
             BTN_SelecionaCanhotoProtocolo.Name = "BTN_SelecionaCanhotoProtocolo";
             BTN_SelecionaCanhotoProtocolo.Size = new Size(130, 39);
             BTN_SelecionaCanhotoProtocolo.TabIndex = 15;
-            BTN_SelecionaCanhotoProtocolo.Text = "Canhoto do Protocolo";
+            BTN_SelecionaCanhotoProtocolo.Text = "Canhoto Protocolo";
             BTN_SelecionaCanhotoProtocolo.UseVisualStyleBackColor = false;
             BTN_SelecionaCanhotoProtocolo.Click += BTN_SelecionaCanhotoProtocolo_Click;
             // 
@@ -314,7 +314,7 @@
             BTN_SelecionaFiliacao.Name = "BTN_SelecionaFiliacao";
             BTN_SelecionaFiliacao.Size = new Size(130, 39);
             BTN_SelecionaFiliacao.TabIndex = 6;
-            BTN_SelecionaFiliacao.Text = "Declaração de Filiação";
+            BTN_SelecionaFiliacao.Text = "Filiação";
             BTN_SelecionaFiliacao.UseVisualStyleBackColor = false;
             BTN_SelecionaFiliacao.Click += BTN_SelecionaFiliacao_Click;
             // 
@@ -326,33 +326,33 @@
             BTN_SelecionaReqINSS.Name = "BTN_SelecionaReqINSS";
             BTN_SelecionaReqINSS.Size = new Size(130, 39);
             BTN_SelecionaReqINSS.TabIndex = 5;
-            BTN_SelecionaReqINSS.Text = "Requerimento INSS";
+            BTN_SelecionaReqINSS.Text = "Req. INSS";
             BTN_SelecionaReqINSS.UseVisualStyleBackColor = false;
             BTN_SelecionaReqINSS.Click += BTN_SelecionaReqINSS_Click;
             // 
-            // BTN_SelecionaReqLicensa
+            // BTN_SelecionaRegInicial
             // 
-            BTN_SelecionaReqLicensa.BackColor = SystemColors.ButtonHighlight;
-            BTN_SelecionaReqLicensa.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            BTN_SelecionaReqLicensa.Location = new Point(6, 238);
-            BTN_SelecionaReqLicensa.Name = "BTN_SelecionaReqLicensa";
-            BTN_SelecionaReqLicensa.Size = new Size(130, 39);
-            BTN_SelecionaReqLicensa.TabIndex = 4;
-            BTN_SelecionaReqLicensa.Text = "Reqeurimento de Licensa";
-            BTN_SelecionaReqLicensa.UseVisualStyleBackColor = false;
-            BTN_SelecionaReqLicensa.Click += BTN_SelecionaReqLicensa_Click;
+            BTN_SelecionaRegInicial.BackColor = SystemColors.ButtonHighlight;
+            BTN_SelecionaRegInicial.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            BTN_SelecionaRegInicial.Location = new Point(6, 238);
+            BTN_SelecionaRegInicial.Name = "BTN_SelecionaRegInicial";
+            BTN_SelecionaRegInicial.Size = new Size(130, 39);
+            BTN_SelecionaRegInicial.TabIndex = 4;
+            BTN_SelecionaRegInicial.Text = "Registo Inicial";
+            BTN_SelecionaRegInicial.UseVisualStyleBackColor = false;
+            BTN_SelecionaRegInicial.Click += BTN_SelecionaRegInicial_Click;
             // 
-            // BTN_SelecionaTermoAutorizacao
+            // BTN_SelecionaProcuracao
             // 
-            BTN_SelecionaTermoAutorizacao.BackColor = SystemColors.ButtonHighlight;
-            BTN_SelecionaTermoAutorizacao.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            BTN_SelecionaTermoAutorizacao.Location = new Point(6, 193);
-            BTN_SelecionaTermoAutorizacao.Name = "BTN_SelecionaTermoAutorizacao";
-            BTN_SelecionaTermoAutorizacao.Size = new Size(130, 39);
-            BTN_SelecionaTermoAutorizacao.TabIndex = 3;
-            BTN_SelecionaTermoAutorizacao.Text = "Termo de Autorização";
-            BTN_SelecionaTermoAutorizacao.UseVisualStyleBackColor = false;
-            BTN_SelecionaTermoAutorizacao.Click += BTN_SelecionaTermoAutorizacao_Click;
+            BTN_SelecionaProcuracao.BackColor = SystemColors.ButtonHighlight;
+            BTN_SelecionaProcuracao.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            BTN_SelecionaProcuracao.Location = new Point(6, 193);
+            BTN_SelecionaProcuracao.Name = "BTN_SelecionaProcuracao";
+            BTN_SelecionaProcuracao.Size = new Size(130, 39);
+            BTN_SelecionaProcuracao.TabIndex = 3;
+            BTN_SelecionaProcuracao.Text = "Procuração";
+            BTN_SelecionaProcuracao.UseVisualStyleBackColor = false;
+            BTN_SelecionaProcuracao.Click += BTN_SelecionaProcuracao_Click;
             // 
             // BTN_SelecionaResidencia
             // 
@@ -362,7 +362,7 @@
             BTN_SelecionaResidencia.Name = "BTN_SelecionaResidencia";
             BTN_SelecionaResidencia.Size = new Size(130, 39);
             BTN_SelecionaResidencia.TabIndex = 2;
-            BTN_SelecionaResidencia.Text = "Comprovante de Residência";
+            BTN_SelecionaResidencia.Text = "Comp. Residência";
             BTN_SelecionaResidencia.UseVisualStyleBackColor = false;
             BTN_SelecionaResidencia.Click += BTN_SelecionaResidencia_Click;
             // 
@@ -425,8 +425,8 @@
         private Button BTN_SelecionaCPF;
         private Button BTN_SelecionaFiliacao;
         private Button BTN_SelecionaReqINSS;
-        private Button BTN_SelecionaReqLicensa;
-        private Button BTN_SelecionaTermoAutorizacao;
+        private Button BTN_SelecionaRegInicial;
+        private Button BTN_SelecionaProcuracao;
         private Button BTN_VisualizaFiliacao;
         private Button BTN_VisualizaReqINSS;
         private Button BTN_VisualizaReqLicensa;

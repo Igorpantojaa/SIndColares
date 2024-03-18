@@ -45,7 +45,6 @@
             PB_FotoAssociado = new PictureBox();
             BTN_Fechar = new Button();
             TXB_Pesquisa = new TextBox();
-            CB_TermoPesquisa = new ComboBox();
             BTN_LimpaPesquisa = new Button();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)DGV_Associados).BeginInit();
@@ -92,6 +91,7 @@
             DGV_Associados.Size = new Size(525, 374);
             DGV_Associados.TabIndex = 0;
             DGV_Associados.CellClick += DGV_Associados_CellClick;
+            DGV_Associados.SelectionChanged += DGV_Associados_SelectionChanged;
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -202,18 +202,11 @@
             // 
             // TXB_Pesquisa
             // 
-            TXB_Pesquisa.Location = new Point(139, 12);
+            TXB_Pesquisa.Location = new Point(15, 12);
             TXB_Pesquisa.Name = "TXB_Pesquisa";
-            TXB_Pesquisa.Size = new Size(143, 23);
+            TXB_Pesquisa.Size = new Size(267, 23);
             TXB_Pesquisa.TabIndex = 6;
-            // 
-            // CB_TermoPesquisa
-            // 
-            CB_TermoPesquisa.FormattingEnabled = true;
-            CB_TermoPesquisa.Location = new Point(12, 12);
-            CB_TermoPesquisa.Name = "CB_TermoPesquisa";
-            CB_TermoPesquisa.Size = new Size(121, 23);
-            CB_TermoPesquisa.TabIndex = 7;
+            TXB_Pesquisa.KeyPress += TXB_Pesquisa_KeyPress;
             // 
             // BTN_LimpaPesquisa
             // 
@@ -221,8 +214,9 @@
             BTN_LimpaPesquisa.Name = "BTN_LimpaPesquisa";
             BTN_LimpaPesquisa.Size = new Size(88, 23);
             BTN_LimpaPesquisa.TabIndex = 8;
-            BTN_LimpaPesquisa.Text = "Novo";
+            BTN_LimpaPesquisa.Text = "Limpar";
             BTN_LimpaPesquisa.UseVisualStyleBackColor = true;
+            BTN_LimpaPesquisa.Click += BTN_LimpaPesquisa_Click;
             // 
             // FRM_GestaoAssociados
             // 
@@ -230,7 +224,6 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(676, 450);
             Controls.Add(BTN_LimpaPesquisa);
-            Controls.Add(CB_TermoPesquisa);
             Controls.Add(TXB_Pesquisa);
             Controls.Add(BTN_Fechar);
             Controls.Add(groupBox2);
@@ -262,7 +255,6 @@
         private GroupBox groupBox2;
         private Button BTN_Fechar;
         private TextBox TXB_Pesquisa;
-        private ComboBox CB_TermoPesquisa;
         private Button BTN_LimpaPesquisa;
         private PictureBox PB_FotoAssociado;
         private DataGridView DGV_Associados;

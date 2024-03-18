@@ -15,6 +15,7 @@ public class Profissao
     public string CPFProprietario {  get; set; } = string.Empty;
     public string AreaPesca { get; set; } = "Rio";
     public string LocalPesca { get; set; } = string.Empty;
+    public string UFPesca { get; set; } = "PA";
     public bool Empregado { get; set; } = false;
     public bool Aposentado { get; set; } = false;
 

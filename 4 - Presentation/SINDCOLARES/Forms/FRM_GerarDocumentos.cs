@@ -69,6 +69,7 @@ public partial class FRM_GerarDocumentos : Form
     {
         _service.RecuperarPeriodo(Convert.ToInt32(CB_Vigencia.SelectedValue));
         CB_Vigencia.SelectedValue = _service.Periodo.Id;
+        LBL_NumPublicacao.Text = _service.Periodo.NumeroPublicacao;
         LBL_DataPublicacao.Text = _service.Periodo.GetDataPublicacao;
         LBL_InicioPeriodo1.Text = _service.Periodo.GetInicioVigencia1;
         LBL_FimPeriodo1.Text = _service.Periodo.GetFimVigencia1;
@@ -85,21 +86,28 @@ public partial class FRM_GerarDocumentos : Form
 
     private void GeraDocumentos()
     {
-        if(_service.InfoAssociado.Id > 0 && _service.Periodo.Id > 0)
+        if (_service.InfoAssociado.Id > 0 && _service.Periodo.Id > 0)
         {
             FolderBrowserDialog fbd = new();
-            fbd.ShowDialog();
-            var destino = fbd.SelectedPath;
-            var docs = _service.SalvaDocumentos(destino);
-            if(CHB_RegInicial.Checked) docs.RegistroInicial();
-            if(CHB_Filiacao.Checked) docs.DeclaracaoFiliacao();
-            if(CHB_ReqSeguroDefeso.Checked) docs.ReqSeguroDefeso();
-            if(CHB_DecResidencia.Checked) docs.DeclaracaoResidencia();
-            GestaoArquivos.AbrirPasta(destino);
+            if (DialogResult.OK == fbd.ShowDialog())
+            {
+                var destino = fbd.SelectedPath;
+                var docs = _service.SalvaDocumentos(destino);
+                if (CHB_RegInicial.Checked) docs.RegistroInicial();
+                if (CHB_Filiacao.Checked) docs.DeclaracaoFiliacao();
+                if (CHB_ReqSeguroDefeso.Checked) docs.ReqSeguroDefeso();
+                //if (CHB_DecResidencia.Checked) docs.DeclaracaoResidencia();
+                GestaoArquivos.AbrirPasta(destino);
+            };
         }
         else
         {
             Mensagens.Alerta("Selecione um associado e um período de vigência para continuar.", "Informacao");
         }
+    }
+
+    private void TXB_Pesquisa_KeyPress(object sender, KeyPressEventArgs e)
+    {
+        DGV_Associados.DataSource = _service.ListarAssociados().Where(x => x.Nome.StartsWith(TXB_Pesquisa.Text)).ToList();
     }
 }

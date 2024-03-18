@@ -8,12 +8,20 @@
 
   <ItemGroup>
     <None Remove="Arquivos\Templates\DeclaracaoFiliacao.docx" />
+    <None Remove="Arquivos\Templates\DeclaracaoResidencia.docx" />
+    <None Remove="Arquivos\Templates\Procuracao.docx" />
     <None Remove="Arquivos\Templates\RegistroInicial.docx" />
     <None Remove="Arquivos\Templates\RequerimentoSeguroDefeso.docx" />
   </ItemGroup>
 
   <ItemGroup>
+    <Content Include="Arquivos\Templates\DeclaracaoResidencia.docx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Arquivos\Templates\DeclaracaoFiliacao.docx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Arquivos\Templates\Procuracao.docx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Arquivos\Templates\RegistroInicial.docx">

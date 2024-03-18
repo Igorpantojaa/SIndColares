@@ -1,4 +1,6 @@
-﻿namespace SINDCOLARES.Formularios
+﻿using System.Windows.Forms;
+
+namespace SINDCOLARES.Formularios
 {
     public class Mensagens
     {
@@ -41,6 +43,37 @@
                         );
                     }
                     break;
+            }
+        }
+        public static bool Sobrecresver()
+        {
+            if (DialogResult.Yes == MessageBox.Show(
+                "Já existe um arquivo no local, deseja sobrescrever?",
+                "Atenção",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Warning
+                )){
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        public static bool Exclusao()
+        {
+            if (DialogResult.Yes == MessageBox.Show(
+                "Deseja excluir o arquivo?",
+                "Atenção",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question
+                ))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
             }
         }
     }

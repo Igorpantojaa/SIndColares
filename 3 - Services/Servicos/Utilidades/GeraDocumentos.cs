@@ -1,4 +1,5 @@
 ﻿using Modelos;
+using Xceed.Document.NET;
 using Xceed.Words.NET;
 
 namespace Servicos.Utilidades;
@@ -15,6 +16,19 @@ public class GeraDocumentos
         _destino = destino;
         _periodo = periodo;
     }
+    public void Procuracao()
+    {
+        try
+        {
+            var doc = DocX.Load(".\\Arquivos\\Templates\\Procuracao.docx");
+            doc.ReplaceText("<NomeAssociado>", $"{_associado.Nome.ToUpper()}");
+            doc.SaveAs($"{_destino}\\Procuracao.docx");
+        }
+        catch
+        {
+            throw;
+        }
+    }
     public void RegistroInicial()
     {
         try
@@ -26,8 +40,8 @@ public class GeraDocumentos
             doc.ReplaceText("<A05>", $"{_associado.Documentos.RG.OrgaoEmissor}/{_associado.Documentos.RG.EstadoEmissao}");
             doc.ReplaceText("<A06>", $"{_associado.Documentos.RG.DataEmisao.ToShortDateString()}");
             doc.ReplaceText("<A07>", $"{_associado.DataNascimento.ToShortDateString()}");
-            doc.ReplaceText("<A08A>", $"{Sexo(_associado.Sexo)}");
-            doc.ReplaceText("<A08B>", $"{Sexo(_associado.Sexo)}");
+            doc.ReplaceText("<A08A>", $"{Sexo(_associado.Sexo, "<A08A>")}");
+            doc.ReplaceText("<A08B>", $"{Sexo(_associado.Sexo, "<A08B>")}");
             doc.ReplaceText("<A09>", $"{_associado.Documentos.RG.NomePai.ToUpper()}");
             doc.ReplaceText("<A10>", $"{_associado.Documentos.RG.NomeMae.ToUpper()}");
             doc.ReplaceText("<A11>", $"{_associado.Apelido.ToUpper()}");
@@ -98,19 +112,20 @@ public class GeraDocumentos
             doc.ReplaceText("<CPF>", $"{_associado.Documentos.CPF}");
             doc.ReplaceText("<RG>", $"{_associado.Documentos.RG.Numero}");
             doc.ReplaceText("<PIS>", $"{_associado.Documentos.PIS}");
+            doc.ReplaceText("<CEI>", $"{_associado.Documentos.CEI}");
             doc.ReplaceText("<Rua>", $"{_associado.Endereco.Rua}");
             doc.ReplaceText("<Numero>", $"{_associado.Endereco.Numero}");
             doc.ReplaceText("<Complemento>", $"{_associado.Endereco.Localidade}");
             doc.ReplaceText("<Telefone>", $"{_associado.Contato.Telefone}");
-            doc.ReplaceText("<NumeroPublicacao>", $"{_periodo.NumeroPublicacao}");
-            doc.ReplaceText("<DataPublicacao>", $"{_periodo.GetDataPublicacao}");
+            doc.ReplaceText("<NPub>", $"{_periodo.NumeroPublicacao}");
+            doc.ReplaceText("<DataPub>", $"{_periodo.GetDataPublicacao}");
             doc.ReplaceText("<P1Inicio>", $"{_periodo.GetInicioVigencia1}");
             doc.ReplaceText("<P1Fim>", $"{_periodo.GetFimVigencia1}");
             doc.ReplaceText("<P2Inicio>", $"{_periodo.GetInicioVigencia2}");
             doc.ReplaceText("<P2Fim>", $"{_periodo.GetFimVigencia2}");
             doc.ReplaceText("<RGP>", $"{_associado.Profissao.RGP}");
             doc.ReplaceText("<Nome>", $"{_associado.Profissao.NumeroTripulantes}");
-            doc.ReplaceText("<UF>", $"{_associado.Endereco.UF}");
+            doc.ReplaceText("<UFP>", $"{_associado.Profissao.UFPesca}");
             doc.ReplaceText("<AB>", $"{_associado.Profissao.AB}");
             doc.ReplaceText("<NTrip>", $"{_associado.Profissao.GetTripulantes}");
             doc.ReplaceText("<CPFProp>", $"{_associado.Profissao.CPFProprietario}");
@@ -151,33 +166,19 @@ public class GeraDocumentos
             throw;
         }
     }
-    public void TermoResponsabilidade()
-    {
-        try
-        {
-            var doc = DocX.Load(".\\Arquivos\\Templates\\TermoResposabilidade.docx");
-            doc.ReplaceText("<NomeAssociado>", $"{_associado.Nome.ToUpper()}");
-            doc.SaveAs($"{_destino}\\Termo_de_Resposabilidade.docx");
-        }
-        catch
-        {
-            throw;
-        }
-    }
-
-    public static string Sexo(string s)
+    public static string Sexo(string valor, string campo)
     {
         var opcao = "  ";
-        switch ( s ) 
+        switch (valor) 
         {
             case "Masculino":
             {
-                opcao = "X";
+                if(campo == "<A08B>") opcao = "X";
             }
             break;
             case "Feminino":
             {
-                opcao = "X";
+                if(campo == "<A08A>") opcao = "X";
             }
             break;
         }
@@ -246,43 +247,6 @@ public class GeraDocumentos
         }
         return opcao;
     }
-    public static string CategoriaPesca(string valor, string campo)
-
-    {
-        var selecao = "  ";
-        switch (valor)
-        {
-            case "Artesanal":
-                {
-                    if(campo == "<C20A>") selecao = "X";
-                }
-                break;
-            case "Industrial":
-                {
-                    if (campo == "<C20B>") selecao = "X";
-                }
-                break;
-        }
-        return selecao;
-    }
-    public static string FormaPesca(string valor, string campo)
-    {
-        var opcao = "  ";
-        switch (valor)
-        {
-            case "Embarcado":
-                {
-                    if(campo == "<D21A>") opcao = "X";
-                }
-                break;
-            case "Desembarcado":
-                {
-                    if (campo == "<D21B>") opcao = "X";
-                }
-                break;
-        }
-        return opcao;
-    }
     public static string Escolaridade(string e, string o)
     {
         var opcao = "  ";
@@ -340,6 +304,43 @@ public class GeraDocumentos
                 break;
         }
         return opcao;
+    }
+    public static string FormaPesca(string valor, string campo)
+    {
+        var opcao = "  ";
+        switch (valor)
+        {
+            case "Embarcado":
+                {
+                    if(campo == "<D21A>") opcao = "X";
+                }
+                break;
+            case "Desembarcado":
+                {
+                    if (campo == "<D21B>") opcao = "X";
+                }
+                break;
+        }
+        return opcao;
+    }
+    public static string CategoriaPesca(string valor, string campo)
+
+    {
+        var selecao = "  ";
+        switch (valor)
+        {
+            case "Artesanal":
+                {
+                    if(campo == "<C20A>") selecao = "X";
+                }
+                break;
+            case "Industrial":
+                {
+                    if (campo == "<C20B>") selecao = "X";
+                }
+                break;
+        }
+        return selecao;
     }
     public static string DecEscolaridade(string valor, string campo)
     {

@@ -1,5 +1,4 @@
 ﻿using System.Diagnostics;
-using System.Security.Cryptography;
 
 namespace Infraestrutura;
 
@@ -46,32 +45,27 @@ public class GestaoArquivos
             throw;
         }
     }
-    public static string SalvarFoto(string origem, string destino)
+
+    public static void SalvarArquivo(string origem, string destino)
     {
         try
         {
-            destino = $"{destino}\\FOTO.jpg";
             File.Copy(origem, destino, true);
-            return destino;
         }
-        catch
+        catch (Exception ex)
         {
-            return string.Empty;
-            throw;
+            throw new Exception(ex.Message);
         }
     }
-    public static string SalvarArquivo(string origem, string destino)
+    public static void ExcluirArquivo(string destino)
     {
         try
         {
-            destino = $"{destino}\\FOTO.jpg";
-            File.Copy(origem, destino, true);
-            return destino;
+            File.Delete(destino);
         }
-        catch
+        catch (Exception ex)
         {
-            return string.Empty;
-            throw;
+            throw new Exception(ex.Message);
         }
     }
 }

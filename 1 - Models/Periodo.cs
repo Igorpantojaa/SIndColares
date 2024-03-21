@@ -1,6 +1,4 @@
-﻿using Xceed.Document.NET;
-
-namespace Modelos;
+﻿namespace Modelos;
 
 public class Periodo
 {
@@ -17,14 +15,8 @@ public class Periodo
     public string Especies { get; set; } = "GURIJUBA (SCIADES PARKERI)";
 
     public string GetDataPublicacao { get { return DataPublicacao.ToShortDateString(); } }
-    public string GetInicioVigencia1 { get { return ValidaDatas(Periodo1Ativo, InicioPeriodo1); } }
-    public string GetInicioVigencia2 { get { return ValidaDatas(Periodo2Ativo, InicioPeriodo2); } }
-    public string GetFimVigencia1 { get { return ValidaDatas(Periodo1Ativo, FimPeriodo1); } }
-    public string GetFimVigencia2 { get { return ValidaDatas(Periodo2Ativo, FimPeriodo2); } }
-
-    private static string ValidaDatas(bool ativo, DateTime Data)
-    {
-        if (!ativo) return string.Empty;
-        else return Data.ToShortDateString();
-    }
+    public string GetInicioVigencia1 { get { return InicioPeriodo1.ToShortDateString(); } }
+    public string GetInicioVigencia2 { get { return InicioPeriodo2.ToShortDateString(); } }
+    public string GetFimVigencia1 { get { return FimPeriodo1.ToShortDateString(); } }
+    public string GetFimVigencia2 { get { return FimPeriodo2.ToShortDateString(); } }
 }

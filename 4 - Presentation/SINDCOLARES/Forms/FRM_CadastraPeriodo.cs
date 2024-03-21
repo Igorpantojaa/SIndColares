@@ -18,12 +18,12 @@ namespace SINDCOLARES.Formularios
         private void BTN_Salvar_Click(object sender, EventArgs e)
         {
             SalvaPeriodo();
-            _service.LimpaPeriodo();
+            _service.LimparPeriodo();
             Close();
         }
         private void BTN_Cancelar_Click(object sender, EventArgs e)
         {
-            _service.LimpaPeriodo();
+            _service.LimparPeriodo();
             Close();
         }
         private void CHB_Periodo1_CheckedChanged(object sender, EventArgs e)
@@ -33,37 +33,35 @@ namespace SINDCOLARES.Formularios
 
         private void AtualizaInfo()
         {
+            _service.PeriodoTemp.DataPublicacao = DTP_DataPublicacao.Value;
+            _service.PeriodoTemp.NumeroPublicacao = TXB_NumPublicacao.Text;
             if (CHB_Periodo1.Checked == true)
             {
-                _service.Periodo.Periodo1Ativo = true;
-                _service.Periodo.DataPublicacao = DTP_DataPublicacao.Value;
-                _service.Periodo.NumeroPublicacao = TXB_NumPublicacao.Text;
-                _service.Periodo.InicioPeriodo1 = DTP_Periodo1Inicio.Value;
-                _service.Periodo.FimPeriodo1 = DTP_Periodo1Fim.Value;
+                _service.PeriodoTemp.Periodo1Ativo = true;
+                _service.PeriodoTemp.InicioPeriodo1 = DTP_Periodo1Inicio.Value;
+                _service.PeriodoTemp.FimPeriodo1 = DTP_Periodo1Fim.Value;
             }
             else
             {
-                _service.Periodo.Periodo1Ativo = false;
-            }
+                _service.PeriodoTemp.Periodo1Ativo = false;
+            };
             if (CHB_Periodo2.Checked == true)
             {
-                _service.Periodo.Periodo2Ativo = true;
-                _service.Periodo.DataPublicacao = DTP_DataPublicacao.Value;
-                _service.Periodo.NumeroPublicacao = TXB_NumPublicacao.Text;
-                _service.Periodo.InicioPeriodo2 = DTP_Periodo2Inicio.Value;
-                _service.Periodo.FimPeriodo2 = DTP_Periodo2Fim.Value;
+                _service.PeriodoTemp.Periodo2Ativo = true;               
+                _service.PeriodoTemp.InicioPeriodo2 = DTP_Periodo2Inicio.Value;
+                _service.PeriodoTemp.FimPeriodo2 = DTP_Periodo2Fim.Value;
             }
             else
             {
-                _service.Periodo.Periodo2Ativo = false;
-            }
+                _service.PeriodoTemp.Periodo2Ativo = false;
+            };
         }
         private void SalvaPeriodo()
         {
             try
             {
                 AtualizaInfo();
-                _service.SalvarPeriodo();
+                _service.PeriodoService.Salvar(_service.PeriodoTemp);
 
             }
             catch (Exception ex)
@@ -98,14 +96,15 @@ namespace SINDCOLARES.Formularios
         }
         private void RecuperaPeriodo()
         {
-            CHB_Periodo1.Checked = _service.Periodo.Periodo1Ativo;
-            CHB_Periodo2.Checked = _service.Periodo.Periodo2Ativo;
-            LBL_Vigencia.Text = _service.Periodo.DataPublicacao.Year.ToString();
-            DTP_DataPublicacao.Value = _service.Periodo.DataPublicacao;
-            DTP_Periodo1Inicio.Value = _service.Periodo.InicioPeriodo1;
-            DTP_Periodo1Fim.Value = _service.Periodo.FimPeriodo1;
-            DTP_Periodo2Inicio.Value = _service.Periodo.InicioPeriodo2;
-            DTP_Periodo2Fim.Value = _service.Periodo.FimPeriodo2;
+            TXB_NumPublicacao.Text = _service.PeriodoTemp.NumeroPublicacao;
+            CHB_Periodo1.Checked = _service.PeriodoTemp.Periodo1Ativo;
+            CHB_Periodo2.Checked = _service.PeriodoTemp.Periodo2Ativo;
+            LBL_Vigencia.Text = _service.PeriodoTemp.DataPublicacao.Year.ToString();
+            DTP_DataPublicacao.Value = _service.PeriodoTemp.DataPublicacao;
+            DTP_Periodo1Inicio.Value = _service.PeriodoTemp.InicioPeriodo1;
+            DTP_Periodo1Fim.Value = _service.PeriodoTemp.FimPeriodo1;
+            DTP_Periodo2Inicio.Value = _service.PeriodoTemp.InicioPeriodo2;
+            DTP_Periodo2Fim.Value = _service.PeriodoTemp.FimPeriodo2;
         }
     }
 }

@@ -2,14 +2,14 @@
 
 public  class Digitalizados
 {
-    public bool CPFCarregado { get { if (CPF != string.Empty) { return true; } else { return false; } } }
-    public bool RGCarregado { get { if (RG != string.Empty) { return true; } else { return false; } } }
-    public bool FiliacaoCarregado { get { if (Filiacao != string.Empty) { return true; } else { return false; } } }
-    public bool ResidenciaCarregado { get { if (Residencia != string.Empty) { return true; } else { return false; } } }
-    public bool ProcuracaoCarregado { get { if (Procuracao != string.Empty) { return true; } else { return false; } } }
-    public bool ReqLicensaCarregado { get { if (RegInicial != string.Empty) { return true; } else { return false; } } }
-    public bool ReqINSSCarregado { get { if (ReqINSS != string.Empty) { return true; } else { return false; } } }
-    public bool CanhotoProtocoloCarregado { get { if (CanhotoProtocolo != string.Empty) { return true; } else { return false; } } }
+    public bool CPFCarregado { get { return ArquivoExistente(CPF); } }
+    public bool RGCarregado { get { return ArquivoExistente(RG); } }
+    public bool FiliacaoCarregado { get { return ArquivoExistente(Filiacao); } }
+    public bool ResidenciaCarregado { get { return ArquivoExistente(Residencia); } }
+    public bool ProcuracaoCarregado { get { return ArquivoExistente(Procuracao); } }
+    public bool ReqInicial { get { return ArquivoExistente(RegInicial); } }
+    public bool ReqINSSCarregado { get { return ArquivoExistente(ReqINSS); } }
+    public bool CanhotoProtocoloCarregado { get { return ArquivoExistente(CanhotoProtocolo); } }
 
     public int Id { get; set; }
     public int AssociadoId { get; set; }
@@ -23,4 +23,10 @@ public  class Digitalizados
     public string RegInicial { get; set; } = string.Empty;
     public string ReqINSS { get; set; } = string.Empty;
     public string CanhotoProtocolo { get; set; } = string.Empty;
+
+    private static bool ArquivoExistente(string path)
+    {
+        if(string.IsNullOrEmpty(path) || !File.Exists(path)) return false;
+        else return true;
+    }
 }

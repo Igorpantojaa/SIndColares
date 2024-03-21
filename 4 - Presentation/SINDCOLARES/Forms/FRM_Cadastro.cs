@@ -52,19 +52,19 @@ public partial class FRM_Cadastro : Form
     private void CarregaFoto()
     {
         if(ValidaDadosBasicos()) _service.PastaAssociado();
-        if (_service.InfoAssociado.Digitalizados.Local != string.Empty)
+        if (_service.AssociadoTemp.Digitalizados.Local != string.Empty)
         {
             OpenFileDialog ofd = new();
             if (ofd.ShowDialog() == DialogResult.OK)
             {
                 try
                 {
-                    var destino = $"{_service.InfoAssociado.Digitalizados.Local}\\FOTO.jpg";
+                    var destino = $"{_service.AssociadoTemp.Digitalizados.Local}\\FOTO.jpg";
                     if(!File.Exists(destino)) 
                     {
                         GestaoArquivos.SalvarArquivo(ofd.FileName, destino);
                         Mensagens.Alerta("Arquivo salvo com sucesso!", "Informacao");
-                        _service.InfoAssociado.Digitalizados.Foto = destino;
+                        _service.AssociadoTemp.Digitalizados.Foto = destino;
                         PB_Foto.ImageLocation = destino;
                     }
                     else
@@ -74,7 +74,7 @@ public partial class FRM_Cadastro : Form
                         {
                             GestaoArquivos.SalvarArquivo(ofd.FileName, destino);
                             Mensagens.Alerta("Arquivo substituido com sucesso!", "Informacao");
-                            _service.InfoAssociado.Digitalizados.Foto = destino;
+                            _service.AssociadoTemp.Digitalizados.Foto = destino;
                             PB_Foto.ImageLocation = destino;
                         }
                     }
@@ -83,7 +83,7 @@ public partial class FRM_Cadastro : Form
                 catch (Exception ex)
                 {
                     Mensagens.Alerta($"{ex.Message}", "Erro");
-                    _service.InfoAssociado.Digitalizados.Foto = string.Empty;
+                    _service.AssociadoTemp.Digitalizados.Foto = string.Empty;
                 }
             }
         }
@@ -102,11 +102,11 @@ public partial class FRM_Cadastro : Form
     }
     private void AtualizaInfo()
     {
-        _service.InfoAssociado.Nome = TXB_Nome.Text;
-        _service.InfoAssociado.Apelido = TXB_Apelido.Text;
-        _service.InfoAssociado.DataNascimento = DTP_DataNascimento.Value;
-        _service.InfoAssociado.Sexo = CB_Sexo.Text;
-        _service.InfoAssociado.Documentos.CPF = TXB_CPF.Text;
+        _service.AssociadoTemp.Nome = TXB_Nome.Text;
+        _service.AssociadoTemp.Apelido = TXB_Apelido.Text;
+        _service.AssociadoTemp.DataNascimento = DTP_DataNascimento.Value;
+        _service.AssociadoTemp.Sexo = CB_Sexo.Text;
+        _service.AssociadoTemp.Documentos.CPF = TXB_CPF.Text;
     }
     private bool ValidaDadosBasicos()
     {
@@ -131,17 +131,17 @@ public partial class FRM_Cadastro : Form
     }
     private void CarregaInformacoes()
     {
-        TXB_Nome.Text = _service.InfoAssociado.Nome;
-        TXB_Apelido.Text = _service.InfoAssociado.Apelido;
-        DTP_DataNascimento.Value = _service.InfoAssociado.DataNascimento;
-        CB_Sexo.Text = _service.InfoAssociado.Sexo;
-        TXB_CPF.Text = _service.InfoAssociado.Documentos.CPF;
-        PB_Foto.ImageLocation = _service.InfoAssociado.Digitalizados.Foto;
+        TXB_Nome.Text = _service.AssociadoTemp.Nome;
+        TXB_Apelido.Text = _service.AssociadoTemp.Apelido;
+        DTP_DataNascimento.Value = _service.AssociadoTemp.DataNascimento;
+        CB_Sexo.Text = _service.AssociadoTemp.Sexo;
+        TXB_CPF.Text = _service.AssociadoTemp.Documentos.CPF;
+        PB_Foto.ImageLocation = _service.AssociadoTemp.Digitalizados.Foto;
     }
     private void DocumentosAssociado()
     {
         ValidaDadosBasicos();
-        if(_service.InfoAssociado.Id == 0) 
+        if(_service.AssociadoTemp.Id == 0) 
         {
             AtualizaInfo();
             if (ValidaDadosBasicos() == true && _service.CPFnaBase() == false)

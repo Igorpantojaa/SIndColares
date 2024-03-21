@@ -15,13 +15,13 @@ public partial class FRM_Endereco : Form
 
     private void BTN_Salvar_Click(object sender, EventArgs e)
     {
-        _service.InfoAssociado.Endereco.CEP = TXB_CEP.Text;
-        _service.InfoAssociado.Endereco.UF = CB_UF.Text;
-        _service.InfoAssociado.Endereco.Municipio = TXB_Municipio.Text;
-        _service.InfoAssociado.Endereco.Localidade = TXB_Localidade.Text;
-        _service.InfoAssociado.Endereco.Bairro = TXB_Bairro.Text;
-        _service.InfoAssociado.Endereco.Rua = TXB_Rua.Text;
-        _service.InfoAssociado.Endereco.Numero = TXB_Numero.Text;
+        _service.AssociadoTemp.Endereco.CEP = TXB_CEP.Text;
+        _service.AssociadoTemp.Endereco.UF = CB_UF.Text;
+        _service.AssociadoTemp.Endereco.Municipio = TXB_Municipio.Text;
+        _service.AssociadoTemp.Endereco.Localidade = TXB_Localidade.Text;
+        _service.AssociadoTemp.Endereco.Bairro = TXB_Bairro.Text;
+        _service.AssociadoTemp.Endereco.Rua = TXB_Rua.Text;
+        _service.AssociadoTemp.Endereco.Numero = TXB_Numero.Text;
         MessageBox.Show("Dados atualizados.", "Sucersso!");
         Close();
     }
@@ -33,12 +33,12 @@ public partial class FRM_Endereco : Form
 
     private void FRM_Endereco_Load(object sender, EventArgs e)
     {
-        TXB_CEP.Text = _service.InfoAssociado.Endereco.CEP;
-        CB_UF.Text = _service.InfoAssociado.Endereco.UF;
-        TXB_Municipio.Text = _service.InfoAssociado.Endereco.Municipio;
-        TXB_Localidade.Text = _service.InfoAssociado.Endereco.Localidade;
-        TXB_Bairro.Text = _service.InfoAssociado.Endereco.Bairro;
-        TXB_Rua.Text = _service.InfoAssociado.Endereco.Rua;
-        TXB_Numero.Text = _service.InfoAssociado.Endereco.Numero;
+        TXB_CEP.Text = _service.AssociadoTemp.Endereco.CEP;
+        CB_UF.Text = _service.AssociadoTemp.Endereco.UF;
+        TXB_Municipio.Text = _service.AssociadoTemp.Endereco.Municipio;
+        TXB_Localidade.Text = _service.AssociadoTemp.Endereco.Localidade;
+        TXB_Bairro.Text = _service.AssociadoTemp.Endereco.Bairro;
+        TXB_Rua.Text = _service.AssociadoTemp.Endereco.Rua;
+        TXB_Numero.Text = _service.AssociadoTemp.Endereco.Numero;
     }
 }

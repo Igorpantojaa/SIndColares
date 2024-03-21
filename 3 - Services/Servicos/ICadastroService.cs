@@ -1,11 +1,13 @@
-﻿using Modelos;
+﻿using Infraestrutura.DTOs;
+using Modelos;
 using Servicos.Utilidades;
 
 namespace Servicos;
 
 public interface ICadastroService
 {
-    Associado InfoAssociado { get; }
+    Associado AssociadoTemp { get; }
+    public IPeriodoDTO PeriodoService { get; } 
     void LimparCadastro();
     void PastaAssociado();
     void Salvar();
@@ -14,14 +16,8 @@ public interface ICadastroService
     bool CPFnaBase();
     void Recuperar(int id);
     string ImagemAssociado(int id);
+    public void LimparPeriodo();
     List<Associado> ListarAssociados();
-
-     Periodo Periodo { get; }
-    void SalvarPeriodo();
-    void ExcluirPeriodo();
-    void LimpaPeriodo();
-    void RecuperarPeriodo(int id);
-    List<Periodo> ListarPeriodos();
-
+    public Periodo PeriodoTemp { get; set; }
     GeraDocumentos SalvaDocumentos(string destino);
 }

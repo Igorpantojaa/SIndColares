@@ -12,7 +12,7 @@ public partial class FRM_CarregaDocumentacao : Form
     public FRM_CarregaDocumentacao(ICadastroService service)
     {
         _service = service;
-        _local = _service.InfoAssociado.Digitalizados.Local;
+        _local = _service.AssociadoTemp.Digitalizados.Local;
         InitializeComponent();
         ChecaDocumentacao();
     }
@@ -25,56 +25,56 @@ public partial class FRM_CarregaDocumentacao : Form
     {
         var destino = $"{_local}\\RG.pdf";
         SalvarArquivo(destino);
-        _service.InfoAssociado.Digitalizados.RG = destino;
+        _service.AssociadoTemp.Digitalizados.RG = destino;
         ChecaDocumentacao();
     }
     private void BTN_SelecionaCPF_Click(object sender, EventArgs e)
     {
         var destino = $"{_local}\\CPF.pdf";
         SalvarArquivo(destino);
-        _service.InfoAssociado.Digitalizados.CPF = destino;
+        _service.AssociadoTemp.Digitalizados.CPF = destino;
         ChecaDocumentacao();
     }
     private void BTN_SelecionaReqINSS_Click(object sender, EventArgs e)
     {
-        var destino = $"{_local}\\REQUERIMENTO_INSS [{_service.Periodo.AnoVigencia}].pdf";
+        var destino = $"{_local}\\REQUERIMENTO_INSS [{_service.PeriodoTemp.AnoVigencia}].pdf";
         SalvarArquivo(destino);
-        _service.InfoAssociado.Digitalizados.ReqINSS = destino;
+        _service.AssociadoTemp.Digitalizados.ReqINSS = destino;
         ChecaDocumentacao();
     }
     private void BTN_SelecionaFiliacao_Click(object sender, EventArgs e)
     {
         var destino = $"{_local}\\DECLARACAO_DE_FILIACAO.pdf";
         SalvarArquivo(destino);
-        _service.InfoAssociado.Digitalizados.Filiacao = destino;
+        _service.AssociadoTemp.Digitalizados.Filiacao = destino;
         ChecaDocumentacao();
     }
     private void BTN_SelecionaRegInicial_Click(object sender, EventArgs e)
     {
         var destino = $"{_local}\\REQUERIMENTO_DE_LICENSA.pdf";
         SalvarArquivo(destino);
-        _service.InfoAssociado.Digitalizados.RegInicial = destino;
+        _service.AssociadoTemp.Digitalizados.RegInicial = destino;
         ChecaDocumentacao();
     }
     private void BTN_SelecionaResidencia_Click(object sender, EventArgs e)
     {
         var destino = $"{_local}\\COMPROVANTE_DE_RESIDENCIA.pdf";
         SalvarArquivo(destino);
-        _service.InfoAssociado.Digitalizados.Residencia = destino;
+        _service.AssociadoTemp.Digitalizados.Residencia = destino;
         ChecaDocumentacao();
     }
     private void BTN_SelecionaProcuracao_Click(object sender, EventArgs e)
     {
         var destino = $"{_local}\\TERMO_DE_AUTORIZACAO.pdf";
         SalvarArquivo(destino);
-        _service.InfoAssociado.Digitalizados.Procuracao = destino;
+        _service.AssociadoTemp.Digitalizados.Procuracao = destino;
         ChecaDocumentacao();
     }
     private void BTN_SelecionaCanhotoProtocolo_Click(object sender, EventArgs e)
     {
-        var destino = $"{_local}\\CANHOTO_PROTOCOLO [{_service.Periodo.AnoVigencia}].pdf";
+        var destino = $"{_local}\\CANHOTO_PROTOCOLO [{_service.PeriodoTemp.AnoVigencia}].pdf";
         SalvarArquivo(destino);
-        _service.InfoAssociado.Digitalizados.CanhotoProtocolo = destino;
+        _service.AssociadoTemp.Digitalizados.CanhotoProtocolo = destino;
         ChecaDocumentacao();
     }
 
@@ -84,89 +84,89 @@ public partial class FRM_CarregaDocumentacao : Form
     }
     private void BTN_VisualizaRG_Click(object sender, EventArgs e)
     {
-        AbrirArquivo(_service.InfoAssociado.Digitalizados.RG);
+        AbrirArquivo(_service.AssociadoTemp.Digitalizados.RG);
     }
     private void BTN_VisualizaCPF_Click(object sender, EventArgs e)
     {
-        AbrirArquivo(_service.InfoAssociado.Digitalizados.CPF);
+        AbrirArquivo(_service.AssociadoTemp.Digitalizados.CPF);
     }
     private void BTN_VisualizaReqINSS_Click(object sender, EventArgs e)
     {
-        AbrirArquivo(_service.InfoAssociado.Digitalizados.ReqINSS);
+        AbrirArquivo(_service.AssociadoTemp.Digitalizados.ReqINSS);
     }
     private void BTN_VisualizaFiliacao_Click(object sender, EventArgs e)
     {
-        AbrirArquivo(_service.InfoAssociado.Digitalizados.Filiacao);
+        AbrirArquivo(_service.AssociadoTemp.Digitalizados.Filiacao);
     }
     private void BTN_VisualizaReqLicensa_Click(object sender, EventArgs e)
     {
-        AbrirArquivo(_service.InfoAssociado.Digitalizados.RegInicial);
+        AbrirArquivo(_service.AssociadoTemp.Digitalizados.RegInicial);
     }
     private void BTN_VisualizaResidencia_Click(object sender, EventArgs e)
     {
-        AbrirArquivo(_service.InfoAssociado.Digitalizados.Residencia);
+        AbrirArquivo(_service.AssociadoTemp.Digitalizados.Residencia);
     }
     private void BTN_VisualizaTermoAutorizacao_Click(object sender, EventArgs e)
     {
-        AbrirArquivo(_service.InfoAssociado.Digitalizados.Procuracao);
+        AbrirArquivo(_service.AssociadoTemp.Digitalizados.Procuracao);
     }
     private void BTN_VisualizaCanhotoProtocolo_Click(object sender, EventArgs e)
     {
-        AbrirArquivo(_service.InfoAssociado.Digitalizados.CanhotoProtocolo);
+        AbrirArquivo(_service.AssociadoTemp.Digitalizados.CanhotoProtocolo);
     }
 
     private void BTN_ExcluirRG_Click(object sender, EventArgs e)
     {
-        _service.InfoAssociado.Digitalizados.RG = 
-            ExcluirArquivo(_service.InfoAssociado.Digitalizados.RG);
+        _service.AssociadoTemp.Digitalizados.RG = 
+            ExcluirArquivo(_service.AssociadoTemp.Digitalizados.RG);
         ChecaDocumentacao();
     }
     private void BTN_ExcluirCPF_Click(object sender, EventArgs e)
     {
-        _service.InfoAssociado.Digitalizados.CPF = 
-            ExcluirArquivo(_service.InfoAssociado.Digitalizados.CPF);
+        _service.AssociadoTemp.Digitalizados.CPF = 
+            ExcluirArquivo(_service.AssociadoTemp.Digitalizados.CPF);
         ChecaDocumentacao();
     }
     private void BTN_ExcluirReqINSS_Click(object sender, EventArgs e)
     {
-        _service.InfoAssociado.Digitalizados.ReqINSS = 
-            ExcluirArquivo(_service.InfoAssociado.Digitalizados.ReqINSS);
+        _service.AssociadoTemp.Digitalizados.ReqINSS = 
+            ExcluirArquivo(_service.AssociadoTemp.Digitalizados.ReqINSS);
         ChecaDocumentacao();
     }
     private void BTN_ExcluirFiliacao_Click(object sender, EventArgs e)
     {
-        _service.InfoAssociado.Digitalizados.Filiacao = 
-            ExcluirArquivo(_service.InfoAssociado.Digitalizados.Filiacao);
+        _service.AssociadoTemp.Digitalizados.Filiacao = 
+            ExcluirArquivo(_service.AssociadoTemp.Digitalizados.Filiacao);
         ChecaDocumentacao();
     }
     private void BTN_ExcluirReqLicensa_Click(object sender, EventArgs e)
     {
-        _service.InfoAssociado.Digitalizados.RegInicial = 
-            ExcluirArquivo(_service.InfoAssociado.Digitalizados.RegInicial);
+        _service.AssociadoTemp.Digitalizados.RegInicial = 
+            ExcluirArquivo(_service.AssociadoTemp.Digitalizados.RegInicial);
         ChecaDocumentacao();
     }
     private void BTN_ExcluirResidencia_Click(object sender, EventArgs e)
     {
-        _service.InfoAssociado.Digitalizados.Residencia = 
-            ExcluirArquivo(_service.InfoAssociado.Digitalizados.Residencia);
+        _service.AssociadoTemp.Digitalizados.Residencia = 
+            ExcluirArquivo(_service.AssociadoTemp.Digitalizados.Residencia);
         ChecaDocumentacao();
     }
     private void BTN_ExcluirAutorizacao_Click(object sender, EventArgs e)
     {
-        _service.InfoAssociado.Digitalizados.Procuracao =
-            ExcluirArquivo(_service.InfoAssociado.Digitalizados.Procuracao);
+        _service.AssociadoTemp.Digitalizados.Procuracao =
+            ExcluirArquivo(_service.AssociadoTemp.Digitalizados.Procuracao);
         ChecaDocumentacao();
     }
     private void BTN_ExcluirCanhotoProtocolo_Click(object sender, EventArgs e)
     {
-        _service.InfoAssociado.Digitalizados.CanhotoProtocolo = 
-            ExcluirArquivo(_service.InfoAssociado.Digitalizados.CanhotoProtocolo);
+        _service.AssociadoTemp.Digitalizados.CanhotoProtocolo = 
+            ExcluirArquivo(_service.AssociadoTemp.Digitalizados.CanhotoProtocolo);
         ChecaDocumentacao();
     }
 
     private void ChecaDocumentacao()
     {
-        if (_service.InfoAssociado.Digitalizados.CPFCarregado == true)
+        if (_service.AssociadoTemp.Digitalizados.CPFCarregado == true)
         {
             BTN_SelecionaCPF.BackColor = Color.LightGreen;
             BTN_SelecionaCPF.Enabled = false;
@@ -175,10 +175,10 @@ public partial class FRM_CarregaDocumentacao : Form
         {
             BTN_SelecionaCPF.BackColor = SystemColors.ButtonHighlight;
             BTN_SelecionaCPF.Enabled = true;
-            _service.InfoAssociado.Digitalizados.CPF = string.Empty;
+            _service.AssociadoTemp.Digitalizados.CPF = string.Empty;
         }
 
-        if (_service.InfoAssociado.Digitalizados.RGCarregado == true)
+        if (_service.AssociadoTemp.Digitalizados.RGCarregado == true)
         {
             BTN_SelecionaRG.BackColor = Color.LightGreen;
             BTN_SelecionaRG.Enabled = false;
@@ -187,10 +187,10 @@ public partial class FRM_CarregaDocumentacao : Form
         {
             BTN_SelecionaRG.BackColor = SystemColors.ButtonHighlight;
             BTN_SelecionaRG.Enabled= true;
-            _service.InfoAssociado.Digitalizados.RG = string.Empty;
+            _service.AssociadoTemp.Digitalizados.RG = string.Empty;
         }
 
-        if (_service.InfoAssociado.Digitalizados.FiliacaoCarregado == true)
+        if (_service.AssociadoTemp.Digitalizados.FiliacaoCarregado == true)
         {
             BTN_SelecionaFiliacao.BackColor = Color.LightGreen;
             BTN_SelecionaFiliacao.Enabled = false;
@@ -199,10 +199,10 @@ public partial class FRM_CarregaDocumentacao : Form
         {
             BTN_SelecionaFiliacao.BackColor = SystemColors.ButtonHighlight;
             BTN_SelecionaFiliacao.Enabled = true;
-            _service.InfoAssociado.Digitalizados.Filiacao = string.Empty;
+            _service.AssociadoTemp.Digitalizados.Filiacao = string.Empty;
         }
 
-        if (_service.InfoAssociado.Digitalizados.ResidenciaCarregado == true)
+        if (_service.AssociadoTemp.Digitalizados.ResidenciaCarregado == true)
         {
             BTN_SelecionaResidencia.BackColor = Color.LightGreen;
             BTN_SelecionaResidencia.Enabled = false;
@@ -211,10 +211,10 @@ public partial class FRM_CarregaDocumentacao : Form
         {
             BTN_SelecionaResidencia.BackColor = SystemColors.ButtonHighlight;
             BTN_SelecionaResidencia.Enabled= true;
-            _service.InfoAssociado.Digitalizados.Residencia = string.Empty;
+            _service.AssociadoTemp.Digitalizados.Residencia = string.Empty;
         }
 
-        if (_service.InfoAssociado.Digitalizados.ProcuracaoCarregado == true)
+        if (_service.AssociadoTemp.Digitalizados.ProcuracaoCarregado == true)
         {
             BTN_SelecionaProcuracao.BackColor = Color.LightGreen;
             BTN_SelecionaProcuracao.Enabled = false;
@@ -223,10 +223,10 @@ public partial class FRM_CarregaDocumentacao : Form
         {
             BTN_SelecionaProcuracao.BackColor = SystemColors.ButtonHighlight;
             BTN_SelecionaProcuracao.Enabled= true;
-            _service.InfoAssociado.Digitalizados.Procuracao = string.Empty;
+            _service.AssociadoTemp.Digitalizados.Procuracao = string.Empty;
         }
 
-        if (_service.InfoAssociado.Digitalizados.ReqLicensaCarregado == true)
+        if (_service.AssociadoTemp.Digitalizados.ReqInicial == true)
         {
             BTN_SelecionaRegInicial.BackColor = Color.LightGreen;
             BTN_SelecionaRegInicial.Enabled = false;
@@ -235,10 +235,10 @@ public partial class FRM_CarregaDocumentacao : Form
         {
             BTN_SelecionaRegInicial.BackColor = SystemColors.ButtonHighlight;
             BTN_SelecionaRegInicial.Enabled= true;
-            _service.InfoAssociado.Digitalizados.RegInicial = string.Empty;
+            _service.AssociadoTemp.Digitalizados.RegInicial = string.Empty;
         }
 
-        if (_service.InfoAssociado.Digitalizados.ReqINSSCarregado == true)
+        if (_service.AssociadoTemp.Digitalizados.ReqINSSCarregado == true)
         {
             BTN_SelecionaReqINSS.BackColor = Color.LightGreen;
             BTN_SelecionaReqINSS.Enabled = false;
@@ -247,10 +247,10 @@ public partial class FRM_CarregaDocumentacao : Form
         {
             BTN_SelecionaReqINSS.BackColor = SystemColors.ButtonHighlight;
             BTN_SelecionaReqINSS.Enabled= true;
-            _service.InfoAssociado.Digitalizados.ReqINSS = string.Empty;
+            _service.AssociadoTemp.Digitalizados.ReqINSS = string.Empty;
         }
 
-        if (_service.InfoAssociado.Digitalizados.CanhotoProtocoloCarregado == true)
+        if (_service.AssociadoTemp.Digitalizados.CanhotoProtocoloCarregado == true)
         {
             BTN_SelecionaCanhotoProtocolo.BackColor = Color.LightGreen;
             BTN_SelecionaCanhotoProtocolo.Enabled = false;
@@ -259,7 +259,7 @@ public partial class FRM_CarregaDocumentacao : Form
         {
             BTN_SelecionaCanhotoProtocolo.BackColor = SystemColors.ButtonHighlight;
             BTN_SelecionaCanhotoProtocolo.Enabled= true;
-            _service.InfoAssociado.Digitalizados.CanhotoProtocolo = string.Empty;
+            _service.AssociadoTemp.Digitalizados.CanhotoProtocolo = string.Empty;
         }
     }
     private static void AbrirArquivo(string caminho)

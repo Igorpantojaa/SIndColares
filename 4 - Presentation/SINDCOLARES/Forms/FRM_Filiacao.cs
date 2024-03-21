@@ -21,17 +21,17 @@ public partial class FRM_Filiacao : Form
 
     private void BTN_Salvar_Click(object sender, EventArgs e)
     {
-        _service.InfoAssociado.Filiacao.NomeEntidade = TXB_NomeEntidade.Text;
-        _service.InfoAssociado.Filiacao.UFEntidade = CB_UF.Text;
-        _service.InfoAssociado.Filiacao.TipoEntidade = CB_TipoEntidade.Text;
-        _service.InfoAssociado.Filiacao.CNPJEntidade = TXB_CNPJ.Text;
+        _service.AssociadoTemp.Filiacao.NomeEntidade = TXB_NomeEntidade.Text;
+        _service.AssociadoTemp.Filiacao.UFEntidade = CB_UF.Text;
+        _service.AssociadoTemp.Filiacao.TipoEntidade = CB_TipoEntidade.Text;
+        _service.AssociadoTemp.Filiacao.CNPJEntidade = TXB_CNPJ.Text;
         if (CHB_Filiacao.Checked == true)
         {
-            _service.InfoAssociado.Filiacao.Filiado = true;
+            _service.AssociadoTemp.Filiacao.Filiado = true;
         }
         else
         {
-            _service.InfoAssociado.Filiacao.Filiado = false;
+            _service.AssociadoTemp.Filiacao.Filiado = false;
         }
         MessageBox.Show("Dados atualizados.", "Sucesso!");
         Close();
@@ -39,10 +39,10 @@ public partial class FRM_Filiacao : Form
 
     private void FRM_Filiacao_Load(object sender, EventArgs e)
     {
-        TXB_NomeEntidade.Text = _service.InfoAssociado.Filiacao.NomeEntidade;
-        CB_UF.Text = _service.InfoAssociado.Filiacao.UFEntidade;
-        CB_TipoEntidade.Text = _service.InfoAssociado.Filiacao.TipoEntidade;
-        TXB_CNPJ.Text = _service.InfoAssociado.Filiacao.CNPJEntidade;
-        CHB_Filiacao.Checked = _service.InfoAssociado.Filiacao.Filiado;
+        TXB_NomeEntidade.Text = _service.AssociadoTemp.Filiacao.NomeEntidade;
+        CB_UF.Text = _service.AssociadoTemp.Filiacao.UFEntidade;
+        CB_TipoEntidade.Text = _service.AssociadoTemp.Filiacao.TipoEntidade;
+        TXB_CNPJ.Text = _service.AssociadoTemp.Filiacao.CNPJEntidade;
+        CHB_Filiacao.Checked = _service.AssociadoTemp.Filiacao.Filiado;
     }
 }

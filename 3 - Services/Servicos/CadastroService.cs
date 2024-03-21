@@ -7,20 +7,21 @@ namespace Servicos;
 
 public class CadastroService : ICadastroService
 {
-    private Periodo _periodo;
+
     private Associado _associado;
     private readonly IPeriodoDTO _periodoDTO;
     private readonly IAssociadoDTO _associadoDTO;
 
-    public Periodo Periodo { get { return _periodo; } }
-    public Associado InfoAssociado { get { return _associado; } }
+    public Periodo PeriodoTemp { get; set; }
+    public Associado AssociadoTemp { get { return _associado; } }
+    public IPeriodoDTO PeriodoService {  get { return _periodoDTO; } }
 
     public CadastroService(SindContext context)
     {
         _associadoDTO = new AssociadoDTO(context);
         _periodoDTO = new PeriodoDTO(context);
         _associado = new();
-        _periodo = new();
+        PeriodoTemp = new();
     }
 
     public void Salvar()
@@ -106,6 +107,10 @@ public class CadastroService : ICadastroService
             throw;
         }
     }
+    public void LimparPeriodo()
+    {
+        PeriodoTemp = new();
+    }
     public string ImagemAssociado(int id)
     {
         try
@@ -128,58 +133,8 @@ public class CadastroService : ICadastroService
             throw;
         }
     }
-
-    public void LimpaPeriodo()
-    {
-        _periodo = new();
-    }
-    public void SalvarPeriodo()
-    {
-        try
-        {
-            _periodoDTO.Salvar(_periodo);
-            LimparCadastro();
-        }
-        catch
-        {
-            throw;
-        }
-    }
-    public void ExcluirPeriodo()
-    {
-        try
-        {
-            _periodoDTO.Excluir(_periodo);
-        }
-        catch
-        {
-            throw;
-        }
-    }
-    public void RecuperarPeriodo(int id)
-    {
-        try
-        {
-            _periodo = _periodoDTO.Recuperar(id);
-        }
-        catch
-        {
-            throw;
-        }
-    }
-    public List<Periodo> ListarPeriodos()
-    {
-        try
-        {
-            return _periodoDTO.ListarTodos();
-        }
-        catch
-        {
-            throw;
-        }
-    }
     public GeraDocumentos SalvaDocumentos(string destino)
     {
-        return new GeraDocumentos(_associado, _periodo, destino);
+        return new GeraDocumentos(_associado, PeriodoTemp, destino);
     }
 }

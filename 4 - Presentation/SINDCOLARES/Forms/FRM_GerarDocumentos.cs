@@ -1,7 +1,6 @@
 ﻿using Infraestrutura;
 using Servicos;
 using SINDCOLARES.Formularios;
-using System.DirectoryServices;
 
 namespace SINDCOLARES.Forms;
 
@@ -18,7 +17,7 @@ public partial class FRM_GerarDocumentos : Form
     private void BTN_Fechar_Click(object sender, EventArgs e)
     {
         _service.LimparCadastro();
-        _service.LimpaPeriodo();
+        _service.LimparPeriodo();
         Close();
     }
     private void BTN_VerCadastro_Click(object sender, EventArgs e)
@@ -55,7 +54,8 @@ public partial class FRM_GerarDocumentos : Form
     }
     private void CarregaPeriodos()
     {
-        CB_Vigencia.DataSource = _service.ListarPeriodos();
+        CB_Vigencia.DataSource = _service.PeriodoService.ListarTodos();
+        CB_Vigencia.SelectedIndex = -1;
     }
     private void VisualizarCadastro()
     {
@@ -67,14 +67,17 @@ public partial class FRM_GerarDocumentos : Form
     }
     private void CarregaInfoVigencia()
     {
-        _service.RecuperarPeriodo(Convert.ToInt32(CB_Vigencia.SelectedValue));
-        CB_Vigencia.SelectedValue = _service.Periodo.Id;
-        LBL_NumPublicacao.Text = _service.Periodo.NumeroPublicacao;
-        LBL_DataPublicacao.Text = _service.Periodo.GetDataPublicacao;
-        LBL_InicioPeriodo1.Text = _service.Periodo.GetInicioVigencia1;
-        LBL_FimPeriodo1.Text = _service.Periodo.GetFimVigencia1;
-        LBL_InicioPeriodo2.Text = _service.Periodo.GetInicioVigencia2;
-        LBL_FimPeriodo2.Text = _service.Periodo.GetFimVigencia2;
+        if (CB_Vigencia.SelectedIndex != -1)
+        {
+            _service.PeriodoTemp = _service.PeriodoService.Recuperar(Convert.ToInt32(CB_Vigencia.SelectedValue));
+            CB_Vigencia.SelectedValue = _service.PeriodoTemp.Id;
+            LBL_NumPublicacao.Text = _service.PeriodoTemp.NumeroPublicacao;
+            LBL_DataPublicacao.Text = _service.PeriodoTemp.GetDataPublicacao;
+            LBL_InicioPeriodo1.Text = _service.PeriodoTemp.GetInicioVigencia1;
+            LBL_FimPeriodo1.Text = _service.PeriodoTemp.GetFimVigencia1;
+            LBL_InicioPeriodo2.Text = _service.PeriodoTemp.GetInicioVigencia2;
+            LBL_FimPeriodo2.Text = _service.PeriodoTemp.GetFimVigencia2;
+        };
     }
     private void CarregaInfoAssociado()
     {
@@ -86,7 +89,7 @@ public partial class FRM_GerarDocumentos : Form
 
     private void GeraDocumentos()
     {
-        if (_service.InfoAssociado.Id > 0 && _service.Periodo.Id > 0)
+        if (_service.AssociadoTemp.Id > 0 && _service.PeriodoTemp.Id > 0)
         {
             FolderBrowserDialog fbd = new();
             if (DialogResult.OK == fbd.ShowDialog())

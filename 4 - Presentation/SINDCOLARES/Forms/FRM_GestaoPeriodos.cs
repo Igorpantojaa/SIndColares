@@ -35,7 +35,7 @@ public partial class FRM_GestaoPeriodos : Form
 
     private void AtualizaTabela()
     {
-        DGV_Periodos.DataSource = _service.ListarPeriodos();
+        DGV_Periodos.DataSource = _service.PeriodoService.ListarTodos();
     }
     private void ExcluirPeriodo()
     {
@@ -49,8 +49,8 @@ public partial class FRM_GestaoPeriodos : Form
                                                                 MessageBoxIcon.Question)
                                                             )
             {
-                _service.RecuperarPeriodo(SelecaoAtual());
-                _service.ExcluirPeriodo();
+                var p = _service.PeriodoService.Recuperar(SelecaoAtual());
+                _service.PeriodoService.Excluir(p);
                 Mensagens.Alerta("Período excluido com sucesso!", "Informacao");
             }
         }
@@ -65,8 +65,8 @@ public partial class FRM_GestaoPeriodos : Form
         {
             if(SelecaoAtual() != 0)
             {
-                _service.LimpaPeriodo();
-                _service.RecuperarPeriodo(SelecaoAtual());
+                _service.LimparPeriodo();
+                _service.PeriodoTemp = _service.PeriodoService.Recuperar(SelecaoAtual());
                 new FRM_CadastraPeriodo(_service).ShowDialog();
             }
         }

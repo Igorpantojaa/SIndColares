@@ -99,6 +99,7 @@ public partial class FRM_GerarDocumentos : Form
                 if (CHB_RegInicial.Checked) docs.RegistroInicial();
                 if (CHB_Filiacao.Checked) docs.DeclaracaoFiliacao();
                 if (CHB_ReqSeguroDefeso.Checked) docs.ReqSeguroDefeso();
+                if (CHB_Procuracao.Checked) docs.Procuracao();
                 //if (CHB_DecResidencia.Checked) docs.DeclaracaoResidencia();
                 GestaoArquivos.AbrirPasta(destino);
             };

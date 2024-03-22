@@ -21,7 +21,12 @@ public class GeraDocumentos
         try
         {
             var doc = DocX.Load(".\\Arquivos\\Templates\\Procuracao.docx");
-            doc.ReplaceText("<NomeAssociado>", $"{_associado.Nome.ToUpper()}");
+            doc.ReplaceText("<Nome>", $"{_associado.Nome.ToUpper()}");
+            doc.ReplaceText("<CPF>", $"{_associado.Documentos.CPF.ToUpper()}");
+            doc.ReplaceText("<RG>", $"{_associado.Documentos.RG.Numero}/{_associado.Documentos.RG.OrgaoEmissor}/{_associado.Documentos.RG.EstadoEmissao}");
+            doc.ReplaceText("<Endereco>", $"{_associado.Endereco.Rua.ToUpper()}, {_associado.Endereco.Numero}");
+            doc.ReplaceText("<Bairro>", $"{_associado.Endereco.Bairro}");
+            doc.ReplaceText("<DataAtual>", $"{(_periodo.InicioPeriodo1.AddDays(13)).ToLongDateString()}");
             doc.SaveAs($"{_destino}\\Procuracao.docx");
         }
         catch

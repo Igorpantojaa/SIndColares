@@ -138,7 +138,10 @@
             Controls.Add(BTN_NovoCadastro);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             MaximizeBox = false;
+            MinimizeBox = false;
             Name = "FRM_Inicio";
+            ShowIcon = false;
+            SizeGripStyle = SizeGripStyle.Hide;
             StartPosition = FormStartPosition.CenterScreen;
             Text = "FRM_Inicio";
             ResumeLayout(false);

@@ -226,7 +226,7 @@ public partial class FRM_CarregaDocumentacao : Form
             _service.AssociadoTemp.Digitalizados.Procuracao = string.Empty;
         }
 
-        if (_service.AssociadoTemp.Digitalizados.ReqInicial == true)
+        if (_service.AssociadoTemp.Digitalizados.ReqInicialCarregado == true)
         {
             BTN_SelecionaRegInicial.BackColor = Color.LightGreen;
             BTN_SelecionaRegInicial.Enabled = false;

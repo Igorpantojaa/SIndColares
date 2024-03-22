@@ -103,16 +103,20 @@
             // 
             // DTP_Periodo1Fim
             // 
+            DTP_Periodo1Fim.AllowDrop = true;
             DTP_Periodo1Fim.Format = DateTimePickerFormat.Short;
             DTP_Periodo1Fim.Location = new Point(115, 78);
+            DTP_Periodo1Fim.MinDate = new DateTime(2000, 1, 1, 0, 0, 0, 0);
             DTP_Periodo1Fim.Name = "DTP_Periodo1Fim";
             DTP_Periodo1Fim.Size = new Size(200, 23);
             DTP_Periodo1Fim.TabIndex = 3;
             // 
             // DTP_Periodo1Inicio
             // 
+            DTP_Periodo1Inicio.AllowDrop = true;
             DTP_Periodo1Inicio.Format = DateTimePickerFormat.Short;
             DTP_Periodo1Inicio.Location = new Point(114, 41);
+            DTP_Periodo1Inicio.MinDate = new DateTime(2000, 1, 1, 0, 0, 0, 0);
             DTP_Periodo1Inicio.Name = "DTP_Periodo1Inicio";
             DTP_Periodo1Inicio.Size = new Size(200, 23);
             DTP_Periodo1Inicio.TabIndex = 1;
@@ -155,18 +159,22 @@
             // 
             // DTP_Periodo2Fim
             // 
+            DTP_Periodo2Fim.AllowDrop = true;
             DTP_Periodo2Fim.Enabled = false;
             DTP_Periodo2Fim.Format = DateTimePickerFormat.Short;
             DTP_Periodo2Fim.Location = new Point(114, 81);
+            DTP_Periodo2Fim.MinDate = new DateTime(2000, 1, 1, 0, 0, 0, 0);
             DTP_Periodo2Fim.Name = "DTP_Periodo2Fim";
             DTP_Periodo2Fim.Size = new Size(200, 23);
             DTP_Periodo2Fim.TabIndex = 3;
             // 
             // DTP_Periodo2Inicio
             // 
+            DTP_Periodo2Inicio.AllowDrop = true;
             DTP_Periodo2Inicio.Enabled = false;
             DTP_Periodo2Inicio.Format = DateTimePickerFormat.Short;
             DTP_Periodo2Inicio.Location = new Point(114, 46);
+            DTP_Periodo2Inicio.MinDate = new DateTime(2000, 1, 1, 0, 0, 0, 0);
             DTP_Periodo2Inicio.Name = "DTP_Periodo2Inicio";
             DTP_Periodo2Inicio.Size = new Size(200, 23);
             DTP_Periodo2Inicio.TabIndex = 1;
@@ -233,10 +241,11 @@
             // 
             // DTP_DataPublicacao
             // 
+            DTP_DataPublicacao.AllowDrop = true;
             DTP_DataPublicacao.CustomFormat = "";
             DTP_DataPublicacao.Format = DateTimePickerFormat.Short;
             DTP_DataPublicacao.Location = new Point(225, 15);
-            DTP_DataPublicacao.MinDate = new DateTime(2019, 1, 1, 0, 0, 0, 0);
+            DTP_DataPublicacao.MinDate = new DateTime(2000, 1, 1, 0, 0, 0, 0);
             DTP_DataPublicacao.Name = "DTP_DataPublicacao";
             DTP_DataPublicacao.Size = new Size(108, 23);
             DTP_DataPublicacao.TabIndex = 11;

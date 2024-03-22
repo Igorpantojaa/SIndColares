@@ -9,7 +9,6 @@
   <ItemGroup>
     <None Remove="Arquivos\Templates\DeclaracaoFiliacao.docx" />
     <None Remove="Arquivos\Templates\DeclaracaoResidencia.docx" />
-    <None Remove="Arquivos\Templates\Procuracao.docx" />
     <None Remove="Arquivos\Templates\RegistroInicial.docx" />
     <None Remove="Arquivos\Templates\RequerimentoSeguroDefeso.docx" />
   </ItemGroup>
@@ -19,9 +18,6 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Arquivos\Templates\DeclaracaoFiliacao.docx">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Arquivos\Templates\Procuracao.docx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Arquivos\Templates\RegistroInicial.docx">
@@ -39,6 +35,12 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\2 - Insfraestructure\Infraestrutura.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Arquivos\Templates\Procuracao.docx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>

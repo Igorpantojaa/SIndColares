@@ -7,7 +7,7 @@ public  class Digitalizados
     public bool FiliacaoCarregado { get { return ArquivoExistente(Filiacao); } }
     public bool ResidenciaCarregado { get { return ArquivoExistente(Residencia); } }
     public bool ProcuracaoCarregado { get { return ArquivoExistente(Procuracao); } }
-    public bool ReqInicial { get { return ArquivoExistente(RegInicial); } }
+    public bool ReqInicialCarregado { get { return ArquivoExistente(RegInicial); } }
     public bool ReqINSSCarregado { get { return ArquivoExistente(ReqINSS); } }
     public bool CanhotoProtocoloCarregado { get { return ArquivoExistente(CanhotoProtocolo); } }
 

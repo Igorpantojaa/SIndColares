@@ -253,7 +253,6 @@
             // CHB_Procuracao
             // 
             CHB_Procuracao.AutoSize = true;
-            CHB_Procuracao.Enabled = false;
             CHB_Procuracao.Location = new Point(11, 47);
             CHB_Procuracao.Name = "CHB_Procuracao";
             CHB_Procuracao.Size = new Size(86, 19);

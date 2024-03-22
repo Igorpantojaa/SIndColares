@@ -121,7 +121,7 @@
   <data name="BTN_NovoCadastro.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAYAAAD0eNT6AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wgAADsIBFShKgAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAACtqSURBVHhe7d0J
+        wQAADsEBuJFr7QAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAACtqSURBVHhe7d0J
         tGxleebxy3CByyAggwyCBHAgyNASUZkUBFGGpTagNEQUW1BobZdiRKMSRSUQmQ2hAY0KOAsoREHFGYVW
         HFAwyGBQEUUGAUXm2/28oU8zvffeXWfvr77vfff/t9Z/rSzXStU+3DpnP6dO1a45GLW11B7qHerD6pvq
         anWDulX9H3XX//u/f6kuU+eoo9XB6tlqKQUAABq2gtpbnamuU3aC75sNhO+o96jNFAAAaMCSyn7LP0/Z
@@ -677,7 +677,7 @@
   <data name="BTN_Periodos.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAYAAAD0eNT6AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vQAADr0BR/uQrQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAC2MSURBVHhe7d0H
+        vAAADrwBlbxySQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAC2MSURBVHhe7d0H
         tO1nXebxm9BCCyEgQwsRkGZoKxBIAkhRBLJQRBgdIQiMlGEcugMCwsJICVWREjoiTUDAiTKjoHRBSmgj
         ICBITaG3JEBIZp4fl53cJM++95z/89/7vu9+v9+1Pmu5/iY3e7+cu/dzztlnnx201m4sT5ET5GT5sXxF
         3i7/Uw4SWt4V5KHyVvmy/EhOkY/IM+QIoeVdWH5bXiP/Jj/4mfq/Xy2/JfXP0PKOlGfKR6U+9upjsD4W
@@ -878,7 +878,7 @@
   <data name="BTN_GeraDocumentos.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAYAAAD0eNT6AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAN
-        1QAADdUBPdZY8QAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAD6CSURBVHhe7d0H
+        1AAADdQB75G6FQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAD6CSURBVHhe7d0H
         uG1VdfbxS5EiKgRQ0ESKMagEC2JiJcYCihIxiQp2QUVFY7B+EjAmKkZjuZrPAraIPXwmqMSCQmxgNBY0
         NmI0iCUiGkWxYvveAeuQcRfjrLvmKnvPOff/fZ7f8ySTu8faZx/HXOOcs/daG37961+jcspWsp8cJvcE
         gHXYHmF7xVbRXoK6hIuog3KgfEh+LLYAAH38SGzvODDaW1CHcBFlU7aTF8gvxTc1AKSwPcT2ku2ivQZl

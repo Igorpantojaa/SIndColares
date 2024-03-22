@@ -30,13 +30,9 @@
         {
             components = new System.ComponentModel.Container();
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             groupBox1 = new GroupBox();
             DGV_Associados = new DataGridView();
-            idDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            nomeDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            getCPFDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            getRGDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            dataNascimentoDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             associadoBindingSource = new BindingSource(components);
             BTN_Novo = new Button();
             BTN_Alterar = new Button();
@@ -46,6 +42,11 @@
             BTN_Fechar = new Button();
             TXB_Pesquisa = new TextBox();
             BTN_LimpaPesquisa = new Button();
+            idDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            nomeDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            getCPFDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            getRGDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            GetDataNascimento = new DataGridViewTextBoxColumn();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)DGV_Associados).BeginInit();
             ((System.ComponentModel.ISupportInitialize)associadoBindingSource).BeginInit();
@@ -78,7 +79,7 @@
             dataGridViewCellStyle1.WrapMode = DataGridViewTriState.False;
             DGV_Associados.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             DGV_Associados.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            DGV_Associados.Columns.AddRange(new DataGridViewColumn[] { idDataGridViewTextBoxColumn, nomeDataGridViewTextBoxColumn, getCPFDataGridViewTextBoxColumn, getRGDataGridViewTextBoxColumn, dataNascimentoDataGridViewTextBoxColumn });
+            DGV_Associados.Columns.AddRange(new DataGridViewColumn[] { idDataGridViewTextBoxColumn, nomeDataGridViewTextBoxColumn, getCPFDataGridViewTextBoxColumn, getRGDataGridViewTextBoxColumn, GetDataNascimento });
             DGV_Associados.DataSource = associadoBindingSource;
             DGV_Associados.Dock = DockStyle.Fill;
             DGV_Associados.Location = new Point(3, 19);
@@ -92,49 +93,6 @@
             DGV_Associados.TabIndex = 0;
             DGV_Associados.CellClick += DGV_Associados_CellClick;
             DGV_Associados.SelectionChanged += DGV_Associados_SelectionChanged;
-            // 
-            // idDataGridViewTextBoxColumn
-            // 
-            idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-            idDataGridViewTextBoxColumn.HeaderText = "Id";
-            idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            idDataGridViewTextBoxColumn.ReadOnly = true;
-            idDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // nomeDataGridViewTextBoxColumn
-            // 
-            nomeDataGridViewTextBoxColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            nomeDataGridViewTextBoxColumn.DataPropertyName = "Nome";
-            nomeDataGridViewTextBoxColumn.HeaderText = "Associado";
-            nomeDataGridViewTextBoxColumn.Name = "nomeDataGridViewTextBoxColumn";
-            nomeDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // getCPFDataGridViewTextBoxColumn
-            // 
-            getCPFDataGridViewTextBoxColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            getCPFDataGridViewTextBoxColumn.DataPropertyName = "GetCPF";
-            getCPFDataGridViewTextBoxColumn.HeaderText = "CPF";
-            getCPFDataGridViewTextBoxColumn.Name = "getCPFDataGridViewTextBoxColumn";
-            getCPFDataGridViewTextBoxColumn.ReadOnly = true;
-            getCPFDataGridViewTextBoxColumn.Width = 53;
-            // 
-            // getRGDataGridViewTextBoxColumn
-            // 
-            getRGDataGridViewTextBoxColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            getRGDataGridViewTextBoxColumn.DataPropertyName = "GetRG";
-            getRGDataGridViewTextBoxColumn.HeaderText = "RG";
-            getRGDataGridViewTextBoxColumn.Name = "getRGDataGridViewTextBoxColumn";
-            getRGDataGridViewTextBoxColumn.ReadOnly = true;
-            getRGDataGridViewTextBoxColumn.Width = 47;
-            // 
-            // dataNascimentoDataGridViewTextBoxColumn
-            // 
-            dataNascimentoDataGridViewTextBoxColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            dataNascimentoDataGridViewTextBoxColumn.DataPropertyName = "DataNascimento";
-            dataNascimentoDataGridViewTextBoxColumn.HeaderText = "Data Nascimento";
-            dataNascimentoDataGridViewTextBoxColumn.Name = "dataNascimentoDataGridViewTextBoxColumn";
-            dataNascimentoDataGridViewTextBoxColumn.ReadOnly = true;
-            dataNascimentoDataGridViewTextBoxColumn.Width = 123;
             // 
             // associadoBindingSource
             // 
@@ -218,6 +176,50 @@
             BTN_LimpaPesquisa.UseVisualStyleBackColor = true;
             BTN_LimpaPesquisa.Click += BTN_LimpaPesquisa_Click;
             // 
+            // idDataGridViewTextBoxColumn
+            // 
+            idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            idDataGridViewTextBoxColumn.HeaderText = "Id";
+            idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            idDataGridViewTextBoxColumn.ReadOnly = true;
+            idDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // nomeDataGridViewTextBoxColumn
+            // 
+            nomeDataGridViewTextBoxColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            nomeDataGridViewTextBoxColumn.DataPropertyName = "Nome";
+            nomeDataGridViewTextBoxColumn.HeaderText = "Associado";
+            nomeDataGridViewTextBoxColumn.Name = "nomeDataGridViewTextBoxColumn";
+            nomeDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // getCPFDataGridViewTextBoxColumn
+            // 
+            getCPFDataGridViewTextBoxColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            getCPFDataGridViewTextBoxColumn.DataPropertyName = "GetCPF";
+            getCPFDataGridViewTextBoxColumn.HeaderText = "CPF";
+            getCPFDataGridViewTextBoxColumn.Name = "getCPFDataGridViewTextBoxColumn";
+            getCPFDataGridViewTextBoxColumn.ReadOnly = true;
+            getCPFDataGridViewTextBoxColumn.Width = 53;
+            // 
+            // getRGDataGridViewTextBoxColumn
+            // 
+            getRGDataGridViewTextBoxColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            getRGDataGridViewTextBoxColumn.DataPropertyName = "GetRG";
+            getRGDataGridViewTextBoxColumn.HeaderText = "RG";
+            getRGDataGridViewTextBoxColumn.Name = "getRGDataGridViewTextBoxColumn";
+            getRGDataGridViewTextBoxColumn.ReadOnly = true;
+            getRGDataGridViewTextBoxColumn.Width = 47;
+            // 
+            // GetDataNascimento
+            // 
+            GetDataNascimento.DataPropertyName = "GetDataNascimento";
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            GetDataNascimento.DefaultCellStyle = dataGridViewCellStyle2;
+            GetDataNascimento.HeaderText = "Data Nascimento";
+            GetDataNascimento.Name = "GetDataNascimento";
+            GetDataNascimento.ReadOnly = true;
+            // 
             // FRM_GestaoAssociados
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -263,6 +265,6 @@
         private DataGridViewTextBoxColumn nomeDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn getCPFDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn getRGDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn dataNascimentoDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn GetDataNascimento;
     }
 }

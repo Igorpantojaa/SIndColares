@@ -18,4 +18,5 @@ public class Associado
     public string GetRG { get { return Documentos.RG.Numero; } }
     public string GetCPF { get { return Documentos.CPF; } }
     public string GetFoto { get { return this.Digitalizados.Foto; } }
+    public string GetDataNascimento { get { return DataNascimento.ToShortDateString(); } }
 }

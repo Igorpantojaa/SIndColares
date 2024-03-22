@@ -68,14 +68,14 @@
             TXB_Telefone.Location = new Point(12, 74);
             TXB_Telefone.Name = "TXB_Telefone";
             TXB_Telefone.Size = new Size(203, 23);
-            TXB_Telefone.TabIndex = 2;
+            TXB_Telefone.TabIndex = 1;
             // 
             // BTN_Cancelar
             // 
             BTN_Cancelar.Location = new Point(120, 116);
             BTN_Cancelar.Name = "BTN_Cancelar";
             BTN_Cancelar.Size = new Size(91, 38);
-            BTN_Cancelar.TabIndex = 9;
+            BTN_Cancelar.TabIndex = 3;
             BTN_Cancelar.Text = "Cancelar";
             BTN_Cancelar.UseVisualStyleBackColor = true;
             BTN_Cancelar.Click += BTN_Cancelar_Click;
@@ -85,7 +85,7 @@
             BTN_Salvar.Location = new Point(16, 116);
             BTN_Salvar.Name = "BTN_Salvar";
             BTN_Salvar.Size = new Size(91, 38);
-            BTN_Salvar.TabIndex = 8;
+            BTN_Salvar.TabIndex = 2;
             BTN_Salvar.Text = "Salvar";
             BTN_Salvar.UseVisualStyleBackColor = true;
             BTN_Salvar.Click += BTN_Salvar_Click;

@@ -76,7 +76,7 @@
             CB_UF.Location = new Point(142, 125);
             CB_UF.Name = "CB_UF";
             CB_UF.Size = new Size(126, 23);
-            CB_UF.TabIndex = 7;
+            CB_UF.TabIndex = 4;
             // 
             // label3
             // 
@@ -93,7 +93,7 @@
             TXB_CNPJ.Location = new Point(6, 125);
             TXB_CNPJ.Name = "TXB_CNPJ";
             TXB_CNPJ.Size = new Size(130, 23);
-            TXB_CNPJ.TabIndex = 5;
+            TXB_CNPJ.TabIndex = 3;
             // 
             // label2
             // 
@@ -110,7 +110,7 @@
             TXB_NomeEntidade.Location = new Point(6, 81);
             TXB_NomeEntidade.Name = "TXB_NomeEntidade";
             TXB_NomeEntidade.Size = new Size(262, 23);
-            TXB_NomeEntidade.TabIndex = 3;
+            TXB_NomeEntidade.TabIndex = 2;
             // 
             // label1
             // 
@@ -146,7 +146,7 @@
             BTN_Cancelar.Location = new Point(198, 177);
             BTN_Cancelar.Name = "BTN_Cancelar";
             BTN_Cancelar.Size = new Size(91, 38);
-            BTN_Cancelar.TabIndex = 12;
+            BTN_Cancelar.TabIndex = 6;
             BTN_Cancelar.Text = "Cancelar";
             BTN_Cancelar.UseVisualStyleBackColor = true;
             BTN_Cancelar.Click += BTN_Cancelar_Click;
@@ -156,7 +156,7 @@
             BTN_Salvar.Location = new Point(94, 177);
             BTN_Salvar.Name = "BTN_Salvar";
             BTN_Salvar.Size = new Size(91, 38);
-            BTN_Salvar.TabIndex = 11;
+            BTN_Salvar.TabIndex = 5;
             BTN_Salvar.Text = "Salvar";
             BTN_Salvar.UseVisualStyleBackColor = true;
             BTN_Salvar.Click += BTN_Salvar_Click;

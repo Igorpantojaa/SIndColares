@@ -102,7 +102,8 @@
             TXB_CEI.Location = new Point(191, 37);
             TXB_CEI.Name = "TXB_CEI";
             TXB_CEI.Size = new Size(145, 23);
-            TXB_CEI.TabIndex = 18;
+            TXB_CEI.TabIndex = 1;
+            TXB_CEI.Leave += TXB_CEI_Leave;
             // 
             // label7
             // 
@@ -119,7 +120,7 @@
             TXB_LocalPesca.Location = new Point(6, 309);
             TXB_LocalPesca.Name = "TXB_LocalPesca";
             TXB_LocalPesca.Size = new Size(338, 23);
-            TXB_LocalPesca.TabIndex = 16;
+            TXB_LocalPesca.TabIndex = 11;
             // 
             // groupBox3
             // 
@@ -140,7 +141,7 @@
             TXB_CPFProprietario.Location = new Point(85, 87);
             TXB_CPFProprietario.Name = "TXB_CPFProprietario";
             TXB_CPFProprietario.Size = new Size(161, 23);
-            TXB_CPFProprietario.TabIndex = 16;
+            TXB_CPFProprietario.TabIndex = 7;
             // 
             // label8
             // 
@@ -167,14 +168,14 @@
             TXB_NomeEmbarcacao.Location = new Point(6, 40);
             TXB_NomeEmbarcacao.Name = "TXB_NomeEmbarcacao";
             TXB_NomeEmbarcacao.Size = new Size(173, 23);
-            TXB_NomeEmbarcacao.TabIndex = 14;
+            TXB_NomeEmbarcacao.TabIndex = 5;
             // 
             // TXB_RGP
             // 
             TXB_RGP.Location = new Point(185, 40);
             TXB_RGP.Name = "TXB_RGP";
             TXB_RGP.Size = new Size(139, 23);
-            TXB_RGP.TabIndex = 8;
+            TXB_RGP.TabIndex = 6;
             // 
             // label4
             // 
@@ -216,7 +217,7 @@
             groupBox2.Location = new Point(12, 338);
             groupBox2.Name = "groupBox2";
             groupBox2.Size = new Size(330, 77);
-            groupBox2.TabIndex = 12;
+            groupBox2.TabIndex = 11;
             groupBox2.TabStop = false;
             groupBox2.Text = "Produtos de Pesca";
             // 
@@ -226,7 +227,7 @@
             CHB_Outros.Location = new Point(179, 47);
             CHB_Outros.Name = "CHB_Outros";
             CHB_Outros.Size = new Size(62, 19);
-            CHB_Outros.TabIndex = 19;
+            CHB_Outros.TabIndex = 5;
             CHB_Outros.Text = "Outros";
             CHB_Outros.UseVisualStyleBackColor = true;
             // 
@@ -236,7 +237,7 @@
             CHB_Algas.Location = new Point(210, 22);
             CHB_Algas.Name = "CHB_Algas";
             CHB_Algas.Size = new Size(55, 19);
-            CHB_Algas.TabIndex = 16;
+            CHB_Algas.TabIndex = 3;
             CHB_Algas.Text = "Algas";
             CHB_Algas.UseVisualStyleBackColor = true;
             // 
@@ -246,7 +247,7 @@
             CHB_Mariscos.Location = new Point(130, 22);
             CHB_Mariscos.Name = "CHB_Mariscos";
             CHB_Mariscos.Size = new Size(73, 19);
-            CHB_Mariscos.TabIndex = 15;
+            CHB_Mariscos.TabIndex = 2;
             CHB_Mariscos.Text = "Mariscos";
             CHB_Mariscos.UseVisualStyleBackColor = true;
             // 
@@ -256,7 +257,7 @@
             CHB_Crustaceos.Location = new Point(90, 47);
             CHB_Crustaceos.Name = "CHB_Crustaceos";
             CHB_Crustaceos.Size = new Size(84, 19);
-            CHB_Crustaceos.TabIndex = 14;
+            CHB_Crustaceos.TabIndex = 4;
             CHB_Crustaceos.Text = "Crustáceos";
             CHB_Crustaceos.UseVisualStyleBackColor = true;
             // 
@@ -266,7 +267,7 @@
             CHB_Peixes.Location = new Point(65, 22);
             CHB_Peixes.Name = "CHB_Peixes";
             CHB_Peixes.Size = new Size(59, 19);
-            CHB_Peixes.TabIndex = 13;
+            CHB_Peixes.TabIndex = 1;
             CHB_Peixes.Text = "Peixes";
             CHB_Peixes.UseVisualStyleBackColor = true;
             // 
@@ -276,7 +277,7 @@
             CB_FormaPesca.Location = new Point(6, 81);
             CB_FormaPesca.Name = "CB_FormaPesca";
             CB_FormaPesca.Size = new Size(179, 23);
-            CB_FormaPesca.TabIndex = 3;
+            CB_FormaPesca.TabIndex = 2;
             // 
             // CHB_Aposentado
             // 
@@ -284,7 +285,7 @@
             CHB_Aposentado.Location = new Point(216, 272);
             CHB_Aposentado.Name = "CHB_Aposentado";
             CHB_Aposentado.Size = new Size(90, 19);
-            CHB_Aposentado.TabIndex = 7;
+            CHB_Aposentado.TabIndex = 10;
             CHB_Aposentado.Text = "Aposentado";
             CHB_Aposentado.UseVisualStyleBackColor = true;
             // 
@@ -293,7 +294,7 @@
             TXB_AB.Location = new Point(191, 81);
             TXB_AB.Name = "TXB_AB";
             TXB_AB.Size = new Size(145, 23);
-            TXB_AB.TabIndex = 10;
+            TXB_AB.TabIndex = 3;
             // 
             // CHB_Empregado
             // 
@@ -301,7 +302,7 @@
             CHB_Empregado.Location = new Point(216, 247);
             CHB_Empregado.Name = "CHB_Empregado";
             CHB_Empregado.Size = new Size(87, 19);
-            CHB_Empregado.TabIndex = 6;
+            CHB_Empregado.TabIndex = 9;
             CHB_Empregado.Text = "Empregado";
             CHB_Empregado.UseVisualStyleBackColor = true;
             // 
@@ -311,7 +312,7 @@
             CB_AreaPesca.Location = new Point(6, 262);
             CB_AreaPesca.Name = "CB_AreaPesca";
             CB_AreaPesca.Size = new Size(179, 23);
-            CB_AreaPesca.TabIndex = 5;
+            CB_AreaPesca.TabIndex = 8;
             // 
             // label3
             // 
@@ -329,7 +330,7 @@
             CB_CategoriaProfissional.Location = new Point(6, 37);
             CB_CategoriaProfissional.Name = "CB_CategoriaProfissional";
             CB_CategoriaProfissional.Size = new Size(179, 23);
-            CB_CategoriaProfissional.TabIndex = 1;
+            CB_CategoriaProfissional.TabIndex = 0;
             // 
             // label1
             // 
@@ -346,7 +347,7 @@
             BTN_Cancelar.Location = new Point(272, 439);
             BTN_Cancelar.Name = "BTN_Cancelar";
             BTN_Cancelar.Size = new Size(91, 38);
-            BTN_Cancelar.TabIndex = 14;
+            BTN_Cancelar.TabIndex = 12;
             BTN_Cancelar.Text = "Cancelar";
             BTN_Cancelar.UseVisualStyleBackColor = true;
             BTN_Cancelar.Click += BTN_Cancelar_Click;
@@ -356,7 +357,7 @@
             BTN_Salvar.Location = new Point(168, 439);
             BTN_Salvar.Name = "BTN_Salvar";
             BTN_Salvar.Size = new Size(91, 38);
-            BTN_Salvar.TabIndex = 13;
+            BTN_Salvar.TabIndex = 4;
             BTN_Salvar.Text = "Salvar";
             BTN_Salvar.UseVisualStyleBackColor = true;
             BTN_Salvar.Click += BTN_Salvar_Click;

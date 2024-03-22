@@ -31,10 +31,10 @@
             BTN_Cancelar = new Button();
             BTN_Salvar = new Button();
             groupBox3 = new GroupBox();
+            CB_DeclaracaoEscolaridade = new ComboBox();
             label1 = new Label();
             CB_Escolarridade = new ComboBox();
             label14 = new Label();
-            CB_DeclaracaoEscolaridade = new ComboBox();
             groupBox3.SuspendLayout();
             SuspendLayout();
             // 
@@ -43,7 +43,7 @@
             BTN_Cancelar.Location = new Point(255, 220);
             BTN_Cancelar.Name = "BTN_Cancelar";
             BTN_Cancelar.Size = new Size(91, 38);
-            BTN_Cancelar.TabIndex = 10;
+            BTN_Cancelar.TabIndex = 3;
             BTN_Cancelar.Text = "Cancelar";
             BTN_Cancelar.UseVisualStyleBackColor = true;
             BTN_Cancelar.Click += BTN_Cancelar_Click;
@@ -53,7 +53,7 @@
             BTN_Salvar.Location = new Point(151, 220);
             BTN_Salvar.Name = "BTN_Salvar";
             BTN_Salvar.Size = new Size(91, 38);
-            BTN_Salvar.TabIndex = 9;
+            BTN_Salvar.TabIndex = 2;
             BTN_Salvar.Text = "Salvar";
             BTN_Salvar.UseVisualStyleBackColor = true;
             BTN_Salvar.Click += BTN_Salvar_Click;
@@ -69,6 +69,14 @@
             groupBox3.Size = new Size(334, 202);
             groupBox3.TabIndex = 8;
             groupBox3.TabStop = false;
+            // 
+            // CB_DeclaracaoEscolaridade
+            // 
+            CB_DeclaracaoEscolaridade.FormattingEnabled = true;
+            CB_DeclaracaoEscolaridade.Location = new Point(8, 90);
+            CB_DeclaracaoEscolaridade.Name = "CB_DeclaracaoEscolaridade";
+            CB_DeclaracaoEscolaridade.Size = new Size(318, 23);
+            CB_DeclaracaoEscolaridade.TabIndex = 1;
             // 
             // label1
             // 
@@ -97,14 +105,6 @@
             label14.Size = new Size(75, 15);
             label14.TabIndex = 4;
             label14.Text = "Escolaridade";
-            // 
-            // CB_DeclaracaoEscolaridade
-            // 
-            CB_DeclaracaoEscolaridade.FormattingEnabled = true;
-            CB_DeclaracaoEscolaridade.Location = new Point(8, 90);
-            CB_DeclaracaoEscolaridade.Name = "CB_DeclaracaoEscolaridade";
-            CB_DeclaracaoEscolaridade.Size = new Size(318, 23);
-            CB_DeclaracaoEscolaridade.TabIndex = 14;
             // 
             // FRM_Escolaridade
             // 

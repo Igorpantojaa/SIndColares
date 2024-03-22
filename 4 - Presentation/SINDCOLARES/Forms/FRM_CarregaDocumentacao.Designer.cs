@@ -98,7 +98,7 @@
             BTN_ExcluirCanhotoProtocolo.Location = new Point(245, 328);
             BTN_ExcluirCanhotoProtocolo.Name = "BTN_ExcluirCanhotoProtocolo";
             BTN_ExcluirCanhotoProtocolo.Size = new Size(103, 39);
-            BTN_ExcluirCanhotoProtocolo.TabIndex = 25;
+            BTN_ExcluirCanhotoProtocolo.TabIndex = 24;
             BTN_ExcluirCanhotoProtocolo.Text = "Excluir";
             BTN_ExcluirCanhotoProtocolo.UseVisualStyleBackColor = false;
             BTN_ExcluirCanhotoProtocolo.Click += BTN_ExcluirCanhotoProtocolo_Click;
@@ -110,7 +110,7 @@
             BTN_ExcluirReqINSS.Location = new Point(245, 283);
             BTN_ExcluirReqINSS.Name = "BTN_ExcluirReqINSS";
             BTN_ExcluirReqINSS.Size = new Size(103, 39);
-            BTN_ExcluirReqINSS.TabIndex = 24;
+            BTN_ExcluirReqINSS.TabIndex = 21;
             BTN_ExcluirReqINSS.Text = "Excluir";
             BTN_ExcluirReqINSS.UseVisualStyleBackColor = false;
             BTN_ExcluirReqINSS.Click += BTN_ExcluirReqINSS_Click;
@@ -122,7 +122,7 @@
             BTN_ExcluirReqLicensa.Location = new Point(245, 238);
             BTN_ExcluirReqLicensa.Name = "BTN_ExcluirReqLicensa";
             BTN_ExcluirReqLicensa.Size = new Size(103, 39);
-            BTN_ExcluirReqLicensa.TabIndex = 23;
+            BTN_ExcluirReqLicensa.TabIndex = 18;
             BTN_ExcluirReqLicensa.Text = "Excluir";
             BTN_ExcluirReqLicensa.UseVisualStyleBackColor = false;
             BTN_ExcluirReqLicensa.Click += BTN_ExcluirReqLicensa_Click;
@@ -134,7 +134,7 @@
             BTN_ExcluirAutorizacao.Location = new Point(245, 193);
             BTN_ExcluirAutorizacao.Name = "BTN_ExcluirAutorizacao";
             BTN_ExcluirAutorizacao.Size = new Size(103, 39);
-            BTN_ExcluirAutorizacao.TabIndex = 22;
+            BTN_ExcluirAutorizacao.TabIndex = 15;
             BTN_ExcluirAutorizacao.Text = "Excluir";
             BTN_ExcluirAutorizacao.UseVisualStyleBackColor = false;
             BTN_ExcluirAutorizacao.Click += BTN_ExcluirAutorizacao_Click;
@@ -146,7 +146,7 @@
             BTN_ExcluirResidencia.Location = new Point(245, 148);
             BTN_ExcluirResidencia.Name = "BTN_ExcluirResidencia";
             BTN_ExcluirResidencia.Size = new Size(103, 39);
-            BTN_ExcluirResidencia.TabIndex = 21;
+            BTN_ExcluirResidencia.TabIndex = 12;
             BTN_ExcluirResidencia.Text = "Excluir";
             BTN_ExcluirResidencia.UseVisualStyleBackColor = false;
             BTN_ExcluirResidencia.Click += BTN_ExcluirResidencia_Click;
@@ -158,7 +158,7 @@
             BTN_ExcluirFiliacao.Location = new Point(245, 103);
             BTN_ExcluirFiliacao.Name = "BTN_ExcluirFiliacao";
             BTN_ExcluirFiliacao.Size = new Size(103, 39);
-            BTN_ExcluirFiliacao.TabIndex = 20;
+            BTN_ExcluirFiliacao.TabIndex = 9;
             BTN_ExcluirFiliacao.Text = "Excluir";
             BTN_ExcluirFiliacao.UseVisualStyleBackColor = false;
             BTN_ExcluirFiliacao.Click += BTN_ExcluirFiliacao_Click;
@@ -170,7 +170,7 @@
             BTN_ExcluirRG.Location = new Point(245, 58);
             BTN_ExcluirRG.Name = "BTN_ExcluirRG";
             BTN_ExcluirRG.Size = new Size(103, 39);
-            BTN_ExcluirRG.TabIndex = 19;
+            BTN_ExcluirRG.TabIndex = 6;
             BTN_ExcluirRG.Text = "Excluir";
             BTN_ExcluirRG.UseVisualStyleBackColor = false;
             BTN_ExcluirRG.Click += BTN_ExcluirRG_Click;
@@ -182,7 +182,7 @@
             BTN_ExcluirCPF.Location = new Point(245, 13);
             BTN_ExcluirCPF.Name = "BTN_ExcluirCPF";
             BTN_ExcluirCPF.Size = new Size(103, 39);
-            BTN_ExcluirCPF.TabIndex = 18;
+            BTN_ExcluirCPF.TabIndex = 3;
             BTN_ExcluirCPF.Text = "Excluir";
             BTN_ExcluirCPF.UseVisualStyleBackColor = false;
             BTN_ExcluirCPF.Click += BTN_ExcluirCPF_Click;
@@ -193,7 +193,7 @@
             BTN_AbrirPasta.Location = new Point(44, 374);
             BTN_AbrirPasta.Name = "BTN_AbrirPasta";
             BTN_AbrirPasta.Size = new Size(266, 39);
-            BTN_AbrirPasta.TabIndex = 17;
+            BTN_AbrirPasta.TabIndex = 25;
             BTN_AbrirPasta.Text = "Abrir pasta do associado";
             BTN_AbrirPasta.UseVisualStyleBackColor = true;
             BTN_AbrirPasta.Click += BTN_AbrirPasta_Click;
@@ -205,7 +205,7 @@
             BTN_VisualizaCanhotoProtocolo.Location = new Point(142, 328);
             BTN_VisualizaCanhotoProtocolo.Name = "BTN_VisualizaCanhotoProtocolo";
             BTN_VisualizaCanhotoProtocolo.Size = new Size(97, 39);
-            BTN_VisualizaCanhotoProtocolo.TabIndex = 16;
+            BTN_VisualizaCanhotoProtocolo.TabIndex = 23;
             BTN_VisualizaCanhotoProtocolo.Text = "Visualizar";
             BTN_VisualizaCanhotoProtocolo.UseVisualStyleBackColor = false;
             BTN_VisualizaCanhotoProtocolo.Click += BTN_VisualizaCanhotoProtocolo_Click;
@@ -217,7 +217,7 @@
             BTN_SelecionaCanhotoProtocolo.Location = new Point(6, 328);
             BTN_SelecionaCanhotoProtocolo.Name = "BTN_SelecionaCanhotoProtocolo";
             BTN_SelecionaCanhotoProtocolo.Size = new Size(130, 39);
-            BTN_SelecionaCanhotoProtocolo.TabIndex = 15;
+            BTN_SelecionaCanhotoProtocolo.TabIndex = 22;
             BTN_SelecionaCanhotoProtocolo.Text = "Canhoto Protocolo";
             BTN_SelecionaCanhotoProtocolo.UseVisualStyleBackColor = false;
             BTN_SelecionaCanhotoProtocolo.Click += BTN_SelecionaCanhotoProtocolo_Click;
@@ -229,7 +229,7 @@
             BTN_VisualizaFiliacao.Location = new Point(142, 103);
             BTN_VisualizaFiliacao.Name = "BTN_VisualizaFiliacao";
             BTN_VisualizaFiliacao.Size = new Size(97, 39);
-            BTN_VisualizaFiliacao.TabIndex = 13;
+            BTN_VisualizaFiliacao.TabIndex = 8;
             BTN_VisualizaFiliacao.Text = "Visualizar";
             BTN_VisualizaFiliacao.UseVisualStyleBackColor = false;
             BTN_VisualizaFiliacao.Click += BTN_VisualizaFiliacao_Click;
@@ -241,7 +241,7 @@
             BTN_VisualizaReqINSS.Location = new Point(142, 283);
             BTN_VisualizaReqINSS.Name = "BTN_VisualizaReqINSS";
             BTN_VisualizaReqINSS.Size = new Size(97, 39);
-            BTN_VisualizaReqINSS.TabIndex = 12;
+            BTN_VisualizaReqINSS.TabIndex = 20;
             BTN_VisualizaReqINSS.Text = "Visualizar";
             BTN_VisualizaReqINSS.UseVisualStyleBackColor = false;
             BTN_VisualizaReqINSS.Click += BTN_VisualizaReqINSS_Click;
@@ -253,7 +253,7 @@
             BTN_VisualizaReqLicensa.Location = new Point(142, 238);
             BTN_VisualizaReqLicensa.Name = "BTN_VisualizaReqLicensa";
             BTN_VisualizaReqLicensa.Size = new Size(97, 39);
-            BTN_VisualizaReqLicensa.TabIndex = 11;
+            BTN_VisualizaReqLicensa.TabIndex = 17;
             BTN_VisualizaReqLicensa.Text = "Visualizar";
             BTN_VisualizaReqLicensa.UseVisualStyleBackColor = false;
             BTN_VisualizaReqLicensa.Click += BTN_VisualizaReqLicensa_Click;
@@ -265,7 +265,7 @@
             BTN_VisualizaTermoAutorizacao.Location = new Point(142, 193);
             BTN_VisualizaTermoAutorizacao.Name = "BTN_VisualizaTermoAutorizacao";
             BTN_VisualizaTermoAutorizacao.Size = new Size(97, 39);
-            BTN_VisualizaTermoAutorizacao.TabIndex = 10;
+            BTN_VisualizaTermoAutorizacao.TabIndex = 14;
             BTN_VisualizaTermoAutorizacao.Text = "Visualizar";
             BTN_VisualizaTermoAutorizacao.UseVisualStyleBackColor = false;
             BTN_VisualizaTermoAutorizacao.Click += BTN_VisualizaTermoAutorizacao_Click;
@@ -277,7 +277,7 @@
             BTN_VisualizaResidencia.Location = new Point(142, 148);
             BTN_VisualizaResidencia.Name = "BTN_VisualizaResidencia";
             BTN_VisualizaResidencia.Size = new Size(97, 39);
-            BTN_VisualizaResidencia.TabIndex = 9;
+            BTN_VisualizaResidencia.TabIndex = 11;
             BTN_VisualizaResidencia.Text = "Visualizar";
             BTN_VisualizaResidencia.UseVisualStyleBackColor = false;
             BTN_VisualizaResidencia.Click += BTN_VisualizaResidencia_Click;
@@ -289,7 +289,7 @@
             BTN_VisualizaRG.Location = new Point(142, 58);
             BTN_VisualizaRG.Name = "BTN_VisualizaRG";
             BTN_VisualizaRG.Size = new Size(97, 39);
-            BTN_VisualizaRG.TabIndex = 8;
+            BTN_VisualizaRG.TabIndex = 5;
             BTN_VisualizaRG.Text = "Visualizar";
             BTN_VisualizaRG.UseVisualStyleBackColor = false;
             BTN_VisualizaRG.Click += BTN_VisualizaRG_Click;
@@ -301,7 +301,7 @@
             BTN_VisualizaCPF.Location = new Point(142, 13);
             BTN_VisualizaCPF.Name = "BTN_VisualizaCPF";
             BTN_VisualizaCPF.Size = new Size(97, 39);
-            BTN_VisualizaCPF.TabIndex = 7;
+            BTN_VisualizaCPF.TabIndex = 1;
             BTN_VisualizaCPF.Text = "Visualizar";
             BTN_VisualizaCPF.UseVisualStyleBackColor = false;
             BTN_VisualizaCPF.Click += BTN_VisualizaCPF_Click;
@@ -313,7 +313,7 @@
             BTN_SelecionaFiliacao.Location = new Point(6, 103);
             BTN_SelecionaFiliacao.Name = "BTN_SelecionaFiliacao";
             BTN_SelecionaFiliacao.Size = new Size(130, 39);
-            BTN_SelecionaFiliacao.TabIndex = 6;
+            BTN_SelecionaFiliacao.TabIndex = 7;
             BTN_SelecionaFiliacao.Text = "Filiação";
             BTN_SelecionaFiliacao.UseVisualStyleBackColor = false;
             BTN_SelecionaFiliacao.Click += BTN_SelecionaFiliacao_Click;
@@ -325,7 +325,7 @@
             BTN_SelecionaReqINSS.Location = new Point(6, 283);
             BTN_SelecionaReqINSS.Name = "BTN_SelecionaReqINSS";
             BTN_SelecionaReqINSS.Size = new Size(130, 39);
-            BTN_SelecionaReqINSS.TabIndex = 5;
+            BTN_SelecionaReqINSS.TabIndex = 19;
             BTN_SelecionaReqINSS.Text = "Req. INSS";
             BTN_SelecionaReqINSS.UseVisualStyleBackColor = false;
             BTN_SelecionaReqINSS.Click += BTN_SelecionaReqINSS_Click;
@@ -337,7 +337,7 @@
             BTN_SelecionaRegInicial.Location = new Point(6, 238);
             BTN_SelecionaRegInicial.Name = "BTN_SelecionaRegInicial";
             BTN_SelecionaRegInicial.Size = new Size(130, 39);
-            BTN_SelecionaRegInicial.TabIndex = 4;
+            BTN_SelecionaRegInicial.TabIndex = 16;
             BTN_SelecionaRegInicial.Text = "Registo Inicial";
             BTN_SelecionaRegInicial.UseVisualStyleBackColor = false;
             BTN_SelecionaRegInicial.Click += BTN_SelecionaRegInicial_Click;
@@ -349,7 +349,7 @@
             BTN_SelecionaProcuracao.Location = new Point(6, 193);
             BTN_SelecionaProcuracao.Name = "BTN_SelecionaProcuracao";
             BTN_SelecionaProcuracao.Size = new Size(130, 39);
-            BTN_SelecionaProcuracao.TabIndex = 3;
+            BTN_SelecionaProcuracao.TabIndex = 13;
             BTN_SelecionaProcuracao.Text = "Procuração";
             BTN_SelecionaProcuracao.UseVisualStyleBackColor = false;
             BTN_SelecionaProcuracao.Click += BTN_SelecionaProcuracao_Click;
@@ -361,7 +361,7 @@
             BTN_SelecionaResidencia.Location = new Point(6, 148);
             BTN_SelecionaResidencia.Name = "BTN_SelecionaResidencia";
             BTN_SelecionaResidencia.Size = new Size(130, 39);
-            BTN_SelecionaResidencia.TabIndex = 2;
+            BTN_SelecionaResidencia.TabIndex = 10;
             BTN_SelecionaResidencia.Text = "Comp. Residência";
             BTN_SelecionaResidencia.UseVisualStyleBackColor = false;
             BTN_SelecionaResidencia.Click += BTN_SelecionaResidencia_Click;
@@ -373,7 +373,7 @@
             BTN_SelecionaRG.Location = new Point(6, 58);
             BTN_SelecionaRG.Name = "BTN_SelecionaRG";
             BTN_SelecionaRG.Size = new Size(130, 39);
-            BTN_SelecionaRG.TabIndex = 1;
+            BTN_SelecionaRG.TabIndex = 4;
             BTN_SelecionaRG.Text = "RG";
             BTN_SelecionaRG.UseVisualStyleBackColor = false;
             BTN_SelecionaRG.Click += BTN_SelecionaRG_Click;
@@ -396,7 +396,7 @@
             BTN_Voltar.Location = new Point(121, 434);
             BTN_Voltar.Name = "BTN_Voltar";
             BTN_Voltar.Size = new Size(130, 39);
-            BTN_Voltar.TabIndex = 13;
+            BTN_Voltar.TabIndex = 26;
             BTN_Voltar.Text = "Voltar";
             BTN_Voltar.UseVisualStyleBackColor = true;
             BTN_Voltar.Click += BTN_Voltar_Click;

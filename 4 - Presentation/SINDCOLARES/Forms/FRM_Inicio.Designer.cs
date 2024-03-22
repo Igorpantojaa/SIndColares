@@ -98,7 +98,7 @@
             BTN_Periodos.Location = new Point(121, 193);
             BTN_Periodos.Name = "BTN_Periodos";
             BTN_Periodos.Size = new Size(90, 96);
-            BTN_Periodos.TabIndex = 4;
+            BTN_Periodos.TabIndex = 2;
             BTN_Periodos.UseVisualStyleBackColor = true;
             BTN_Periodos.Click += BTN_Periodos_Click;
             // 
@@ -119,7 +119,7 @@
             BTN_GeraDocumentos.Location = new Point(291, 193);
             BTN_GeraDocumentos.Name = "BTN_GeraDocumentos";
             BTN_GeraDocumentos.Size = new Size(90, 96);
-            BTN_GeraDocumentos.TabIndex = 6;
+            BTN_GeraDocumentos.TabIndex = 3;
             BTN_GeraDocumentos.UseVisualStyleBackColor = true;
             BTN_GeraDocumentos.Click += BTN_GeraDocumentos_Click;
             // 

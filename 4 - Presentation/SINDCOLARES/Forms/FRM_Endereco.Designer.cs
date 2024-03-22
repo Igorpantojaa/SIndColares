@@ -75,7 +75,7 @@
             TXB_Localidade.Location = new Point(321, 81);
             TXB_Localidade.Name = "TXB_Localidade";
             TXB_Localidade.Size = new Size(107, 23);
-            TXB_Localidade.TabIndex = 14;
+            TXB_Localidade.TabIndex = 7;
             // 
             // label1
             // 
@@ -93,14 +93,14 @@
             CB_UF.Location = new Point(97, 37);
             CB_UF.Name = "CB_UF";
             CB_UF.Size = new Size(102, 23);
-            CB_UF.TabIndex = 12;
+            CB_UF.TabIndex = 5;
             // 
             // TXB_Numero
             // 
             TXB_Numero.Location = new Point(259, 81);
             TXB_Numero.Name = "TXB_Numero";
             TXB_Numero.Size = new Size(56, 23);
-            TXB_Numero.TabIndex = 11;
+            TXB_Numero.TabIndex = 2;
             // 
             // label17
             // 
@@ -117,7 +117,7 @@
             TXB_Bairro.Location = new Point(325, 37);
             TXB_Bairro.Name = "TXB_Bairro";
             TXB_Bairro.Size = new Size(103, 23);
-            TXB_Bairro.TabIndex = 9;
+            TXB_Bairro.TabIndex = 0;
             // 
             // label16
             // 
@@ -134,7 +134,7 @@
             TXB_Municipio.Location = new Point(205, 37);
             TXB_Municipio.Name = "TXB_Municipio";
             TXB_Municipio.Size = new Size(114, 23);
-            TXB_Municipio.TabIndex = 7;
+            TXB_Municipio.TabIndex = 6;
             // 
             // label15
             // 
@@ -161,7 +161,7 @@
             TXB_Rua.Location = new Point(9, 81);
             TXB_Rua.Name = "TXB_Rua";
             TXB_Rua.Size = new Size(244, 23);
-            TXB_Rua.TabIndex = 3;
+            TXB_Rua.TabIndex = 1;
             // 
             // label12
             // 
@@ -178,7 +178,7 @@
             TXB_CEP.Location = new Point(9, 37);
             TXB_CEP.Name = "TXB_CEP";
             TXB_CEP.Size = new Size(82, 23);
-            TXB_CEP.TabIndex = 1;
+            TXB_CEP.TabIndex = 4;
             // 
             // label13
             // 
@@ -195,7 +195,7 @@
             BTN_Salvar.Location = new Point(254, 140);
             BTN_Salvar.Name = "BTN_Salvar";
             BTN_Salvar.Size = new Size(91, 38);
-            BTN_Salvar.TabIndex = 6;
+            BTN_Salvar.TabIndex = 3;
             BTN_Salvar.Text = "Salvar";
             BTN_Salvar.UseVisualStyleBackColor = true;
             BTN_Salvar.Click += BTN_Salvar_Click;
@@ -205,7 +205,7 @@
             BTN_Cancelar.Location = new Point(358, 140);
             BTN_Cancelar.Name = "BTN_Cancelar";
             BTN_Cancelar.Size = new Size(91, 38);
-            BTN_Cancelar.TabIndex = 7;
+            BTN_Cancelar.TabIndex = 8;
             BTN_Cancelar.Text = "Cancelar";
             BTN_Cancelar.UseVisualStyleBackColor = true;
             BTN_Cancelar.Click += BTN_Cancelar_Click;

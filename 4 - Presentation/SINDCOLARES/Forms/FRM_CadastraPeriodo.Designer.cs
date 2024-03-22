@@ -86,7 +86,7 @@
             CHB_Periodo1.Location = new Point(8, 22);
             CHB_Periodo1.Name = "CHB_Periodo1";
             CHB_Periodo1.Size = new Size(81, 19);
-            CHB_Periodo1.TabIndex = 6;
+            CHB_Periodo1.TabIndex = 3;
             CHB_Periodo1.Text = "1º Período";
             CHB_Periodo1.UseVisualStyleBackColor = true;
             CHB_Periodo1.CheckedChanged += CHB_Periodo1_CheckedChanged;
@@ -109,7 +109,7 @@
             DTP_Periodo1Fim.MinDate = new DateTime(2000, 1, 1, 0, 0, 0, 0);
             DTP_Periodo1Fim.Name = "DTP_Periodo1Fim";
             DTP_Periodo1Fim.Size = new Size(200, 23);
-            DTP_Periodo1Fim.TabIndex = 3;
+            DTP_Periodo1Fim.TabIndex = 5;
             // 
             // DTP_Periodo1Inicio
             // 
@@ -119,7 +119,7 @@
             DTP_Periodo1Inicio.MinDate = new DateTime(2000, 1, 1, 0, 0, 0, 0);
             DTP_Periodo1Inicio.Name = "DTP_Periodo1Inicio";
             DTP_Periodo1Inicio.Size = new Size(200, 23);
-            DTP_Periodo1Inicio.TabIndex = 1;
+            DTP_Periodo1Inicio.TabIndex = 4;
             // 
             // groupBox2
             // 
@@ -141,7 +141,7 @@
             CHB_Periodo2.Location = new Point(6, 22);
             CHB_Periodo2.Name = "CHB_Periodo2";
             CHB_Periodo2.Size = new Size(81, 19);
-            CHB_Periodo2.TabIndex = 5;
+            CHB_Periodo2.TabIndex = 6;
             CHB_Periodo2.Text = "2º Período";
             CHB_Periodo2.UseVisualStyleBackColor = true;
             CHB_Periodo2.CheckedChanged += CHB_Periodo1_CheckedChanged;
@@ -166,7 +166,7 @@
             DTP_Periodo2Fim.MinDate = new DateTime(2000, 1, 1, 0, 0, 0, 0);
             DTP_Periodo2Fim.Name = "DTP_Periodo2Fim";
             DTP_Periodo2Fim.Size = new Size(200, 23);
-            DTP_Periodo2Fim.TabIndex = 3;
+            DTP_Periodo2Fim.TabIndex = 8;
             // 
             // DTP_Periodo2Inicio
             // 
@@ -177,7 +177,7 @@
             DTP_Periodo2Inicio.MinDate = new DateTime(2000, 1, 1, 0, 0, 0, 0);
             DTP_Periodo2Inicio.Name = "DTP_Periodo2Inicio";
             DTP_Periodo2Inicio.Size = new Size(200, 23);
-            DTP_Periodo2Inicio.TabIndex = 1;
+            DTP_Periodo2Inicio.TabIndex = 7;
             // 
             // LBL_Periodo2inicio
             // 
@@ -223,7 +223,7 @@
             BTN_Salvar.Location = new Point(71, 425);
             BTN_Salvar.Name = "BTN_Salvar";
             BTN_Salvar.Size = new Size(99, 38);
-            BTN_Salvar.TabIndex = 8;
+            BTN_Salvar.TabIndex = 9;
             BTN_Salvar.Text = "Salvar";
             BTN_Salvar.UseVisualStyleBackColor = true;
             BTN_Salvar.Click += BTN_Salvar_Click;
@@ -234,7 +234,7 @@
             BTN_Cancelar.Location = new Point(176, 425);
             BTN_Cancelar.Name = "BTN_Cancelar";
             BTN_Cancelar.Size = new Size(99, 38);
-            BTN_Cancelar.TabIndex = 9;
+            BTN_Cancelar.TabIndex = 10;
             BTN_Cancelar.Text = "Cancelar";
             BTN_Cancelar.UseVisualStyleBackColor = true;
             BTN_Cancelar.Click += BTN_Cancelar_Click;
@@ -248,7 +248,7 @@
             DTP_DataPublicacao.MinDate = new DateTime(2000, 1, 1, 0, 0, 0, 0);
             DTP_DataPublicacao.Name = "DTP_DataPublicacao";
             DTP_DataPublicacao.Size = new Size(108, 23);
-            DTP_DataPublicacao.TabIndex = 11;
+            DTP_DataPublicacao.TabIndex = 1;
             // 
             // label2
             // 
@@ -282,7 +282,7 @@
             TXB_NumPublicacao.Location = new Point(225, 46);
             TXB_NumPublicacao.Name = "TXB_NumPublicacao";
             TXB_NumPublicacao.Size = new Size(108, 23);
-            TXB_NumPublicacao.TabIndex = 15;
+            TXB_NumPublicacao.TabIndex = 2;
             // 
             // FRM_CadastraPeriodo
             // 

@@ -1,5 +1,6 @@
 ﻿using Servicos;
 using Servicos.ComboBox;
+using Servicos.Utilidades;
 
 namespace SINDCOLARES.Formularios;
 
@@ -28,6 +29,10 @@ public partial class FRM_Profissao : Form
     private void FRM_Profissao_Load(object sender, EventArgs e)
     {
         CarregarInformacoes();
+    }
+    private void TXB_CEI_Leave(object sender, EventArgs e)
+    {
+        TXB_CEI.Text = CEI.FormataCEI(TXB_CEI.Text);
     }
 
     private void SalvarInformacoes()

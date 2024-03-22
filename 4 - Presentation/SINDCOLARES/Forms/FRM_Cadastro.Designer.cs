@@ -79,7 +79,7 @@
             BTN_Documentos.Location = new Point(14, 22);
             BTN_Documentos.Name = "BTN_Documentos";
             BTN_Documentos.Size = new Size(130, 55);
-            BTN_Documentos.TabIndex = 8;
+            BTN_Documentos.TabIndex = 6;
             BTN_Documentos.Text = "Documentos";
             BTN_Documentos.UseVisualStyleBackColor = true;
             BTN_Documentos.Click += BTN_Documentos_Click;
@@ -89,7 +89,7 @@
             BTN_Profissao.Location = new Point(308, 82);
             BTN_Profissao.Name = "BTN_Profissao";
             BTN_Profissao.Size = new Size(130, 55);
-            BTN_Profissao.TabIndex = 13;
+            BTN_Profissao.TabIndex = 11;
             BTN_Profissao.Text = "Profissão";
             BTN_Profissao.UseVisualStyleBackColor = true;
             BTN_Profissao.Click += BTN_Profissao_Click;
@@ -99,7 +99,7 @@
             BTN_Endereco.Location = new Point(161, 22);
             BTN_Endereco.Name = "BTN_Endereco";
             BTN_Endereco.Size = new Size(130, 55);
-            BTN_Endereco.TabIndex = 9;
+            BTN_Endereco.TabIndex = 7;
             BTN_Endereco.Text = "Endereço";
             BTN_Endereco.UseVisualStyleBackColor = true;
             BTN_Endereco.Click += BTN_Endereco_Click;
@@ -109,7 +109,7 @@
             BTN_filiacao.Location = new Point(161, 82);
             BTN_filiacao.Name = "BTN_filiacao";
             BTN_filiacao.Size = new Size(130, 55);
-            BTN_filiacao.TabIndex = 12;
+            BTN_filiacao.TabIndex = 10;
             BTN_filiacao.Text = "Filiação";
             BTN_filiacao.UseVisualStyleBackColor = true;
             BTN_filiacao.Click += BTN_filiacao_Click;
@@ -119,7 +119,7 @@
             BTN_Contato.Location = new Point(308, 21);
             BTN_Contato.Name = "BTN_Contato";
             BTN_Contato.Size = new Size(130, 55);
-            BTN_Contato.TabIndex = 10;
+            BTN_Contato.TabIndex = 8;
             BTN_Contato.Text = "Contato";
             BTN_Contato.UseVisualStyleBackColor = true;
             BTN_Contato.Click += BTN_Contato_Click;
@@ -129,7 +129,7 @@
             BTN_Escolaridade.Location = new Point(14, 83);
             BTN_Escolaridade.Name = "BTN_Escolaridade";
             BTN_Escolaridade.Size = new Size(130, 55);
-            BTN_Escolaridade.TabIndex = 11;
+            BTN_Escolaridade.TabIndex = 9;
             BTN_Escolaridade.Text = "Escolaridade";
             BTN_Escolaridade.UseVisualStyleBackColor = true;
             BTN_Escolaridade.Click += BTN_Escolaridade_Click;
@@ -176,7 +176,7 @@
             CB_Sexo.Location = new Point(6, 37);
             CB_Sexo.Name = "CB_Sexo";
             CB_Sexo.Size = new Size(151, 23);
-            CB_Sexo.TabIndex = 9;
+            CB_Sexo.TabIndex = 3;
             // 
             // DTP_DataNascimento
             // 
@@ -185,14 +185,14 @@
             DTP_DataNascimento.Location = new Point(332, 37);
             DTP_DataNascimento.Name = "DTP_DataNascimento";
             DTP_DataNascimento.Size = new Size(114, 23);
-            DTP_DataNascimento.TabIndex = 8;
+            DTP_DataNascimento.TabIndex = 5;
             // 
             // TXB_Apelido
             // 
             TXB_Apelido.Location = new Point(163, 37);
             TXB_Apelido.Name = "TXB_Apelido";
             TXB_Apelido.Size = new Size(163, 23);
-            TXB_Apelido.TabIndex = 5;
+            TXB_Apelido.TabIndex = 4;
             // 
             // label4
             // 
@@ -238,7 +238,7 @@
             TXB_Nome.Location = new Point(6, 81);
             TXB_Nome.Name = "TXB_Nome";
             TXB_Nome.Size = new Size(314, 23);
-            TXB_Nome.TabIndex = 3;
+            TXB_Nome.TabIndex = 2;
             // 
             // label2
             // 
@@ -272,7 +272,7 @@
             BTN_Cancelar.Location = new Point(373, 382);
             BTN_Cancelar.Name = "BTN_Cancelar";
             BTN_Cancelar.Size = new Size(91, 38);
-            BTN_Cancelar.TabIndex = 21;
+            BTN_Cancelar.TabIndex = 14;
             BTN_Cancelar.Text = "Cancelar";
             BTN_Cancelar.UseVisualStyleBackColor = true;
             BTN_Cancelar.Click += BTN_Cancelar_Click;
@@ -282,7 +282,7 @@
             BTN_Salvar.Location = new Point(269, 382);
             BTN_Salvar.Name = "BTN_Salvar";
             BTN_Salvar.Size = new Size(91, 38);
-            BTN_Salvar.TabIndex = 20;
+            BTN_Salvar.TabIndex = 13;
             BTN_Salvar.Text = "Salvar";
             BTN_Salvar.UseVisualStyleBackColor = true;
             BTN_Salvar.Click += BTN_Salvar_Click;
@@ -292,7 +292,7 @@
             BTN_Documentacao.Location = new Point(12, 382);
             BTN_Documentacao.Name = "BTN_Documentacao";
             BTN_Documentacao.Size = new Size(121, 38);
-            BTN_Documentacao.TabIndex = 22;
+            BTN_Documentacao.TabIndex = 12;
             BTN_Documentacao.Text = "Documentação";
             BTN_Documentacao.UseVisualStyleBackColor = true;
             BTN_Documentacao.Click += BTN_Digitalizados_Click;

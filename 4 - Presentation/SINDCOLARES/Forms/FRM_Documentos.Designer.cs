@@ -77,7 +77,7 @@
             TXB_NomeMae.Location = new Point(6, 127);
             TXB_NomeMae.Name = "TXB_NomeMae";
             TXB_NomeMae.Size = new Size(440, 23);
-            TXB_NomeMae.TabIndex = 16;
+            TXB_NomeMae.TabIndex = 7;
             // 
             // label11
             // 
@@ -94,7 +94,7 @@
             TXB_NomePai.Location = new Point(6, 83);
             TXB_NomePai.Name = "TXB_NomePai";
             TXB_NomePai.Size = new Size(440, 23);
-            TXB_NomePai.TabIndex = 5;
+            TXB_NomePai.TabIndex = 6;
             // 
             // label3
             // 
@@ -111,7 +111,7 @@
             TXB_OrgaoEmissor.Location = new Point(353, 39);
             TXB_OrgaoEmissor.Name = "TXB_OrgaoEmissor";
             TXB_OrgaoEmissor.Size = new Size(93, 23);
-            TXB_OrgaoEmissor.TabIndex = 14;
+            TXB_OrgaoEmissor.TabIndex = 5;
             // 
             // label10
             // 
@@ -139,7 +139,7 @@
             CB_EstadoEmissao.Location = new Point(259, 39);
             CB_EstadoEmissao.Name = "CB_EstadoEmissao";
             CB_EstadoEmissao.Size = new Size(88, 23);
-            CB_EstadoEmissao.TabIndex = 10;
+            CB_EstadoEmissao.TabIndex = 4;
             // 
             // DTP_DataEmissao
             // 
@@ -148,7 +148,7 @@
             DTP_DataEmissao.Location = new Point(139, 39);
             DTP_DataEmissao.Name = "DTP_DataEmissao";
             DTP_DataEmissao.Size = new Size(114, 23);
-            DTP_DataEmissao.TabIndex = 10;
+            DTP_DataEmissao.TabIndex = 3;
             // 
             // label8
             // 
@@ -165,7 +165,7 @@
             TXB_RG.Location = new Point(6, 39);
             TXB_RG.Name = "TXB_RG";
             TXB_RG.Size = new Size(127, 23);
-            TXB_RG.TabIndex = 1;
+            TXB_RG.TabIndex = 2;
             // 
             // label7
             // 
@@ -194,7 +194,7 @@
             TXB_PIS.Location = new Point(256, 33);
             TXB_PIS.Name = "TXB_PIS";
             TXB_PIS.Size = new Size(171, 23);
-            TXB_PIS.TabIndex = 5;
+            TXB_PIS.TabIndex = 1;
             // 
             // label2
             // 
@@ -211,7 +211,7 @@
             TXB_CPF.Location = new Point(27, 35);
             TXB_CPF.Name = "TXB_CPF";
             TXB_CPF.Size = new Size(171, 23);
-            TXB_CPF.TabIndex = 3;
+            TXB_CPF.TabIndex = 0;
             // 
             // label1
             // 
@@ -228,7 +228,7 @@
             BTN_Cancelar.Location = new Point(375, 267);
             BTN_Cancelar.Name = "BTN_Cancelar";
             BTN_Cancelar.Size = new Size(91, 38);
-            BTN_Cancelar.TabIndex = 20;
+            BTN_Cancelar.TabIndex = 9;
             BTN_Cancelar.Text = "Cancelar";
             BTN_Cancelar.UseVisualStyleBackColor = true;
             BTN_Cancelar.Click += BTN_Cancelar_Click;
@@ -238,7 +238,7 @@
             BTN_Salvar.Location = new Point(271, 267);
             BTN_Salvar.Name = "BTN_Salvar";
             BTN_Salvar.Size = new Size(91, 38);
-            BTN_Salvar.TabIndex = 19;
+            BTN_Salvar.TabIndex = 8;
             BTN_Salvar.Text = "Salvar";
             BTN_Salvar.UseVisualStyleBackColor = true;
             BTN_Salvar.Click += BTN_Salvar_Click;

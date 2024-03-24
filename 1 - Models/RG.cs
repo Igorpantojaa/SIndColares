@@ -8,6 +8,6 @@ public class RG
     public string Numero { get; set; } = string.Empty;
     public string NomePai { get; set; } = string.Empty;
     public string NomeMae { get; set; } = string.Empty;
-    public string OrgaoEmissor { get; set; } = string.Empty;
-    public string EstadoEmissao { get; set; } = string.Empty;
+    public string OrgaoEmissor { get; set; } = "PC";
+    public string EstadoEmissao { get; set; } = "PA";
 }

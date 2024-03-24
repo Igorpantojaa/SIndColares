@@ -96,10 +96,10 @@ public partial class FRM_GerarDocumentos : Form
             {
                 var destino = fbd.SelectedPath;
                 var docs = _service.SalvaDocumentos(destino);
-                if (CHB_RegInicial.Checked) docs.RegistroInicial();
-                if (CHB_Filiacao.Checked) docs.DeclaracaoFiliacao();
-                if (CHB_ReqSeguroDefeso.Checked) docs.ReqSeguroDefeso();
-                if (CHB_Procuracao.Checked) docs.Procuracao();
+                if (CHB_RegInicial.Checked) docs.RegistroInicial(RB_PDF.Checked);
+                if (CHB_Filiacao.Checked) docs.DeclaracaoFiliacao(RB_PDF.Checked);
+                if (CHB_ReqSeguroDefeso.Checked) docs.ReqSeguroDefeso(RB_PDF.Checked);
+                if (CHB_Procuracao.Checked) docs.Procuracao(RB_PDF.Checked);
                 //if (CHB_DecResidencia.Checked) docs.DeclaracaoResidencia();
                 GestaoArquivos.AbrirPasta(destino);
             };

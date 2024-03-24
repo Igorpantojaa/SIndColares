@@ -205,7 +205,6 @@
             // 
             GP_FormatoSaida.Controls.Add(RB_PDF);
             GP_FormatoSaida.Controls.Add(RB_Word);
-            GP_FormatoSaida.Enabled = false;
             GP_FormatoSaida.Location = new Point(529, 41);
             GP_FormatoSaida.Name = "GP_FormatoSaida";
             GP_FormatoSaida.Size = new Size(127, 81);
@@ -216,23 +215,22 @@
             // RB_PDF
             // 
             RB_PDF.AutoSize = true;
-            RB_PDF.Enabled = false;
+            RB_PDF.Checked = true;
             RB_PDF.Location = new Point(14, 49);
             RB_PDF.Name = "RB_PDF";
             RB_PDF.Size = new Size(91, 19);
             RB_PDF.TabIndex = 1;
+            RB_PDF.TabStop = true;
             RB_PDF.Text = "Arquivo PDF";
             RB_PDF.UseVisualStyleBackColor = true;
             // 
             // RB_Word
             // 
             RB_Word.AutoSize = true;
-            RB_Word.Checked = true;
             RB_Word.Location = new Point(14, 24);
             RB_Word.Name = "RB_Word";
             RB_Word.Size = new Size(99, 19);
             RB_Word.TabIndex = 0;
-            RB_Word.TabStop = true;
             RB_Word.Text = "Arquivo Word";
             RB_Word.UseVisualStyleBackColor = true;
             // 

@@ -1,5 +1,4 @@
 ﻿using Modelos;
-using Xceed.Document.NET;
 using Xceed.Words.NET;
 
 namespace Servicos.Utilidades;
@@ -13,10 +12,10 @@ public class GeraDocumentos
     public GeraDocumentos(Associado associado, Periodo periodo, string destino)
     {
         _associado = associado;
-        _destino = destino;
+        _destino = CriarPasta($"{destino}\\[{_associado.Nome.ToUpper()}]");
         _periodo = periodo;
     }
-    public void Procuracao()
+    public void Procuracao(bool PDF)
     {
         try
         {
@@ -27,14 +26,24 @@ public class GeraDocumentos
             doc.ReplaceText("<Endereco>", $"{_associado.Endereco.Rua.ToUpper()}, {_associado.Endereco.Numero}");
             doc.ReplaceText("<Bairro>", $"{_associado.Endereco.Bairro}");
             doc.ReplaceText("<DataAtual>", $"{(_periodo.InicioPeriodo1.AddDays(13)).ToLongDateString()}");
-            doc.SaveAs($"{_destino}\\Procuracao.docx");
+            if (PDF)
+            {
+                var doctemp = $"{_destino}\\ProcuracaoTemp.docx";
+                doc.SaveAs(doctemp);
+                SaidaEmPDF(doctemp, $"{_destino}\\Procuracao.pdf");
+                File.Delete(doctemp);
+            }
+            else
+            {
+                doc.SaveAs($"{_destino}\\Procuracao.docx");
+            }
         }
         catch
         {
             throw;
         }
     }
-    public void RegistroInicial()
+    public void RegistroInicial(bool PDF)
     {
         try
         {
@@ -99,6 +108,17 @@ public class GeraDocumentos
             doc.ReplaceText("<G33B>", "X");
             doc.ReplaceText("<G33C>", "  ");
             doc.ReplaceText("<G33D>", "  ");
+            if (PDF)
+            {
+                var doctemp = $"{_destino}\\DocTemp.docx";
+                doc.SaveAs(doctemp);
+                SaidaEmPDF(doctemp, $"{_destino}\\Registro_Inicial_EFAP.pdf");
+                File.Delete(doctemp);
+            }
+            else
+            {
+                doc.SaveAs($"{_destino}\\Registro_Inicial_EFAP.docx");
+            }
             doc.SaveAs($"{_destino}\\Registro_Inicial_EFAP.docx");
         }
         catch
@@ -106,7 +126,7 @@ public class GeraDocumentos
             throw;
         }
     }
-    public void ReqSeguroDefeso()
+    public void ReqSeguroDefeso(bool PDF)
     {
         try
         {
@@ -134,14 +154,24 @@ public class GeraDocumentos
             doc.ReplaceText("<AB>", $"{_associado.Profissao.AB}");
             doc.ReplaceText("<NTrip>", $"{_associado.Profissao.GetTripulantes}");
             doc.ReplaceText("<CPFProp>", $"{_associado.Profissao.CPFProprietario}");
-            doc.SaveAs($"{_destino}\\Requerimento_de_SeguroDefeso.docx");
+            if (PDF)
+            {
+                var doctemp = $"{_destino}\\DocTemp.docx";
+                doc.SaveAs(doctemp);
+                SaidaEmPDF(doctemp, $"{_destino}\\Requerimento_de_SeguroDefeso.pdf");
+                File.Delete(doctemp);
+            }
+            else
+            {
+                doc.SaveAs($"{_destino}\\Requerimento_de_SeguroDefeso.docx");
+            }
         }
         catch
         {
             throw;
         }
     }
-    public void DeclaracaoFiliacao()
+    public void DeclaracaoFiliacao(bool PDF)
     {
         try
         {
@@ -151,20 +181,41 @@ public class GeraDocumentos
             doc.ReplaceText("<NumeroRG>", $"{_associado.Documentos.RG.Numero} {_associado.Documentos.RG.OrgaoEmissor}/{_associado.Documentos.RG.EstadoEmissao}");
             doc.ReplaceText("<EnderecoCompleto>", $"{_associado.Endereco.Rua}, {_associado.Endereco.Numero} - {_associado.Endereco.Localidade}.");
             doc.ReplaceText("<CidadeUF>", $"{_associado.Endereco.Municipio}-{_associado.Endereco.UF}");
-            doc.SaveAs($"{_destino}\\Declaracao_de_Filiacao.docx");
+            if (PDF)
+            {
+                var doctemp = $"{_destino}\\DocTemp.docx";
+                doc.SaveAs(doctemp);
+                SaidaEmPDF(doctemp, $"{_destino}\\Declaracao_de_Filiacao.pdf");
+                File.Delete(doctemp);
+            }
+            else
+            {
+                doc.SaveAs($"{_destino}\\Declaracao_de_Filiacao.docx");
+            }
         }
         catch
         {
             throw;
         }
     }
-    public void DeclaracaoResidencia()
+    public void DeclaracaoResidencia(bool PDF)
     {
         try
         {
             var doc = DocX.Load(".\\Arquivos\\Templates\\DeclaracaoResidencia.docx");
             doc.ReplaceText("<NomeAssociado>", $"{_associado.Nome.ToUpper()}");
             doc.SaveAs($"{_destino}\\Declaracao_de_Residencia.docx");
+            if (PDF)
+            {
+                var doctemp = $"{_destino}\\DocTemp.docx";
+                doc.SaveAs(doctemp);
+                SaidaEmPDF(doctemp, $"{_destino}\\Declaracao_de_Residencia.pdf");
+                File.Delete(doctemp);
+            }
+            else
+            {
+                doc.SaveAs($"{_destino}\\Declaracao_de_Residencia.docx");
+            }
         }
         catch
         {
@@ -369,5 +420,20 @@ public class GeraDocumentos
                 break;
         }
         return selecao;
+    }
+    private static string CriarPasta(string caminho)
+    {
+        if (!Directory.Exists(caminho))
+        {
+            Directory.CreateDirectory(caminho);
+            return caminho;
+        }
+        else return string.Empty;
+    }
+    private static void SaidaEmPDF(string origem, string destino)
+    {
+        var doc = new Spire.Doc.Document();
+        doc.LoadFromFile(origem);
+        doc.SaveToFile(destino, Spire.Doc.FileFormat.PDF);
     }
 }

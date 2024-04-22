@@ -62,25 +62,28 @@ public partial class FRM_GerarDocumentos : Form
     }
     private void GeraDocumentos()
     {
-        if (_service.AssociadoTemp.Id > 0 && _service.PeriodoTemp.Id > 0)
+        if (ChecaSelecao())
         {
-            FolderBrowserDialog fbd = new();
-            if (DialogResult.OK == fbd.ShowDialog())
+            if (_service.AssociadoTemp.Id > 0 && _service.PeriodoTemp.Id > 0)
             {
-                var destino = fbd.SelectedPath;
-                var docs = _service.SalvaDocumentos(destino);
-                if (CHB_RegInicial.Checked) docs.RegistroInicial(RB_PDF.Checked, CHB_PastaClienteSaida.Checked);
-                if (CHB_Filiacao.Checked) docs.DeclaracaoFiliacao(RB_PDF.Checked, CHB_PastaClienteSaida.Checked);
-                if (CHB_ReqSeguroDefeso.Checked) docs.ReqSeguroDefeso(RB_PDF.Checked, CHB_PastaClienteSaida.Checked);
-                if (CHB_Procuracao.Checked) docs.Procuracao(RB_PDF.Checked, CHB_PastaClienteSaida.Checked);
-                //if (CHB_DecResidencia.Checked) docs.DeclaracaoResidencia();
-                if (CHB_AbreDestino.Checked) GestaoArquivos.AbrirPasta(destino);
-                MessageBox.Show("Arquivos Gerados com sucesso!", "Sucesso");
-            };
-        }
-        else
-        {
-            Mensagens.Alerta("Selecione um associado e um período de vigência para continuar.", "Informacao");
+                FolderBrowserDialog fbd = new();
+                if (DialogResult.OK == fbd.ShowDialog())
+                {
+                    var destino = fbd.SelectedPath;
+                    var docs = _service.SalvaDocumentos(destino);
+                    if (CHB_RegInicial.Checked) docs.RegistroInicial(RB_PDF.Checked, CHB_PastaClienteSaida.Checked);
+                    if (CHB_Filiacao.Checked) docs.DeclaracaoFiliacao(RB_PDF.Checked, CHB_PastaClienteSaida.Checked);
+                    if (CHB_ReqSeguroDefeso.Checked) docs.ReqSeguroDefeso(RB_PDF.Checked, CHB_PastaClienteSaida.Checked);
+                    if (CHB_Procuracao.Checked) docs.Procuracao(RB_PDF.Checked, CHB_PastaClienteSaida.Checked);
+                    //if (CHB_DecResidencia.Checked) docs.DeclaracaoResidencia();
+                    if (CHB_AbreDestino.Checked) GestaoArquivos.AbrirPasta(destino);
+                    MessageBox.Show("Arquivos Gerados com sucesso!", "Sucesso");
+                };
+            }
+            else
+            {
+                Mensagens.Alerta("Selecione um associado e um período de vigência para continuar.", "Informacao");
+            }
         }
     }
     private void CarregaPeriodos()
@@ -115,6 +118,22 @@ public partial class FRM_GerarDocumentos : Form
         if (SelecaoTabela() > 0)
         {
             _service.Recuperar(SelecaoTabela());
+        }
+    }
+    private bool ChecaSelecao()
+    {
+        if (!CHB_DecResidencia.Checked
+         && !CHB_Filiacao.Checked
+         && !CHB_Procuracao.Checked
+         && !CHB_RegInicial.Checked
+         && !CHB_ReqSeguroDefeso.Checked)
+        {
+            Mensagens.Alerta("Selecione pelo menos um documento para gerar.", "Informacao");
+            return false;
+        }
+        else
+        {
+            return true;
         }
     }
 }

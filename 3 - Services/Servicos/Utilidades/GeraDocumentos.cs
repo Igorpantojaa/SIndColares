@@ -139,7 +139,7 @@ public class GeraDocumentos
             doc.ReplaceText("<CEI>", $"{_associado.Documentos.CEI}");
             doc.ReplaceText("<Rua>", $"{_associado.Endereco.Rua}");
             doc.ReplaceText("<Numero>", $"{_associado.Endereco.Numero}");
-            doc.ReplaceText("<Complemento>", $"{_associado.Endereco.Localidade}");
+            doc.ReplaceText("<Complemento>", $"{_associado.Endereco.Bairro}");
             doc.ReplaceText("<Telefone>", $"{_associado.Contato.Telefone}");
             doc.ReplaceText("<NPub>", $"{_periodo.NumeroPublicacao}");
             doc.ReplaceText("<DataPub>", $"{_periodo.GetDataPublicacao}");

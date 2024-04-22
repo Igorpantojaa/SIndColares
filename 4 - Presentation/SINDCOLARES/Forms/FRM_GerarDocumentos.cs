@@ -69,19 +69,13 @@ public partial class FRM_GerarDocumentos : Form
             {
                 var destino = fbd.SelectedPath;
                 var docs = _service.SalvaDocumentos(destino);
-                if (CHB_RegInicial.Checked) docs.RegistroInicial(RB_PDF.Checked);
-                if (CHB_Filiacao.Checked) docs.DeclaracaoFiliacao(RB_PDF.Checked);
-                if (CHB_ReqSeguroDefeso.Checked) docs.ReqSeguroDefeso(RB_PDF.Checked);
-                if (CHB_Procuracao.Checked) docs.Procuracao(RB_PDF.Checked);
+                if (CHB_RegInicial.Checked) docs.RegistroInicial(RB_PDF.Checked, CHB_PastaClienteSaida.Checked);
+                if (CHB_Filiacao.Checked) docs.DeclaracaoFiliacao(RB_PDF.Checked, CHB_PastaClienteSaida.Checked);
+                if (CHB_ReqSeguroDefeso.Checked) docs.ReqSeguroDefeso(RB_PDF.Checked, CHB_PastaClienteSaida.Checked);
+                if (CHB_Procuracao.Checked) docs.Procuracao(RB_PDF.Checked, CHB_PastaClienteSaida.Checked);
                 //if (CHB_DecResidencia.Checked) docs.DeclaracaoResidencia();
-                if (DialogResult.Yes == MessageBox.Show(
-                    "Arquivos Gerados com sucesso, " +
-                    "abrir a pasta?",
-                    "Sucesso",
-                    MessageBoxButtons.YesNo))
-                {
-                    GestaoArquivos.AbrirPasta(destino);
-                }
+                if (CHB_AbreDestino.Checked) GestaoArquivos.AbrirPasta(destino);
+                MessageBox.Show("Arquivos Gerados com sucesso!", "Sucesso");
             };
         }
         else

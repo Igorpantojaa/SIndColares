@@ -73,6 +73,9 @@
             BTN_GeraDocumentos = new Button();
             BTN_Fechar = new Button();
             BTN_VerCadastro = new Button();
+            groupBox1 = new GroupBox();
+            CHB_PastaClienteSaida = new CheckBox();
+            CHB_AbreDestino = new CheckBox();
             GP_Associados.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)DGV_Associados).BeginInit();
             ((System.ComponentModel.ISupportInitialize)associadoBindingSource).BeginInit();
@@ -82,6 +85,7 @@
             GP_Periodo2.SuspendLayout();
             GP_Periodo1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)periodoBindingSource).BeginInit();
+            groupBox1.SuspendLayout();
             SuspendLayout();
             // 
             // GP_Associados
@@ -89,7 +93,7 @@
             GP_Associados.Controls.Add(DGV_Associados);
             GP_Associados.Location = new Point(12, 41);
             GP_Associados.Name = "GP_Associados";
-            GP_Associados.Size = new Size(511, 223);
+            GP_Associados.Size = new Size(511, 315);
             GP_Associados.TabIndex = 0;
             GP_Associados.TabStop = false;
             GP_Associados.Text = "Selecione o Associado";
@@ -98,6 +102,8 @@
             // 
             DGV_Associados.AllowUserToAddRows = false;
             DGV_Associados.AllowUserToDeleteRows = false;
+            DGV_Associados.AllowUserToResizeColumns = false;
+            DGV_Associados.AllowUserToResizeRows = false;
             DGV_Associados.AutoGenerateColumns = false;
             dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = SystemColors.Control;
@@ -134,7 +140,7 @@
             DGV_Associados.RowHeadersVisible = false;
             DGV_Associados.RowTemplate.Height = 25;
             DGV_Associados.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            DGV_Associados.Size = new Size(505, 201);
+            DGV_Associados.Size = new Size(505, 293);
             DGV_Associados.TabIndex = 0;
             DGV_Associados.CellClick += DGV_Associados_CellContentClick;
             DGV_Associados.CellContentClick += DGV_Associados_CellContentClick;
@@ -207,9 +213,9 @@
             // 
             GP_FormatoSaida.Controls.Add(RB_PDF);
             GP_FormatoSaida.Controls.Add(RB_Word);
-            GP_FormatoSaida.Location = new Point(529, 41);
+            GP_FormatoSaida.Location = new Point(6, 69);
             GP_FormatoSaida.Name = "GP_FormatoSaida";
-            GP_FormatoSaida.Size = new Size(127, 81);
+            GP_FormatoSaida.Size = new Size(158, 83);
             GP_FormatoSaida.TabIndex = 4;
             GP_FormatoSaida.TabStop = false;
             GP_FormatoSaida.Text = "Formato de Saída";
@@ -243,9 +249,9 @@
             GP_Documentos.Controls.Add(CHB_ReqSeguroDefeso);
             GP_Documentos.Controls.Add(CHB_RegInicial);
             GP_Documentos.Controls.Add(CHB_Filiacao);
-            GP_Documentos.Location = new Point(529, 131);
+            GP_Documentos.Location = new Point(529, 41);
             GP_Documentos.Name = "GP_Documentos";
-            GP_Documentos.Size = new Size(127, 148);
+            GP_Documentos.Size = new Size(169, 148);
             GP_Documentos.TabIndex = 5;
             GP_Documentos.TabStop = false;
             GP_Documentos.Text = "Documentos";
@@ -266,9 +272,9 @@
             CHB_DecResidencia.Enabled = false;
             CHB_DecResidencia.Location = new Point(11, 122);
             CHB_DecResidencia.Name = "CHB_DecResidencia";
-            CHB_DecResidencia.Size = new Size(108, 19);
+            CHB_DecResidencia.Size = new Size(159, 19);
             CHB_DecResidencia.TabIndex = 3;
-            CHB_DecResidencia.Text = "Dec. Residência";
+            CHB_DecResidencia.Text = "Declaração de Residência";
             CHB_DecResidencia.UseVisualStyleBackColor = true;
             // 
             // CHB_ReqSeguroDefeso
@@ -276,9 +282,9 @@
             CHB_ReqSeguroDefeso.AutoSize = true;
             CHB_ReqSeguroDefeso.Location = new Point(11, 97);
             CHB_ReqSeguroDefeso.Name = "CHB_ReqSeguroDefeso";
-            CHB_ReqSeguroDefeso.Size = new Size(102, 19);
+            CHB_ReqSeguroDefeso.Size = new Size(147, 19);
             CHB_ReqSeguroDefeso.TabIndex = 2;
-            CHB_ReqSeguroDefeso.Text = "Seguro Defeso";
+            CHB_ReqSeguroDefeso.Text = "Req.  de Seguro Defeso";
             CHB_ReqSeguroDefeso.UseVisualStyleBackColor = true;
             // 
             // CHB_RegInicial
@@ -296,9 +302,9 @@
             CHB_Filiacao.AutoSize = true;
             CHB_Filiacao.Location = new Point(11, 22);
             CHB_Filiacao.Name = "CHB_Filiacao";
-            CHB_Filiacao.Size = new Size(66, 19);
+            CHB_Filiacao.Size = new Size(143, 19);
             CHB_Filiacao.TabIndex = 0;
-            CHB_Filiacao.Text = "Filiação";
+            CHB_Filiacao.Text = "Declaração de Filiação";
             CHB_Filiacao.UseVisualStyleBackColor = true;
             // 
             // GP_Periodo
@@ -310,7 +316,7 @@
             GP_Periodo.Controls.Add(label1);
             GP_Periodo.Controls.Add(GP_Periodo1);
             GP_Periodo.Controls.Add(CB_Vigencia);
-            GP_Periodo.Location = new Point(15, 270);
+            GP_Periodo.Location = new Point(15, 362);
             GP_Periodo.Name = "GP_Periodo";
             GP_Periodo.Size = new Size(508, 156);
             GP_Periodo.TabIndex = 6;
@@ -476,9 +482,9 @@
             // 
             // BTN_GeraDocumentos
             // 
-            BTN_GeraDocumentos.Location = new Point(529, 331);
+            BTN_GeraDocumentos.Location = new Point(535, 415);
             BTN_GeraDocumentos.Name = "BTN_GeraDocumentos";
-            BTN_GeraDocumentos.Size = new Size(127, 40);
+            BTN_GeraDocumentos.Size = new Size(158, 40);
             BTN_GeraDocumentos.TabIndex = 7;
             BTN_GeraDocumentos.Text = "Gerar Documentos";
             BTN_GeraDocumentos.UseVisualStyleBackColor = true;
@@ -486,9 +492,9 @@
             // 
             // BTN_Fechar
             // 
-            BTN_Fechar.Location = new Point(529, 388);
+            BTN_Fechar.Location = new Point(535, 478);
             BTN_Fechar.Name = "BTN_Fechar";
-            BTN_Fechar.Size = new Size(127, 40);
+            BTN_Fechar.Size = new Size(158, 40);
             BTN_Fechar.TabIndex = 8;
             BTN_Fechar.Text = "Fechar";
             BTN_Fechar.UseVisualStyleBackColor = true;
@@ -496,26 +502,58 @@
             // 
             // BTN_VerCadastro
             // 
-            BTN_VerCadastro.Location = new Point(529, 285);
+            BTN_VerCadastro.Location = new Point(535, 369);
             BTN_VerCadastro.Name = "BTN_VerCadastro";
-            BTN_VerCadastro.Size = new Size(127, 40);
+            BTN_VerCadastro.Size = new Size(158, 40);
             BTN_VerCadastro.TabIndex = 9;
             BTN_VerCadastro.Text = "Ver Cadastro";
             BTN_VerCadastro.UseVisualStyleBackColor = true;
             BTN_VerCadastro.Click += BTN_VerCadastro_Click;
             // 
+            // groupBox1
+            // 
+            groupBox1.Controls.Add(CHB_PastaClienteSaida);
+            groupBox1.Controls.Add(CHB_AbreDestino);
+            groupBox1.Controls.Add(GP_FormatoSaida);
+            groupBox1.Location = new Point(529, 195);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Size = new Size(170, 161);
+            groupBox1.TabIndex = 10;
+            groupBox1.TabStop = false;
+            groupBox1.Text = "Opções";
+            // 
+            // CHB_PastaClienteSaida
+            // 
+            CHB_PastaClienteSaida.AutoSize = true;
+            CHB_PastaClienteSaida.Location = new Point(11, 44);
+            CHB_PastaClienteSaida.Name = "CHB_PastaClienteSaida";
+            CHB_PastaClienteSaida.Size = new Size(147, 19);
+            CHB_PastaClienteSaida.TabIndex = 2;
+            CHB_PastaClienteSaida.Text = "Criar pastas individuais";
+            CHB_PastaClienteSaida.UseVisualStyleBackColor = true;
+            // 
+            // CHB_AbreDestino
+            // 
+            CHB_AbreDestino.AutoSize = true;
+            CHB_AbreDestino.Location = new Point(11, 19);
+            CHB_AbreDestino.Name = "CHB_AbreDestino";
+            CHB_AbreDestino.Size = new Size(158, 19);
+            CHB_AbreDestino.TabIndex = 1;
+            CHB_AbreDestino.Text = "Abrir destino ao terminar";
+            CHB_AbreDestino.UseVisualStyleBackColor = true;
+            // 
             // FRM_GerarDocumentos
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(672, 440);
+            ClientSize = new Size(709, 528);
             ControlBox = false;
+            Controls.Add(groupBox1);
             Controls.Add(BTN_VerCadastro);
             Controls.Add(BTN_Fechar);
             Controls.Add(BTN_GeraDocumentos);
             Controls.Add(GP_Periodo);
             Controls.Add(GP_Documentos);
-            Controls.Add(GP_FormatoSaida);
             Controls.Add(BTN_LimpaPesquisa);
             Controls.Add(TXB_Pesquisa);
             Controls.Add(GP_Associados);
@@ -537,6 +575,8 @@
             GP_Periodo1.ResumeLayout(false);
             GP_Periodo1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)periodoBindingSource).EndInit();
+            groupBox1.ResumeLayout(false);
+            groupBox1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -581,5 +621,8 @@
         private CheckBox CHB_Procuracao;
         private Label LBL_NumPublicacao;
         private Label label3;
+        private GroupBox groupBox1;
+        private CheckBox CHB_PastaClienteSaida;
+        private CheckBox CHB_AbreDestino;
     }
 }

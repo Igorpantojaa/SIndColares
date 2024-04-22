@@ -28,6 +28,14 @@ public partial class FRM_GerarDocumentos : Form
     {
         GeraDocumentos();
     }
+    private void TXB_Pesquisa_KeyPress(object sender, KeyPressEventArgs e)
+    {
+        DGV_Associados.DataSource = _service.ListarAssociados().Where(x => x.Nome.StartsWith(TXB_Pesquisa.Text)).ToList();
+    }
+    private void DGV_Associados_SelectionChanged(object sender, EventArgs e)
+    {
+        CarregaInfoAssociado();
+    }
     private void CB_Vigencia_SelectionChangeCommitted(object sender, EventArgs e)
     {
         CarregaInfoVigencia();
@@ -51,6 +59,35 @@ public partial class FRM_GerarDocumentos : Form
     private void AtualizaTabela()
     {
         DGV_Associados.DataSource = _service.ListarAssociados();
+    }
+    private void GeraDocumentos()
+    {
+        if (_service.AssociadoTemp.Id > 0 && _service.PeriodoTemp.Id > 0)
+        {
+            FolderBrowserDialog fbd = new();
+            if (DialogResult.OK == fbd.ShowDialog())
+            {
+                var destino = fbd.SelectedPath;
+                var docs = _service.SalvaDocumentos(destino);
+                if (CHB_RegInicial.Checked) docs.RegistroInicial(RB_PDF.Checked);
+                if (CHB_Filiacao.Checked) docs.DeclaracaoFiliacao(RB_PDF.Checked);
+                if (CHB_ReqSeguroDefeso.Checked) docs.ReqSeguroDefeso(RB_PDF.Checked);
+                if (CHB_Procuracao.Checked) docs.Procuracao(RB_PDF.Checked);
+                //if (CHB_DecResidencia.Checked) docs.DeclaracaoResidencia();
+                if (DialogResult.Yes == MessageBox.Show(
+                    "Arquivos Gerados com sucesso, " +
+                    "abrir a pasta?",
+                    "Sucesso",
+                    MessageBoxButtons.YesNo))
+                {
+                    GestaoArquivos.AbrirPasta(destino);
+                }
+            };
+        }
+        else
+        {
+            Mensagens.Alerta("Selecione um associado e um período de vigência para continuar.", "Informacao");
+        }
     }
     private void CarregaPeriodos()
     {
@@ -85,33 +122,5 @@ public partial class FRM_GerarDocumentos : Form
         {
             _service.Recuperar(SelecaoTabela());
         }
-    }
-
-    private void GeraDocumentos()
-    {
-        if (_service.AssociadoTemp.Id > 0 && _service.PeriodoTemp.Id > 0)
-        {
-            FolderBrowserDialog fbd = new();
-            if (DialogResult.OK == fbd.ShowDialog())
-            {
-                var destino = fbd.SelectedPath;
-                var docs = _service.SalvaDocumentos(destino);
-                if (CHB_RegInicial.Checked) docs.RegistroInicial(RB_PDF.Checked);
-                if (CHB_Filiacao.Checked) docs.DeclaracaoFiliacao(RB_PDF.Checked);
-                if (CHB_ReqSeguroDefeso.Checked) docs.ReqSeguroDefeso(RB_PDF.Checked);
-                if (CHB_Procuracao.Checked) docs.Procuracao(RB_PDF.Checked);
-                //if (CHB_DecResidencia.Checked) docs.DeclaracaoResidencia();
-                GestaoArquivos.AbrirPasta(destino);
-            };
-        }
-        else
-        {
-            Mensagens.Alerta("Selecione um associado e um período de vigência para continuar.", "Informacao");
-        }
-    }
-
-    private void TXB_Pesquisa_KeyPress(object sender, KeyPressEventArgs e)
-    {
-        DGV_Associados.DataSource = _service.ListarAssociados().Where(x => x.Nome.StartsWith(TXB_Pesquisa.Text)).ToList();
     }
 }

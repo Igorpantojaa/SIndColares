@@ -136,7 +136,9 @@
             DGV_Associados.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             DGV_Associados.Size = new Size(505, 201);
             DGV_Associados.TabIndex = 0;
+            DGV_Associados.CellClick += DGV_Associados_CellContentClick;
             DGV_Associados.CellContentClick += DGV_Associados_CellContentClick;
+            DGV_Associados.SelectionChanged += DGV_Associados_SelectionChanged;
             // 
             // idDataGridViewTextBoxColumn
             // 

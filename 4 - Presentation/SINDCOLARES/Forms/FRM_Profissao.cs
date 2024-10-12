@@ -1,6 +1,7 @@
 ﻿using Servicos;
 using Servicos.ComboBox;
 using Servicos.Utilidades;
+using SINDCOLARES.Forms;
 
 namespace SINDCOLARES.Formularios;
 

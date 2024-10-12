@@ -1,6 +1,7 @@
 ﻿using Servicos;
 using Infraestrutura;
 using System.Diagnostics;
+using SINDCOLARES.Forms;
 
 namespace SINDCOLARES.Formularios;
 

@@ -1,6 +1,7 @@
 ﻿using Infraestrutura;
 using Servicos;
-using SINDCOLARES.Formularios;
+using Spire.Doc;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace SINDCOLARES.Forms;
 
@@ -45,6 +46,34 @@ public partial class FRM_GerarDocumentos : Form
         CarregaInfoAssociado();
     }
 
+    private bool ChecaDocs()
+    {
+        if (!CHB_DecResidencia.Checked
+         && !CHB_Filiacao.Checked
+         && !CHB_Procuracao.Checked
+         && !CHB_RegInicial.Checked
+         && !CHB_ReqSeguroDefeso.Checked)
+        {
+            Mensagens.Alerta("Selecione pelo menos um documento para gerar.", "Informacao");
+            return false;
+        }
+        else
+        {
+            return true;
+        }
+    }
+    private bool ChecaInfo()
+    {
+        if (_service.AssociadoTemp.Id > 0 && _service.PeriodoTemp.Id > 0)
+        {
+            return true;
+        }
+        else
+        {
+            Mensagens.Alerta("Selecione um associado e um período de vigência para continuar.", "Informacao");
+            return false;
+        }
+    }
     private int SelecaoTabela()
     {
         if (DGV_Associados.SelectedRows.Count > 0)
@@ -68,14 +97,16 @@ public partial class FRM_GerarDocumentos : Form
             if (DialogResult.OK == fbd.ShowDialog())
             {
                 var destino = fbd.SelectedPath;
+                var data = DTP_DataDocumento.Value;
                 var docs = _service.SalvaDocumentos(destino);
-                if (CHB_RegInicial.Checked) docs.RegistroInicial(RB_PDF.Checked, CHB_PastaClienteSaida.Checked);
-                if (CHB_Filiacao.Checked) docs.DeclaracaoFiliacao(RB_PDF.Checked, CHB_PastaClienteSaida.Checked);
+                if (CHB_RegInicial.Checked) docs.RegistroInicial(RB_PDF.Checked, CHB_PastaClienteSaida.Checked, data);
+                if (CHB_Filiacao.Checked) docs.DeclaracaoFiliacao(RB_PDF.Checked, CHB_PastaClienteSaida.Checked, data);
                 if (CHB_ReqSeguroDefeso.Checked) docs.ReqSeguroDefeso(RB_PDF.Checked, CHB_PastaClienteSaida.Checked);
                 if (CHB_Procuracao.Checked) docs.Procuracao(RB_PDF.Checked, CHB_PastaClienteSaida.Checked);
-                //if (CHB_DecResidencia.Checked) docs.DeclaracaoResidencia();
+                if (CHB_DecResidencia.Checked) docs.DeclaracaoResidencia(RB_PDF.Checked, CHB_PastaClienteSaida.Checked, data);
                 if (CHB_AbreDestino.Checked) GestaoArquivos.AbrirPasta(destino);
                 MessageBox.Show("Arquivos Gerados com sucesso!", "Sucesso");
+                TXB_Pesquisa.Focus();
             };
         }
     }
@@ -113,32 +144,38 @@ public partial class FRM_GerarDocumentos : Form
             _service.Recuperar(SelecaoTabela());
         }
     }
-    private bool ChecaDocs()
+
+    private void BTN_Imprimir_Click(object sender, EventArgs e)
     {
-        if (!CHB_DecResidencia.Checked
-         && !CHB_Filiacao.Checked
-         && !CHB_Procuracao.Checked
-         && !CHB_RegInicial.Checked
-         && !CHB_ReqSeguroDefeso.Checked)
+        try
         {
-            Mensagens.Alerta("Selecione pelo menos um documento para gerar.", "Informacao");
-            return false;
+            if (ChecaDocs() && ChecaInfo())
+            {
+                var destino = ".\\temp";
+                var data = DTP_DataDocumento.Value;
+                var listaDocs = new List<string>();
+                var docs = _service.SalvaDocumentos(destino);
+                if (CHB_RegInicial.Checked) listaDocs.Add(docs.RegistroInicial(false, CHB_PastaClienteSaida.Checked, data));
+                if (CHB_Filiacao.Checked) listaDocs.Add(docs.DeclaracaoFiliacao(false, CHB_PastaClienteSaida.Checked, data));
+                if (CHB_ReqSeguroDefeso.Checked) listaDocs.Add(docs.ReqSeguroDefeso(false, CHB_PastaClienteSaida.Checked));
+                if (CHB_Procuracao.Checked) listaDocs.Add(docs.Procuracao(false, CHB_PastaClienteSaida.Checked));
+                if (CHB_DecResidencia.Checked) listaDocs.Add(docs.DeclaracaoResidencia(false, CHB_PastaClienteSaida.Checked, data));
+                MessageBox.Show("Arquivos Gerados com sucesso!", "Sucesso");
+                foreach (var doc in listaDocs)
+                {
+                    Document documento = new( );
+                    PrintPreviewDialog pd = new();
+                    var print = documento.PrintDocument;
+                    print.DocumentName = doc;
+                    pd.Document = print;
+                    pd.ShowDialog();
+                }
+                TXB_Pesquisa.Focus();
+            }
         }
-        else
+        catch (Exception ex)
         {
-            return true;
-        }
-    }
-    private bool ChecaInfo()
-    {
-        if (_service.AssociadoTemp.Id > 0 && _service.PeriodoTemp.Id > 0)
-        {
-            return true;
-        }
-        else
-        {
-            Mensagens.Alerta("Selecione um associado e um período de vigência para continuar.", "Informacao");
-            return false;
+            MessageBox.Show(ex.Message, "Erro!");
         }
     }
 }

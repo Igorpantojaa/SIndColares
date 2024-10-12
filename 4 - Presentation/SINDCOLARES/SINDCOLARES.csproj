@@ -11,12 +11,12 @@
   <ItemGroup>
     <PackageReference Include="DocX" Version="2.3.0" />
     <PackageReference Include="FreeSpire.Doc" Version="12.2.0" />
+    <PackageReference Include="itext" Version="8.0.5" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.16" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="7.0.16">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="System.IO.Packaging" Version="8.0.0" />
   </ItemGroup>
 
   <ItemGroup>

@@ -1,4 +1,5 @@
 ﻿using Servicos;
+using SINDCOLARES.Forms;
 
 namespace SINDCOLARES.Formularios
 {

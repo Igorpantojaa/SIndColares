@@ -1,6 +1,6 @@
 ﻿using System.Windows.Forms;
 
-namespace SINDCOLARES.Formularios
+namespace SINDCOLARES.Forms
 {
     public class Mensagens
     {
@@ -52,7 +52,8 @@ namespace SINDCOLARES.Formularios
                 "Atenção",
                 MessageBoxButtons.YesNo,
                 MessageBoxIcon.Warning
-                )){
+                ))
+            {
                 return true;
             }
             else

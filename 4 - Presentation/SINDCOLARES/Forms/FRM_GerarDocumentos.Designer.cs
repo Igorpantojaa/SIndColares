@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle11 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle12 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle9 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle10 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             GP_Associados = new GroupBox();
             DGV_Associados = new DataGridView();
             idDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
@@ -76,6 +76,9 @@
             groupBox1 = new GroupBox();
             CHB_PastaClienteSaida = new CheckBox();
             CHB_AbreDestino = new CheckBox();
+            BTN_Imprimir = new Button();
+            DTP_DataDocumento = new DateTimePicker();
+            label2 = new Label();
             GP_Associados.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)DGV_Associados).BeginInit();
             ((System.ComponentModel.ISupportInitialize)associadoBindingSource).BeginInit();
@@ -93,7 +96,7 @@
             GP_Associados.Controls.Add(DGV_Associados);
             GP_Associados.Location = new Point(12, 41);
             GP_Associados.Name = "GP_Associados";
-            GP_Associados.Size = new Size(511, 315);
+            GP_Associados.Size = new Size(511, 393);
             GP_Associados.TabIndex = 0;
             GP_Associados.TabStop = false;
             GP_Associados.Text = "Selecione o Associado";
@@ -105,42 +108,42 @@
             DGV_Associados.AllowUserToResizeColumns = false;
             DGV_Associados.AllowUserToResizeRows = false;
             DGV_Associados.AutoGenerateColumns = false;
-            dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.BackColor = SystemColors.Control;
-            dataGridViewCellStyle7.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle7.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle7.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = DataGridViewTriState.False;
-            DGV_Associados.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = SystemColors.Control;
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.False;
+            DGV_Associados.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             DGV_Associados.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             DGV_Associados.Columns.AddRange(new DataGridViewColumn[] { idDataGridViewTextBoxColumn, nomeDataGridViewTextBoxColumn, getRGDataGridViewTextBoxColumn, getCPFDataGridViewTextBoxColumn });
             DGV_Associados.DataSource = associadoBindingSource;
-            dataGridViewCellStyle11.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle11.BackColor = SystemColors.Window;
-            dataGridViewCellStyle11.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle11.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle11.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle11.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle11.WrapMode = DataGridViewTriState.False;
-            DGV_Associados.DefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = SystemColors.Window;
+            dataGridViewCellStyle5.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle5.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.False;
+            DGV_Associados.DefaultCellStyle = dataGridViewCellStyle5;
             DGV_Associados.Dock = DockStyle.Fill;
             DGV_Associados.Location = new Point(3, 19);
             DGV_Associados.MultiSelect = false;
             DGV_Associados.Name = "DGV_Associados";
             DGV_Associados.ReadOnly = true;
-            dataGridViewCellStyle12.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle12.BackColor = SystemColors.Control;
-            dataGridViewCellStyle12.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle12.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle12.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle12.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle12.WrapMode = DataGridViewTriState.False;
-            DGV_Associados.RowHeadersDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = SystemColors.Control;
+            dataGridViewCellStyle6.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle6.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.False;
+            DGV_Associados.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             DGV_Associados.RowHeadersVisible = false;
             DGV_Associados.RowTemplate.Height = 25;
             DGV_Associados.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            DGV_Associados.Size = new Size(505, 293);
+            DGV_Associados.Size = new Size(505, 371);
             DGV_Associados.TabIndex = 0;
             DGV_Associados.CellClick += DGV_Associados_CellContentClick;
             DGV_Associados.CellContentClick += DGV_Associados_CellContentClick;
@@ -158,9 +161,9 @@
             // 
             nomeDataGridViewTextBoxColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             nomeDataGridViewTextBoxColumn.DataPropertyName = "Nome";
-            dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.WrapMode = DataGridViewTriState.False;
-            nomeDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            nomeDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
             nomeDataGridViewTextBoxColumn.HeaderText = "Nome";
             nomeDataGridViewTextBoxColumn.Name = "nomeDataGridViewTextBoxColumn";
             nomeDataGridViewTextBoxColumn.ReadOnly = true;
@@ -169,9 +172,9 @@
             // 
             getRGDataGridViewTextBoxColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
             getRGDataGridViewTextBoxColumn.DataPropertyName = "GetRG";
-            dataGridViewCellStyle9.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle9.WrapMode = DataGridViewTriState.False;
-            getRGDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
+            getRGDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
             getRGDataGridViewTextBoxColumn.HeaderText = "RG";
             getRGDataGridViewTextBoxColumn.Name = "getRGDataGridViewTextBoxColumn";
             getRGDataGridViewTextBoxColumn.ReadOnly = true;
@@ -181,9 +184,9 @@
             // 
             getCPFDataGridViewTextBoxColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
             getCPFDataGridViewTextBoxColumn.DataPropertyName = "GetCPF";
-            dataGridViewCellStyle10.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle10.WrapMode = DataGridViewTriState.False;
-            getCPFDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.False;
+            getCPFDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle4;
             getCPFDataGridViewTextBoxColumn.HeaderText = "CPF";
             getCPFDataGridViewTextBoxColumn.Name = "getCPFDataGridViewTextBoxColumn";
             getCPFDataGridViewTextBoxColumn.ReadOnly = true;
@@ -213,9 +216,9 @@
             // 
             GP_FormatoSaida.Controls.Add(RB_PDF);
             GP_FormatoSaida.Controls.Add(RB_Word);
-            GP_FormatoSaida.Location = new Point(6, 69);
+            GP_FormatoSaida.Location = new Point(6, 120);
             GP_FormatoSaida.Name = "GP_FormatoSaida";
-            GP_FormatoSaida.Size = new Size(158, 83);
+            GP_FormatoSaida.Size = new Size(158, 75);
             GP_FormatoSaida.TabIndex = 4;
             GP_FormatoSaida.TabStop = false;
             GP_FormatoSaida.Text = "Formato de Saída";
@@ -269,7 +272,6 @@
             // CHB_DecResidencia
             // 
             CHB_DecResidencia.AutoSize = true;
-            CHB_DecResidencia.Enabled = false;
             CHB_DecResidencia.Location = new Point(11, 122);
             CHB_DecResidencia.Name = "CHB_DecResidencia";
             CHB_DecResidencia.Size = new Size(159, 19);
@@ -309,6 +311,7 @@
             // 
             // GP_Periodo
             // 
+            GP_Periodo.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             GP_Periodo.Controls.Add(LBL_NumPublicacao);
             GP_Periodo.Controls.Add(label3);
             GP_Periodo.Controls.Add(GP_Periodo2);
@@ -316,7 +319,7 @@
             GP_Periodo.Controls.Add(label1);
             GP_Periodo.Controls.Add(GP_Periodo1);
             GP_Periodo.Controls.Add(CB_Vigencia);
-            GP_Periodo.Location = new Point(15, 362);
+            GP_Periodo.Location = new Point(15, 440);
             GP_Periodo.Name = "GP_Periodo";
             GP_Periodo.Size = new Size(508, 156);
             GP_Periodo.TabIndex = 6;
@@ -482,17 +485,19 @@
             // 
             // BTN_GeraDocumentos
             // 
-            BTN_GeraDocumentos.Location = new Point(535, 415);
+            BTN_GeraDocumentos.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            BTN_GeraDocumentos.Location = new Point(535, 497);
             BTN_GeraDocumentos.Name = "BTN_GeraDocumentos";
             BTN_GeraDocumentos.Size = new Size(158, 40);
             BTN_GeraDocumentos.TabIndex = 7;
-            BTN_GeraDocumentos.Text = "Gerar Documentos";
+            BTN_GeraDocumentos.Text = "Salvar Documentos";
             BTN_GeraDocumentos.UseVisualStyleBackColor = true;
             BTN_GeraDocumentos.Click += BTN_GeraDocumentos_Click;
             // 
             // BTN_Fechar
             // 
-            BTN_Fechar.Location = new Point(535, 478);
+            BTN_Fechar.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            BTN_Fechar.Location = new Point(535, 556);
             BTN_Fechar.Name = "BTN_Fechar";
             BTN_Fechar.Size = new Size(158, 40);
             BTN_Fechar.TabIndex = 8;
@@ -502,7 +507,8 @@
             // 
             // BTN_VerCadastro
             // 
-            BTN_VerCadastro.Location = new Point(535, 369);
+            BTN_VerCadastro.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            BTN_VerCadastro.Location = new Point(535, 405);
             BTN_VerCadastro.Name = "BTN_VerCadastro";
             BTN_VerCadastro.Size = new Size(158, 40);
             BTN_VerCadastro.TabIndex = 9;
@@ -512,12 +518,14 @@
             // 
             // groupBox1
             // 
+            groupBox1.Controls.Add(label2);
+            groupBox1.Controls.Add(DTP_DataDocumento);
             groupBox1.Controls.Add(CHB_PastaClienteSaida);
             groupBox1.Controls.Add(CHB_AbreDestino);
             groupBox1.Controls.Add(GP_FormatoSaida);
             groupBox1.Location = new Point(529, 195);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(170, 161);
+            groupBox1.Size = new Size(170, 204);
             groupBox1.TabIndex = 10;
             groupBox1.TabStop = false;
             groupBox1.Text = "Opções";
@@ -525,7 +533,7 @@
             // CHB_PastaClienteSaida
             // 
             CHB_PastaClienteSaida.AutoSize = true;
-            CHB_PastaClienteSaida.Location = new Point(11, 44);
+            CHB_PastaClienteSaida.Location = new Point(11, 95);
             CHB_PastaClienteSaida.Name = "CHB_PastaClienteSaida";
             CHB_PastaClienteSaida.Size = new Size(147, 19);
             CHB_PastaClienteSaida.TabIndex = 2;
@@ -535,19 +543,50 @@
             // CHB_AbreDestino
             // 
             CHB_AbreDestino.AutoSize = true;
-            CHB_AbreDestino.Location = new Point(11, 19);
+            CHB_AbreDestino.Location = new Point(11, 70);
             CHB_AbreDestino.Name = "CHB_AbreDestino";
             CHB_AbreDestino.Size = new Size(158, 19);
             CHB_AbreDestino.TabIndex = 1;
             CHB_AbreDestino.Text = "Abrir destino ao terminar";
             CHB_AbreDestino.UseVisualStyleBackColor = true;
             // 
+            // BTN_Imprimir
+            // 
+            BTN_Imprimir.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            BTN_Imprimir.Enabled = false;
+            BTN_Imprimir.Location = new Point(535, 451);
+            BTN_Imprimir.Name = "BTN_Imprimir";
+            BTN_Imprimir.Size = new Size(158, 40);
+            BTN_Imprimir.TabIndex = 11;
+            BTN_Imprimir.Text = "Imprimir Documentos";
+            BTN_Imprimir.UseVisualStyleBackColor = true;
+            BTN_Imprimir.Visible = false;
+            BTN_Imprimir.Click += BTN_Imprimir_Click;
+            // 
+            // DTP_DataDocumento
+            // 
+            DTP_DataDocumento.Format = DateTimePickerFormat.Short;
+            DTP_DataDocumento.Location = new Point(6, 38);
+            DTP_DataDocumento.Name = "DTP_DataDocumento";
+            DTP_DataDocumento.Size = new Size(158, 23);
+            DTP_DataDocumento.TabIndex = 5;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(6, 19);
+            label2.Name = "label2";
+            label2.Size = new Size(51, 15);
+            label2.TabIndex = 6;
+            label2.Text = "Na data:";
+            // 
             // FRM_GerarDocumentos
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(712, 528);
+            ClientSize = new Size(712, 608);
             ControlBox = false;
+            Controls.Add(BTN_Imprimir);
             Controls.Add(groupBox1);
             Controls.Add(BTN_VerCadastro);
             Controls.Add(BTN_Fechar);
@@ -624,5 +663,8 @@
         private GroupBox groupBox1;
         private CheckBox CHB_PastaClienteSaida;
         private CheckBox CHB_AbreDestino;
+        private Button BTN_Imprimir;
+        private Label label2;
+        private DateTimePicker DTP_DataDocumento;
     }
 }

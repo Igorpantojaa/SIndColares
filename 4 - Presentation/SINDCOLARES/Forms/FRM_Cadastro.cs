@@ -3,6 +3,7 @@ using Infraestrutura;
 using Servicos.ComboBox;
 using Servicos.Utilidades;
 using SINDCOLARES.Formularios;
+using SINDCOLARES.Forms;
 
 namespace SINDCOLARES;
 
@@ -17,9 +18,9 @@ public partial class FRM_Cadastro : Form
         CB_Sexo.DataSource = ConteudoComboBox.Sexo();
     }
 
-    private void PB_Foto_Click(object sender, EventArgs e) => CarregaFoto();
     private void BTN_Salvar_Click(object sender, EventArgs e) => Salvar();
     private void TXB_CPF_Leave(object sender, EventArgs e) => FormataCPF();
+    private void PB_Foto_Click(object sender, EventArgs e) => CarregaFoto();
     private void BTN_Cancelar_Click(object sender, EventArgs e) => Cancelar();
     private void FRM_Cadastro_Load(object sender, EventArgs e) => CarregaInformacoes();
     private void BTN_Digitalizados_Click(object sender, EventArgs e) => DocumentosAssociado();
@@ -107,6 +108,7 @@ public partial class FRM_Cadastro : Form
         _service.AssociadoTemp.DataNascimento = DTP_DataNascimento.Value;
         _service.AssociadoTemp.Sexo = CB_Sexo.Text;
         _service.AssociadoTemp.Documentos.CPF = TXB_CPF.Text;
+        _service.AssociadoTemp.EstadoCivil = CBO_EstadoCivil.Text;
     }
     private bool ValidaDadosBasicos()
     {
@@ -135,6 +137,7 @@ public partial class FRM_Cadastro : Form
         TXB_Apelido.Text = _service.AssociadoTemp.Apelido;
         DTP_DataNascimento.Value = _service.AssociadoTemp.DataNascimento;
         CB_Sexo.Text = _service.AssociadoTemp.Sexo;
+        CBO_EstadoCivil.Text = _service.AssociadoTemp.EstadoCivil;
         TXB_CPF.Text = _service.AssociadoTemp.Documentos.CPF;
         PB_Foto.ImageLocation = _service.AssociadoTemp.Digitalizados.Foto;
     }

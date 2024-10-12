@@ -1,4 +1,5 @@
 ﻿using Modelos;
+using Spire.Doc;
 using Xceed.Words.NET;
 
 namespace Servicos.Utilidades;
@@ -15,7 +16,8 @@ public class GeraDocumentos
         _associado = associado;
         _destino = CriarPasta($"{destino}");
     }
-    public void Procuracao(bool PDF, bool pastaIndividual)
+
+    public string Procuracao(bool PDF, bool pastaIndividual)
     {
         try
         {
@@ -28,14 +30,67 @@ public class GeraDocumentos
             doc.ReplaceText("<DataAtual>", $"{(_periodo.InicioPeriodo1.AddDays(13)).ToLongDateString()}");
             if (PDF)
             {
-                    var doctemp = $"{LocalSalvamento(pastaIndividual)}\\ProcuracaoTemp.docx";
-                    doc.SaveAs(doctemp);
-                    SaidaEmPDF(doctemp, $"{LocalSalvamento(pastaIndividual)}\\Procuracao [{_associado.Nome.ToUpper()}].pdf");
-                    File.Delete(doctemp);   
+                var doctemp = $"{LocalSalvamento(pastaIndividual)}\\ProcuracaoTemp.docx";
+                doc.SaveAs(doctemp);
+                var destino = $"{LocalSalvamento(pastaIndividual)}\\Procuracao [{_associado.Nome.ToUpper()}].pdf";
+                SaidaEmPDF(doctemp, destino);
+                File.Delete(doctemp);
+                return destino;
             }
             else
             {
-                doc.SaveAs($"{LocalSalvamento(pastaIndividual)}\\Procuracao [{_associado.Nome.ToUpper()}].docx");
+                var destino = $"{LocalSalvamento(pastaIndividual)}\\Procuracao [{_associado.Nome.ToUpper()}].docx";
+                doc.SaveAs(destino);
+                return destino;
+            }
+        }
+        catch (Exception ex)
+        {
+            throw new Exception(ex.Message);
+        }
+    }
+    public string ReqSeguroDefeso(bool PDF, bool pastaIndividual)
+    {
+        try
+        {
+            var doc = DocX.Load(".\\Arquivos\\Templates\\RequerimentoSeguroDefeso.docx");
+            doc.ReplaceText("<NomeAssociado>", $"{_associado.Nome.ToUpper()}");
+            doc.ReplaceText("<NomeMae>", $"{_associado.Documentos.RG.NomeMae.ToUpper()}");
+            doc.ReplaceText("<DataNascimento>", $"{_associado.DataNascimento.ToShortDateString()}");
+            doc.ReplaceText("<CPF>", $"{_associado.Documentos.CPF}");
+            doc.ReplaceText("<RG>", $"{_associado.Documentos.RG.Numero}");
+            doc.ReplaceText("<PIS>", $"{_associado.Documentos.PIS}");
+            doc.ReplaceText("<CEI>", $"{_associado.Documentos.CEI}");
+            doc.ReplaceText("<Rua>", $"{_associado.Endereco.Rua}");
+            doc.ReplaceText("<Numero>", $"{_associado.Endereco.Numero}");
+            doc.ReplaceText("<Complemento>", $"{_associado.Endereco.Bairro}");
+            doc.ReplaceText("<Telefone>", $"{_associado.Contato.Telefone}");
+            doc.ReplaceText("<NPub>", $"{_periodo.NumeroPublicacao}");
+            doc.ReplaceText("<DataPub>", $"{_periodo.GetDataPublicacao}");
+            doc.ReplaceText("<P1Inicio>", $"{_periodo.GetInicioVigencia1}");
+            doc.ReplaceText("<P1Fim>", $"{_periodo.GetFimVigencia1}");
+            doc.ReplaceText("<P2Inicio>", $"{_periodo.GetInicioVigencia2}");
+            doc.ReplaceText("<P2Fim>", $"{_periodo.GetFimVigencia2}");
+            doc.ReplaceText("<RGP>", $"{_associado.Profissao.RGP}");
+            doc.ReplaceText("<Nome>", $"{_associado.Profissao.NumeroTripulantes}");
+            doc.ReplaceText("<UFP>", $"{_associado.Profissao.UFPesca}");
+            doc.ReplaceText("<AB>", $"{_associado.Profissao.AB}");
+            doc.ReplaceText("<NTrip>", $"{_associado.Profissao.GetTripulantes}");
+            doc.ReplaceText("<CPFProp>", $"{_associado.Profissao.CPFProprietario}");
+            if (PDF)
+            {
+                var doctemp = $"{LocalSalvamento(pastaIndividual)}\\DocTemp.docx";
+                doc.SaveAs(doctemp);
+                var destino = $"{LocalSalvamento(pastaIndividual)}\\Requerimento_de_Seguro_Defeso [{_associado.Nome.ToUpper()}].pdf";
+                SaidaEmPDF(doctemp, destino);
+                File.Delete(doctemp);
+                return destino;
+            }
+            else
+            {
+                var destino = $"{LocalSalvamento(pastaIndividual)}\\Requerimento_de_Seguro_Defeso [{_associado.Nome.ToUpper()}].docx";
+                doc.SaveAs(destino);
+                return destino;
             }
         }
         catch
@@ -43,7 +98,7 @@ public class GeraDocumentos
             throw;
         }
     }
-    public void RegistroInicial(bool PDF, bool pastaIndividual)
+    public string RegistroInicial(bool PDF, bool pastaIndividual, DateTime data)
     {
         try
         {
@@ -108,69 +163,29 @@ public class GeraDocumentos
             doc.ReplaceText("<G33B>", "X");
             doc.ReplaceText("<G33C>", "  ");
             doc.ReplaceText("<G33D>", "  ");
+            doc.ReplaceText("<DataCompleta>", $"{data.ToLongDateString()}");
             if (PDF)
             {
                 var doctemp = $"{LocalSalvamento(pastaIndividual)}\\DocTemp.docx";
                 doc.SaveAs(doctemp);
-                SaidaEmPDF(doctemp, $"{LocalSalvamento(pastaIndividual)}\\Registro_Inicial_EFAP [{_associado.Nome.ToUpper()}].pdf");
+                var destino = $"{LocalSalvamento(pastaIndividual)}\\Registro_Inicial_EFAP [{_associado.Nome.ToUpper()}].pdf";
+                SaidaEmPDF(doctemp, destino);
                 File.Delete(doctemp);
+                return destino;
             }
             else
             {
-                doc.SaveAs($"{LocalSalvamento(pastaIndividual)}\\Registro_Inicial_EFAP [{_associado.Nome.ToUpper()}].docx");
+                var destino = $"{LocalSalvamento(pastaIndividual)}\\Registro_Inicial_EFAP [{_associado.Nome.ToUpper()}].docx";
+                doc.SaveAs(destino);
+                return destino;
             }
         }
-        catch
+        catch (Exception ex)
         {
-            throw;
+            throw new(ex.Message);
         }
     }
-    public void ReqSeguroDefeso(bool PDF, bool pastaIndividual)
-    {
-        try
-        {
-            var doc = DocX.Load(".\\Arquivos\\Templates\\RequerimentoSeguroDefeso.docx");
-            doc.ReplaceText("<NomeAssociado>", $"{_associado.Nome.ToUpper()}");
-            doc.ReplaceText("<NomeMae>", $"{_associado.Documentos.RG.NomeMae.ToUpper()}");
-            doc.ReplaceText("<DataNascimento>", $"{_associado.DataNascimento.ToShortDateString()}");
-            doc.ReplaceText("<CPF>", $"{_associado.Documentos.CPF}");
-            doc.ReplaceText("<RG>", $"{_associado.Documentos.RG.Numero}");
-            doc.ReplaceText("<PIS>", $"{_associado.Documentos.PIS}");
-            doc.ReplaceText("<CEI>", $"{_associado.Documentos.CEI}");
-            doc.ReplaceText("<Rua>", $"{_associado.Endereco.Rua}");
-            doc.ReplaceText("<Numero>", $"{_associado.Endereco.Numero}");
-            doc.ReplaceText("<Complemento>", $"{_associado.Endereco.Bairro}");
-            doc.ReplaceText("<Telefone>", $"{_associado.Contato.Telefone}");
-            doc.ReplaceText("<NPub>", $"{_periodo.NumeroPublicacao}");
-            doc.ReplaceText("<DataPub>", $"{_periodo.GetDataPublicacao}");
-            doc.ReplaceText("<P1Inicio>", $"{_periodo.GetInicioVigencia1}");
-            doc.ReplaceText("<P1Fim>", $"{_periodo.GetFimVigencia1}");
-            doc.ReplaceText("<P2Inicio>", $"{_periodo.GetInicioVigencia2}");
-            doc.ReplaceText("<P2Fim>", $"{_periodo.GetFimVigencia2}");
-            doc.ReplaceText("<RGP>", $"{_associado.Profissao.RGP}");
-            doc.ReplaceText("<Nome>", $"{_associado.Profissao.NumeroTripulantes}");
-            doc.ReplaceText("<UFP>", $"{_associado.Profissao.UFPesca}");
-            doc.ReplaceText("<AB>", $"{_associado.Profissao.AB}");
-            doc.ReplaceText("<NTrip>", $"{_associado.Profissao.GetTripulantes}");
-            doc.ReplaceText("<CPFProp>", $"{_associado.Profissao.CPFProprietario}");
-            if (PDF)
-            {
-                var doctemp = $"{LocalSalvamento(pastaIndividual)}\\DocTemp.docx";
-                doc.SaveAs(doctemp);
-                SaidaEmPDF(doctemp, $"{LocalSalvamento(pastaIndividual)}\\Requerimento_de_Seguro_Defeso [{_associado.Nome.ToUpper()}].pdf");
-                File.Delete(doctemp);
-            }
-            else
-            {
-                doc.SaveAs($"{LocalSalvamento(pastaIndividual)}\\Requerimento_de_Seguro_Defeso [{_associado.Nome.ToUpper()}].docx");
-            }
-        }
-        catch
-        {
-            throw;
-        }
-    }
-    public void DeclaracaoFiliacao(bool PDF, bool pastaIndividual)
+    public string DeclaracaoFiliacao(bool PDF, bool pastaIndividual, DateTime data)
     {
         try
         {
@@ -180,16 +195,21 @@ public class GeraDocumentos
             doc.ReplaceText("<NumeroRG>", $"{_associado.Documentos.RG.Numero} {_associado.Documentos.RG.OrgaoEmissor}/{_associado.Documentos.RG.EstadoEmissao}");
             doc.ReplaceText("<EnderecoCompleto>", $"{_associado.Endereco.Rua}, {_associado.Endereco.Numero} - {_associado.Endereco.Localidade}.");
             doc.ReplaceText("<CidadeUF>", $"{_associado.Endereco.Municipio}-{_associado.Endereco.UF}");
+            doc.ReplaceText("<DataCompleta>", $"{data.ToLongDateString()}");
             if (PDF)
             {
                 var doctemp = $"{LocalSalvamento(pastaIndividual)}\\DocTemp.docx";
                 doc.SaveAs(doctemp);
-                SaidaEmPDF(doctemp, $"{LocalSalvamento(pastaIndividual)}\\Declaracao_de_Filiacao [{_associado.Nome.ToUpper()}].pdf");
+                var destino = $"{LocalSalvamento(pastaIndividual)}\\Declaracao_de_Filiacao [{_associado.Nome.ToUpper()}].pdf";
+                SaidaEmPDF(doctemp, destino);
                 File.Delete(doctemp);
+                return destino;
             }
             else
             {
-                doc.SaveAs($"{LocalSalvamento(pastaIndividual)}\\Declaracao_de_Filiacao [{_associado.Nome.ToUpper()}].docx");
+                var destino = $"{LocalSalvamento(pastaIndividual)}\\Declaracao_de_Filiacao [{_associado.Nome.ToUpper()}].docx";
+                doc.SaveAs(destino);
+                return destino;
             }
         }
         catch
@@ -197,50 +217,41 @@ public class GeraDocumentos
             throw;
         }
     }
-    public void DeclaracaoResidencia(bool PDF, bool pastaIndividual)
+    public string DeclaracaoResidencia(bool PDF, bool pastaIndividual, DateTime data)
     {
         try
         {
             var doc = DocX.Load(".\\Arquivos\\Templates\\DeclaracaoResidencia.docx");
             doc.ReplaceText("<NomeAssociado>", $"{_associado.Nome.ToUpper()}");
-            doc.SaveAs($"{LocalSalvamento(pastaIndividual)}\\Declaracao_de_Residencia.docx");
+            doc.ReplaceText("<EstadoCivil>", $"{_associado.EstadoCivil.ToUpper()}");
+            doc.ReplaceText("<CPF>", $"{_associado.GetCPF.ToUpper()}");
+            doc.ReplaceText("<RG>", $"{_associado.GetRG.ToUpper()}");
+            doc.ReplaceText("<EnderecoCompleto>", $"{_associado.Endereco.GetEndereco.ToUpper()}");
+            doc.ReplaceText("<Municipio>", $"{_associado.Endereco.Municipio.ToUpper()}");
+            doc.ReplaceText("<DataCompleta>", $"{data.ToLongDateString()}");
             if (PDF)
             {
                 var doctemp = $"{LocalSalvamento(pastaIndividual)}\\DocTemp.docx";
                 doc.SaveAs(doctemp);
-                SaidaEmPDF(doctemp, $"{LocalSalvamento(pastaIndividual)}\\Declaracao_de_Residencia [{_associado.Nome.ToUpper()}].pdf");
+                var destino = $"{LocalSalvamento(pastaIndividual)}\\Declaracao_de_Residencia [{_associado.Nome.ToUpper()}].pdf";
+                SaidaEmPDF(doctemp, destino);
                 File.Delete(doctemp);
+                return destino;
             }
             else
             {
-                doc.SaveAs($"{LocalSalvamento(pastaIndividual)}\\Declaracao_de_Residencia [{_associado.Nome.ToUpper()}].docx");
+                var destino = $"{LocalSalvamento(pastaIndividual)}\\Declaracao_de_Residencia [{_associado.Nome.ToUpper()}].docx";
+                doc.SaveAs(destino);
+                return destino;
             }
         }
-        catch
+        catch(Exception ex)
         {
-            throw;
+            throw new(ex.Message);
         }
     }
 
-    public static string Sexo(string valor, string campo)
-    {
-        var opcao = "  ";
-        switch (valor) 
-        {
-            case "Masculino":
-            {
-                if(campo == "<A08B>") opcao = "X";
-            }
-            break;
-            case "Feminino":
-            {
-                if(campo == "<A08A>") opcao = "X";
-            }
-            break;
-        }
-        return opcao;
-    }
-    public static string Escolha(bool o, string s)
+    private static string Escolha(bool o, string s)
     {
         var opcao = "  ";
         switch (s)
@@ -303,7 +314,25 @@ public class GeraDocumentos
         }
         return opcao;
     }
-    public static string Escolaridade(string e, string o)
+    private static string Sexo(string valor, string campo)
+    {
+        var opcao = "  ";
+        switch (valor) 
+        {
+            case "Masculino":
+            {
+                if(campo == "<A08B>") opcao = "X";
+            }
+            break;
+            case "Feminino":
+            {
+                if(campo == "<A08A>") opcao = "X";
+            }
+            break;
+        }
+        return opcao;
+    }
+    private static string Escolaridade(string e, string o)
     {
         var opcao = "  ";
         switch (e)
@@ -361,7 +390,7 @@ public class GeraDocumentos
         }
         return opcao;
     }
-    public static string FormaPesca(string valor, string campo)
+    private static string FormaPesca(string valor, string campo)
     {
         var opcao = "  ";
         switch (valor)
@@ -379,7 +408,7 @@ public class GeraDocumentos
         }
         return opcao;
     }
-    public static string CategoriaPesca(string valor, string campo)
+    private static string CategoriaPesca(string valor, string campo)
 
     {
         var selecao = "  ";
@@ -398,7 +427,7 @@ public class GeraDocumentos
         }
         return selecao;
     }
-    public static string DecEscolaridade(string valor, string campo)
+    private static string DecEscolaridade(string valor, string campo)
     {
         var selecao = "  ";
         switch (valor)
@@ -434,8 +463,8 @@ public class GeraDocumentos
     }
     private static void SaidaEmPDF(string origem, string destino)
     {
-        var doc = new Spire.Doc.Document();
+        var doc = new Document();
         doc.LoadFromFile(origem);
-        doc.SaveToFile(destino, Spire.Doc.FileFormat.PDF);
+        doc.SaveToFile(destino, FileFormat.PDF);
     }
 }

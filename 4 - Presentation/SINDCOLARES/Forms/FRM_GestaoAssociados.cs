@@ -1,5 +1,6 @@
 ﻿using Servicos;
-using SINDCOLARES.Formularios;
+using SINDCOLARES.Forms;
+
 namespace SINDCOLARES;
 
 public partial class FRM_GestaoAssociados : Form

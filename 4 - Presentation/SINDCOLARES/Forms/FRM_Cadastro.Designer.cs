@@ -52,6 +52,8 @@
             BTN_Cancelar = new Button();
             BTN_Salvar = new Button();
             BTN_Documentacao = new Button();
+            CBO_EstadoCivil = new ComboBox();
+            label3 = new Label();
             GP_Formularios.SuspendLayout();
             GP_Foto.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)PB_Foto).BeginInit();
@@ -61,13 +63,14 @@
             // 
             // GP_Formularios
             // 
+            GP_Formularios.Anchor = AnchorStyles.Bottom;
             GP_Formularios.Controls.Add(BTN_Documentos);
             GP_Formularios.Controls.Add(BTN_Profissao);
             GP_Formularios.Controls.Add(BTN_Endereco);
             GP_Formularios.Controls.Add(BTN_filiacao);
             GP_Formularios.Controls.Add(BTN_Contato);
             GP_Formularios.Controls.Add(BTN_Escolaridade);
-            GP_Formularios.Location = new Point(12, 226);
+            GP_Formularios.Location = new Point(12, 279);
             GP_Formularios.Name = "GP_Formularios";
             GP_Formularios.Size = new Size(452, 150);
             GP_Formularios.TabIndex = 19;
@@ -158,6 +161,8 @@
             // 
             // GP_Info
             // 
+            GP_Info.Controls.Add(CBO_EstadoCivil);
+            GP_Info.Controls.Add(label3);
             GP_Info.Controls.Add(CB_Sexo);
             GP_Info.Controls.Add(DTP_DataNascimento);
             GP_Info.Controls.Add(TXB_Apelido);
@@ -166,7 +171,7 @@
             GP_Info.Controls.Add(label6);
             GP_Info.Location = new Point(12, 140);
             GP_Info.Name = "GP_Info";
-            GP_Info.Size = new Size(452, 80);
+            GP_Info.Size = new Size(452, 133);
             GP_Info.TabIndex = 17;
             GP_Info.TabStop = false;
             // 
@@ -269,7 +274,8 @@
             // 
             // BTN_Cancelar
             // 
-            BTN_Cancelar.Location = new Point(373, 382);
+            BTN_Cancelar.Anchor = AnchorStyles.Bottom;
+            BTN_Cancelar.Location = new Point(373, 435);
             BTN_Cancelar.Name = "BTN_Cancelar";
             BTN_Cancelar.Size = new Size(91, 38);
             BTN_Cancelar.TabIndex = 14;
@@ -279,7 +285,8 @@
             // 
             // BTN_Salvar
             // 
-            BTN_Salvar.Location = new Point(269, 382);
+            BTN_Salvar.Anchor = AnchorStyles.Bottom;
+            BTN_Salvar.Location = new Point(269, 435);
             BTN_Salvar.Name = "BTN_Salvar";
             BTN_Salvar.Size = new Size(91, 38);
             BTN_Salvar.TabIndex = 13;
@@ -289,7 +296,8 @@
             // 
             // BTN_Documentacao
             // 
-            BTN_Documentacao.Location = new Point(12, 382);
+            BTN_Documentacao.Anchor = AnchorStyles.Bottom;
+            BTN_Documentacao.Location = new Point(12, 435);
             BTN_Documentacao.Name = "BTN_Documentacao";
             BTN_Documentacao.Size = new Size(121, 38);
             BTN_Documentacao.TabIndex = 12;
@@ -297,11 +305,29 @@
             BTN_Documentacao.UseVisualStyleBackColor = true;
             BTN_Documentacao.Click += BTN_Digitalizados_Click;
             // 
+            // CBO_EstadoCivil
+            // 
+            CBO_EstadoCivil.FormattingEnabled = true;
+            CBO_EstadoCivil.Items.AddRange(new object[] { "Solteiro(a)", "Casado(a)", "União Estável", "Divorciado(a)", "Viúvo(a)" });
+            CBO_EstadoCivil.Location = new Point(6, 92);
+            CBO_EstadoCivil.Name = "CBO_EstadoCivil";
+            CBO_EstadoCivil.Size = new Size(151, 23);
+            CBO_EstadoCivil.TabIndex = 7;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(6, 74);
+            label3.Name = "label3";
+            label3.Size = new Size(68, 15);
+            label3.TabIndex = 6;
+            label3.Text = "Estado Civil";
+            // 
             // FRM_Cadastro
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(476, 427);
+            ClientSize = new Size(476, 480);
             ControlBox = false;
             Controls.Add(BTN_Documentacao);
             Controls.Add(BTN_Cancelar);
@@ -314,7 +340,7 @@
             MaximizeBox = false;
             Name = "FRM_Cadastro";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "FRM_Cadastro";
+            Text = "Associado";
             Load += FRM_Cadastro_Load;
             GP_Formularios.ResumeLayout(false);
             GP_Foto.ResumeLayout(false);
@@ -352,5 +378,7 @@
         private Button BTN_Salvar;
         private Button BTN_Documentacao;
         private PictureBox PB_Foto;
+        private ComboBox CBO_EstadoCivil;
+        private Label label3;
     }
 }
